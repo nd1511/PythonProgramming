@@ -2,6 +2,7 @@
 #import torchvision
 
 import numpy as np
+
 import torch
 
 from torch.autograd import Variable
@@ -164,6 +165,21 @@ print(correct[:5])
 accuracy = torch.sum(correct) / correct.shape[0]
 
 print('Test accuracy: ', accuracy)
+
+
+
+# we now make predictions with our model
+inp = Variable(torch.Tensor([4, 3.7, 1, 0.5]))
+
+# we compute the probabilities
+prediction = mymodel.forward(inp)
+
+# we print the probabilities
+print(prediction)
+# we choose the class with the highest probability
+
+# we then use argmax, we choose the class with the highest probability
+
 
 
 
