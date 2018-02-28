@@ -168,20 +168,24 @@ print('Test accuracy: ', accuracy)
 
 
 
+# we run the training and testing procedure many times
+# and we keep the model with the best accuracy
+
+# we run this many times and, in the end, we keep the model with the best test results
+
+
+
 # we now make predictions with our model
-inp = Variable(torch.Tensor([4, 3.7, 1, 0.5]))
+#inp = Variable(torch.Tensor([4, 3.7, 1, 0.5]))
 
 # we compute the probabilities
-prediction = mymodel.forward(inp)
+#prediction = mymodel.forward(inp)
 
 # we print the probabilities
-print(prediction)
+#print(prediction)
 # we choose the class with the highest probability
 
 # we then use argmax, we choose the class with the highest probability
-
-
-
 
 
 
