@@ -1,216 +1,116 @@
 
+import numpy as np
+
 import torch
 
 from torch.autograd import Variable
 
-import torchvision
-
-from torchvision import transforms, datasets
-
 import matplotlib.pyplot as plt
 
-# we import several useful functions
-import torch.nn.functional as F
+import pandas as pd
 
 
 
-# we use SGD, stochastic gradient descent
-# we use mini-batches and SGD
+# we use pandas dataframes
 
-# we define the size of the mini-batches
-batch_size = 256
+# we import our dataset into a pandas dataframe
+df = pd.read_csv('Iris.csv')
 
-# we define the learning rate, the step size
-lr = 0.5
+df[['Species']] = df['Species'].map({'Iris-setosa':0, 'Iris-virginica':1, 'Iris-versicolor':2}) #map text labels to numberical vaules
 
-epochs = 1
+# we shuffle our dataset
+df = df.sample(frac=1)
+# this is important for training
 
+# we convert our data into torch tensors
+X = torch.Tensor(np.array(df[df.columns[1:-1]])) #pick our features from our dataset
+Y = torch.LongTensor(np.array(df[['Species']]).squeeze()) #select our label - squeeze() removes redundant dimensions
 
+#size of training set
+m = 100
 
-# we use the MNIST database
-# we use MNIST and the hand-written digits database
+#split our data into training and test set
 
-training_data = datasets.MNIST(root = 'data/',
-                               transform = transforms.ToTensor(),
-                               train = True,
-                               download=True)
+#training set
+x_train = Variable(X[0:m])
+y_train = Variable(Y[0:m])
 
-print(training_data[0])
-
-plt.imshow(training_data[0][0][0])
-
-#plt.show()
-
-
-
-test_data = datasets.MNIST(root = 'data/',
-                           train = False,
-                           transform = transforms.ToTensor())
-
-# we create the training samples
-training_samples = torch.utils.data.DataLoader(dataset = training_data,
-                                               batch_size = batch_size,
-                                               shuffle = True)
-
-# we create the test samples
-test_samples = torch.utils.data.DataLoader(dataset = test_data,
-                                           batch_size = batch_size,
-                                           shuffle = False)
-# we do not need to shuffle because this is testing
+#test set
+x_test = Variable(X[m:])
+y_test = Variable(Y[m:])
 
 
 
-print("Number of training examples: ", len(training_samples.dataset))
-
-print("Number of test examples: ", len(test_samples.dataset))
-
-
-
-class convnet(torch.nn.Module):
+#define model class - inherit useful functions and attributes from torch.nn.Module
+class logisticmodel(torch.nn.Module):
     def __init__(self):
-        super().__init__()
-
-        # we now define the layers
-        # kernel = filter = convolution
-
-        # 1 input channel, 5 output channels
-        self.conv1 = torch.nn.Conv2d(1, 5,
-                                     kernel_size = 5)
-
-        # 5 input channel, 10 output channels
-        self.conv2 = torch.nn.Conv2d(5, 10,
-                                     kernel_size = 3)
-
-        # we use ReLU
-        self.relu = torch.nn.ReLU()
-
-        # we now define the dense fully-connected NN
-        self.dense = torch.nn.Linear(4840, 10)
+        super().__init__() #call parent class initializer
+        self.linear = torch.nn.Linear(4, 3) #define linear combination function with 4 inputs and 3 outputs
 
     def forward(self, x):
+        pred = self.linear(x) #linearly combine our inputs to give 3 outputs
+        pred = torch.nn.functional.softmax(pred, dim=1) #activate our output neurons to give probabilities of belonging to each of the three class
+        return pred
 
-        # we use conv1
-        out1 = self.relu(self.conv1(x))
+#training hyper-parameters
+no_epochs = 100
 
-        # we use conv2
-        out2 = self.relu(self.conv2(out1))
-
-        print(x.size(0))
-
-        # we unwrap this to a string, to a column
-        todense = out2.view(x.size(0), -1)
-
-        output = self.dense(todense)
-
-        #return output
-        return F.log_softmax(output, dim = 0)
-        # we use log softmax along the zeroth dimension
+lr = 0.1
 
 
 
-mynet = convnet()
+#create our model from defined class
+mymodel = logisticmodel()
+costf = torch.nn.CrossEntropyLoss() #cross entropy cost function as it is a classification problem
+optimizer = torch.optim.Adam(mymodel.parameters(), lr = lr) #define our optimizer
 
-# we use the negative log likelihood (NLL)
-criterion = torch.nn.NLLLoss()
+#for plotting costs
+costs=[]
+plt.ion()
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.set_xlabel('Epoch')
+ax.set_ylabel('Cost')
+ax.set_xlim(0, no_epochs)
+plt.show()
 
-# NLL is like cross-entropy CE, when one-hot coding
-# we use one-hot vectors and we use NLL
+#training loop - same as last time
+for epoch in range(no_epochs):
+    h = mymodel.forward(x_train) #forward propagate - calulate our hypothesis
 
-# we use SGD
-optimiser = torch.optim.SGD(mynet.parameters(), lr = lr)
+    #calculate, plot and print cost
+    cost = costf(h, y_train)
+    costs.append(cost.data[0])
+    ax.plot(costs, 'b')
+    fig.canvas.draw()
+    print('Epoch ', epoch, ' Cost: ', cost.data[0])
 
+    #calculate gradients + update weights using gradient descent step with our optimizer
+    optimizer.zero_grad()
+    cost.backward()
+    optimizer.step()
 
+    #Some people's laptops are too fast so the plot updates too fast to be visible - uncomment the following line to fix that problem
+    #plt.pause(0.0001)
 
-def train():
-    # we now set our model ready for training
-    mynet.train()
-
-    # dropout changes training and testing conditions
-
-    fig = plt.figure()
-
-    ax = fig.add_subplot(111)
-
-    ax.grid()
-    plt.ion()
-
-    plt.show()
-
-    ax.set_xlabel('Batch')
-
-    ax.set_ylabel("Loss")
-
-    costs = []
-
-    for e in range(epochs):
-
-        # we use mini-batches
-        for i, (features, labels) in enumerate(training_samples):
-            features, labels = Variable(features), Variable(labels)
-
-            prediction = mynet(features)
-
-            optimiser.zero_grad()
-
-            # we use NLL
-            loss = criterion(prediction, labels)
-
-            # one-hot coding is automatically done
-
-            loss.backward()
-
-            optimiser.step()
+#test accuracy
+test_h = mymodel.forward(x_test) #predict probabilities for test set
+_, test_h = test_h.data.max(1) #returns the output which had the highest probability
+test_y = y_test.data
+correct = torch.eq(test_h, test_y) #perform element-wise equality operation
+accuracy = torch.sum(correct)/correct.shape[0] #calculate accuracy
+print('Test accuracy: ', accuracy)
 
 
 
-            costs.append(loss.data)
+#predict the class of an input using our trained model
+inp = [4.6, 3.1, 1.2, 0.3] #define our inputs
+inp = Variable(torch.Tensor(inp)) #convert our input to variable
+prediction = mymodel.forward(inp) #calculate our output probabilities
+_, prediction = prediction.data.max(1) #which class had the highest probability
 
-            ax.plot(costs, 'b')
+print(prediction)
 
-            fig.canvas.draw()
-
-            # we pause the plot so as to see the graph
-            plt.pause(0.001)
-
-
-
-            # loss is a variable and we use "loss.data[0]"
-            print("Epoch: ", e, "Batch: ", i, "Loss: ", loss.data[0])
-
-            # we stop training at 50th batch
-            if i == 50:
-                break
-
-
-
-train()
-
-
-
-def test():
-
-    print('\n\n\n')
-
-    # we use "eval()"
-    mynet.eval()
-
-    correct = 0
-
-    for features, labels in test_samples:
-        features, labels = Variable(features), Variable(labels)
-
-        probabilities = mynet(features)
-
-        prediction = probabilities.data.max(1)[1]
-
-        # we use "eq()" to have the same format
-        correct += (prediction.eq(labels.data.view_as(prediction))).sum()
-
-    print("Test set accuracy: ", correct / len(test_samples.dataset))
-
-
-
-test()
 
 
 
