@@ -113,6 +113,10 @@ mynet = NN()
 # we use the MSE cost function
 criterion = torch.nn.MSELoss()
 
+# we use the CE cost function, we use cross-entropy
+#criterion = torch.nn.NLLLoss()
+# we use negative log-likelihood, we use NLL
+
 # we use Rprop
 #optimiser = torch.optim.Rprop(mynet.parameters(), lr=lr)
 
@@ -192,10 +196,6 @@ def test():
 
 
 test()
-
-
-
-
 
 
 
