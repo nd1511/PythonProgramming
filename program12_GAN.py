@@ -133,12 +133,16 @@ class generator(torch.nn.Module):
         # from 64x14x14 to 1x28x28
         self.uconv2 = torch.nn.ConvTranspose2d(64, 1, kernel_size=4, stride=2, padding=1)
 
-        self.bn1 = torch.BatchNorm1d(256)
+	# we use "BatchNorm1d(.)"
+        self.bn1 = torch.nn.BatchNorm1d(256)
 
-        self.bn2 = torch.BatchNorm1d(1024)
+	# we use "BatchNorm1d(.)"
+        self.bn2 = torch.nn.BatchNorm1d(1024)
 
-        self.bn3 = torch.BatchNorm1d(128 * 7 * 7)
+	# we use "BatchNorm1d(.)"
+        self.bn3 = torch.nn.BatchNorm1d(128 * 7 * 7)
 
+	# we use "BatchNorm2d(.)"
         self.bn4 = torch.nn.BatchNorm2d(64)
 
     def forward(self, x):
