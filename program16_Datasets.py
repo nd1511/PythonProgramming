@@ -239,3 +239,23 @@ print('logenergy features=', logenergy.shape)
 
 
 
+# we use the Chime Challenge
+
+# we use the Chime Challenge
+# we can use data from the Chime Challenge
+
+# in MATLAB, we have:
+# [y, fs] = readwav('/Volumes/Maxtor/CHiME5/audio/train/S03_U01.CH1.wav');
+# size(y), fs
+# %soundsc(y, fs)
+# %clear sound
+# %figure; plot((1:length(y))*(1/fs), y); axisenlarge; figbolden; xlabel('Time (s)'); figbolden; ylabel('Amplitude'); figbolden;
+# %figure; plot((1:length(y))*(1/fs)/60, y); axisenlarge; figbolden; xlabel('Time (m)'); figbolden; ylabel('Amplitude'); figbolden;
+# figure; plot((1:length(y))*(1/fs)/(60*60), y); axisenlarge; figbolden; xlabel('Time (h)'); figbolden; ylabel('Amplitude'); figbolden;
+
+
+
+
+
+
+
