@@ -239,10 +239,11 @@ print('logenergy features=', logenergy.shape)
 
 
 
-# we use the Chime Challenge
+# we use the CHiME Challenge
+# we use: http://spandh.dcs.shef.ac.uk/chime_challenge/data.html
 
-# we use the Chime Challenge
-# we can use data from the Chime Challenge
+# we use the CHiME Challenge
+# we can use data from the CHiME Challenge
 
 # in MATLAB, we have:
 # [y, fs] = readwav('/Volumes/Maxtor/CHiME5/audio/train/S03_U01.CH1.wav');
@@ -253,6 +254,11 @@ print('logenergy features=', logenergy.shape)
 # %figure; plot((1:length(y))*(1/fs)/60, y); axisenlarge; figbolden; xlabel('Time (m)'); figbolden; ylabel('Amplitude'); figbolden;
 # figure; plot((1:length(y))*(1/fs)/(60*60), y); axisenlarge; figbolden; xlabel('Time (h)'); figbolden; ylabel('Amplitude'); figbolden;
 
+
+
+# we use TensorFlow that allows us to express any computation as a graph of data flows
+# the nodes in the graph of data flows represent mathematical operations
+# the edges in the graph of data flows represent data
 
 
 
