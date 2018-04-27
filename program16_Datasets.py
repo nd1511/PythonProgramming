@@ -1,4 +1,125 @@
 
+from __future__ import print_function
+
+# we use LIBROSA for speech processing
+import librosa
+
+
+
+# 1. Get the file path to the included audio example
+# filename = librosa.util.example_audio_file()
+
+# 2. Load the audio as a waveform `y`
+#    Store the sampling rate as `sr`
+# y, sr = librosa.load(filename)
+
+# 3. Run the default beat tracker
+# tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
+
+# print('Estimated tempo: {:.2f} beats per minute'.format(tempo))
+
+# 4. Convert the frame indices of beat events into timestamps
+# beat_times = librosa.frames_to_time(beat_frames, sr=sr)
+
+#print('Saving output to beat_times.csv')
+# librosa.output.times_csv('beat_times.csv', beat_times)
+
+
+
+
+
+
+import numpy as np
+
+x = np.array(12)
+print(x)
+print(x.ndim)
+
+x = np.array([12, 3, 6, 14])
+print(x)
+print(x.ndim)
+
+x = np.array([[12, 3, 6, 14],
+             [5, 78, 34, 0]])
+print(x)
+print(x.ndim)
+
+
+
+
+
+
+from keras.datasets import mnist
+
+# we use tuples, (..., ...)
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+print('')
+print(train_images.ndim)
+print(train_images.shape)
+print(train_images.dtype)
+
+digit = train_images[4]
+
+import matplotlib.pyplot as plt
+
+plt.imshow(digit, cmap=plt.cm.binary)
+
+#plt.show()
+#plt.close()
+
+my_slice = train_images[10:100]
+
+print('')
+print(my_slice.shape)
+
+
+
+
+
+
+from keras.datasets import imdb
+
+# we use tuples, (..., ...)
+(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000)
+
+print('')
+print(train_data.shape)
+print(test_data.shape)
+
+print('')
+print(train_data[0])
+print(train_labels[0])
+
+
+
+
+
+
+# we use the CHiME Challenge
+# we use: http://spandh.dcs.shef.ac.uk/chime_challenge/data.html
+
+# in MATLAB, we have:
+# [y, fs] = readwav('/Volumes/Maxtor/CHiME5/audio/train/S03_U01.CH1.wav');
+# size(y), fs
+# %soundsc(y, fs)
+# %clear sound
+# figure; plot((1:length(y))*(1/fs)/(60*60), y); axisenlarge; figbolden; xlabel('Time (h)'); figbolden; ylabel('Amplitude'); figbolden;
+
+import scipy.io.wavfile
+
+# we use "S03_U01.CH1.wav" from the CHiME Challenge
+sample_rate, signal = scipy.io.wavfile.read('/Volumes/Maxtor/CHiME5/audio/train/S03_U01.CH2.wav')
+
+print('')
+print(sample_rate)
+print(signal.shape)
+
+
+
+
+
+
 from sklearn import datasets
 
 import numpy as np
@@ -172,9 +293,6 @@ mfcc -= (numpy.mean(mfcc, axis=0) + 1e-8)
 
 
 
-
-
-
 # we use speechpy
 # we use: https://github.com/astorfi/speechpy
 
@@ -231,8 +349,6 @@ logenergy = speechpy.feature.lmfe(signal, sampling_frequency=fs, frame_length=0.
 logenergy_feature_cube = speechpy.feature.extract_derivative_feature(logenergy)
 
 print('logenergy features=', logenergy.shape)
-
-
 
 
 
