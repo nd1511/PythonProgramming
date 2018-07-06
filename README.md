@@ -1,7 +1,9 @@
 # PythonProgramming
 Python Programming using the PyCharm integrated development environment (IDE).
 
-PyTorch and Keras with TensorFlow.
+PyTorch and Keras (i.e. Keras with TensorFlow).
+
+Neural Networks (NNs) with either PyTorch or Keras.
 
 Author: Nikolaos Dionelis
 
