@@ -5,6 +5,16 @@
 # RNN
 # an RNN is a for loop that reuses quantities computed during the previous iteration of the loop
 
+# RNNs, LSTM-RNNs and GRU-RNNs
+# LSTM-RNNs and GRU-RNNs are better than RNNs
+
+# LSTM-RNNs and GRU-RNNs are better than vanilla RNNs
+
+# LSTM-RNNs are used in (https://research.google.com/pubs/archive/44312.pdf)
+# GRU-RNNs are used in (https://pdfs.semanticscholar.org/702e/aa99bcb366d08d7f450ed7e354f9f6920b23.pdf)
+
+
+
 import numpy as np
 
 #state_t = 0
