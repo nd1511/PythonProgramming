@@ -305,6 +305,26 @@ plt.show()
 
 
 
+# we now use a cryptocurrency dataset
+
+# we use another dataset
+# we utilise a cryptocurrency dataset
+
+# we use pandas
+import pandas as pd
+
+# we create a dataframe
+#df = pd.read_csv('./dataset_cryptocurrency.csv')
+df = pd.read_csv('/Users/dionelisnikolaos/Downloads/dataset_cryptocurrency.csv')
+
+# output first 5 rows in dataset
+print(df.head())
+
+
+
+
+
+
 # we now use Keras
 # we use: https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/
 
