@@ -136,6 +136,165 @@ r_k = c_k / c_k[0]
 
 
 
+# we now use: Yield (%) on British government securities
+
+# Yield (%) on British government securities
+yield_Br = [2.22, 2.23, 1.78, 1.72, 2.36, 2.41, 3.45, 3.29, 2.93, 2.92, 2.29, 2.66, 4.58, 4.76, 5.00, 4.74, 5.66, 5.42, 4.26, 4.02, 4.69, 4.72, 5.42, 5.31, 5.98, 5.91, 4.67, 4.81, 4.75, 4.91, 6.67, 6.52, 6.58, 6.42, 6.69, 6.51, 7.52, 7.41, 8.11, 8.18, 8.79, 8.63]
+
+#x = (?)
+#x = array1
+x = yield_Br
+
+#print(array1.size)
+#N = x.size
+
+#N = x.size
+N = len(x)
+#print(N)
+
+# we use plt to plot figures
+import matplotlib.pyplot as plt
+
+plt.figure()
+
+plt.plot(x, 'bo-', label='Yield')
+#plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
+
+plt.title('Yield (%) on British government securities')
+plt.legend()
+
+plt.show()
+
+#M = N / 10
+#print(M)
+
+import math
+M = math.floor(N / 10)
+#print(M)
+
+#c_k = np.zeros(int(M))
+c_k = np.zeros(M)
+
+x_bar = 0
+
+#print(x[0,0])
+#print(x[0,1])
+
+for t in range(1-1,N-1):
+    x_bar = x_bar + (x[t])
+
+x_bar = x_bar / N
+
+for m in range(1-1, M):
+    for t in range(1-1, N-m):
+        c_k[m] = c_k[m] + ((x[t] - x_bar) * (x[t+m] - x_bar))
+
+c_k = (1/N) * c_k
+
+r_k = c_k / c_k[0]
+
+#print(c_k)
+#print(c_k.size)
+
+#print(c_k.size)
+#print(r_k.size)
+
+# we find the auto-correlation coefficients
+# we compute the auto-correlation function, the auto-correlation coefficients, the correlogram
+
+plt.figure()
+
+#plt.plot(r_k, 'bo-', label='auto-correlation coefficients')
+plt.plot([1,2,3,4], r_k, 'bo-', label='auto-correlation coefficients')
+#plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
+
+plt.title('The auto-correlation coefficients, the correlogram')
+plt.legend()
+
+plt.show()
+
+# we see that the auto-correlation coefficients do not go to zero
+
+# the auto-correlation coefficients do not come down quickly towards zero
+# from the plot, we observe that the auto-correlation coefficients do not go to zero fast
+
+
+
+# Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 14.3: Examples, 6th edition (2004), Chapman & Hall / CRC.
+
+# accordding to example 14.3, (1) c_k, (2) r_k, (3) one-step difference and repeat (1) and (2)
+# we have done (1) and (2) and now we do (3)
+
+#import numpy as np
+yield_Br = np.asarray(yield_Br)
+
+#x = (?)
+#x = array1[0,1:] - array1[0,0:-1]
+x = yield_Br[1:] - yield_Br[0:-1]
+# x is the one-step difference
+
+#print(array1.size)
+N = x.size
+
+#print(N)
+#print(array1.size)
+
+#M = N / 10
+# print(M)
+
+#import math
+M = math.floor(N / 10)
+
+#c_k = np.zeros(int(M))
+c_k = np.zeros(M)
+
+x_bar = 0
+
+#print(x[0,0])
+#print(x[0,1])
+
+for t in range(1-1,N-1):
+    #x_bar = x_bar + (x[0,t])
+    x_bar = x_bar + (x[t])
+
+x_bar = x_bar / N
+
+for m in range(1-1, M):
+    for t in range(1-1, N-m):
+        #c_k[m] = c_k[m] + ((x[0,t] - x_bar) * (x[0,t+m] - x_bar))
+        c_k[m] = c_k[m] + ((x[t] - x_bar) * (x[t + m] - x_bar))
+
+c_k = (1/N) * c_k
+
+r_k = c_k / c_k[0]
+
+#print(c_k)
+#print(c_k.size)
+
+#print(c_k.size)
+#print(r_k.size)
+
+# we find the auto-correlation coefficients
+# we compute the auto-correlation function, the auto-correlation coefficients, the correlogram
+
+plt.figure()
+
+#plt.plot(r_k, 'bo-', label='auto-correlation coefficients')
+plt.plot([1,2,3,4], r_k, 'bo-', label='auto-correlation coefficients')
+#plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
+
+plt.title('The auto-correlation coefficients, the correlogram')
+plt.legend()
+
+plt.show()
+
+# we see that the auto-correlation coefficients go to zero
+
+# the auto-correlation coefficients come down quickly towards zero
+# from the plot, we observe that the auto-correlation coefficients go to zero fast
+
+
+
 
 
 
@@ -163,6 +322,7 @@ print(test_images.shape)
 
 print(len(test_labels))
 print(test_labels)
+
 
 
 
