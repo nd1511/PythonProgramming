@@ -720,6 +720,16 @@ plt.show()
 
 
 
+# Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 14.3: Examples, 6th edition (2004), Chapman & Hall / CRC.
+
+# we use example 14.2 from Chapter 14.3: Examples
+# Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 14.3: Examples, 6th edition (2004), Chapman & Hall / CRC.
+
+# all the auto-correlation coefficients go to zero fast and, hence, the time series are stationary
+# ARMA(0,1) or ARMA(1,0) can be used
+
+
+
 
 
 
