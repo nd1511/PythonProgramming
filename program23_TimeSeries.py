@@ -425,13 +425,44 @@ plt.legend()
 
 plt.show()
 
-# we plot all together
+
+
+# we use the last values
+
+# we plot all together using the last values
 plt.figure()
 
-plt.plot(range(0, 100+1), BTC_close_ratio[0:100+1], 'bo-', label='BTC close_ratio')
-plt.plot(range(0, 100+1), ETH_close_ratio[0:100+1], 'ro-', label='ETH close_ratio')
-plt.plot(range(0, 100+1), XRP_close_ratio[0:100+1], 'ko-', label='XRP close_ratio')
-plt.plot(range(0, 100+1), BCH_close_ratio[0:100+1], 'mo-', label='BCH close_ratio')
+plt.plot(range(0, 100+1), BTC_close_ratio[-100-1:], 'bo-', label='BTC close_ratio')
+plt.plot(range(0, 100+1), ETH_close_ratio[-100-1:], 'ro-', label='ETH close_ratio')
+plt.plot(range(0, 100+1), XRP_close_ratio[-100-1:], 'ko-', label='XRP close_ratio')
+plt.plot(range(0, 100+1), BCH_close_ratio[-100-1:], 'mo-', label='BCH close_ratio')
+
+plt.title('The close ratios.')
+plt.legend()
+
+plt.show()
+
+#print(len(BTC_close_ratio))
+#print(len(ETH_close_ratio))
+#print(len(XRP_close_ratio))
+#print(len(BCH_close_ratio))
+
+BTC_close_ratio2 = np.asarray(BTC_close_ratio[-len(BCH_close_ratio):])
+ETH_close_ratio2 = np.asarray(ETH_close_ratio[-len(BCH_close_ratio):])
+XRP_close_ratio2 = np.asarray(XRP_close_ratio[-len(BCH_close_ratio):])
+
+#print(len(BTC_close_ratio2))
+#print(len(ETH_close_ratio2))
+#print(len(XRP_close_ratio2))
+#print(len(BCH_close_ratio))
+
+# we plot all together using the last values
+plt.figure()
+
+plt.plot(range(0, len(BCH_close_ratio)), BTC_close_ratio2, 'bo-', label='BTC close_ratio')
+plt.plot(range(0, len(BCH_close_ratio)), ETH_close_ratio2, 'ro-', label='ETH close_ratio')
+plt.plot(range(0, len(BCH_close_ratio)), XRP_close_ratio2, 'ko-', label='XRP close_ratio')
+plt.plot(range(0, len(BCH_close_ratio)), BCH_close_ratio, 'mo-', label='BCH close_ratio')
 
 plt.title('The close ratios.')
 plt.legend()
@@ -446,7 +477,9 @@ plt.show()
 
 #x = (?)
 #x = array1
-x = BTC_close_ratio
+
+#x = BTC_close_ratio
+x = BTC_close_ratio2
 
 #print(array1.size)
 #N = x.size
@@ -514,7 +547,9 @@ plt.show()
 
 #x = (?)
 #x = array1
-x = ETH_close_ratio
+
+#x = ETH_close_ratio
+x = ETH_close_ratio2
 
 x = np.asarray(x)
 
@@ -584,7 +619,9 @@ plt.show()
 
 #x = (?)
 #x = array1
-x = XRP_close_ratio
+
+#x = XRP_close_ratio
+x = XRP_close_ratio2
 
 x = np.asarray(x)
 
@@ -757,9 +794,6 @@ print(test_images.shape)
 
 print(len(test_labels))
 print(test_labels)
-
-
-
 
 
 
