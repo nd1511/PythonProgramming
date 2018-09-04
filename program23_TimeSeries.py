@@ -327,7 +327,14 @@ print(df.head(9))
 # over a 5 year period 2013-2018. The provided data is all in $ USD and includes open/close, high/low, volume traded, spread and close ratio.
 # The close ratio is defined as: Close Ratio = (Close - Low)/(High - Low)
 
-# we compute the close ration using Close Ratio = (Close - Low)/(High - Low)
+# The default setting is to use the close ratio of the time frame as the input data.
+# We compute the close ration using Close Ratio = (Close - Low)/(High - Low).
+# Changing this to the open, the high or low can dramatically affect how the indicator moves and the analytical insight it provides.
+
+# The open, high, low and close average (OHLC average) is the average of all these settings combined.
+# There is no right or wrong setting for an indicator. Whether to the use the open, high, low or close or an average will depend on the insight the trader requires from the indicator.
+
+
 
 # In the Excel file: Bitcoin (BTC) is from 2 to 1867
 # BTC is from 2 to 1867
@@ -794,7 +801,6 @@ print(test_images.shape)
 
 print(len(test_labels))
 print(test_labels)
-
 
 
 
