@@ -13,8 +13,6 @@
 # datasets can be found in (https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173)
 # C. Chatfield: https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173
 
-
-
 # we use: http://www.commsp.ee.ic.ac.uk/~mandic/courses.htm
 # we also use: https://pdfs.semanticscholar.org/presentation/27ca/53acde0b5a7914cb042365ae4f05a2c1c0ce.pdf
 
@@ -312,6 +310,14 @@ plt.show()
 
 # we use pandas
 import pandas as pd
+
+from pandas import read_csv
+#from pandas import datetime
+
+#def parser(x):
+#    return datetime.strptime('190' + x, '%Y-%m')
+
+#series = read_csv('/Users/dionelisnikolaos/Downloads/dataset_cryptocurrency.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
 
 # we create a dataframe
 #df = pd.read_csv('./dataset_cryptocurrency.csv')
@@ -774,6 +780,29 @@ plt.show()
 
 
 
+from statsmodels.tsa.arima_model import ARIMA
+
+# fit model
+model = ARIMA(x, order=(5, 1, 0))
+model_fit = model.fit(disp=0)
+
+print(model_fit.summary())
+
+from pandas import DataFrame
+
+# plot residual errors
+residuals = DataFrame(model_fit.resid)
+
+residuals.plot()
+plt.show()
+
+residuals.plot(kind='kde')
+plt.show()
+
+print(residuals.describe())
+
+
+
 
 
 
@@ -801,6 +830,7 @@ print(test_images.shape)
 
 print(len(test_labels))
 print(test_labels)
+
 
 
 
