@@ -782,8 +782,14 @@ plt.show()
 
 from statsmodels.tsa.arima_model import ARIMA
 
-# fit model
-model = ARIMA(x, order=(5, 1, 0))
+# we fit the model
+
+#model = ARIMA(x, order=(1, 0, 0))
+#model = ARIMA(x, order=(0, 0, 1))
+
+model = ARIMA(x, order=(1, 1, 0))
+#model = ARIMA(x, order=(0, 1, 1))
+
 model_fit = model.fit(disp=0)
 
 print(model_fit.summary())
@@ -800,6 +806,8 @@ residuals.plot(kind='kde')
 plt.show()
 
 print(residuals.describe())
+
+# we use: https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/
 
 
 
@@ -830,6 +838,8 @@ print(test_images.shape)
 
 print(len(test_labels))
 print(test_labels)
+
+
 
 
 
