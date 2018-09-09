@@ -213,6 +213,9 @@ plt.figure()
 plt.plot([1,2,3,4], r_k, 'bo-', label='auto-correlation coefficients')
 #plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
 
+plt.plot([1,2,3,4], np.ones(np.size(r_k))*2*(1/np.sqrt(N)), 'ro--', label='2/sqrt(N)')
+plt.plot([1,2,3,4], np.ones(np.size(r_k))*2*(-1)*(1/np.sqrt(N)), 'ro--', label='-2/sqrt(N)')
+
 plt.title('The auto-correlation coefficients, the correlogram')
 plt.legend()
 
@@ -287,6 +290,9 @@ plt.figure()
 #plt.plot(r_k, 'bo-', label='auto-correlation coefficients')
 plt.plot([1,2,3,4], r_k, 'bo-', label='auto-correlation coefficients')
 #plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
+
+plt.plot([1,2,3,4], np.ones(np.size(r_k))*2*(1/np.sqrt(N)), 'ro--', label='2/sqrt(N)')
+plt.plot([1,2,3,4], np.ones(np.size(r_k))*2*(-1)*(1/np.sqrt(N)), 'ro--', label='-2/sqrt(N)')
 
 plt.title('The auto-correlation coefficients, the correlogram')
 plt.legend()
@@ -544,6 +550,9 @@ plt.figure()
 plt.plot(range(1,M+1), r_k, 'bo-', label='BTC auto-correlation coefficients')
 #plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
 
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(1/np.sqrt(N)), 'ro--', label='2/sqrt(N)')
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(-1)*(1/np.sqrt(N)), 'ro--', label='-2/sqrt(N)')
+
 plt.title('The auto-correlation coefficients, the correlogram, for BTC.')
 plt.legend()
 
@@ -615,6 +624,9 @@ plt.figure()
 #plt.plot(r_k, 'bo-', label='auto-correlation coefficients')
 plt.plot(range(1,M+1), r_k, 'ro-', label='ETH auto-correlation coefficients')
 #plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
+
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(1/np.sqrt(N)), 'ro--', label='2/sqrt(N)')
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(-1)*(1/np.sqrt(N)), 'ro--', label='-2/sqrt(N)')
 
 plt.title('The auto-correlation coefficients, the correlogram, for ETH.')
 plt.legend()
@@ -688,6 +700,9 @@ plt.figure()
 plt.plot(range(1,M+1), r_k, 'ko-', label='XRP auto-correlation coefficients')
 #plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
 
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(1/np.sqrt(N)), 'ro--', label='2/sqrt(N)')
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(-1)*(1/np.sqrt(N)), 'ro--', label='-2/sqrt(N)')
+
 plt.title('The auto-correlation coefficients, the correlogram, for XRP.')
 plt.legend()
 
@@ -758,6 +773,9 @@ plt.figure()
 plt.plot(range(1,M+1), r_k, 'mo-', label='BCH auto-correlation coefficients')
 #plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
 
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(1/np.sqrt(N)), 'ro--', label='2/sqrt(N)')
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(-1)*(1/np.sqrt(N)), 'ro--', label='-2/sqrt(N)')
+
 plt.title('The auto-correlation coefficients, the correlogram, for BCH.')
 plt.legend()
 
@@ -769,6 +787,8 @@ plt.show()
 # from the plot, we observe that the auto-correlation coefficients go to zero fast
 
 
+
+# we have used +/- 2/sqrt(N)
 
 # Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 14.3: Examples, 6th edition (2004), Chapman & Hall / CRC.
 
@@ -782,7 +802,7 @@ plt.show()
 
 from statsmodels.tsa.arima_model import ARIMA
 
-# we fit the model
+# we fit the ARIMA model
 
 #model = ARIMA(x, order=(1, 0, 0))
 #model = ARIMA(x, order=(0, 0, 1))
@@ -794,6 +814,7 @@ model_fit = model.fit(disp=0)
 
 print(model_fit.summary())
 
+# we use DataFrame
 from pandas import DataFrame
 
 # plot residual errors
@@ -838,7 +859,6 @@ print(test_images.shape)
 
 print(len(test_labels))
 print(test_labels)
-
 
 
 
