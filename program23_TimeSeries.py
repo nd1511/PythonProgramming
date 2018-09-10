@@ -95,6 +95,9 @@ r_k = c_k / c_k[0]
 x = array1[0,1:] - array1[0,0:-1]
 # x is the one-step difference
 
+#print(np.size(array1))
+#print(np.size(x))
+
 #print(array1.size)
 N = x.size
 
@@ -240,6 +243,9 @@ yield_Br = np.asarray(yield_Br)
 #x = array1[0,1:] - array1[0,0:-1]
 x = yield_Br[1:] - yield_Br[0:-1]
 # x is the one-step difference
+
+#print(np.size(yield_Br))
+#print(np.size(x))
 
 #print(array1.size)
 N = x.size
@@ -734,6 +740,7 @@ N = len(x)
 #print(M)
 
 import math
+
 M = math.floor(N / 10)
 #print(M)
 
@@ -800,7 +807,95 @@ plt.show()
 
 
 
+
+
+
+# we compute the auto-correlation coefficients for the one-step difference of BCH
+
+#x = (?)
+#x = array1
+
+#x = BCH_close_ratio
+#x = BCH_close_ratio[1:] - BCH_close_ratio[0:-1]
+
+x = np.diff(BCH_close_ratio)
+# x is the one-step difference
+
+#print(np.size(BCH_close_ratio))
+#print(np.size(x))
+#print(np.size(BCH_close_ratio[1:]))
+#print(np.size(BCH_close_ratio[0:-1]))
+
+x = np.asarray(x)
+
+#print(array1.size)
+#N = x.size
+
+#N = x.size
+N = len(x)
+#print(N)
+
+#M = N / 10
+#print(M)
+
+import math
+M = math.floor(N / 10)
+#print(M)
+
+#c_k = np.zeros(int(M))
+c_k = np.zeros(M)
+
+x_bar = 0
+
+#print(x[0,0])
+#print(x[0,1])
+
+for t in range(1-1,N-1):
+    x_bar = x_bar + (x[t])
+
+x_bar = x_bar / N
+
+for m in range(1-1, M):
+    for t in range(1-1, N-m):
+        c_k[m] = c_k[m] + ((x[t] - x_bar) * (x[t+m] - x_bar))
+
+c_k = (1/N) * c_k
+
+r_k = c_k / c_k[0]
+
+#print(c_k)
+#print(c_k.size)
+
+#print(c_k.size)
+#print(r_k.size)
+
+# we find the auto-correlation coefficients
+# we compute the auto-correlation function, the auto-correlation coefficients, the correlogram
+
+plt.figure()
+
+#plt.plot(r_k, 'bo-', label='auto-correlation coefficients')
+plt.plot(range(1,M+1), r_k, 'mo-', label='BCH auto-correlation coefficients')
+#plt.plot((1:len(x))*(1/len(x))*21, x, 'bo-', label='Yield')
+
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(1/np.sqrt(N)), 'ro--', label='2/sqrt(N)')
+plt.plot(range(1,M+1), np.ones(np.size(r_k))*2*(-1)*(1/np.sqrt(N)), 'ro--', label='-2/sqrt(N)')
+
+plt.title('The auto-correlation coefficients, the correlogram, for BCH.')
+plt.legend()
+
+plt.show()
+
+# we see that the auto-correlation coefficients go to zero
+
+# the auto-correlation coefficients come down quickly towards zero
+# from the plot, we observe that the auto-correlation coefficients go to zero fast
+
+
+
 from statsmodels.tsa.arima_model import ARIMA
+
+x = BCH_close_ratio
 
 # we fit the ARIMA model
 
@@ -809,6 +904,9 @@ from statsmodels.tsa.arima_model import ARIMA
 
 model = ARIMA(x, order=(1, 1, 0))
 #model = ARIMA(x, order=(0, 1, 1))
+
+#model = ARIMA(x, order=(2, 1, 0))
+#model = ARIMA(x, order=(0, 1, 2))
 
 model_fit = model.fit(disp=0)
 
@@ -859,6 +957,8 @@ print(test_images.shape)
 
 print(len(test_labels))
 print(test_labels)
+
+
 
 
 
