@@ -1,4 +1,9 @@
 
+# we use the TIMIT speech database
+
+# we use TIMIT
+# we use: https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
+
 # we use: https://github.com/librosa/tutorial/blob/master/Librosa%20tutorial.ipynb
 
 # we use: https://github.com/keunwoochoi/kapre/blob/master/examples/example_codes.ipynb
@@ -112,6 +117,5 @@ plt.colorbar(format='%+2.0f dB')
 plt.tight_layout()
 
 plt.show()
-
 
 
