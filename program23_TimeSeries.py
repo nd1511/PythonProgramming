@@ -963,5 +963,65 @@ print(test_labels)
 
 
 
+from scipy.io import wavfile
+
+#fs, data = wavfile.read('../Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1')
+fs, data = wavfile.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1')
+
+print('')
+print(fs)
+
+print(data.shape)
+print(len(data))
+
+
+
+# we use kapre
+
+# we use the kapre library
+# we use: https://github.com/keunwoochoi/kapre
+
+from keras.models import Sequential
+
+from kapre.time_frequency import Melspectrogram
+from kapre.utils import Normalization2D
+from kapre.augmentation import AdditiveNoise
+
+# 6 channels (!), maybe 1-sec audio signal, for an example.
+#input_shape = (6, 44100)
+
+sr = len(data)
+input_shape = (1, sr)
+
+model = Sequential()
+
+# A mel-spectrogram layer
+model.add(Melspectrogram(n_dft=512, n_hop=256, input_shape=input_shape,
+                         padding='same', sr=sr, n_mels=128,
+                         fmin=0.0, fmax=sr/2, power_melgram=1.0,
+                         return_decibel_melgram=False, trainable_fb=False,
+                         trainable_kernel=False,
+                         name='trainable_stft'))
+
+# add some additive white noise
+model.add(AdditiveNoise(power=0.2))
+
+# If you wanna normalise it per-frequency
+model.add(Normalization2D(str_axis='freq')) # or 'channel', 'time', 'batch', 'data_sample'
+
+# After this, it's just a usual keras workflow. For example..
+# Add some layers, e.g., model.add(some convolution layers..)
+
+# Compile the model
+model.compile('adam', 'categorical_crossentropy') # if single-label classification
+
+# train it with raw audio sample inputs
+#x = load_x() # e.g., x.shape = (10000, 6, 44100)
+#y = load_y() # e.g., y.shape = (10000, 10) if it's 10-class classification
+
+x = data
+
+# and train it
+#model.fit(x, y)
 
 
