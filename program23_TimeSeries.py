@@ -996,13 +996,17 @@ plt.show()
 
 
 
-# we use kapre
-
 # we use the kapre library
 # we use: https://github.com/keunwoochoi/kapre
 
+import kapre
+
+#kapre.time_frequency.Spectrogram(n_dft=512, n_hop=256, padding='same', power_spectrogram=2.0, return_decibel_spectrogram=False,
+#                                 trainable_kernel=False, image_data_format='default')
+
 from keras.models import Sequential
 
+# we use kapre
 from kapre.time_frequency import Melspectrogram
 from kapre.utils import Normalization2D
 from kapre.augmentation import AdditiveNoise
@@ -1026,14 +1030,14 @@ model.add(Melspectrogram(n_dft=512, n_hop=256, input_shape=input_shape,
 # add some additive white noise
 model.add(AdditiveNoise(power=0.2))
 
-# If you wanna normalise it per-frequency
+# we normalise it per frequency
 model.add(Normalization2D(str_axis='freq')) # or 'channel', 'time', 'batch', 'data_sample'
 
 # After this, it's just a usual keras workflow. For example..
 # Add some layers, e.g., model.add(some convolution layers..)
 
 # Compile the model
-model.compile('adam', 'categorical_crossentropy') # if single-label classification
+#model.compile('adam', 'categorical_crossentropy') # if single-label classification
 
 # train it with raw audio sample inputs
 #x = load_x() # e.g., x.shape = (10000, 6, 44100)
@@ -1043,5 +1047,45 @@ x = data
 
 # and train it
 #model.fit(x, y)
+
+
+
+# we use: https://github.com/keunwoochoi/kapre/blob/master/examples/example_codes.ipynb
+
+# we use: https://github.com/keunwoochoi/kapre/blob/master/examples/prepare%20audio.ipynb
+# we also use: https://github.com/keunwoochoi/kapre/blob/master/examples/example_codes.ipynb
+
+#import keras
+#import kapre
+
+import librosa
+from librosa import display
+
+y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1', sr=None)
+#print(len(y), sr)
+
+print(librosa.samples_to_time(len(y), sr))
+
+D = librosa.stft(y)
+#print(D.shape, D.dtype)
+
+import numpy as np
+
+S, phase = librosa.magphase(D)
+#print(S.dtype, phase.dtype, np.allclose(D, S * phase))
+
+plt.figure(figsize=(14, 4))
+
+logPowerSpectrum = np.log(np.abs(librosa.stft(y, 512, 256)) ** 2)
+
+#display.specshow(np.log(np.abs(librosa.stft(y, 512, 256)) ** 2), y_axis='linear', sr=sr)
+display.specshow(logPowerSpectrum, y_axis='linear', sr=sr)
+
+plt.title('Log-Spectrogram')
+
+plt.show()
+
+# we use: https://github.com/librosa/tutorial/blob/master/Librosa%20tutorial.ipynb
+
 
 
