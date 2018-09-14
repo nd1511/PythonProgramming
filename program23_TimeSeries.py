@@ -974,6 +974,26 @@ print(fs)
 print(data.shape)
 print(len(data))
 
+from matplotlib import pyplot as plt
+import numpy as np
+
+times = np.arange(len(data))/float(fs)
+
+# Make the plot: tweak the figsize (width, height) in inches
+plt.figure(figsize=(30, 4))
+
+plt.fill_between(times, data, color='k')
+plt.xlim(times[0], times[-1])
+
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+
+# we can set the format by changing the extension
+# such as .pdf, .svg, .eps
+#plt.savefig('plot.png', dpi=100)
+
+plt.show()
+
 
 
 # we use kapre
