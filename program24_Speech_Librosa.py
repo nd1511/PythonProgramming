@@ -135,3 +135,73 @@ plt.show()
 # for MATLAB: https://github.com/dustinstansbury/medal
 # we use: https://github.com/PhDP/mlbop/tree/master/MATLAB-18
 
+
+
+# we now use: https://stsievert.com/blog/2015/09/01/matlab-to-python/
+
+# we import pylab
+from pylab import *
+
+# matrix multiplication
+A = rand(3, 3)
+A[0:2, 1] = 4
+
+I = A @ inv(A)
+I = A.dot(inv(A))
+
+# vector manipulations
+t = linspace(0, 4, num=1e3)
+
+y1 = cos(t/2) * exp(-t)
+y2 = cos(t/2) * exp(-5*t)
+
+# plotting
+figure()
+plot(t, y1, label='Slow decay')
+plot(t, y2, label='Fast decay')
+
+legend(loc='best')
+show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+from scipy.io import loadmat, savemat # fyi
+from numpy.random import rand, randn  # fyi (or uniform, gaussian_normal)
+
+x = np.linspace(0, 1, num=100)
+y = np.exp(-x) * np.cos(2 * np.pi * x)
+
+plt.figure()
+plt.plot(x, y, label='Moderate decay')
+
+plt.legend(loc='best')
+plt.show()
+
+
+
+# we import pylab
+from pylab import *
+
+# we import seaborn
+import seaborn as sns
+
+def f(t, tau=4, sigma=1/2):
+    return cos(t*sigma) * exp(-t*tau)
+
+t = linspace(0, 4, num=1e3)
+
+taus = [1, 2, 3, 4, 5]
+y = [f(t, tau=tau) for tau in taus]
+
+figure()
+for i, tau in enumerate(taus):
+    plot(t, y[i], label=r'$\tau = {0}$'.format(tau))
+
+legend(loc='best')
+show()
+
+# we use: https://github.com/stsievert
+# use: https://stsievert.com/blog/2015/09/01/matlab-to-python/
+
+
