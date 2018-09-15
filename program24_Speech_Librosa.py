@@ -125,3 +125,13 @@ plt.show()
 
 
 
+
+
+
+# we use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks/blob/master/slides/L2.Neural-Networks.pdf
+
+# use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks
+# use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks/blob/master/slides/L2.Neural-Networks.pdf
+
+
+
