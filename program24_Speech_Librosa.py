@@ -1,7 +1,7 @@
 
 # we use the TIMIT speech database
 
-# we use TIMIT
+# we use the TIMIT database
 # we use: https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
 
 # we use: https://github.com/librosa/tutorial/blob/master/Librosa%20tutorial.ipynb
@@ -36,10 +36,11 @@ plt.figure(figsize=(14, 4))
 logPowerSpectrum = np.log(np.abs(librosa.stft(y, 512, 256)) ** 2)
 
 #display.specshow(np.log(np.abs(librosa.stft(y, 512, 256)) ** 2), y_axis='linear', sr=sr)
-display.specshow(logPowerSpectrum, y_axis='linear', x_axis='time', sr=sr)
+#display.specshow(logPowerSpectrum, y_axis='linear', x_axis='time', sr=sr)
+
+display.specshow(logPowerSpectrum, y_axis='linear', sr=sr)
 
 plt.title('Log-Spectrogram')
-
 plt.show()
 
 
@@ -67,10 +68,10 @@ logPowerSpectrum = np.log(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_
 #display.specshow(np.log(np.abs(librosa.stft(y, 512, 256)) ** 2), y_axis='linear', sr=sr)
 #display.specshow(logPowerSpectrum, y_axis='linear', sr=sr)
 
-display.specshow(logPowerSpectrum, y_axis='linear', x_axis='time', sr=sr)
+#display.specshow(logPowerSpectrum, y_axis='linear', x_axis='time', sr=sr)
+display.specshow(logPowerSpectrum, y_axis='linear', sr=sr)
 
 plt.title('Log-Spectrogram')
-
 plt.show()
 
 
@@ -80,14 +81,16 @@ plt.figure(figsize=(14, 4))
 #librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
 #                                                 ref=np.max), y_axis='log', x_axis='time')
 
+#librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+#                                                 ref=np.max), y_axis='linear', x_axis='time')
+
 librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
-                                                 ref=np.max), y_axis='linear', x_axis='time')
+                                                 ref=np.max), y_axis='linear')
 
 plt.title('Spectrogram')
 plt.colorbar(format='%+2.0f dB')
 
 plt.tight_layout()
-
 plt.show()
 
 
@@ -108,14 +111,17 @@ plt.figure(figsize=(14, 4))
 #librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
 #                                                 ref=np.max), y_axis='log', x_axis='time')
 
+#librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+#                                                 ref=np.max), y_axis='linear', x_axis='time')
+
 librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
-                                                 ref=np.max), y_axis='linear', x_axis='time')
+                                                 ref=np.max), y_axis='linear')
 
 plt.title('Spectrogram')
 plt.colorbar(format='%+2.0f dB')
 
 plt.tight_layout()
-
 plt.show()
+
 
 
