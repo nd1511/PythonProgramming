@@ -4,7 +4,7 @@
 # we use the TIMIT database
 # we use: https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
 
-# we use: https://github.com/librosa/tutorial/blob/master/Librosa%20tutorial.ipynb
+# use: https://github.com/librosa/tutorial/blob/master/Librosa%20tutorial.ipynb
 
 # we use: https://github.com/keunwoochoi/kapre/blob/master/examples/example_codes.ipynb
 # we also use: https://github.com/keunwoochoi/kapre/blob/master/examples/prepare%20audio.ipynb
@@ -203,5 +203,69 @@ show()
 
 # we use: https://github.com/stsievert
 # use: https://stsievert.com/blog/2015/09/01/matlab-to-python/
+
+
+
+
+
+
+# use: wavSI1027
+y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSI1027', sr=None)
+
+print(librosa.samples_to_time(len(y), sr))
+
+D = librosa.stft(y)
+#print(D.shape, D.dtype)
+
+S, phase = librosa.magphase(D)
+#print(S.dtype, phase.dtype, np.allclose(D, S * phase))
+
+plt.figure(figsize=(14, 4))
+
+plt.subplot(211)
+
+#librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+#                                                 ref=np.max), y_axis='log', x_axis='time')
+
+#librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+#                                                 ref=np.max), y_axis='linear', x_axis='time')
+
+librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+                                                 ref=np.max), y_axis='linear')
+
+plt.title('Spectrogram SI1027')
+plt.colorbar(format='%+2.0f dB')
+
+plt.tight_layout()
+#plt.show()
+
+# use: wavSI1657
+y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSI1657', sr=None)
+
+print(librosa.samples_to_time(len(y), sr))
+
+D = librosa.stft(y)
+#print(D.shape, D.dtype)
+
+S, phase = librosa.magphase(D)
+#print(S.dtype, phase.dtype, np.allclose(D, S * phase))
+
+plt.subplot(212)
+
+#librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+#                                                 ref=np.max), y_axis='log', x_axis='time')
+
+#librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+#                                                 ref=np.max), y_axis='linear', x_axis='time')
+
+librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
+                                                 ref=np.max), y_axis='linear')
+
+plt.title('Spectrogram SI1657')
+plt.colorbar(format='%+2.0f dB')
+
+plt.tight_layout()
+plt.show()
+
 
 
