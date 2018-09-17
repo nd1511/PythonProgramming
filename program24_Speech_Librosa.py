@@ -233,7 +233,7 @@ plt.subplot(211)
 librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
                                                  ref=np.max), y_axis='linear')
 
-plt.title('Spectrogram SI1027')
+plt.title('Spectrogram - SI1027')
 plt.colorbar(format='%+2.0f dB')
 
 plt.tight_layout()
@@ -261,11 +261,27 @@ plt.subplot(212)
 librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
                                                  ref=np.max), y_axis='linear')
 
-plt.title('Spectrogram SI1657')
+plt.title('Spectrogram - SI1657')
 plt.colorbar(format='%+2.0f dB')
 
 plt.tight_layout()
 plt.show()
 
 
+
+# use: wavSI1657
+y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSI1657', sr=None)
+print(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)), ref=np.max).shape)
+
+storeAll = librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)), ref=np.max)
+
+# use: wavSI1027
+y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSI1027', sr=None)
+print(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)), ref=np.max).shape)
+
+#storeAll = [storeAll, librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)), ref=np.max)]
+storeAll = np.concatenate((storeAll, librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)), ref=np.max)), axis=1)
+
+print('')
+print(np.shape(storeAll))
 
