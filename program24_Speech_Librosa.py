@@ -317,6 +317,173 @@ print(np.shape(storeAll))
 
 
 
+# we use: pyaudio
+# use: https://people.csail.mit.edu/hubert/pyaudio/
+
+# we use: speech_recognition
+# use: https://pypi.org/project/SpeechRecognition/2.1.3/
+
+import speech_recognition as sr
+
+from os import path
+
+#AUDIO_FILE = "audio.wav"
+AUDIO_FILE = "/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1"
+
+r = sr.Recognizer()
+
+with sr.AudioFile(AUDIO_FILE) as source:
+ audio = r.record(source)
+
+try:
+   print("Sphinx thinks you said " + r.recognize_sphinx(audio))
+
+except sr.UnknownValueError:
+   print("Sphinx could not understand audio")
+
+except sr.RequestError as e:
+  print("Sphinx error; {0}".format(e))
+
+
+
+# use: https://github.com/Apress/Deep-Learning-Apps-Using-Python/blob/master/Chapter11_Speech%20to%20text%20and%20vice%20versa/Speech%20to%20Text%20API%20and%20Text%20to%20Speech.ipynb
+
+import speech_recognition as sr
+
+from os import path
+
+#AUDIO_FILE = "audio.wav"
+AUDIO_FILE = "/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1"
+
+# use the audio file as the audio source
+r = sr.Recognizer()
+
+with sr.AudioFile(AUDIO_FILE) as source:
+    audio = r.record(source) # read the entire audio file
+
+# recognize speech using Sphinx
+try:
+    print("Sphinx thinks you said " + r.recognize_sphinx(audio))
+
+except sr.UnknownValueError:
+    print("Sphinx could not understand audio")
+
+except sr.RequestError as e:
+    print("Sphinx error; {0}".format(e))
+
+# we now use: https://www.apress.com/gb/book/9781484235157
+
+# use: https://github.com/Apress/Deep-Learning-Apps-Using-Python
+# we use: https://github.com/Apress/Deep-Learning-Apps-Using-Python/blob/master/Chapter11_Speech%20to%20text%20and%20vice%20versa/Speech%20to%20Text%20API%20and%20Text%20to%20Speech.ipynb
+
+# we use: pyaudio
+import pyaudio
+
+import wave
+
+def record_audio(RECORD_SECONDS, WAVE_OUTPUT_FILENAME):
+    # --------- SETTING PARAMS FOR OUR AUDIO FILE ------------#
+    FORMAT = pyaudio.paInt16  # format of wave
+    CHANNELS = 2  # no. of audio channels
+
+    RATE = 44100  # frame rate
+    CHUNK = 1024  # frames per audio sample
+    # --------------------------------------------------------#
+
+    # creating PyAudio object
+    audio = pyaudio.PyAudio()
+
+    # open a new stream for microphone
+    # It creates a PortAudio Stream Wrapper class object
+    stream = audio.open(format=FORMAT, channels=CHANNELS,
+                        rate=RATE, input=True,
+                        frames_per_buffer=CHUNK)
+
+    # ----------------- start of recording -------------------#
+    print("Listening...")
+
+    # list to save all audio frames
+    frames = []
+
+    for i in range(int(RATE / CHUNK * RECORD_SECONDS)):
+        # read audio stream from microphone
+        data = stream.read(CHUNK)
+        # append audio data to frames list
+        frames.append(data)
+
+    # ------------------ end of recording --------------------#
+    print("Finished recording.")
+
+    stream.stop_stream()  # stop the stream object
+    stream.close()  # close the stream object
+    audio.terminate()  # terminate PortAudio
+
+    # ------------------ saving audio ------------------------#
+
+    # create wave file object
+    waveFile = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+
+    # settings for wave file object
+    waveFile.setnchannels(CHANNELS)
+    waveFile.setsampwidth(audio.get_sample_size(FORMAT))
+    waveFile.setframerate(RATE)
+    waveFile.writeframes(b''.join(frames))
+
+    # closing the wave file object
+    waveFile.close()
+
+def read_audio(WAVE_FILENAME):
+    # function to read audio(wav) file
+    with open(WAVE_FILENAME, 'rb') as f:
+        audio = f.read()
+    return audio
+
+try:
+    print("Google Speech Recognition thinks you said " + r.recognize_google(audio))
+
+except sr.UnknownValueError:
+    print("Google Speech Recognition could not understand audio")
+
+except sr.RequestError as e:
+    print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+#import requests
+#import json
+
+# Wit speech API endpoint
+#API_ENDPOINT = 'https://api.wit.ai/speech'
+
+# Wit.ai api access token
+#wit_access_token = 'ERGSGTLIC3RLAUEFTULLKIXRUUA3GOXG'
+
+#def RecognizeSpeech(AUDIO_FILENAME, num_seconds=5):
+#    # record audio of specified length in specified audio file
+#    record_audio(num_seconds, AUDIO_FILENAME)
+#
+#    # reading audio
+#    audio = read_audio(AUDIO_FILENAME)
+#
+#    # defining headers for HTTP request
+#    headers = {'authorization': 'Bearer ' + wit_access_token, 'Content-Type': 'audio/wav'}
+#
+#    # making an HTTP post request
+#    resp = requests.post(API_ENDPOINT, headers=headers, data=audio)
+#
+#    # converting response content to JSON format
+#    data = json.loads(resp.content)
+#
+#    # get text from data
+#    text = data['_text']
+#
+#    # return the text
+#    return text
+#
+#if __name__ == "__main__":
+#    text = RecognizeSpeech('audio.wav', 4)
+#    print("\nYou said: {}".format(text))
+
+
+
 
 
 
@@ -563,7 +730,6 @@ model.predict_classes(x_test)
 model.summary
 
 #model.save('model.h5')
-
 #jsonModel = model.to_json()
 #model.save_weights('modelWeights.h5')
 
