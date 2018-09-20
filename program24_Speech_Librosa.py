@@ -469,3 +469,103 @@ ax6.yaxis.set_major_locator(MaxNLocator(integer=True))
 ax6.set_title('Step 5: Throw away higher principal components')
 plt.show()
 
+
+
+
+
+
+import tensorflow as tf
+sess = tf.Session()
+
+my_graph = tf.Graph()
+
+with my_graph.as_default():
+    variable = tf.Variable(30, name='navin')
+
+    initialize = tf.global_variables_initializer()
+
+with tf.Session(graph = my_graph) as sess:
+    sess.run(initialize)
+
+    print(sess.run(variable))
+
+
+
+import numpy as np
+import os
+
+from keras.datasets import cifar10
+
+from keras.models import Sequential
+
+from keras.layers.core import Dense, Dropout, Activation
+
+# we use adaptive momentum, we use Adam
+from keras.optimizers import adam
+
+from keras.utils import np_utils
+
+# we now load data
+np.random.seed(100)
+
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+
+x_train = x_train.reshape(50000, 3072)
+x_train = (x_train - np.mean(x_train)) / np.std(x_train)
+
+x_test = x_test.reshape(10000, 3072)
+x_test = (x_test - np.mean(x_test)) / np.std(x_test)
+
+# use one-hot encoding
+
+labels = 10
+
+# we use one-hot vectors
+y_train = np_utils.to_categorical(y_train, labels)
+
+# use one-hot vectors
+y_test = np_utils.to_categorical(y_test, labels)
+
+# we use classification, we use the cross-entropy (CE) cost function
+# we use the CE cost function, we use one-hot encoding
+
+
+
+model = Sequential()
+
+model.add(Sense(512, input_shape=(3072,)))
+
+# we use the ReLU activation function
+model.add(Activation('relu'))
+
+# use dropout to reduce overfitting
+model.add(Dropout(0.4))
+# we use dropout for better generalization
+
+model.add(Dense(120))
+model.add(Activation('relu'))
+
+model.add(Dropout(0.2))
+
+model.add(Dense(labels))
+
+# the output layer is a sigmoid layer
+model.add(Activation('sigmoid'))
+
+adam = adam(0.1)
+model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
+
+score = model.evaluate(x_test, y_test, verbose=0)
+print('Test Accuracy: ', score[1])
+
+model.predict_classes(x_test)
+
+model.summary
+
+#model.save('model.h5')
+
+#jsonModel = model.to_json()
+#model.save_weights('modelWeights.h5')
+
+#modelWt = model.load_weights('modelWeight.h5')
+
