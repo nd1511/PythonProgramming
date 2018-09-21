@@ -484,6 +484,35 @@ except sr.RequestError as e:
 
 
 
+# we now use MFCCs, Mel-frequency cepstral coefficients
+
+# we use the library package "python_speech_features"
+from python_speech_features import mfcc
+
+# delta is the difference
+from python_speech_features import delta
+
+# we use the log filterbank
+from python_speech_features import logfbank
+
+import scipy.io.wavfile as wav
+
+(fs, signal) = wav.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1')
+#(fs, signal) = wav.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA2')
+
+# compute the MFCCs
+mfccfeatures = mfcc(signal, fs)
+
+# we compute the delta MFCCs
+dmfccfeatures = delta(mfccfeatures, 2)
+# researchers usually use MFCCs, Delta MFCCs and Delta Delta MFCCs
+
+fbankfeature = logfbank(signal, fs)
+
+print(fbankfeature)
+
+
+
 
 
 
@@ -730,6 +759,7 @@ model.predict_classes(x_test)
 model.summary
 
 #model.save('model.h5')
+
 #jsonModel = model.to_json()
 #model.save_weights('modelWeights.h5')
 
