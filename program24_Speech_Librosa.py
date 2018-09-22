@@ -511,6 +511,27 @@ fbankfeature = logfbank(signal, fs)
 
 print(fbankfeature)
 
+import matplotlib.pyplot as plt
+
+from scipy import signal
+from scipy.io import wavfile
+
+#fs, sig = wavfile.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1')
+#fs, sig = wavfile.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA2')
+
+# we use wavSI1657 from TIMIT
+fs, sig = wavfile.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSI1657')
+
+freq, times, spectrogram = signal.spectrogram(sig, fs, window='hann', nfft=512)
+
+plt.figure()
+plt.pcolormesh(times, freq, np.log(spectrogram))
+
+plt.ylabel('Frequency (kHz)')
+plt.xlabel('Time (s)')
+
+plt.show()
+
 
 
 
@@ -759,7 +780,6 @@ model.predict_classes(x_test)
 model.summary
 
 #model.save('model.h5')
-
 #jsonModel = model.to_json()
 #model.save_weights('modelWeights.h5')
 
