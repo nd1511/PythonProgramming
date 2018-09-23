@@ -688,6 +688,27 @@ plt.show()
 
 
 
+# we define input
+input_list = [0, 2, 4, 4, 1, 5, 2]
+
+# initialize "model_memory"
+model_memory = [0] * len(input_list)
+# we initialize the memory
+
+# we store
+loc_write = 0
+for value in input_list:
+    model_memory[loc_write] = value
+    loc_write += 1
+
+# we write
+loc_read = 0
+while loc_read < loc_write:
+    print(model_memory[loc_read])
+    loc_read += 1
+
+
+
 
 
 
@@ -749,7 +770,6 @@ y_test = np_utils.to_categorical(y_test, labels)
 
 
 model = Sequential()
-
 model.add(Sense(512, input_shape=(3072,)))
 
 # we use the ReLU activation function
