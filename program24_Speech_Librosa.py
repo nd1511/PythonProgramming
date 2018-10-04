@@ -1,6 +1,13 @@
 
 # we use the TIMIT speech database
 
+# we use speech, deep learning (DL), neural networks (NNs) with speech
+# we use Li Deng's book: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
+
+# use: https://lidengsite.wordpress.com/book-chapters/
+# we use: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
+# we also use: https://lidengsite.files.wordpress.com/2018/03/chapter-1.pdf
+
 # we use the TIMIT database
 # we use: https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
 
@@ -14,6 +21,7 @@ import numpy as np
 #import keras
 #import kapre
 
+# we use LIBROSA, Columbia University, Dan Ellis
 import librosa
 from librosa import display
 
@@ -128,9 +136,10 @@ plt.show()
 
 
 
-# we use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks/blob/master/slides/L2.Neural-Networks.pdf
+# for deep learning (DL): http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
 
-# we use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks
+# we use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks/blob/master/slides/L2.Neural-Networks.pdf
+# use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks
 
 # for MATLAB: https://github.com/dustinstansbury/medal
 # we use: https://github.com/PhDP/mlbop/tree/master/MATLAB-18
@@ -801,6 +810,7 @@ model.summary
 
 #model.save('model.h5')
 #jsonModel = model.to_json()
+
 #model.save_weights('modelWeights.h5')
 
 #modelWt = model.load_weights('modelWeight.h5')
