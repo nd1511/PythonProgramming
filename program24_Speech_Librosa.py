@@ -543,6 +543,33 @@ plt.show()
 
 
 
+# we use keras for neural networks (NNs)
+import keras
+from keras.layers.core import Dense, Activation
+
+from keras.models import Sequential
+model = Sequential()
+
+# the input layer is of dimension 4
+# the hidden layer is of dimension 10
+model.add(Dense(output_dim=10, input_dim=4))
+
+model.add(Activation('relu'))
+
+# the output layer is of dimension 3
+model.add(Dense(output_dim=3))
+
+# softmax output layer, softmax, normalized exponential
+model.add(Activation('softmax'))
+
+#model.summary
+
+# cross-entropy (CE) cost function
+# stochastic gradient descent (SGD)
+#model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+
+
+
 
 
 
@@ -744,7 +771,6 @@ import os
 from keras.datasets import cifar10
 
 from keras.models import Sequential
-
 from keras.layers.core import Dense, Dropout, Activation
 
 # we use adaptive momentum, we use Adam
@@ -805,12 +831,10 @@ score = model.evaluate(x_test, y_test, verbose=0)
 print('Test Accuracy: ', score[1])
 
 model.predict_classes(x_test)
-
 model.summary
 
 #model.save('model.h5')
 #jsonModel = model.to_json()
-
 #model.save_weights('modelWeights.h5')
 
 #modelWt = model.load_weights('modelWeight.h5')
