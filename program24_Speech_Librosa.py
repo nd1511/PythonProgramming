@@ -839,3 +839,243 @@ model.summary
 
 #modelWt = model.load_weights('modelWeight.h5')
 
+
+
+
+
+
+# we read stored data
+
+# we now read stored data in Python
+# In order to read the data in a Python script, a function like the following can easily read the data.
+
+def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
+                            max_air_len=None, fs=None, forced_fs=None, keep_ids=None,
+                            start_at_max=True, max_air_read=None):
+    latest_file = '../results_dir/training_test_data.h5'
+    from os.path import isfile
+    import numpy as np
+    from h5py import File
+
+    from resampy import resample
+
+    ids = None
+    x = None
+    all_boudnaries = None
+
+    if forced_fs is None:
+        forced_fs = fs
+    resample_op = lambda x: x
+    if not forced_fs == fs:
+        resample_op = lambda x: np.array(resample(np.array(x.T, dtype=np.float64), fs, forced_fs, 0)).T
+
+    if max_air_read is not None:
+        if fs is None:
+            raise AssertionError('Cannot work with max_air_read without fs')
+            max_air_read_samples = int(np.ceil(fs * max_air_read))
+    for i, this_h5 in enumerate(h5_files):
+        print
+        "Reading : " + this_h5 + " @ " + str(i + 1) + " of " + str(len(h5_files)),
+        hf = File(this_h5, 'r')
+        names = np.array(hf.get('names'))
+        airs = np.array(hf.get('airs')).T
+        boundaries = np.array(hf.get('boundary_ids')).T
+        if i > 0:
+            ids = np.concatenate((ids, names))
+        else:
+            ids = names
+
+        print("Got " + str(airs.shape))
+        airs = resample_op(airs)
+        if max_air_read is not None:
+            airs = airs[:, 0:max_air_read_samples]
+        if i > 0:
+            if x.shape[1] < airs.shape[1]:
+                npads = -x.shape[1] + airs.shape[1]
+                x = np.concatenate((x, np.zeros((x.shape[0], npads)).astype(x.dtype)), axis=1)
+                x = np.concatenate((x, airs), axis=0)
+            else:
+                if x.shape[1] > airs.shape[1]:
+                    npads = x.shape[1] - airs.shape[1]
+                    airs = np.concatenate((airs, np.zeros((airs.shape[0], npads)).astype(
+                        airs.dtype)), axis=1)
+                x.resize((x.shape[0] + airs.shape[0], x.shape[1]))
+                x[-airs.shape[0]:, :] = airs
+        else:
+            x = np.array(airs)
+
+        if i > 0:
+            all_boudnaries = np.concatenate((all_boudnaries, boundaries), axis=0)
+        else:
+            all_boudnaries = boundaries
+
+    class_names = np.unique(all_boudnaries)
+    y = np.zeros((all_boudnaries.shape[0], class_names.size)).astype(bool)
+    for i, cname in enumerate(class_names):
+        y[np.any(all_boudnaries == cname, axis=1), i] = True
+
+    if keep_ids is not None:
+        y = y[:, np.in1d(class_names.astype(int), np.array(keep_ids).astype(int))]
+
+    if fs is not None:
+        print('Got ' + str(x.shape[0]) + ' AIRs of duration ' + str(x.shape[1] / float(fs)))
+    else:
+        print('Got ' + str(x.shape[0]) + ' AIRs of length ' + str(x.shape[1]))
+
+    x = data_post_proc(x, fs, start_at_max, framesize, get_pow_spec, max_air_len)
+
+    print('Left with ' + str(x.shape) + ' AIRs data ')
+
+    ids = ids.astype(str)
+    class_names = class_names.astype(str)
+    return (x, y), ids, class_names
+
+
+
+# splitting data for training and testing
+# Once we have acquired a number of examples for our task, we can start training your network.
+
+def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
+                   test_ratio=.075, stratified=True, framesize=None, print_set_report=True,
+                   clustered_data=True, **kwargs):
+    import numpy as np
+    from myutils_reverb import read_li8_file
+
+    val_sum = train_ratio + test_ratio + val_ratio
+    if not isclose(val_sum, 1.):
+        raise AssertionError('Ratios should sum to 1.00 and not ' + str(val_sum))
+    (x, y), ids, class_names = read_air_and_filters_xy(air_files,
+                                                       framesize=framesize, **kwargs)
+
+    if stratified:
+        from sklearn.model_selection import StratifiedShuffleSplit as splitter
+        y_new = np.zeros((y.shape[0],)).astype('int64')
+        uvals = np.unique(y, axis=0)
+        for i in range(uvals.shape[0]):
+            y_new[np.all(y == uvals[i, :], axis=1)] = i
+    else:
+        from sklearn.model_selection import ShuffleSplit as splitter
+        y_new = y
+
+    sss = splitter(n_splits=1, test_size=test_ratio, random_state=50)
+    for train_val_index, test_index in sss.split(np.zeros_like(y_new), y_new):
+        pass
+
+    sss_val = splitter(n_splits=1, test_size=(val_ratio) / (val_ratio + train_ratio),
+                       random_state=50)
+    for train_index, val_index in sss_val.split(np.zeros_like(y_new[train_val_index]),
+                                                y_new[train_val_index]):
+        pass
+    train_index = train_val_index[train_index]
+    val_index = train_val_index[val_index]
+
+    if print_set_report:
+        print_split_report(y, idx_list=(train_index, val_index, test_index),
+                           set_names=('Train', 'Val', 'Test'))
+
+    return (x[train_index, :], y[train_index, :]), ids[train_index], \
+           (x[test_index, :], y[test_index, :]), ids[test_index], \
+           (x[val_index, :], y[val_index, :]), ids[val_index], \
+           (x, y), ids, \
+           class_names
+
+
+
+# we now define our Keras model
+
+# create a Keras model
+def get_model(input_dims, n_outputs, dense_width=128):
+    from keras.models import Sequential
+    from keras.layers import Dense, InputLayer, Reshape, \
+        Dropout, TimeDistributed, GRU
+
+    default_activation = 'relu'
+
+    model = Sequential()
+
+    model.add(InputLayer(input_shape=tuple(list(input_dims) + [1])))
+    model.add(Reshape((model.output_shape[1], model.output_shape[2])))
+
+    model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
+    model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
+    model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
+    model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
+
+    model.add(Dropout(0.05))
+    model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
+
+    model.add(Dropout(0.05))
+    model.add(GRU(dense_width, activation=default_activation))
+
+    model.add(Dense(n_outputs, activation='sigmoid'))
+
+    return model
+
+
+
+# we use an apropriate loss for the problem
+
+# we use multi-label detection
+model.compile(loss='binary_crossentropy', optimizer='adam')
+
+model.fit(x, y, epochs=1000, validation_data=val_data,
+          batch_size=batch_size_base, shuffle=True, sample_weight=sample_weights,
+          verbose=2, callbacks=callbacks)
+
+
+
+# we now use callbacks
+
+# we use callbacks in Python
+callbacks = []
+callbacks.append(
+    EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0,
+                  mode='auto'))
+callbacks.append(
+    EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0,
+                  mode='auto'))
+tensordir = '../papayiannis_results/tensorlogs_dir'
+callbacks.append(
+    TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=batch_size_base,
+                write_graph=True, write_grads=False, write_images=False,
+                embeddings_freq=0, embeddings_layer_names=None,
+                embeddings_metadata=None))
+
+
+
+# evaluation
+# we evaluate our DL model
+
+def get_scores(y_pred, y_gt, beta=1):
+    import numpy as np
+
+    if y_pred.ndim > 1 or y_gt.ndim > 1:
+        raise ValueError('Expected 1D inputs')
+    if not y_pred.size == y_gt.size:
+        raise ValueError('Expected 1D inputs of same size')
+
+    tp = np.logical_and(y_pred, y_gt)
+
+    precision = tp.sum() / y_pred.sum().astype(float)
+
+    recall = tp.sum() / y_gt.sum().astype(float)
+
+    fbeta = (1.0 + beta ** 2) * (precision * recall) / float((precision * beta ** 2) + recall)
+
+    fp = np.sum(np.logical_and(y_pred, np.logical_not(y_gt)))
+    fn = np.sum(np.logical_and(np.logical_not(y_pred), y_gt))
+    tp = np.sum(np.logical_and(y_pred, y_gt))
+    tn = np.sum(np.logical_and(np.logical_not(y_pred), np.logical_not(y_gt)))
+
+    fpr = fp / float(fp + tn)
+    fnr = fn / float(fn + tp)
+
+    metrics = ('F' + str(beta), 'Precision', 'Recall', 'False Positive', 'False Negative',
+               'False Positive Rate', 'False Negative Rate')
+    metric_values = (fbeta, precision, recall, fp, fn, fpr, fnr)
+
+    return metrics, metric_values
+
+# we now use TensorBoard
+# we use: https://www.tensorflow.org/guide/summaries_and_tensorboard
+
