@@ -568,6 +568,10 @@ model.add(Activation('softmax'))
 # stochastic gradient descent (SGD)
 #model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
 
+# we use .fit()
+#model.fit(x_train, y_train, epochs=20, batch_size=128)
+# train/fit the model
+
 
 
 
@@ -831,6 +835,7 @@ score = model.evaluate(x_test, y_test, verbose=0)
 print('Test Accuracy: ', score[1])
 
 model.predict_classes(x_test)
+
 model.summary
 
 #model.save('model.h5')
@@ -877,9 +882,12 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
         print
         "Reading : " + this_h5 + " @ " + str(i + 1) + " of " + str(len(h5_files)),
         hf = File(this_h5, 'r')
+
         names = np.array(hf.get('names'))
         airs = np.array(hf.get('airs')).T
+
         boundaries = np.array(hf.get('boundary_ids')).T
+
         if i > 0:
             ids = np.concatenate((ids, names))
         else:
@@ -949,8 +957,10 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
 
     if stratified:
         from sklearn.model_selection import StratifiedShuffleSplit as splitter
+
         y_new = np.zeros((y.shape[0],)).astype('int64')
         uvals = np.unique(y, axis=0)
+
         for i in range(uvals.shape[0]):
             y_new[np.all(y == uvals[i, :], axis=1)] = i
     else:
@@ -998,6 +1008,7 @@ def get_model(input_dims, n_outputs, dense_width=128):
 
     model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
     model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
+
     model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
     model.add(TimeDistributed(Dense(dense_width, activation=default_activation)))
 
@@ -1057,7 +1068,6 @@ def get_scores(y_pred, y_gt, beta=1):
     tp = np.logical_and(y_pred, y_gt)
 
     precision = tp.sum() / y_pred.sum().astype(float)
-
     recall = tp.sum() / y_gt.sum().astype(float)
 
     fbeta = (1.0 + beta ** 2) * (precision * recall) / float((precision * beta ** 2) + recall)
