@@ -846,6 +846,16 @@ model.summary
 
 
 
+# we use Kaggle, Kaggle competitions
+# use: https://medium.com/@faizanahemad/participating-in-kaggle-data-science-competitions-part-1-step-by-step-guide-and-baseline-model-5b0c6973022a
+
+# we use: https://www.kaggle.com/questions-and-answers/41211
+# we also use: https://www.linkedin.com/pulse/machine-learning-whats-inside-box-randy-lao/?published=t
+
+# article about Kaggle: https://medium.com/@faizanahemad/participating-in-kaggle-data-science-competitions-part-1-step-by-step-guide-and-baseline-model-5b0c6973022a
+
+# use the "No free Hunch" Blog: http://blog.kaggle.com/2014/08/01/learning-from-the-best/
+# we also use: http://blog.kaggle.com/2017/05/25/two-sigma-financial-modeling-challenge-winners-interview-2nd-place-nima-shahbazi-chahhou-mohamed/
 
 
 
@@ -1039,13 +1049,17 @@ model.fit(x, y, epochs=1000, validation_data=val_data,
 
 # we use callbacks in Python
 callbacks = []
+
 callbacks.append(
     EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0,
                   mode='auto'))
+
 callbacks.append(
     EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0,
                   mode='auto'))
+
 tensordir = '../papayiannis_results/tensorlogs_dir'
+
 callbacks.append(
     TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=batch_size_base,
                 write_graph=True, write_grads=False, write_images=False,
@@ -1074,6 +1088,7 @@ def get_scores(y_pred, y_gt, beta=1):
 
     fp = np.sum(np.logical_and(y_pred, np.logical_not(y_gt)))
     fn = np.sum(np.logical_and(np.logical_not(y_pred), y_gt))
+
     tp = np.sum(np.logical_and(y_pred, y_gt))
     tn = np.sum(np.logical_and(np.logical_not(y_pred), np.logical_not(y_gt)))
 
@@ -1082,6 +1097,7 @@ def get_scores(y_pred, y_gt, beta=1):
 
     metrics = ('F' + str(beta), 'Precision', 'Recall', 'False Positive', 'False Negative',
                'False Positive Rate', 'False Negative Rate')
+
     metric_values = (fbeta, precision, recall, fp, fn, fpr, fnr)
 
     return metrics, metric_values
