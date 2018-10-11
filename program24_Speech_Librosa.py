@@ -857,6 +857,9 @@ model.summary
 # use the "No free Hunch" Blog: http://blog.kaggle.com/2014/08/01/learning-from-the-best/
 # we also use: http://blog.kaggle.com/2017/05/25/two-sigma-financial-modeling-challenge-winners-interview-2nd-place-nima-shahbazi-chahhou-mohamed/
 
+# Kaggle, nd1511: https://www.kaggle.com/nd1511
+# nd1511, Nikolaos Dionelis: https://www.kaggle.com/nd1511
+
 
 
 # we read stored data
@@ -957,6 +960,7 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
                    test_ratio=.075, stratified=True, framesize=None, print_set_report=True,
                    clustered_data=True, **kwargs):
     import numpy as np
+
     from myutils_reverb import read_li8_file
 
     val_sum = train_ratio + test_ratio + val_ratio
