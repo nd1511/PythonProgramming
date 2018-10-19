@@ -21,6 +21,9 @@ import numpy as np
 #import keras
 #import kapre
 
+# use Kapre as a Keras pre-processor
+# use: https://github.com/keunwoochoi/kapre
+
 # we use LIBROSA, Columbia University, Dan Ellis
 import librosa
 from librosa import display
@@ -932,6 +935,7 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
 
     class_names = np.unique(all_boudnaries)
     y = np.zeros((all_boudnaries.shape[0], class_names.size)).astype(bool)
+
     for i, cname in enumerate(class_names):
         y[np.any(all_boudnaries == cname, axis=1), i] = True
 
@@ -964,6 +968,7 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
     from myutils_reverb import read_li8_file
 
     val_sum = train_ratio + test_ratio + val_ratio
+
     if not isclose(val_sum, 1.):
         raise AssertionError('Ratios should sum to 1.00 and not ' + str(val_sum))
     (x, y), ids, class_names = read_air_and_filters_xy(air_files,
@@ -1054,18 +1059,16 @@ model.fit(x, y, epochs=1000, validation_data=val_data,
 # we use callbacks in Python
 callbacks = []
 
-callbacks.append(
-    EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0,
+callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0,
                   mode='auto'))
 
-callbacks.append(
-    EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0,
+callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0,
                   mode='auto'))
 
-tensordir = '../papayiannis_results/tensorlogs_dir'
+tensordir = '../results/tensorlogs_dir'
 
-callbacks.append(
-    TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=batch_size_base,
+# use TensorBoard
+callbacks.append(TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=batch_size_base,
                 write_graph=True, write_grads=False, write_images=False,
                 embeddings_freq=0, embeddings_layer_names=None,
                 embeddings_metadata=None))
@@ -1085,7 +1088,10 @@ def get_scores(y_pred, y_gt, beta=1):
 
     tp = np.logical_and(y_pred, y_gt)
 
+    # compute the precision
     precision = tp.sum() / y_pred.sum().astype(float)
+
+    # compute the recall
     recall = tp.sum() / y_gt.sum().astype(float)
 
     fbeta = (1.0 + beta ** 2) * (precision * recall) / float((precision * beta ** 2) + recall)
