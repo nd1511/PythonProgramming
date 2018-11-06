@@ -987,6 +987,7 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
         y_new = y
 
     sss = splitter(n_splits=1, test_size=test_ratio, random_state=50)
+
     for train_val_index, test_index in sss.split(np.zeros_like(y_new), y_new):
         pass
 
@@ -995,7 +996,9 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
     for train_index, val_index in sss_val.split(np.zeros_like(y_new[train_val_index]),
                                                 y_new[train_val_index]):
         pass
+
     train_index = train_val_index[train_index]
+
     val_index = train_val_index[val_index]
 
     if print_set_report:
@@ -1015,8 +1018,8 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
 # create a Keras model
 def get_model(input_dims, n_outputs, dense_width=128):
     from keras.models import Sequential
-    from keras.layers import Dense, InputLayer, Reshape, \
-        Dropout, TimeDistributed, GRU
+
+    from keras.layers import Dense, InputLayer, Reshape, Dropout, TimeDistributed, GRU
 
     default_activation = 'relu'
 
@@ -1103,6 +1106,7 @@ def get_scores(y_pred, y_gt, beta=1):
     tn = np.sum(np.logical_and(np.logical_not(y_pred), np.logical_not(y_gt)))
 
     fpr = fp / float(fp + tn)
+
     fnr = fn / float(fn + tp)
 
     metrics = ('F' + str(beta), 'Precision', 'Recall', 'False Positive', 'False Negative',
