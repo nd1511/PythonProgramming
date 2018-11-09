@@ -910,7 +910,9 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
             ids = names
 
         print("Got " + str(airs.shape))
+
         airs = resample_op(airs)
+
         if max_air_read is not None:
             airs = airs[:, 0:max_air_read_samples]
         if i > 0:
@@ -934,6 +936,7 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
             all_boudnaries = boundaries
 
     class_names = np.unique(all_boudnaries)
+
     y = np.zeros((all_boudnaries.shape[0], class_names.size)).astype(bool)
 
     for i, cname in enumerate(class_names):
@@ -952,7 +955,9 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
     print('Left with ' + str(x.shape) + ' AIRs data ')
 
     ids = ids.astype(str)
+
     class_names = class_names.astype(str)
+
     return (x, y), ids, class_names
 
 
@@ -978,6 +983,7 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
         from sklearn.model_selection import StratifiedShuffleSplit as splitter
 
         y_new = np.zeros((y.shape[0],)).astype('int64')
+
         uvals = np.unique(y, axis=0)
 
         for i in range(uvals.shape[0]):
