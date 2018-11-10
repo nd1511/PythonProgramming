@@ -1,5 +1,5 @@
 
-# we use the TIMIT speech database
+# we use the TIMIT clean speech database
 
 # we use speech, deep learning (DL), neural networks (NNs) with speech
 # we use Li Deng's book: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
@@ -146,6 +146,25 @@ plt.show()
 
 # for MATLAB: https://github.com/dustinstansbury/medal
 # we use: https://github.com/PhDP/mlbop/tree/master/MATLAB-18
+
+from __future__ import print_function
+
+import librosa
+import librosa.display
+
+import matplotlib.pyplot as plt
+
+filename = "./songs/Song1.mp3"
+y, sr = librosa.load(filename, sr=22050)
+
+rmse = librosa.feature.rmse(y=y, frame_length=2048*8, hop_length=512*4)
+R = librosa.segment.recurrence_matrix(rmse)
+
+plt.figure(figsize=(8, 8))
+librosa.display.specshow(R, x_axis='time', y_axis='time')
+
+plt.title('Similarity Matrix')
+plt.show()
 
 
 
@@ -875,7 +894,9 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
                             start_at_max=True, max_air_read=None):
     latest_file = '../results_dir/training_test_data.h5'
     from os.path import isfile
+
     import numpy as np
+
     from h5py import File
 
     from resampy import resample
@@ -1112,7 +1133,6 @@ def get_scores(y_pred, y_gt, beta=1):
     tn = np.sum(np.logical_and(np.logical_not(y_pred), np.logical_not(y_gt)))
 
     fpr = fp / float(fp + tn)
-
     fnr = fn / float(fn + tp)
 
     metrics = ('F' + str(beta), 'Precision', 'Recall', 'False Positive', 'False Negative',
