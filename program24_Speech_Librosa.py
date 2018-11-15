@@ -6,6 +6,7 @@
 
 # use: https://lidengsite.wordpress.com/book-chapters/
 # we use: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
+
 # we also use: https://lidengsite.files.wordpress.com/2018/03/chapter-1.pdf
 
 # we use the TIMIT database
@@ -146,6 +147,8 @@ plt.show()
 
 # for MATLAB: https://github.com/dustinstansbury/medal
 # we use: https://github.com/PhDP/mlbop/tree/master/MATLAB-18
+
+# for DL in MATLAB: https://github.com/dustinstansbury/medal
 
 from __future__ import print_function
 
@@ -1079,8 +1082,7 @@ def get_model(input_dims, n_outputs, dense_width=128):
 model.compile(loss='binary_crossentropy', optimizer='adam')
 
 model.fit(x, y, epochs=1000, validation_data=val_data,
-          batch_size=batch_size_base, shuffle=True, sample_weight=sample_weights,
-          verbose=2, callbacks=callbacks)
+          batch_size=batch_size_base, shuffle=True, sample_weight=sample_weights, verbose=2, callbacks=callbacks)
 
 
 
@@ -1089,11 +1091,9 @@ model.fit(x, y, epochs=1000, validation_data=val_data,
 # we use callbacks in Python
 callbacks = []
 
-callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0,
-                  mode='auto'))
+callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0, mode='auto'))
 
-callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0,
-                  mode='auto'))
+callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0, mode='auto'))
 
 tensordir = '../results/tensorlogs_dir'
 
