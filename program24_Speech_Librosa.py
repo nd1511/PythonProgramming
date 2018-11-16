@@ -1,8 +1,11 @@
 
-# we use the TIMIT clean speech database
-
 # we use speech, deep learning (DL), neural networks (NNs) with speech
 # we use Li Deng's book: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
+
+# use: https://github.com/Owen864720655/E-book/blob/master/New%20Era%20for%20Robust%20Speech%20Recognition-Exploiting%20Deeping%20Learning.pdf
+# use: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
+
+
 
 # use: https://lidengsite.wordpress.com/book-chapters/
 # we use: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
@@ -32,6 +35,7 @@ from librosa import display
 # we use plt to plot figures
 import matplotlib.pyplot as plt
 
+# we use the TIMIT clean speech database
 y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1', sr=None)
 #print(len(y), sr)
 
