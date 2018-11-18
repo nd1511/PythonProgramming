@@ -24,10 +24,11 @@
 
 import numpy as np
 
-#import keras
-#import kapre
+import keras
+import kapre
 
 # use Kapre as a Keras pre-processor
+import kapre
 # use: https://github.com/keunwoochoi/kapre
 
 # we use LIBROSA, Columbia University, Dan Ellis
@@ -1100,7 +1101,6 @@ model.fit(x, y, epochs=1000, validation_data=val_data,
 
 # we use callbacks in Python
 callbacks = []
-
 callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0, mode='auto'))
 
 callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0, mode='auto'))
