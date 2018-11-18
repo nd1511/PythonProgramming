@@ -5,6 +5,8 @@
 # use: https://github.com/Owen864720655/E-book/blob/master/New%20Era%20for%20Robust%20Speech%20Recognition-Exploiting%20Deeping%20Learning.pdf
 # use: http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
 
+# book for speech: https://github.com/Owen864720655/E-book/blob/master/New%20Era%20for%20Robust%20Speech%20Recognition-Exploiting%20Deeping%20Learning.pdf
+
 
 
 # use: https://lidengsite.wordpress.com/book-chapters/
@@ -804,6 +806,7 @@ import os
 from keras.datasets import cifar10
 
 from keras.models import Sequential
+
 from keras.layers.core import Dense, Dropout, Activation
 
 # we use adaptive momentum, we use Adam
@@ -869,6 +872,7 @@ model.summary
 
 #model.save('model.h5')
 #jsonModel = model.to_json()
+
 #model.save_weights('modelWeights.h5')
 
 #modelWt = model.load_weights('modelWeight.h5')
@@ -990,7 +994,9 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
 
 
 
-# splitting data for training and testing
+# split the data for training and testing
+
+# training and testing
 # Once we have acquired a number of examples for our task, we can start training your network.
 
 def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
@@ -1104,8 +1110,7 @@ tensordir = '../results/tensorlogs_dir'
 # use TensorBoard
 callbacks.append(TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=batch_size_base,
                 write_graph=True, write_grads=False, write_images=False,
-                embeddings_freq=0, embeddings_layer_names=None,
-                embeddings_metadata=None))
+                embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None))
 
 
 
@@ -1117,6 +1122,7 @@ def get_scores(y_pred, y_gt, beta=1):
 
     if y_pred.ndim > 1 or y_gt.ndim > 1:
         raise ValueError('Expected 1D inputs')
+
     if not y_pred.size == y_gt.size:
         raise ValueError('Expected 1D inputs of same size')
 
