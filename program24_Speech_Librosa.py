@@ -353,6 +353,8 @@ y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Proj
 #print(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)), ref=np.max).shape)
 storeAll = np.concatenate((storeAll, librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)), ref=np.max)), axis=1)
 
+#print(np.shape(storeAll))
+
 print('')
 print(np.shape(storeAll))
 
@@ -540,6 +542,8 @@ import scipy.io.wavfile as wav
 
 (fs, signal) = wav.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1')
 #(fs, signal) = wav.read('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA2')
+
+#mfccfeatures = mfcc(signal, fs)
 
 # compute the MFCCs
 mfccfeatures = mfcc(signal, fs)
