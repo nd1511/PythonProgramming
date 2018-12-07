@@ -144,9 +144,6 @@ plt.show()
 
 
 
-
-
-
 # for deep learning (DL): http://125.234.102.146:8080/dspace/bitstream/DNULIB_52011/6853/1/automatic_speech_recognition_a_deep_learning_approach.pdf
 
 # we use: https://github.com/Imperial-College-Data-Science-Society/Neural-Networks/blob/master/slides/L2.Neural-Networks.pdf
@@ -785,6 +782,80 @@ while loc_read < loc_write:
 
 
 
+# we use CNTK
+# use: cntk.sequence.slice
+
+# sequence model: use every 3rd frame
+
+n_channels = 12
+
+input_var = cntk.sequence.input_variable([cntk.FreeDimension, n_channels])
+
+model = cntk.slice(input_var, axis=0, begin_index=0, end_index=0, strides=3)
+
+x = np.random.rand(1, 6, n_channels).astype(np.float32)
+
+#print(model.eval({model.arguments[0]: x}))
+
+
+
+# use: TensorFlow pre-trained model
+
+# use pre-trained model from PyTorch
+# we use: resnet_v1_50 on the ImageNet validation setl, pytorch pretrained resnet_50 is 76.15%
+
+trainloader = imagenet_traindata(args.batch_size)
+testloader = imagenet_testdata(args.batch_size)
+
+MainModel = imp.load_source('MainModel', "tf_resnetv1_50_to_pth.py")
+
+# load pre-trained model from PyTorch
+model = torch.load('tf_resnetv1_50_to_pth.pth')
+
+model = nn.DataParallel(model)
+model = model.cuda()
+
+print(model)
+
+trainloader = imagenet_traindata(args.batch_size)
+testloader = imagenet_testdata(args.batch_size)
+
+MainModel = imp.load_source('MainModel', "tf_resnetv1_50_to_pth.py")
+model = torch.load('tf_resnetv1_50_to_pth.pth')
+
+model = nn.DataParallel(model)
+model = model.cuda()
+
+print(model)
+
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, weight_decay=1e-4)
+
+def validate(val_loader, model, criterion):
+    losses = AverageMeter()
+    top1 = AverageMeter()
+    top5 = AverageMeter()
+    model.eval()
+
+    for i, (input, target) in enumerate(val_loader):
+        input_var = torch.autograd.Variable(input, volatile=True).cuda()
+        target_var = torch.autograd.Variable(target, volatile=True).cuda()
+
+        # compute output
+        output = model(input_var)
+        loss = criterion(output, target_var)
+
+        # measure accuracy and record loss
+        prec1, prec5 = accuracy(output.data, target_var.data, topk=(1, 5))
+        losses.update(loss.data[0], input.size(0))
+        top1.update(prec1[0], input.size(0))
+        top5.update(prec5[0], input.size(0))
+
+    print('Test: *Loss {loss.avg:.4f} \tPrec@1 {top1.avg:.3f}'.format(loss=losses, top1=top1))
+
+    return top1.avg
+
+validate(testloader, model, criterion)
 
 
 
@@ -915,28 +986,36 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
 
     from h5py import File
 
+    # use: resampy
     from resampy import resample
 
     ids = None
+
     x = None
+
     all_boudnaries = None
 
     if forced_fs is None:
         forced_fs = fs
+
     resample_op = lambda x: x
+
     if not forced_fs == fs:
         resample_op = lambda x: np.array(resample(np.array(x.T, dtype=np.float64), fs, forced_fs, 0)).T
 
     if max_air_read is not None:
         if fs is None:
             raise AssertionError('Cannot work with max_air_read without fs')
+
             max_air_read_samples = int(np.ceil(fs * max_air_read))
+
     for i, this_h5 in enumerate(h5_files):
         print
         "Reading : " + this_h5 + " @ " + str(i + 1) + " of " + str(len(h5_files)),
         hf = File(this_h5, 'r')
 
         names = np.array(hf.get('names'))
+
         airs = np.array(hf.get('airs')).T
 
         boundaries = np.array(hf.get('boundary_ids')).T
@@ -1015,6 +1094,7 @@ def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
 
     if not isclose(val_sum, 1.):
         raise AssertionError('Ratios should sum to 1.00 and not ' + str(val_sum))
+
     (x, y), ids, class_names = read_air_and_filters_xy(air_files,
                                                        framesize=framesize, **kwargs)
 
