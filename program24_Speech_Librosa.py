@@ -93,8 +93,6 @@ display.specshow(logPowerSpectrum, y_axis='linear', sr=sr)
 plt.title('Log-Spectrogram')
 plt.show()
 
-
-
 plt.figure(figsize=(14, 4))
 
 #librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)),
@@ -418,7 +416,6 @@ except sr.RequestError as e:
 
 # we use: pyaudio
 import pyaudio
-
 import wave
 
 def record_audio(RECORD_SECONDS, WAVE_OUTPUT_FILENAME):
@@ -571,7 +568,6 @@ plt.pcolormesh(times, freq, np.log(spectrogram))
 
 plt.ylabel('Frequency (kHz)')
 plt.xlabel('Time (s)')
-
 plt.show()
 
 
