@@ -242,9 +242,6 @@ show()
 
 
 
-
-
-
 # use: wavSI1027
 y, sr = librosa.load('/Users/dionelisnikolaos/Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSI1027', sr=None)
 
@@ -547,7 +544,6 @@ dmfccfeatures = delta(mfccfeatures, 2)
 # researchers usually use MFCCs, Delta MFCCs and Delta Delta MFCCs
 
 fbankfeature = logfbank(signal, fs)
-
 print(fbankfeature)
 
 import matplotlib.pyplot as plt
@@ -778,9 +774,7 @@ while loc_read < loc_write:
 
 
 
-# we use CNTK
-# use: cntk.sequence.slice
-
+# we use CNTK and we use: cntk.sequence.slice
 # sequence model: use every 3rd frame
 
 n_channels = 12
