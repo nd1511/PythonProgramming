@@ -13,16 +13,31 @@
 # datasets can be found in (https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173)
 # C. Chatfield: https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173
 
-# we use: http://www.commsp.ee.ic.ac.uk/~mandic/courses.htm
-# we also use: https://pdfs.semanticscholar.org/presentation/27ca/53acde0b5a7914cb042365ae4f05a2c1c0ce.pdf
-
 # http://www.commsp.ee.ic.ac.uk/~mandic/courses.htm
 # http://www.econ.ohio-state.edu/dejong/note2.pdf
 
+# we use: http://www.commsp.ee.ic.ac.uk/~mandic/courses.htm
+# we also use: https://pdfs.semanticscholar.org/presentation/27ca/53acde0b5a7914cb042365ae4f05a2c1c0ce.pdf
+
 # for MATLAB, we use: https://github.com/yalamarthibharat/TimeSeriesAnalysis
 
+# we use pandas
+import pandas as pd
+
+# we use Quandl
+import quandl
+
+from PyPDF2 import PdfFileReader
+import os
+
+import numpy as np
+import math
+
+#quandl.ApiConfig.api_key = "bA8kfL-FkszhWuXM18Pe" #setting up your api-key
 
 
+
+# we use C. Chatfield's book
 # Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 2.7: Autocorrelation and the Correlogram, 6th edition (2004), Chapman & Hall / CRC.
 
 # we use equation (2.7)
@@ -960,9 +975,6 @@ print(test_labels)
 
 
 
-
-
-
 from scipy.io import wavfile
 
 #fs, data = wavfile.read('../Desktop/folder_desktop/MATLAB_Project2/TIMIT/TRAIN/DR1/FCJF0/wavSA1')
@@ -1024,8 +1036,7 @@ model.add(Melspectrogram(n_dft=512, n_hop=256, input_shape=input_shape,
                          padding='same', sr=sr, n_mels=128,
                          fmin=0.0, fmax=sr/2, power_melgram=1.0,
                          return_decibel_melgram=False, trainable_fb=False,
-                         trainable_kernel=False,
-                         name='trainable_stft'))
+                         trainable_kernel=False, name='trainable_stft'))
 
 # add some additive white noise
 model.add(AdditiveNoise(power=0.2))
@@ -1057,6 +1068,7 @@ x = data
 
 #import keras
 #import kapre
+import numpy as np
 
 import librosa
 from librosa import display
@@ -1069,23 +1081,17 @@ print(librosa.samples_to_time(len(y), sr))
 D = librosa.stft(y)
 #print(D.shape, D.dtype)
 
-import numpy as np
-
 S, phase = librosa.magphase(D)
 #print(S.dtype, phase.dtype, np.allclose(D, S * phase))
 
 plt.figure(figsize=(14, 4))
-
 logPowerSpectrum = np.log(np.abs(librosa.stft(y, 512, 256)) ** 2)
 
 #display.specshow(np.log(np.abs(librosa.stft(y, 512, 256)) ** 2), y_axis='linear', sr=sr)
 display.specshow(logPowerSpectrum, y_axis='linear', sr=sr)
 
 plt.title('Log-Spectrogram')
-
 plt.show()
 
 # we use: https://github.com/librosa/tutorial/blob/master/Librosa%20tutorial.ipynb
-
-
 
