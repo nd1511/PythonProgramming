@@ -1,17 +1,8 @@
 
-# we use Chris Chatfield's book
-# we use: The Analysis of Time Series: An Introduction, Chris Chatfield, 6th edition (2004), Chapman & Hall / CRC.
+# use: https://github.com/phiconad/Algothon_Georgeteam
 
-# References:
-# [1] C. Chatfield, "The Analysis of Time Series: An Introduction" 6th edition (2004), Chapman & Hall / CRC.
-
-# Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 2.7: Autocorrelation and the Correlogram, 6th edition (2004), Chapman & Hall / CRC.
-# Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 14.3: Examples, 6th edition (2004), Chapman & Hall / CRC.
-
-# we use: https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173
-
-# datasets can be found in (https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173)
-# C. Chatfield: https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173
+# we use: http://www.algothon.org
+# https://github.com/phiconad/Algothon_Georgeteam
 
 # http://www.commsp.ee.ic.ac.uk/~mandic/courses.htm
 # http://www.econ.ohio-state.edu/dejong/note2.pdf
@@ -34,6 +25,20 @@ import numpy as np
 import math
 
 #quandl.ApiConfig.api_key = "bA8kfL-FkszhWuXM18Pe" #setting up your api-key
+
+# we use Chris Chatfield's book
+# we use: The Analysis of Time Series: An Introduction, Chris Chatfield, 6th edition (2004), Chapman & Hall / CRC.
+
+# References:
+# [1] C. Chatfield, "The Analysis of Time Series: An Introduction" 6th edition (2004), Chapman & Hall / CRC.
+
+# Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 2.7: Autocorrelation and the Correlogram, 6th edition (2004), Chapman & Hall / CRC.
+# Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 14.3: Examples, 6th edition (2004), Chapman & Hall / CRC.
+
+# we use: https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173
+
+# datasets can be found in (https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173)
+# C. Chatfield: https://www.crcpress.com/The-Analysis-of-Time-Series-An-Introduction-Sixth-Edition/Chatfield/p/book/9781584883173
 
 
 
@@ -100,6 +105,9 @@ r_k = c_k / c_k[0]
 # we compute the auto-correlation function, the auto-correlation coefficients, the correlogram
 
 
+
+# we use: http://www.algothon.org
+# use: https://github.com/phiconad/Algothon_Georgeteam
 
 # Chris Chatfield, The Analysis of Time Series: An Introduction, Chapter 14.3: Examples, 6th edition (2004), Chapman & Hall / CRC.
 
@@ -924,10 +932,9 @@ model = ARIMA(x, order=(1, 1, 0))
 #model = ARIMA(x, order=(0, 1, 2))
 
 model_fit = model.fit(disp=0)
-
 print(model_fit.summary())
 
-# we use DataFrame
+# we now use DataFrame
 from pandas import DataFrame
 
 # plot residual errors
@@ -1065,6 +1072,9 @@ x = data
 
 # we use: https://github.com/keunwoochoi/kapre/blob/master/examples/prepare%20audio.ipynb
 # we also use: https://github.com/keunwoochoi/kapre/blob/master/examples/example_codes.ipynb
+
+# use pandas
+import pandas as pd
 
 #import keras
 #import kapre
