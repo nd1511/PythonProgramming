@@ -1173,13 +1173,14 @@ model.fit(x, y, epochs=1000, validation_data=val_data,
 
 # we now use callbacks
 
-# we use callbacks in Python
+# we use callbacks
 callbacks = []
 callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0, mode='auto'))
-
 callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0, mode='auto'))
 
 tensordir = '../results/tensorlogs_dir'
+
+# we use: https://www.tensorflow.org/guide/summaries_and_tensorboard
 
 # use TensorBoard
 callbacks.append(TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=batch_size_base,
@@ -1188,8 +1189,7 @@ callbacks.append(TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=bat
 
 
 
-# evaluation
-# we evaluate our DL model
+# evaluation: we evaluate our DL model
 
 def get_scores(y_pred, y_gt, beta=1):
     import numpy as np
