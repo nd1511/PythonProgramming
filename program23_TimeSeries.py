@@ -15,19 +15,18 @@
 # we use pandas
 import pandas as pd
 
+# we use numpy
+import numpy as np
+
 # we use Quandl
 import quandl
 
 from PyPDF2 import PdfFileReader
-import os
 
-import numpy as np
+import os
 import math
 
 #quandl.ApiConfig.api_key = "bA8kfL-FkszhWuXM18Pe" #setting up your api-key
-
-import numpy
-import pandas
 
 #help(list)
 # use "help(list)" to read description
@@ -1240,9 +1239,10 @@ x = data
 # use pandas
 import pandas as pd
 
+import numpy as np
+
 #import keras
 #import kapre
-import numpy as np
 
 import librosa
 from librosa import display
