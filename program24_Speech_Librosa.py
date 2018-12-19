@@ -84,6 +84,9 @@ plt.figure(figsize=(14, 4))
 
 logPowerSpectrum = np.log(np.abs(librosa.stft(y, n_fft=512, hop_length=256, win_length=256, window='hann', center=True)) ** 2)
 
+# we use numpy
+# use np.log() and np.abs()
+
 #display.specshow(np.log(np.abs(librosa.stft(y, 512, 256)) ** 2), y_axis='linear', sr=sr)
 #display.specshow(logPowerSpectrum, y_axis='linear', sr=sr)
 
@@ -1076,8 +1079,6 @@ def read_air_and_filters_xy(h5_files, framesize=None, get_pow_spec=True,
 def get_split_data(air_files, train_ratio=.85, val_ratio=.075,
                    test_ratio=.075, stratified=True, framesize=None, print_set_report=True,
                    clustered_data=True, **kwargs):
-    import numpy as np
-
     from myutils_reverb import read_li8_file
 
     val_sum = train_ratio + test_ratio + val_ratio
@@ -1175,6 +1176,7 @@ model.fit(x, y, epochs=1000, validation_data=val_data,
 
 # we use callbacks
 callbacks = []
+
 callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=loss_patience, verbose=0, mode='auto'))
 callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=val_patience, verbose=0, mode='auto'))
 
@@ -1192,8 +1194,6 @@ callbacks.append(TensorBoard(log_dir=tensordir, histogram_freq=0, batch_size=bat
 # evaluation: we evaluate our DL model
 
 def get_scores(y_pred, y_gt, beta=1):
-    import numpy as np
-
     if y_pred.ndim > 1 or y_gt.ndim > 1:
         raise ValueError('Expected 1D inputs')
 
