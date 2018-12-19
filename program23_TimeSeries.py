@@ -123,7 +123,7 @@ for i in range(1, n+1, 1):
 #print(p)
 print(n, "! = ", p)
 
-# dry run
+# use dry run
 # dry run the code
 
 # run the code like the interpreter
@@ -188,6 +188,26 @@ print("")
 
 print("I am back in the main program.")
 print("")
+
+# recursive implementations take more memory and are slower
+
+# if we dry run the recursive implementation,
+# then we go downwards searching and upwards completing
+# if n=3, then:
+# 3*recfactorial(2)         =6
+# 2*recfactorial(1)         =2
+# 1                         =1
+
+# if we dry run the recursive implementation,
+# then we go downwards searching and upwards completing
+# if n=5, then:
+# 5*recfactorial(4)         =120
+# 4*recfactorial(3)         =24
+# 3*recfactorial(2)         =6
+# 2*recfactorial(1)         =2
+# 1                         =1
+
+
 
 # we use Chris Chatfield's book
 # we use: The Analysis of Time Series: An Introduction, Chris Chatfield, 6th edition (2004), Chapman & Hall / CRC.
