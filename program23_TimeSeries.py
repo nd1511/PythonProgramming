@@ -20,13 +20,12 @@ import numpy as np
 
 # we use Quandl
 import quandl
+#quandl.ApiConfig.api_key = "bA8kfL-FkszhWuXM18Pe" #setting up your api-key
 
 from PyPDF2 import PdfFileReader
 
 import os
 import math
-
-#quandl.ApiConfig.api_key = "bA8kfL-FkszhWuXM18Pe" #setting up your api-key
 
 #help(list)
 # use "help(list)" to read description
@@ -158,9 +157,9 @@ factorial
 n! = 1*2*3*..*n, where 1! = 1, 0! = 1
 3! = 1 * 2 * 3 = 6
 """
-
 print("")
 
+# define function for factorial
 def factorial(x):
     #print("I am in the factorial function.")
     p = 1
@@ -171,6 +170,8 @@ def factorial(x):
     print(n,"! = ",p)
 
 # Recursive: The function calls itself
+
+# define function for recursive factorial
 def recfactorial(x):
     #print("I am in the recfactorial function.")
     if x == 1:
@@ -206,6 +207,18 @@ print("")
 # 3*recfactorial(2)         =6
 # 2*recfactorial(1)         =2
 # 1                         =1
+
+# recursion for factorial
+# factorial: n! = n * (n-1)!, if n > 1 and f(1) = 1
+# we use range(StartValue, EndValue+1, StepSize)
+
+# https://www.codecademy.com/nikolaos.dionelis
+# Code Academy, Nikolaos Dionelis
+
+# https://www.codecademy.com/nikolaos.dionelis
+
+# Hacker Rank, Nikolaos Dionelis
+# https://www.hackerrank.com/nd1511
 
 
 
@@ -1100,10 +1113,9 @@ plt.show()
 
 
 from statsmodels.tsa.arima_model import ARIMA
+# we fit the ARIMA model
 
 x = BCH_close_ratio
-
-# we fit the ARIMA model
 
 #model = ARIMA(x, order=(1, 0, 0))
 #model = ARIMA(x, order=(0, 0, 1))
@@ -1200,13 +1212,10 @@ plt.show()
 
 # we use the kapre library
 # we use: https://github.com/keunwoochoi/kapre
-
 import kapre
 
 #kapre.time_frequency.Spectrogram(n_dft=512, n_hop=256, padding='same', power_spectrogram=2.0, return_decibel_spectrogram=False,
 #                                 trainable_kernel=False, image_data_format='default')
-
-from keras.models import Sequential
 
 # we use kapre
 from kapre.time_frequency import Melspectrogram
@@ -1219,6 +1228,7 @@ from kapre.augmentation import AdditiveNoise
 sr = len(data)
 input_shape = (1, sr)
 
+from keras.models import Sequential
 model = Sequential()
 
 # A mel-spectrogram layer
