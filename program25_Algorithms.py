@@ -127,6 +127,7 @@ def mysum(a):
     global x, y
 
     # global vs local memory variables
+    # local: mysum(x, y, a)
 
     x = a * x
     y = y + a
@@ -137,9 +138,14 @@ def mysum(a):
     # return statement
     return x + y
 
+# local memory variables: a
+# functions have global variables, local variables and a return statement
+
 # main program
-x = int(input("give me the first number"))
-y = int(input("give me the second number"))
+
+# input from the user
+x = int(input("Give me the first number: "))
+y = int(input("Give me the second number: "))
 
 print('x before function = ', x)
 print('y before function = ', y)
@@ -155,7 +161,7 @@ print('y after function = ', y)
 import numpy as np
 
 # use pandas for .csv files
-import pandas as ps
+import pandas as pd
 
 #help(list)
 # use "help(list)" to read description
@@ -407,6 +413,12 @@ def insertionsort(array):
 
         array[j] = v
 
+# v is equal to array[i]
+# insertion sort compares array[i] and array[j]
+
+# insertion sort uses a sorted list and an unsorted list
+# insertion sort keeps the sorted list always sorted
+
 # main program
 
 #l = [1, 0, -8, 4, -3, 6, 7, 5, -5]
@@ -421,9 +433,6 @@ print(l)
 
 
 
-# !/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 def babblesort(l):
     n = len(l)
 
@@ -433,6 +442,7 @@ def babblesort(l):
                 # swap
                 l[j], l[j - 1] = l[j - 1], l[j]
 
+# we now input two lists
 def babblesort2(l, l2):
     n = len(l)
 
