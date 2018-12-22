@@ -1,6 +1,9 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Cracking the Coding Interview
+# use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
+
 # we define binary search
 
 # define function for binary search
@@ -91,6 +94,12 @@ print(binarysearch(l, 1821))
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# global x,y
+# use global memory variables
+
+# global variables => change the memory in the main program
+# global variables => use less memory
+
 # define the function mysum()
 def mysum(a):
     # define x,y as global variables
@@ -129,6 +138,9 @@ import pandas as ps
 
 #help(list)
 # use "help(list)" to read description
+
+# help(file)
+# help(list)
 
 list1 = []
 
@@ -247,10 +259,9 @@ def factorial(x):
 
 factorial(n)
 
-# recursive implementations take more memory and are slower
 # recursive implementations are neater
-
 # recursive implementations are more understandable
+# recursive implementations take more memory and are slower
 
 """
 factorial
@@ -426,6 +437,5 @@ l1.append(str(input('Name: ')))
 l2.append(int(input('Score: ')))
 
 babblesort2(l2, l1)
-
 print(l1)
 
