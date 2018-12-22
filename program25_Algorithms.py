@@ -6,6 +6,9 @@
 
 # we use: http://faculty.washington.edu/pisan/cpp/readings/McDowell_ch11_Advanced%20Topics.pdf
 
+# we use HackerRank
+# use: https://www.hackerrank.com/nd1511
+
 # we define binary search
 # binary search needs a sorted list
 
@@ -20,10 +23,12 @@ def binarysearch(array, key):
 
     # define the last, define the ceiling
     last = len(array) - 1
-    # in binary search, the ceiling moves
 
     # binary search => define the first and last
     # binary search => we will change the first and last
+
+    # in binary search, the floor moves
+    # in binary search, the ceiling moves
 
     while first <= last and not found:
         # integer division
@@ -277,6 +282,7 @@ factorial(n)
 
 # recursive implementations are neater
 # recursive implementations are more understandable
+
 # recursive implementations take more memory and are slower
 
 """
@@ -316,6 +322,9 @@ print("")
 
 print("I am back in the main program.")
 print("")
+
+# recursion has a base case, which is the simplest case
+# recursion has a recursive call, which is the recursion step
 
 # recursive implementations take more memory and are slower
 
@@ -384,13 +393,14 @@ print(l)
 
 # insertion sort
 
-# define function for insertion sort
+# define the function for insertion sort
 def insertionsort(array):
     for i in range(1, len(array)):
         v = array[i]
 
         j = i
 
+        # compare array[j - 1] and array[i]
         while j > 0 and array[j - 1] > v:
             array[j] = array[j - 1]
             j = j - 1
