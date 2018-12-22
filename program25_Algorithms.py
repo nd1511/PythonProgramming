@@ -4,14 +4,26 @@
 # Cracking the Coding Interview
 # use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
 
+# we use: http://faculty.washington.edu/pisan/cpp/readings/McDowell_ch11_Advanced%20Topics.pdf
+
 # we define binary search
+# binary search needs a sorted list
 
-# define function for binary search
+# binary search is very fast: finite searches even for a very long list
+
+# define the function for binary search
 def binarysearch(array, key):
-    first = 0
-    last = len(array) - 1
-
     found = False
+
+    # define the first, define the floor
+    first = 0
+
+    # define the last, define the ceiling
+    last = len(array) - 1
+    # in binary search, the ceiling moves
+
+    # binary search => define the first and last
+    # binary search => we will change the first and last
 
     while first <= last and not found:
         # integer division
@@ -32,6 +44,7 @@ def binarysearch(array, key):
     return found
 
 # we define sequential search
+# sequal search is brute force
 
 # define function for serial search
 def serialsearch(array, key):
@@ -42,6 +55,9 @@ def serialsearch(array, key):
             found = True
 
     return found
+
+# the serial search has complexity = O(N)
+# O(N) is bad complexity: when we double the data, we double the time
 
 # main program
 
