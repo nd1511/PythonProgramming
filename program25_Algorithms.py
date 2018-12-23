@@ -1,3 +1,9 @@
+# Vazirani Algorithms
+# use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
+
+# https://github.com/haseebr/competitive-programming/blob/master/Materials/Algorithms%20by%20Vazirani%20and%20Dasgupta.pdf
+# we use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
+
 # Cracking the Coding Interview
 # use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
 
@@ -265,9 +271,7 @@ for i in range(1, n+1, 1):
 #print(p)
 print(n, "! = ", p)
 
-# use dry run
 # dry run the code
-
 # run the code like the interpreter
 
 # range(startValue, endValue+1, stepSize)
@@ -364,6 +368,63 @@ print("")
 
 # Hacker Rank, Nikolaos Dionelis
 # https://www.hackerrank.com/nd1511
+
+
+
+# recursion produces easy to read code
+# recursion => base case and recursion step
+
+# the Fibonacci series => recursion
+# recursion-based problems and the Fibonacci series
+
+# memoization
+# use both memoization and recursion
+
+# Fibonacci with memoization: what memoization structure, local vs global
+
+# Fibonacci with memoization
+def fibHelper( n, memoarray ) :
+    if( n in memoarray ):
+        # code todo
+def fib( n ):
+    return fibHelpber( n, [] )
+
+# fib(100) => fib(99), fib(98)
+# fib(99) => fib(98), fib(97)
+# fib(98) => fib(97), fib(96)
+# fib(97) => fib(96), fib(95)
+# (...)
+
+# Recursion depth
+# Tree => use levels, 1 number in first level, 2 numbers in second level, 4, 8, ...
+
+# Execution stack, stack data structure
+# Recursion => Python has small execution stack
+
+# stack data structure
+# stack and queue data structures
+
+# define the function for the Fibonacci series
+def fib(n) :
+    if  n == 0 :
+return 1
+    elif n == 1:
+return 1
+    else:
+        #Return a(n - 1) + a(n - 2)
+        return fib(n-1) + fib(n-2)
+
+# fib(98) => fib (97, 96)
+# fib(99) => fib (98, 97)
+
+# 100
+# 99 98
+# 98 97 97 96
+# 97 96 96 95 96 95 95 94
+# ...
+
+# Vazirani's Book - Algorithms
+# we use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
 
 
@@ -464,7 +525,6 @@ def babblesort2(l, l2):
     return l, l2
 
 # main program
-
 l1 = []
 l2 = []
 
