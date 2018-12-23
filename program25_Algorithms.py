@@ -1,6 +1,3 @@
-# !/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 # Cracking the Coding Interview
 # use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
 
@@ -8,6 +5,9 @@
 
 # we use HackerRank
 # use: https://www.hackerrank.com/nd1511
+
+# we use: https://docs.python.org/3.6/library/index.html
+# use: https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
 
 # we define binary search
 # binary search needs a sorted list
@@ -112,9 +112,6 @@ print(binarysearch(l, 1821))
 
 
 
-# !/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 # global x,y
 # use global memory variables
 
@@ -158,6 +155,11 @@ print('y after function = ', y)
 
 
 
+# use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+# we use: https://www.springboard.com/blog/python-interview-questions/
+# use: https://www.springboard.com/blog/data-science-interview-questions/
+
 import numpy as np
 
 # use pandas for .csv files
@@ -166,8 +168,10 @@ import pandas as pd
 #help(list)
 # use "help(list)" to read description
 
-# help(file)
-# help(list)
+# help(file) and help(list)
+# use: https://docs.python.org/3.6/library/index.html
+
+# https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
 
 list1 = []
 
@@ -302,13 +306,12 @@ print("")
 def factorial(x):
     #print("I am in the factorial function.")
     p = 1
-
     for i in range(1,x+1,1):
         p = p*i
 
     print(n,"! = ",p)
 
-# Recursive: The function calls itself
+# Recursive: The function calls itself.
 
 # define function for recursive factorial
 def recfactorial(x):
@@ -364,9 +367,6 @@ print("")
 
 
 
-# !/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 # babble sort
 # straight exchange sort
 
@@ -381,6 +381,8 @@ def babblesort(l):
                 l[j], l[j - 1] = l[j - 1], l[j]
                 # we do a straight exchange sort
 
+    return l
+
 # main program
 
 l = [1, 0, -8, 4, -3, 6, 7, 5, -5]
@@ -392,7 +394,7 @@ print(l)
 # we use: help(list)
 # use "help(list)" to read description
 
-babblesort(l)
+l = babblesort(l)
 print(l)
 
 
@@ -403,7 +405,6 @@ print(l)
 def insertionsort(array):
     for i in range(1, len(array)):
         v = array[i]
-
         j = i
 
         # compare array[j - 1] and array[i]
@@ -412,6 +413,8 @@ def insertionsort(array):
             j = j - 1
 
         array[j] = v
+
+    return array
 
 # v is equal to array[i]
 # insertion sort compares array[i] and array[j]
@@ -428,11 +431,12 @@ print(l)
 # l.sort()
 # print(l)
 
-insertionsort(l)
+l = insertionsort(l)
 print(l)
 
 
 
+# define babble sort
 def babblesort(l):
     n = len(l)
 
@@ -441,6 +445,8 @@ def babblesort(l):
             if l[j] < l[j - 1]:
                 # swap
                 l[j], l[j - 1] = l[j - 1], l[j]
+
+    return l
 
 # we now input two lists
 def babblesort2(l, l2):
@@ -454,6 +460,8 @@ def babblesort2(l, l2):
 
                 # swap
                 l2[j], l2[j - 1] = l2[j - 1], l2[j]
+
+    return l, l2
 
 # main program
 
@@ -472,6 +480,12 @@ l2.append(int(input('Score: ')))
 l1.append(str(input('Name: ')))
 l2.append(int(input('Score: ')))
 
-babblesort2(l2, l1)
+l1, l2 = babblesort2(l2, l1)
 print(l1)
+
+# we use: https://docs.python.org/3.6/library/index.html
+# use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+# https://www.springboard.com/blog/python-interview-questions/
+# we use: https://docs.python.org/2/library/stdtypes.html
 
