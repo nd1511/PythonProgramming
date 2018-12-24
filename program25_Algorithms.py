@@ -547,7 +547,7 @@ l1.append(str(input('Name: ')))
 l2.append(int(input('Score: ')))
 
 l1, l2 = babblesort2(l2, l1)
-print(l1)
+print(l2)
 
 
 
@@ -612,17 +612,14 @@ from sklearn.linear_model import Lasso
 model = Lasso(alpha=0.1)
 
 # we fit the model
-model.fit([[-1,-1], [0,0] [1,1]], [-1,0,1])
+model.fit([[-1,-1], [0,0], [1,1]], [-1,0,1])
 
 print("")
-
 print(model.coef_)
-print("")
 
 print(model.intercept_)
-print("")
 
-model.predict([[3, -3]])
+print(model.predict([[3, -3]]))
 print("")
 
 # we now use Ridge regression
@@ -640,15 +637,11 @@ from sklearn.linear_model import Ridge
 model = Ridge(alpha=0.1)
 model.fit([[-1,-1], [0,0], [1,1]], [-1,0,1])
 
-print("")
-
 print(model.coef_)
-print("")
 
 print(model.intercept_)
-print("")
 
-model.predict([[3, -3]])
+print(model.predict([[3, -3]]))
 print("")
 
 # we now use elastic net regression
@@ -659,6 +652,7 @@ print("")
 # elastic net is between L1 and L2
 # elastic net is between LASSO and Ridge
 
+# use: https://www.jpmorgan.com/global/research/machine-learning
 # elastic net: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 # import elastic net
@@ -667,15 +661,11 @@ from sklearn.linear_model import ElasticNet
 model = ElasticNet(alpha=0.1)
 model.fit([[-1,-1], [0,0], [1,1]], [-1,0,1])
 
-print("")
-
 print(model.coef_)
-print("")
 
 print(model.intercept_)
-print("")
 
-model.predict([[3, -3]])
+print(model.predict([[3, -3]]))
 print("")
 
 # use K-Nearest Neighbors
@@ -708,15 +698,11 @@ model = LogisticRegression(penalty='l2')
 
 model.fit([[-2,-3], [1,0], [1,1]], [1,0,1])
 
-print("")
-
 print(model.coef_)
-print("")
 
 print(model.intercept_)
-print("")
 
-model.predict([[3, 3]])
+print(model.predict([[3, 3]]))
 print("")
 
 # classification using SVMs
@@ -752,13 +738,13 @@ from sklearn.cluster import KMeans
 # we fit the model
 model = KMeans(n_clusters=2, random_state=0).fit(X)
 
-print('')
 print(model.predict([[1,2], [-1,-1]]))
-print(model.cluster_centers_)
-print('')
 
-# we now use PCA
-# principal component analysis
+print(model.cluster_centers_)
+print("")
+
+# we now use PCA: principal component analysis
+# use eigenvalues and eigenvectors for PCA
 
 # PCA for dimensionality reduction
 # dimensionality reductsion is unsupervised learning
@@ -778,10 +764,10 @@ model = PCA(n_components=2)
 model.fit(X)
 
 # check the variance and see if it is a good fit
-print('')
 print(model.explained_variance_ratio_)
-print('')
+print("")
 
+# factor analysis and PCA
 # PCA and ICA for dimensionality reduction
 
 # we use: https://www.jpmorgan.com/global/research/machine-learning
