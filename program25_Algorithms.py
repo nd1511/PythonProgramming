@@ -1,10 +1,10 @@
-# Vazirani Algorithms
+# Vazirani Algorithms, Book
 # use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
 # https://github.com/haseebr/competitive-programming/blob/master/Materials/Algorithms%20by%20Vazirani%20and%20Dasgupta.pdf
 # we use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
-# Cracking the Coding Interview
+# Cracking the Coding Interview, Book
 # use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
 
 # we use: http://faculty.washington.edu/pisan/cpp/readings/McDowell_ch11_Advanced%20Topics.pdf
@@ -210,6 +210,9 @@ print(list1[::-1])
 print("")
 
 # reverse the list
+#list1.reverse()
+
+# reverse the list
 #print([list1[-1:0:-1], list1[0]])
 #print([list1[-1:0:-1], [list1[0]]])
 print(list1[-1:0:-1] + [list1[0]])
@@ -386,8 +389,12 @@ print("")
 def fibHelper( n, memoarray ) :
     if( n in memoarray ):
         # code todo
+        return
 def fib( n ):
     return fibHelpber( n, [] )
+
+# we use memoization and: https://stackoverflow.com/questions/7875380/recursive-fibonacci-memoization
+# https://medium.com/@nothingisfunny/memoization-improving-recursive-solution-for-fibonacci-sequence-problem-c02dab7a74e5
 
 # fib(100) => fib(99), fib(98)
 # fib(99) => fib(98), fib(97)
@@ -407,9 +414,9 @@ def fib( n ):
 # define the function for the Fibonacci series
 def fib(n) :
     if  n == 0 :
-return 1
+        return 1
     elif n == 1:
-return 1
+        return 1
     else:
         #Return a(n - 1) + a(n - 2)
         return fib(n-1) + fib(n-2)
@@ -543,9 +550,38 @@ l2.append(int(input('Score: ')))
 l1, l2 = babblesort2(l2, l1)
 print(l1)
 
+
+
 # we use: https://docs.python.org/3.6/library/index.html
 # use: https://www.springboard.com/blog/data-science-interview-questions/#programming
 
 # https://www.springboard.com/blog/python-interview-questions/
 # we use: https://docs.python.org/2/library/stdtypes.html
+
+import numpy as np
+
+import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
+
+# Gaussian distribution mean and variance
+mu, sigma = 100, 15
+
+x = mu + sigma*np.random.randn(10000)
+
+# the histogram of the data
+n, bins, patches = plt.hist(x, 50, normed=1, facecolor='green', alpha=0.75)
+
+# add a 'best fit' line
+y = mlab.normpdf( bins, mu, sigma)
+
+l = plt.plot(bins, y, 'r--', linewidth=1)
+
+plt.xlabel('Smarts')
+plt.ylabel('Probability')
+
+plt.title(r'$\mathrm{Histogram\ of\ IQ:}\ \mu=100,\ \sigma=15$')
+plt.axis([40, 160, 0, 0.03])
+
+plt.grid(True)
+plt.show()
 
