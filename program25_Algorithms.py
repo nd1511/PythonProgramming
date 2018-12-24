@@ -2,7 +2,7 @@
 # use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
 # https://github.com/haseebr/competitive-programming/blob/master/Materials/Algorithms%20by%20Vazirani%20and%20Dasgupta.pdf
-# we use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
+# we now use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
 # Cracking the Coding Interview, Book
 # use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
