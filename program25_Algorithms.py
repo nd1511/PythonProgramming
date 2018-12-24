@@ -452,7 +452,6 @@ def babblesort(l):
     return l
 
 # main program
-
 l = [1, 0, -8, 4, -3, 6, 7, 5, -5]
 print(l)
 
@@ -584,4 +583,119 @@ plt.axis([40, 160, 0, 0.03])
 
 plt.grid(True)
 plt.show()
+
+
+
+# use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# we use: https://news.efinancialcareers.com/dk-en/285249/machine-learning-and-big-data-j-p-morgan
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# use: https://www.jpmorgan.com/global/research/machine-learning
+
+# we now use: https://www.jpmorgan.com/global/research/machine-learning
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# we use LASSO regression
+# L1 regularisation, L1 penalty term
+
+# weight decay using LASSO
+# we use the L2 norm as a penalty term
+
+# Lagrange multiplier from the validation set
+# use: (function to minimize) + (Lagrange multiplier) * (L1 term)
+
+# we import Lasso regression
+from sklearn.linear_model import Lasso
+
+# we use LASSO regression
+model = Lasso(alpha=0.1)
+
+# we fit the model
+model.fit([[-1,-1], [0,0] [1,1]], [-1,0,1])
+
+print("")
+
+print(model.coef_)
+print("")
+
+print(model.intercept_)
+print("")
+
+model.predict([[3, -3]])
+print("")
+
+# SOS: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# we now use Ridge regression
+# Ridge => L2 regularisation
+
+# we now use the L2 norm as a penalty term
+# use: (function to minimize) + (Lagrange multiplier) * (L2 term)
+
+# L1 regularisation is better than L2 regularisation
+
+# we import Ridge regression
+from sklearn.linear_model import Ridge
+
+model = Ridge(alpha=0.1)
+model.fit([[-1,-1], [0,0], [1,1]], [-1,0,1])
+
+print("")
+
+print(model.coef_)
+print("")
+
+print(model.intercept_)
+print("")
+
+model.predict([[3, -3]])
+print("")
+
+# we now use elastic net regression
+
+# elastic net has both L1 and L2 penalty terms
+# elastic net uses both L1 and L2 regularisation
+
+# elastic net is between L1 and L2
+# elastic net is between LASSO and Ridge
+
+# elastic net: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# import elastic net
+from sklearn.linear_model import ElasticNet
+
+model = ElasticNet(alpha=0.1)
+model.fit([[-1,-1], [0,0], [1,1]], [-1,0,1])
+
+print("")
+
+print(model.coef_)
+print("")
+
+print(model.intercept_)
+print("")
+
+model.predict([[3, -3]])
+print("")
+
+# use K-Nearest Neighbors
+
+# we import K-Nearest Neighbors
+from sklearn.neighbors import NearestNeighbors
+
+import numpy as np
+
+# define numpy np array
+X = np.array([[-1, -2], [-2,-2], [-3,-5], [1,1], [2,2], [4,4]])
+
+model = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(X)
+distances, indices = model.kneighbors([[0,0]])
+
+print(distances)
+print(indices)
+print("")
+
+# we use: https://news.efinancialcareers.com/dk-en/285249/machine-learning-and-big-data-j-p-morgan
+# use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
