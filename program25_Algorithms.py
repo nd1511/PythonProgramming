@@ -625,8 +625,6 @@ print("")
 model.predict([[3, -3]])
 print("")
 
-# SOS: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
-
 # we now use Ridge regression
 # Ridge => L2 regularisation
 
@@ -634,6 +632,7 @@ print("")
 # use: (function to minimize) + (Lagrange multiplier) * (L2 term)
 
 # L1 regularisation is better than L2 regularisation
+# SOS: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 # we import Ridge regression
 from sklearn.linear_model import Ridge
@@ -698,4 +697,95 @@ print("")
 
 # we use: https://news.efinancialcareers.com/dk-en/285249/machine-learning-and-big-data-j-p-morgan
 # use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# binary classification
+# logistic regression for classification
+
+# we import logistic regression
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression(penalty='l2')
+
+model.fit([[-2,-3], [1,0], [1,1]], [1,0,1])
+
+print("")
+
+print(model.coef_)
+print("")
+
+print(model.intercept_)
+print("")
+
+model.predict([[3, 3]])
+print("")
+
+# classification using SVMs
+# we use SVMs, convex optimization problems
+
+# kernel trick => higher dimensional space
+# with kernel trick: linearly separable
+
+# SVM for multi-class classification
+
+# import SVM classifier
+from sklearn.svm import SVC
+
+import numpy as np
+
+X = np.array([[-3,-2], [-4,-5], [3,4], [4,5]])
+y = np.array([1, 1, 2, 2])
+
+model = SVC()
+model. fit(X, y)
+
+print(model.predict([[0, 0]]))
+print("")
+
+# use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# use clustering with K-means
+# clustering is unsupervised learning
+
+# we import K-means
+from sklearn.cluster import KMeans
+
+# we fit the model
+model = KMeans(n_clusters=2, random_state=0).fit(X)
+
+print('')
+print(model.predict([[1,2], [-1,-1]]))
+print(model.cluster_centers_)
+print('')
+
+# we now use PCA
+# principal component analysis
+
+# PCA for dimensionality reduction
+# dimensionality reductsion is unsupervised learning
+
+# PCA is unsupervised learning
+# we reduce the data: reduce the dimensions of the data
+
+# we import PCA
+from sklearn.decomposition import PCA
+
+X = np.array([[-3,-2], [-4,-5], [3,4], [4,5]])
+
+# we define the number of principal components
+model = PCA(n_components=2)
+
+# we do unsupervised learning
+model.fit(X)
+
+# check the variance and see if it is a good fit
+print('')
+print(model.explained_variance_ratio_)
+print('')
+
+# PCA and ICA for dimensionality reduction
+
+# we use: https://www.jpmorgan.com/global/research/machine-learning
+
+# use: https://news.efinancialcareers.com/dk-en/285249/machine-learning-and-big-data-j-p-morgan
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
