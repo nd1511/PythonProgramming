@@ -9,8 +9,12 @@
 
 # we use: http://faculty.washington.edu/pisan/cpp/readings/McDowell_ch11_Advanced%20Topics.pdf
 
+# use: https://sigmoidal.io/machine-learning-for-trading/
+# we use: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2756331
+
 # we use HackerRank
 # use: https://www.hackerrank.com/nd1511
+# nd1511, Nikolaos Dionelis, HackerRank
 
 # we use: https://docs.python.org/3.6/library/index.html
 # use: https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
@@ -147,8 +151,8 @@ def mysum(a):
 # main program
 
 # input from the user
-x = int(input("Give me the first number: "))
-y = int(input("Give me the second number: "))
+x = int(input("User, give me the first number: "))
+y = int(input("User, give me the second number: "))
 
 print('x before function = ', x)
 print('y before function = ', y)
@@ -336,7 +340,7 @@ factorial(n)
 print(n,"! = ", recfactorial(n), ' with recursive')
 print("")
 
-print("I am back in the main program.")
+print("The program is back in the main program.")
 print("")
 
 # recursion has a base case, which is the simplest case
