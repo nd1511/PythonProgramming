@@ -106,7 +106,7 @@ print(names)
 
 
 
-# Vazirani Algorithms, Book
+# Vazirani's Book: Algorithms
 # use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
 # https://github.com/haseebr/competitive-programming/blob/master/Materials/Algorithms%20by%20Vazirani%20and%20Dasgupta.pdf
@@ -152,7 +152,11 @@ print(names)
 
 
 
-# use: help(list)
+# we use the Python documentation
+# we use: https://docs.python.org/3/library/index.html
+
+# we use: help(list)
+# use: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 
 # main program
 list1 = []
@@ -549,7 +553,7 @@ print(alist)
 # Mergesort and Quicksort are both recursive Divide and Conquer algorithms.
 # Merge sort is a recursive algorithm that continually splits a list in half.
 
-# If the list is empty or has one item, it is sorted by definition (the base case).
+# If the list is empty or has one item, it is sorted by definition (i.e. the base case).
 
 # If the list has more than one item, we split the list and recursively
 # invoke a merge sort on both halves.
