@@ -9,6 +9,11 @@
 
 # we use: http://faculty.washington.edu/pisan/cpp/readings/McDowell_ch11_Advanced%20Topics.pdf
 
+# Data Science GitHub: https://www.analyticsvidhya.com/blog/2018/12/best-data-science-machine-learning-projects-github
+# generative adversarial networks (GANs): https://www.analyticsvidhya.com/blog/2017/06/introductory-generative-adversarial-networks-gans/
+
+# use: https://www.analyticsvidhya.com/blog/2018/12/best-data-science-machine-learning-projects-github
+
 # use: https://sigmoidal.io/machine-learning-for-trading/
 # we use: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2756331
 
@@ -80,6 +85,7 @@ def serialsearch(array, key):
 import time
 
 # l = [2,28,35,17,'a',6]
+
 l = []
 for i in range(-3000000, 3000000):
     l.append(i)
