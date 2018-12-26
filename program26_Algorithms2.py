@@ -33,7 +33,7 @@
 
 # babble sort
 
-# define babble sort
+# we define babble sort
 def babblesort(l):
     n = len(l)
     for i in range(1, n, 1):
@@ -152,6 +152,8 @@ print(names)
 
 
 
+# use: help(list)
+
 # main program
 list1 = []
 
@@ -178,6 +180,9 @@ print(list1.count(max(list1)))
 
 
 
+# we use: https://docs.python.org/3.6/library/index.html
+# use: https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
+
 # define function to separate list
 def separateList(list1):
     list2 = []
@@ -191,7 +196,6 @@ def separateList(list1):
 
     return list2, list3
 
-
 # main program
 listTest = [4, 3, 0, 0, -3, -6]
 
@@ -204,6 +208,10 @@ print(listTest > 0 * np.ones(len(listTest)))
 print(listTest < 0 * np.ones(len(listTest)))
 
 
+
+# we use HackerRank
+# nd1511, Nikolaos Dionelis, HackerRank
+# use: https://www.hackerrank.com/nd1511
 
 # main program
 
@@ -419,7 +427,7 @@ print(result)
 
 
 
-# define the select function
+# we define the select function
 def select(A, B, C):
     list1 = []
 
@@ -533,7 +541,6 @@ def mergeSort(alist):
     print("Merging ", alist)
 
 # main program
-
 alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 
 mergeSort(alist)
@@ -553,7 +560,6 @@ print(alist)
 
 # we use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 # https://github.com/haseebr/competitive-programming/blob/master/Materials/Algorithms%20by%20Vazirani%20and%20Dasgupta.pdf
-
 # we now use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
 # use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
