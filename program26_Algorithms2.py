@@ -2,7 +2,6 @@
 # https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 # we use: https://www.jpmorgan.com/global/research/machine-learning
-
 # use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 # Vazirani Algorithms, Book
@@ -68,7 +67,19 @@ print(names)
 
 
 
-# use babble sort
+# we use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# www.interactivepython.org
+# Problem Solving with Algorithms and Data Structures using Python - interactivepython.org
+
+# interactive textbook
+# use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# recursion and memoization
+# Fibonacci series and memoization
+# http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# we use babble sort
 def modifiedbabblesort(l, l2):
     n = len(l)
     for i in range(1, n, 1):
@@ -97,7 +108,6 @@ print(scores)
 print(names)
 
 # help(list)
-
 scores.reverse()
 names.reverse()
 
