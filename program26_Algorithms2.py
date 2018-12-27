@@ -183,7 +183,6 @@ print('')
 print(list1)
 
 print(sum(list1))
-
 print(max(list1))
 
 # max_value = max(list1)
@@ -349,7 +348,7 @@ print(result)
 
 
 
-# define the function
+# define the function functionList
 def functionList(A, B, C):
     result = []
 
@@ -516,6 +515,7 @@ print('The program found the number with ', str(i), ' tries.')
 # we use: http://faculty.washington.edu/pisan/cpp/readings/McDowell_ch11_Advanced%20Topics.pdf
 
 # The Merge Sort Algorithm
+# Merge Sort is a recursive Divide and Conquer algorithm.
 
 # we define Merge Sort
 def mergeSort(alist):
