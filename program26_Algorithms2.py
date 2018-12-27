@@ -173,7 +173,6 @@ list1 = []
 
 while True:
     num = int(input('Write a number: '))
-
     list1.append(num)
 
     if sum(list1) > 1000:
@@ -348,7 +347,7 @@ print(result)
 
 
 
-# define the function functionList
+# we define the function functionList
 def functionList(A, B, C):
     result = []
 
@@ -436,6 +435,23 @@ result = A + B + C
 result.sort()
 
 print('')
+print(result)
+
+import numpy as np
+
+A = [1, 2]
+B = [-1, -1, -1, 10]
+C = [11]
+
+# use: https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.concatenate.html
+result = np.concatenate((A, B, C), axis=0)
+
+# we use: np.concatenate()
+# https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.concatenate.html
+
+result = list(result)
+result.sort()
+
 print(result)
 
 
