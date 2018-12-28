@@ -27,6 +27,8 @@
 # use: https://sigmoidal.io/machine-learning-for-trading/
 # we use: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2756331
 
+# we now use: https://drive.google.com/open?id=1NLtR4uMVtxojIWXZOdU2jPQZrtuzNC5c
+
 # we use: https://docs.python.org/3.6/library/index.html
 # use: https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
 
@@ -192,6 +194,7 @@ print(max(list1))
 print(list1.count(max(list1)))
 
 # help(str) and help(list)
+# use: http://interactivepython.org/runestone/static/pythonds/Introduction/GettingStartedwithData.html
 
 
 
@@ -597,6 +600,9 @@ print(alist)
 # we now use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
 # use: https://github.com/jwang5675/ctci/blob/master/Cracking%20the%20Coding%20Interview%206th%20Edition.pdf
+
+# we use: http://interactivepython.org/runestone/static/pythonds/index.html
+# use: http://interactivepython.org/runestone/static/pythonds/Introduction/GettingStartedwithData.html
 
 names = []
 
