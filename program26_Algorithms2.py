@@ -31,6 +31,7 @@
 # use: https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
 
 # babble sort
+# use: http://interactivepython.org/runestone/static/pythonds/index.html#
 
 # we define babble sort
 def babblesort(l):
@@ -190,6 +191,8 @@ print(max(list1))
 # help(list)
 print(list1.count(max(list1)))
 
+# help(str) and help(list)
+
 
 
 # we use: https://docs.python.org/3.6/library/index.html
@@ -243,7 +246,6 @@ point2 = complex(x2, y2)
 # use: phase(point2)
 
 print('')
-
 print(math.degrees(cmath.phase(point1)))
 print(math.degrees(cmath.phase(point2)))
 
@@ -532,6 +534,8 @@ print('The program found the number with ', str(i), ' tries.')
 
 # The Merge Sort Algorithm
 # Merge Sort is a recursive Divide and Conquer algorithm.
+
+# we use: http://interactivepython.org/runestone/static/pythonds/index.html#
 
 # we define Merge Sort
 def mergeSort(alist):
