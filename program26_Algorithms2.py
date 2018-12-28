@@ -1,3 +1,86 @@
+# use: https://drive.google.com/open?id=1sbnRuR26hEXK8WXlJCIQFnndPZI2M1nx
+# we use: https://drive.google.com/open?id=1NLtR4uMVtxojIWXZOdU2jPQZrtuzNC5c
+
+# use: https://news.efinancialcareers.com/dk-en/285249/machine-learning-and-big-data-j-p-morgan
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# we use: https://www.jpmorgan.com/global/research/machine-learning
+# use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# Quandl: import quandl, https://www.quandl.com/tools/python
+# Bloomberg: BLPAPI, https://www.bloomberglabs.com/api/libraries/
+
+# Webscraping: BeautifulSoup, import bs4, PyPi
+# Webscraping: import Selenium, PyPi
+
+# Twitter: import twitter, PyPi
+# LinkedIn: import python-linkedin, PyPi
+
+# we now use: https://drive.google.com/open?id=1sbnRuR26hEXK8WXlJCIQFnndPZI2M1nx
+# we use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# Quandl: import quandl, https://www.quandl.com/tools/python
+import quandl
+
+# LinkedIn: import python-linkedin, PyPi
+import linkedin
+
+# Webscraping: import BeautifulSoup, PyPi
+import bs4
+
+# Webscraping: import Selenium, PyPi
+import selenium
+
+# we use: https://drive.google.com/open?id=1sbnRuR26hEXK8WXlJCIQFnndPZI2M1nx
+
+# we use pandas
+import pandas as pd
+#import pandas_datareader.data as web
+
+import datetime
+from numpy import nan
+
+# we use selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# we create a pandas dataframe to store the scraped data
+df = pd.DataFrame(index=range(40), columns=['company', 'quarter', 'quarter_ending', 'total_revenue', \
+                                            'gross_profit', 'net_income', 'total_assets', 'total_liabilities', \
+                                            'total_equity', 'net_cash_flow'])
+
+url_form = "http://www.nasdaq.com/symbol/{}/financials?query={}&data=quarterly"
+financials_xpath = "//tbody/tr/th[text() = '{}']/../td[contains(text(), '$')]"
+
+# define the company ticker symbols
+symbols = ["amzn", "aapl", "fb", "ibm", "msft"]
+
+# file: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# Webscraping: BeautifulSoup, import bs4, PyPi
+from bs4 import BeautifulSoup
+
+import re
+import os
+
+import pandas as pd
+from pandas import ExcelWriter
+
+import sys
+
+# we use: urllib.request
+import urllib.request
+# The urllib2 module has been split across two modules in Python 3 named urllib.request and urllib.error.
+
+# from urllib.request, we use ProxyHandler
+proxy_support = urllib.request.ProxyHandler({"https" : "https://proxy.companyname.net:8080"})
+
+opener = urllib.request.build_opener(proxy_support)
+urllib.request.install_opener(opener)
+
 # use: https://news.efinancialcareers.com/dk-en/285249/machine-learning-and-big-data-j-p-morgan
 # https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
@@ -32,7 +115,7 @@
 # we use: https://docs.python.org/3.6/library/index.html
 # use: https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
 
-# babble sort
+# we use babble sort
 # use: http://interactivepython.org/runestone/static/pythonds/index.html#
 
 # we define babble sort
@@ -491,7 +574,7 @@ C = [4, 5, 6, 7]
 print('')
 print(select(A, B, C))
 
-# we use random
+# we use randint
 from random import randint
 
 # A = randint(0, 1)
@@ -556,6 +639,7 @@ def mergeSort(alist):
         i = 0
         j = 0
         k = 0
+
         while i < len(lefthalf) and j < len(righthalf):
             if lefthalf[i] < righthalf[j]:
                 alist[k] = lefthalf[i]
