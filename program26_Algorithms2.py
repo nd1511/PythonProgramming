@@ -280,6 +280,7 @@ print(list1.count(max(list1)))
 # use: http://interactivepython.org/runestone/static/pythonds/Introduction/GettingStartedwithData.html
 
 # Fibonacci series
+# recursion and memoization
 
 # define the recursion for the Fibonacci series
 def Fib(n):
@@ -287,7 +288,7 @@ def Fib(n):
         return 1
     elif n == 1:
         return 1
-    else:
+    elif n > 1:
         return Fib(n-1) + Fib(n-2)
 
 # main program
@@ -298,6 +299,45 @@ print(Fib(5))
 
 # we use: https://www.youtube.com/watch?v=Qk0zUZW-U_M
 # http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# Fibonacci series and memoization
+# http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# we store the values
+Fib_cache = {}
+
+def Fib2(n):
+    if n in Fib_cache:
+        return Fib_cache[n]
+
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    elif n > 1:
+        value1 = Fib2(n-1) + Fib2(n-2)
+
+        # store the value
+        Fib_cache[n] = value1
+
+        # return the value
+        return value1
+
+# main program
+print('')
+
+for n in range(0, 10+1, 1):
+    print(n, ' term: ', Fib2(n))
+
+# use memoization
+from functools import lru_cache
+
+# we store the first 1000 values
+lru_cache(maxsize = 1000)
+
+print('')
+for n in range(0, 10+1, 1):
+    print(n, ' term: ', Fib(n))
 
 
 
