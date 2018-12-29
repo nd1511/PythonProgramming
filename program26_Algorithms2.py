@@ -330,10 +330,20 @@ def counter4(list1):
 
 # we have used: "if list1[i] not in list1[:i]:"
 
-# if a[i] not in a[:i]:
-# use: if list1[i] not in list1[:i]:
+# "if a[i] not in a[:i]:"
+# use: "if list1[i] not in list1[:i]:"
 
 print(counter4(a))
+
+print('')
+a = [4, 5, 6, 5, 6, 7, 6, 5, 4, 5, 6]
+
+# a[:i] is the same as a[0:i:1]
+# we now use "if a[i] not in a[:i]:"
+
+for i in range(len(a)):
+    if a[i] not in a[:i]:
+        print(a[i])
 
 
 
@@ -383,15 +393,17 @@ for i in b:
 for i in b:
     print (i)
 
-# use "list"
+# create a generator object
 b = (k**3 for k in a if k % 2 == 0 and k % 4 == 0)
+# use dynamic memory with the generator object
 
 print('')
+# use "list(.)"
 print(list(b))
 
 # we filter a list and produce a new list
 c = ((k, k+1) for k in a)
-# we use tuples: we use a list of tuples
+# we use tuples: we create a list of tuples
 
 print('')
 print(list(c))
@@ -400,11 +412,35 @@ print(list(c))
 c = ((k, k/2) for k in a)
 print(list(c))
 
+# "/2" is float division and "//2" is integer division
+c = ((k, k//2) for k in a)
+print(list(c))
+
 # list comprehention: filter kai map
-d = ("x"*k for k in a)
+d = ('x'*k for k in a)
+# "'x'*k" means repeat 'x' k times
+
+print('')
 print(list(d))
 
-# list comprehentions filter kai map
+# "*i" means repeat i times
+d = ('x'*i for i in a if i%2 == 1)
+print(list(d))
+
+print('')
+a = [3,4,5,4,5,6,7,8,9]
+
+# use: "if a[i] not in a[:i]"
+d = ('o'*a[i] for i in range(len(a)) if a[i] not in a[:i])
+print(list(d))
+
+# filter and map
+# map because we create a new list or generator object
+
+# use "set(list1)" for no dublicates
+# build-in functions: https://docs.python.org/3/library/functions.html
+
+# list comprehentions perform filtering kai mapping
 list1 = [1,2,3]
 list2 = ("a", "b", "c")
 
@@ -423,7 +459,31 @@ list2 = ("a", "", "c")
 list3 = set((i,j) for i in list1 for j in list2 if i % 2 == 0 and len(j) > 0)
 print(list3)
 
+list3 = [2,4,-1,-2,2,2,8,1,8]
+list4 = set(i for i in list1 for j in list3 if i==j)
+print(list(list4))
+
+list3 = [2,4,-1,-2,2,2,8,1,8]
+#list4 = [i for i in list1 for j in list3 if i==j]
+
+# use: if list1[i] not in list1[:i]
+list4 = [list1[i] for i in range(len(list1)) for j in range(len(list3)) if list1[i] not in list1[:i] and \
+         list3[j] not in list3[:j] and list1[i]==list3[j]]
+print(list4)
+
 # list comprehentions perform both filtering kai mapping
+
+# use list comprehension
+list1 = [-4, 4, -3, -5, 2, -1, 9]
+list2 = [k**2 for k in list1]
+
+print('')
+print(list1)
+print(list2)
+
+# use list comprehention for filtering kai mapping
+list2 = [(abs(k)+1)**2 for k in list1 if k%2 == 0]
+print(list2)
 
 # built-in functions: all, any
 # any: return true when at least one element is true
