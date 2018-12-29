@@ -28,7 +28,7 @@ import linkedin
 # Webscraping: import BeautifulSoup, PyPi
 import bs4
 
-# Webscraping: import Selenium, PyPi
+# do webscraping: import Selenium, PyPi
 import selenium
 
 # we use: https://drive.google.com/open?id=1sbnRuR26hEXK8WXlJCIQFnndPZI2M1nx
@@ -111,6 +111,21 @@ urllib.request.install_opener(opener)
 # we use: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2756331
 
 # we now use: https://drive.google.com/open?id=1NLtR4uMVtxojIWXZOdU2jPQZrtuzNC5c
+
+# use PyTorch
+import torch
+
+x = torch.rand(5,3)
+print(x)
+
+x = torch.zeros(5, 3)
+print(x)
+
+x = torch.FloatTensor([5.5, 3])
+print(x)
+
+y = torch.rand(2)
+print(torch.add(x, y))
 
 # we use: https://docs.python.org/3.6/library/index.html
 # use: https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range
@@ -214,6 +229,7 @@ def insertionsort(array):
         print('gia ton ', i, ' oro tis listas')
         v = array[i]
         j = i
+
         while j > 0 and array[j - 1] > v:
             print('pairno to ', j - 1, 'oro tis ipolipis listas kai sygrino tin timi toy me ayti toy', i,
                   'kai kano allagi timon')
