@@ -228,10 +228,9 @@ print("")
 print(list1[-1:0:-1] + [list1[0]])
 print("")
 
+#help(list)
 print(list1[::-2])
 print("")
-
-#help(list)
 
 # Kaggle competitions
 # https://www.kaggle.com/nd1511
@@ -443,6 +442,32 @@ def fib(n) :
 # Vazirani's Book - Algorithms
 # we use: http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
 
+# file: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# functions have global or local variables
+# global variables change the memory in the main program
+
+# def myFunction(): global x,y
+# use "global x,y" for less memory
+
+list1 = ['a', 5, 4, -1, 'g', 'a', 'a', 3]
+# use: "help(list)"
+print(list1.count('a'))
+
+print('')
+
+# traverse the list
+#for i in list1:
+for i in range(len(list1)):
+    # we use: "if list1[i] not in list1[:i]:"
+    if list1[i] not in list1[:i]:
+        print(list1[i])
+
+# O(n) complexity is bad because double the elements means double the time
+
+# binary search needs a sorted list
+# binary search is very fast: 9 to 10 searches needed only
+
 
 
 # babble sort
@@ -534,7 +559,6 @@ def babblesort2(l, l2):
             if l[j] < l[j - 1]:
                 # swap
                 l[j], l[j - 1] = l[j - 1], l[j]
-
                 # swap
                 l2[j], l2[j - 1] = l2[j - 1], l2[j]
 
