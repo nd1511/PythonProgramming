@@ -279,6 +279,26 @@ print(list1.count(max(list1)))
 # help(str) and help(list)
 # use: http://interactivepython.org/runestone/static/pythonds/Introduction/GettingStartedwithData.html
 
+# Fibonacci series
+
+# define the recursion for the Fibonacci series
+def Fib(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return Fib(n-1) + Fib(n-2)
+
+# main program
+print('')
+
+print(Fib(4))
+print(Fib(5))
+
+# we use: https://www.youtube.com/watch?v=Qk0zUZW-U_M
+# http://interactivepython.org/runestone/static/pythonds/index.html#
+
 
 
 # we use: https://docs.python.org/3.6/library/index.html
