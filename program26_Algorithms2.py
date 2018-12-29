@@ -226,17 +226,13 @@ print(names)
 # define insertion sort
 def insertionsort(array):
     for i in range(1, len(array)):
-        print('gia ton ', i, ' oro tis listas')
         v = array[i]
         j = i
 
         while j > 0 and array[j - 1] > v:
-            print('pairno to ', j - 1, 'oro tis ipolipis listas kai sygrino tin timi toy me ayti toy', i,
-                  'kai kano allagi timon')
             array[j] = array[j - 1]
             j = j - 1
         array[j] = v
-        print('vazo stin thesi toy ', j, 'tin timi tou arxikou ', i, 'apo opou xekinisa')
 
     return array
 
@@ -261,6 +257,300 @@ print(names)
 insertionsort(names)
 
 print(names)
+
+# use: https://docs.python.org/3/library/functions.html
+
+# we use the Python built-in functions
+# https://docs.python.org/3/library/functions.html
+
+import numpy as np
+
+# find the number of even numbers in the list
+a = [4, 5, 6, 5, 6, 7, 6, 5, 4, 5, 6]
+
+counter0 = 0
+for i in a:
+    if i % 2 == 0:
+        counter0 += 1
+
+print('')
+print(counter0)
+
+def counter1(list1):
+    count1 = 0
+    for i in list1:
+        if i % 2 == 0:
+            count1 += 1
+
+    return count1
+
+print(counter1(a))
+
+# find how many elements in b exist in a
+b = [1, 2, 3, 5]
+
+def counter2(list1, list2):
+    count1 = 0
+    for i in list2:
+        for j in list1:
+            if i == j:
+                count1 += 1
+                break
+
+    return count1
+
+print('')
+print(counter2(a, b))
+
+# find how many elements in b exist in a
+b = [-1, 0, 2, 3, 5, 6]
+print(counter2(a, b))
+
+# find how many double entries exist in a list
+def counter3(list1):
+    # list2 = list(set(list1))
+    list2 = set(list1)
+
+    return len(list1) - len(list2)
+
+print('')
+print(counter3(a))
+
+# find how many double entries exist in a list
+def counter4(list1):
+    count1 = 0
+    for i in range(len(list1)):
+        if list1[i] not in list1[:i]:
+            for j in range(i + 1, len(list1)):
+                if list1[i] == list1[j]:
+                    count1 += 1
+                    break
+
+    return count1
+
+# we have used: "if list1[i] not in list1[:i]:"
+
+# if a[i] not in a[:i]:
+# use: if list1[i] not in list1[:i]:
+
+print(counter4(a))
+
+
+
+# use LIST COMPREHENSION
+# we use: https://docs.python.org/3/library/functions.html
+
+# find how many numbers are even using list comprehension
+a = [3,4,5,4,5,6,7,8,9]
+
+# we use list comprehensions
+b = len([k for k in a if k % 2 == 0])
+
+print('')
+print(b)
+
+b = [k for k in a if k % 2 == 0]
+print(b)
+
+b = [k**2 for k in a if k % 2 == 0]
+print(b)
+
+# use generator objects
+b = (k**2 for k in a if k % 2 == 0 and k % 4 == 0)
+print(list(b))
+
+# list comprehensions in parenthesis => generator object
+
+# we use generator objects instead of lists
+# generator object are from list comprehensions in parenthesis
+
+print('')
+
+# we use generator objects
+b = (k**3 for k in a if k % 2 == 0 and k % 4 == 0)
+print(b)
+
+# generator objects give us their values when we call them with a for loop
+
+# generator objects give us their values only once
+# a generator object gives us its values only one time when we use a for loop
+
+# use a for loop for generator objects
+for i in b:
+    print (i)
+
+# this will produce nothing due to the generator object
+for i in b:
+    print (i)
+
+# use "list"
+b = (k**3 for k in a if k % 2 == 0 and k % 4 == 0)
+
+print('')
+print(list(b))
+
+# we filter a list and produce a new list
+c = ((k, k+1) for k in a)
+# we use tuples: we use a list of tuples
+
+print('')
+print(list(c))
+
+# filter the list and produce a new list
+c = ((k, k/2) for k in a)
+print(list(c))
+
+# list comprehention: filter kai map
+d = ("x"*k for k in a)
+print(list(d))
+
+# list comprehentions filter kai map
+list1 = [1,2,3]
+list2 = ("a", "b", "c")
+
+# list with tuples with all combinations of 1 και 2
+list3 = set((i,j) for i in list1 for j in list2)
+
+print('')
+print(list3)
+
+list3 = set((i,j) for i in list1 for j in list2 if i % 2 == 0)
+print(list3)
+
+print('')
+list2 = ("a", "", "c")
+
+list3 = set((i,j) for i in list1 for j in list2 if i % 2 == 0 and len(j) > 0)
+print(list3)
+
+# list comprehentions perform both filtering kai mapping
+
+# built-in functions: all, any
+# any: return true when at least one element is true
+
+# built-in functions: all, any
+# all: return false when at least one element is false
+
+# check if negative number exists
+any(p<0 for p in a)
+
+print('')
+
+print(any(p<0 for p in a))
+print(not all(p>=0 for p in a))
+
+# check if x exists in the list
+x = 8
+
+print('')
+
+#any(i==x for i in a)
+print(any(i==x for i in a))
+
+x = 100
+print(any(i==x for i in a))
+
+
+
+# we sort the list
+# use either "sorted" or "sort"
+
+# we use either "sorted" or "sort"
+# "sorted" return a new list that is sorted
+# "sort" sorts the list itself (not creating a new list)
+
+print('')
+a = [3, 4, -3, 2, -3, -4, 3, 31]
+
+b = sorted(a)
+a.sort()
+
+print(a)
+print(b)
+
+# we use either "sorted" or "sort"
+# "sorted": parameter reverse
+
+a = [3, 4, -3, 2, -3, -4, 3, 31]
+b = sorted(a, reverse=True)
+
+print(b)
+print('')
+
+# "sorted": parameter key
+# the parameter key is a function or a lambda expression
+
+# we use lambda expressions
+
+b = sorted(a, reverse=True, key=abs)
+print(b)
+
+# "sorted": parameter key is either a function or a lambda expression
+
+# "sorted": use a function or a lambda expression
+# sorting is based on the result of the function or the lambda expression
+
+# define a function for the "sorted" parameter key
+def myfunction(k):
+    if k % 2 == 0:
+        return k
+    else:
+        return k ** 2
+
+a = [3, 4, -3, 2, -3, -4, 3, 31]
+c = a
+
+b = sorted(a, reverse=True, key=myfunction)
+
+print('')
+print(b)
+
+# key functions can be any one-to-one function
+
+# use: lamda parameters : return_value
+# lamda expression in Python: "lamda parameters : return_value"
+
+# use: x if x >= 0 else -x
+# we can use if in lambda expressions: "x if x >= 0 else -x"
+
+# sorting with -x
+b = sorted(a, key=lambda x: -x)
+# lambda expression: "lambda x: -x"
+
+print('')
+print(b)
+
+# sorting with abs
+b = sorted(a, key=abs)
+print(b)
+
+# use the previously defined function "my function"
+
+# we use lamda expression for "my function"
+b = sorted(a, key=lambda k: k if k % 2 == 0 else k ** 2)
+
+print('')
+print(b)
+
+# we use lamda expression and if statement
+b = sorted(a, key=lambda k: k if k % 4 == 0 else k ** 3)
+print(b)
+
+# we define function that has a function as a parameter
+def myfunction2(list1, function1):
+    for i in list1:
+        function1(i)
+
+print('')
+myfunction2(a, print)  # print every value
+
+print('')
+
+# myfunction2(sorted(a), lambda x : print(-x+y))
+myfunction2(sorted(a), lambda x: print(-x))
+
+print('')
+myfunction2(a, lambda x: print(x if x % 2 == 0 else x ** 2))
 
 
 
