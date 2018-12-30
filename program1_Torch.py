@@ -9,6 +9,8 @@
 # we use PyTorch
 import torch
 
+import numpy as np
+
 # create a tensor
 x = torch.Tensor([1, 2, 3])
 print(x)
@@ -45,7 +47,6 @@ n = 2
 
 # m is the number of training points
 m = 300
-
 # m is the number of training samples, m>>n
 
 # randn(.,.) is Gaussian with zero-mean and unit variance
@@ -584,4 +585,13 @@ from numpy import nan
 # we use an if statement and a lambda expression
 array2 = sorted(array1, reverse = False, key = lambda x : x if x%2 == 1 else nan)
 print(array2)
+
+# map(.) and filter(.) build-in functions
+# for build-in functions: https://docs.python.org/3/library/functions.html
+
+print('')
+
+# use the map(.) build-in function
+print(list(map(myfunction, array1)))
+print(list(map(lambda x : -x**2, array1)))
 
