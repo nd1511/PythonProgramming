@@ -1,3 +1,25 @@
+# website: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# Machine Learning, AI, Big Data and Data Science
+# AI: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# use: http://interactivepython.org/runestone/static/pythonds/index.html
+
+# Data Structures, Algorithms and Data Science
+# website: http://interactivepython.org/runestone/static/pythonds/index.html
+
+# List of interview questions:
+# www.github.com/MaximAbramchuck/awesome-interview-questions
+
+# The main website for Python coding questions:
+# https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+# Python online course: Interactive Python:
+# http://interactivepython.org/runestone/static/pythonds/index.html
+
+# Use the book (http://interactivepython.org/runestone/static/pythonds/index.html) as a roadmap.
+# Recursion with finite memory and stack. Trees and graphs.
+
 import numpy as np
 
 """
@@ -12,6 +34,9 @@ The syntax is: result = [transform iteration filter].
 filter => filtering condition
 The transform occurs for every iteration if the filtering condition is met.
 """
+
+# use: http://interactivepython.org/runestone/static/pythonds/BasicDS/toctree.html
+# we now use: http://interactivepython.org/runestone/static/pythonds/index.html
 
 # list comprehensions: one-line code
 
@@ -140,6 +165,13 @@ print('')
 d4 = {k: v for k, v in enumerate('Good Year John')}
 print(d4)
 
+# use: https://docs.python.org/2.3/whatsnew/section-enumerate.html
+
+# we use "enumerate(.)"
+# https://docs.python.org/2.3/whatsnew/section-enumerate.html
+
+# website: http://book.pythontips.com/en/latest/enumerate.html
+
 # dict with all letters in "Good Year John"
 # without the letters in "John"
 
@@ -193,6 +225,31 @@ print('A & B = ',a&b) #intersection
 print('A ^ B = ',a^b) #symmetric difference
 print('')
 
+# sets => use Venn diagram
+# a Venn diagram solves the problem with sets
+
+# Venn diagram for A-B, A|B, A&B
+
+# AUB is A|B
+# AUB is (A OR B)
+# AUB is (A Union B)
+
+# A&B is (A Intersection B)
+# A^B is (A XOR B)
+
+# XOR = exclusive OR, A XOR B is A^B with sets
+# XOR = symmetric difference
+
+# XOR Vs OR: XOR is ^ while OR is |
+# OR = | = Union, XOR is exclusive OR
+
+# use: http://mattturck.com/bigdata2018/
+# book: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# (1) https://www.jpmorgan.com/global/research/machine-learning
+# (2) https://news.efinancialcareers.com/uk-en/285249/machine-learning-and-big-data-j-p-morgan
+# (3) https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
 
 
 """
@@ -230,6 +287,15 @@ def dfs(graph, start):
 
     return visited
 
+# use "extend(.)"
+# website: https://www.tutorialspoint.com/python/list_extend.htm
+
+# we use: https://www.tutorialspoint.com/python/list_extend.htm
+# use: https://pythontips.com/2013/09/29/the-python-yield-keyword-explained/
+
+# use "yield" instead of "return"
+# website: https://pythontips.com/2013/09/29/the-python-yield-keyword-explained/
+
 # do depth first search (dfs)
 def dfs_paths(graph, start, goal):
     stack = [(start, [start])]
@@ -242,6 +308,15 @@ def dfs_paths(graph, start, goal):
                 yield path + [next]
             else:
                 stack.append((next, path + [next]))
+
+# depth first search
+# DFS: https://en.wikipedia.org/wiki/Depth-first_search
+
+# we use "next"
+# use: https://www.programiz.com/python-programming/methods/built-in/next
+
+# website: https://stackoverflow.com/questions/1733004/python-next-function
+# we use: https://www.programiz.com/python-programming/methods/built-in/next
 
 # breadth first search (bfs)
 def bfs(graph, start):
@@ -297,6 +372,12 @@ print(bfs(graph1, 'A'))
 print(list(bfs_paths(graph1, 'C', 'F')))
 print(list(bfs_paths(graph1, 'A', 'F')))
 
+# DFS VS BFS
+# Graphs: use DFS (or BFS) with or without recursion
+
+# DFS => stack
+# BFS => queue
+
 # pandas use dictionaries with list in key and with list in value
 
 # dictionaries have keys and values
@@ -315,11 +396,122 @@ print(list(bfs_paths(graph1, 'A', 'F')))
 
 
 
+import librosa
+import soundfile as sf
+
+import numpy as np
+
+magnitude = 0.1
+rate = 44100
+
+t = np.linspace(0, 10, rate * 10)
+
+sampling_rate = 16000
+audio = magnitude * np.sin(2 * np.pi * 100 * t)
+
+wav_file = 'test_file.wav'
+sf.write(wav_file, audio, sampling_rate, subtype='PCM_32')
+
+audio_sf, _ = sf.read(wav_file)
+audio_lr, _ = librosa.load(wav_file, sr=None, mono=False)
+
+print('')
+
+#max(np.abs(audio_sf))
+print(max(np.abs(audio_sf)))
+
+#max(np.abs(audio_lr))
+print(max(np.abs(audio_lr)))
+print('')
+
+# we use enumerate(.)
+# use: http://book.pythontips.com/en/latest/enumerate.html
+
+#list1 = [4, 5, 1, 2, -4, -3, -5, 0, 0, -5, 1]
+list1 = [4, 5, 1, -5, 0, -5]
+
+for counter, value in enumerate(list1):
+    print(counter, value)
+print('')
+
+for counter, value in enumerate(list1, 1):
+    print(counter, value)
+print('')
+
+# we use: https://www.geeksforgeeks.org/enumerate-in-python/
+
+list2 = ['apples', 'bananas', 'grapes', 'pears']
+
+counter_list = list(enumerate(list2, 1))
+print(counter_list)
+
+# dict(list1) when list1 is a list of tuples
+counter_list2 = dict(enumerate(list2, 1))
+print(counter_list2)
+
+# dict(list1) or set(list1) or list(set1)
+# set(.) => remove the dublicates
+
+print('')
+print(set('ABCDABEBF'))
+# set has no dublicate entries
+
+# string str is a list of characters
+# from list to set, and from string to set
+
+# use: help(list)
+# we use: help(list.pop)
+
+# create graphs
+#graph1 = {'A' : set(.)}
+graph1 = {'A' : set(list1)}
+
+print(graph1)
+print('')
+
+# stack => LIFO
+# LIFO, stack: extend(.) and pop(.)
+# LIFO, stack: append(.) and pop(.)
+
+# queue => FIFO
+# FIFO, queue: extend(.) and pop(0)
+# FIFO, queue: append(.) and pop(0)
+
+# Depth First Search (DFS) => stack
+# Breadth First Search (BFS) => queue
+
+# use "yield"
+# yield => return + Generator Object
+# Generator Objeccts for better memory, dynamic memory
+
+# "yield" creates a generator object
+# generator objects can be only accessed one time (i.e. once)
+
+# we use "exec(.)"
+# https://www.geeksforgeeks.org/exec-in-python/
+
+# use: exec(.)
+from math import *
+exec("print(factorial(5))", {"factorial":factorial})
+
+exec("print(factorial(4))", {"factorial":factorial})
+# https://www.programiz.com/python-programming/methods/built-in/exec
+
+# use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# we now use: https://blog.dataiku.com/data-science-trading
+# Big Data: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# we use: https://www.datasciencecentral.com/profiles/blogs/j-p-morgan-s-comprehensive-guide-on-machine-learning
+# https://towardsdatascience.com/https-medium-com-skuttruf-machine-learning-in-finance-algorithmic-trading-on-energy-markets-cb68f7471475
+
+
+
 # define a list
 list_ls = [6, 7, 8, 10]
 print('')
 
-# print the firsr item in the list
+# print the first item in the list
 print(list_ls[0])
 
 # print the last item in the list
@@ -432,6 +624,7 @@ class car:
         self.year = year
         self.state = "parked"
         self.stopping = "not stopping"
+
     # we define a function for this object
     def start(self):
         if self.year<=1990:
@@ -439,6 +632,7 @@ class car:
         else:
             self.state = "going"
         #print(self.state)
+
     def stop(self, str1):
         self.stopping = str1
 
@@ -672,8 +866,10 @@ fig = plt.figure(figsize=(10, 10))
 
 # create our first axes to plot our data in space
 ax1 = fig.add_subplot(121, projection='3d')  # start with 111
+
 x1 = np.arange(2)  # meshgrid takes two vectors which would be a range of numbers along each axis
 x2 = np.arange(2)  # it outputs two matrices where a pair of the same position element gives a coordinate
+
 x1, x2 = np.meshgrid(x1, x2)  # covering the entire domain of the input plane
 ax1.scatter(X.data[:, 0], X.data[:, 1], Y.data[:])  # plot data points
 ax1.set_xlabel('Windows')
