@@ -115,6 +115,9 @@ print(d3.values())
 print(d3.items())
 print('')
 
+# list1 = dict1.items()
+# ".items()" returns a list of tuples
+
 # traverse a dictionary
 for food in d1:
     print('{} costs {}'.format(food, d1[food]))
@@ -143,6 +146,17 @@ print(d4)
 d5 = {k: v for k, v in enumerate("Good Year John") if v not in "John"}
 print(d5)
 print('')
+
+# dict comprehensions => one-line code
+
+# list1 = dict1.keys()
+# ".keys()" returns a list
+
+# list2 = dict1.values()
+# ".values()" returns a list
+
+# list3 = dict1.items()
+# ".items()" returns a list of tuples
 
 
 
@@ -184,10 +198,24 @@ print('')
 """
 Graphs
 Use dict to create graphs.
+
+Graphs are dictionaries in Python.
+Dictionaries have keys and values, where the key is the index.
+
+Graphs solve maze problems.
+We have directed and undirected graphs.
 """
 
-# graphs
-# binary graphs are a special case of graphs
+# traverse a graph
+# graphs: binary graphs are a special case of graphs
+
+# maze => graphs
+# graphs solve maze problem
+
+# we use a dictionary to create a graph
+
+# graphs are dictionaries
+# use dictionaries, lists and sets
 
 # depth first search (dfs)
 def dfs(graph, start):
@@ -244,12 +272,21 @@ def bfs_paths(graph, start, goal):
             else:
                 queue.append((next, path + [next]))
 
+# crate a graph using a dictionary
 graph1 = {'A': set(['B', 'C']),
           'B': set(['A', 'D', 'E']),
           'C': set(['A', 'F']),
           'D': set(['D']),
           'E': set(['B', 'F']),
           'F': set(['C', 'E'])}
+
+# hashmap = dict
+# dictionaries are hashmaps
+
+# use: help(dict)
+# we use: help(dict) and help (list)
+
+# dict: key and value and index = key
 
 print(dfs(graph1, 'A'))
 print(list(dfs_paths(graph1, 'C', 'F')))
@@ -259,6 +296,22 @@ print(bfs(graph1, 'A'))
 
 print(list(bfs_paths(graph1, 'C', 'F')))
 print(list(bfs_paths(graph1, 'A', 'F')))
+
+# pandas use dictionaries with list in key and with list in value
+
+# dictionaries have keys and values
+# pandas => list in both key and value
+
+# help(dict)
+
+# use: dict(.), set(.), list(.)
+# we use: len(dict1)
+
+# from list to dict: dict(list1)
+# dict(list1) where list1 has tuples, list1 is a list of tuples
+
+# for OOP, we use classes
+# define classes for OOP in Python
 
 
 
@@ -612,8 +665,9 @@ lr = 0.05  # what proportion of our gradient do we want to update our parameters
 X = Variable(torch.rand(m, n))
 Y = Variable(2 * X.data[:, 0] + 1.6 * X.data[:, 1] + 1)
 
-# create a figure
 plt.ion()
+
+# create a figure
 fig = plt.figure(figsize=(10, 10))
 
 # create our first axes to plot our data in space
