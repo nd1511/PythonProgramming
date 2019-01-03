@@ -1,6 +1,270 @@
+import numpy as np
+
+"""
+comprehensions
+list comprehensions
+
+A list comprehension is created using [i for i in list1 if i%2 == 0].
+The output of a list comprehension is a new list.
+
+The syntax is: result = [transform iteration filter].
+
+filter => filtering condition
+The transform occurs for every iteration if the filtering condition is met.
+"""
+
+# list comprehensions: one-line code
+
+# The syntax is: result = [transform iteration filter].
+# The order in the list matters and the new list has this order.
+
+lista = [1,2,3,4,5,6,7,8,9]
+print([i*2 for i in lista])
+
+lista.pop()
+print(lista)
+
+lista.pop(0)
+print(lista)
+print('')
+
+# print all the multiples of 3 and 7 from 1 to 100 using list comprehension
+list1 = [i for i in range(1,101) if i%3 == 0 and i%7 == 0]
+print(list1)
+
+# 2D array 6x6 with zeros
+array2D = [[0 for i in range(0,6)] for j in range(0,6)]
+print(array2D)
+
+array2D[0][0] = 1
+print(array2D)
+print('')
+
+# 3D array 6x6 with zeros
+array3D = [[[0 for i in range(6)] for j in range(6)] for k in range(6)]
+print(array3D)
+
+print(array3D[0][0][0])
+print('')
+
+
+
+"""
+dictionary
+
+dict = HashMap
+dictionaries have keys and values
+"""
+
+# =============================================================================
+# # Create a function that adds a specific value to the value of a key
+# # and if the key does not exist, then create the key.
+# =============================================================================
+
+def function1(dict1, key1, value1):
+    if key1 not in dict1:
+        dict1[key1] = 0
+
+    dict1[key1] += value1
+    return dict1
+
+def function2(dict1, key1, value1):
+    dict1[key1] = dict1.get(key1, 0) + value1
+    return dict1
+
+d1 = {
+    'milk': 3.67,
+    'butter': 1.95,
+    'bread': 1.67,
+    'cheese': 4.67
+}
+print(d1)
+
+d1['butter'] = 2.35
+print(d1)
+print('')
+
+d2 = {
+    1: 3.67,
+    2: 1.95,
+    3: 1.67,
+    4: 4.67
+}
+print(d2)
+
+d2[2] = 2.35
+print(d2)
+print('')
+
+d3 = dict([('milk', 3.76), ('butter', 1.95), ('bread', 1.67), ('cheese', 4.67)])
+print(d3)
+
+del d3['butter']
+print(d3)
+print('')
+
+# we use ".format(.)"
+print('length of dictionary d3 = {} '.format(len(d3)))
+
+print('length of dictionary d3 = {} compared to {} i in {} '.format(len(d3), d1, d2))
+print('')
+
+print(d3.keys())
+print(d3.values())
+
+print(d3.items())
+print('')
+
+# traverse a dictionary
+for food in d1:
+    print('{} costs {}'.format(food, d1[food]))
+
+print('')
+d1 = function1(d1, 'whine', 4.15)
+
+d1 = function1(d1, 'milk', 1)
+print(d1)
+
+d1 = function2(d1, 'whine2', 3.15)
+d1 = function2(d1, 'milk', 1)
+
+print(d1)
+print('')
+
+# use comprehensions
+
+# use dict comprehension
+d4 = {k: v for k, v in enumerate('Good Year John')}
+print(d4)
+
+# dict with all letters in "Good Year John"
+# without the letters in "John"
+
+d5 = {k: v for k, v in enumerate("Good Year John") if v not in "John"}
+print(d5)
+print('')
+
+
+
+"""
+Sets
+A set has no dublicates.
+"""
+
+s = {'a','b','a','c','d'}
+print(s)
+
+s2 = set("Good Year John")
+print(s2)
+print('')
+
+a = set('12345678a')
+b = set('1234b')
+
+print('A = ',a)
+print('B = ',b)
+print('')
+
+a.add('9')
+b.remove('4')
+
+print('A = ',a)
+print('B = ',b)
+print('')
+
+print('A - B = ',a-b) #difference
+print('A | B = ',a|b) #Union
+
+print('A & B = ',a&b) #intersection
+print('A ^ B = ',a^b) #symmetric difference
+print('')
+
+
+
+"""
+Graphs
+Use dict to create graphs.
+"""
+
+# graphs
+# binary graphs are a special case of graphs
+
+# depth first search (dfs)
+def dfs(graph, start):
+    visited, stack = set(), [start]
+
+    while stack:
+        vertex = stack.pop()
+
+        if vertex not in visited:
+            visited.add(vertex)
+            stack.extend(graph[vertex] - visited)
+
+    return visited
+
+# do depth first search (dfs)
+def dfs_paths(graph, start, goal):
+    stack = [(start, [start])]
+
+    while stack:
+        (vertex, path) = stack.pop()
+
+        for next in graph[vertex] - set(path):
+            if next == goal:
+                yield path + [next]
+            else:
+                stack.append((next, path + [next]))
+
+# breadth first search (bfs)
+def bfs(graph, start):
+    '''
+    help bfs
+    '''
+    visited, queue = set(), [start]
+
+    while queue:
+        vertex = queue.pop(0)
+
+        if vertex not in visited:
+            visited.add(vertex)
+            queue.extend(graph[vertex] - visited)
+
+    return visited
+
+# do breadth first search (bfs)
+def bfs_paths(graph, start, goal):
+    queue = [(start, [start])]
+
+    while queue:
+        (vertex, path) = queue.pop(0)
+
+        for next in graph[vertex] - set(path):
+            if next == goal:
+                yield path + [next]
+            else:
+                queue.append((next, path + [next]))
+
+graph1 = {'A': set(['B', 'C']),
+          'B': set(['A', 'D', 'E']),
+          'C': set(['A', 'F']),
+          'D': set(['D']),
+          'E': set(['B', 'F']),
+          'F': set(['C', 'E'])}
+
+print(dfs(graph1, 'A'))
+print(list(dfs_paths(graph1, 'C', 'F')))
+
+print('')
+print(bfs(graph1, 'A'))
+
+print(list(bfs_paths(graph1, 'C', 'F')))
+print(list(bfs_paths(graph1, 'A', 'F')))
+
+
 
 # define a list
 list_ls = [6, 7, 8, 10]
+print('')
 
 # print the firsr item in the list
 print(list_ls[0])
@@ -10,8 +274,6 @@ print(list_ls[-1])
 
 # print the first, the second and the third items
 print(list_ls[0:3])
-
-
 
 # create a 2D list
 vec1 = [1, 2, 3]
@@ -23,8 +285,6 @@ print(list_ls2[0])
 print(list_ls2[0][0])
 
 print(list_ls2[0][0:2])
-
-
 
 # the list can hold different data types
 list_ls3 = [4, 4.0, "name1"]
@@ -48,15 +308,11 @@ print(my_dict2["001"])
 
 print(my_dict2["003"])
 
-
-
 my_boolean = False
 
 print(my_boolean or True)
 
 print(my_boolean and True)
-
-
 
 x = 5
 y = 10
@@ -73,8 +329,6 @@ elif x!=7:
 else:
     print("main 3")
 
-
-
 f = 0
 while f<10:
     print(f)
@@ -84,8 +338,6 @@ while f<10:
 for n in range(5):
     print(n)
 
-
-
 my_list = ["this", "is", "a", "list"]
 
 for n in my_list:
@@ -94,6 +346,7 @@ for n in my_list:
 
 
 # define class and object
+
 # we define the car object
 class car:
     # we now initialize the car object
@@ -110,13 +363,11 @@ class car:
 my_car = car("ford", 1980)
 
 print(my_car.year)
-
 print(my_car.brand)
 
 my_second_car = car("tesla", 2016)
 
 print(my_car.year)
-
 print(my_second_car.year)
 
 
@@ -144,7 +395,6 @@ mycar = car("ford", 1980)
 print(mycar.stopping)
 
 mycar.stop("stopping")
-
 print(mycar.stopping)
 
 
@@ -171,12 +421,9 @@ print(mycar2.state)
 
 #print(string1)
 
-
-
-#import numpy
-
 #vec = numpy.array([[1,2,3], [4,5,6]])
 
+#import numpy
 import numpy as np
 
 vec = np.array([[1,2,3], [4,5,6]])
@@ -193,9 +440,7 @@ print(vec2)
 
 
 
-
-
-
+# we use PyTorch
 import torch
 
 # create a tensor
@@ -263,12 +508,8 @@ b = Variable(torch.randn([1]), requires_grad=True)
 
 costs = []
 
-
-
 #import matplotlib
 import matplotlib.pyplot as plt
-
-
 
 from mpl_toolkits.mplot3d import Axes3D
 
@@ -314,24 +555,30 @@ x1, x2 = np.meshgrid(x1, x2)
 
 for epoch in range(epochs):
     h = torch.mm(w, X) + b
+
     cost = torch.sum(0.5*(h-Y)**2)/m
     # to the power of 2, we use: ** 2
+
     cost.backward()
+
     w.data -= lr * w.grad.data
     b.data -= lr * b.grad.data
+
     w.grad.data.zero_()
     # the underscore _ means replace it with zero
+
     b.grad.data.zero_()
     # the underscore _ means replace it with zero
+
     costs.append(cost.data)
+
     y = b.data[0] + x1*w.data[0][0] + x2*w.data[0][1]
     s = ax1.plot_surface(x1, x2, y)
+
     fig.canvas.draw()
+
     s.remove()
     plt.pause(1)
-
-
-
 
 
 
@@ -388,6 +635,7 @@ ax2.grid()
 plt.show()
 
 
+
 # define model class
 class LinearModel(torch.nn.Module):  # import functionality from a torch module
     def __init__(self):
@@ -441,6 +689,7 @@ for epoch in range(epochs):
 
     s = ax1.plot_surface(x1, x2, y, color=(0, 1, 1, 0.5))  # plot surface hypothesis
     ax1.view_init(azim=epoch)  # choose view angle of 3d plot (make it rotate)
+
     fig.canvas.draw()  # draw the new stuff on the canvas
     s.remove()  # remove the 3d surface plot object
 
@@ -451,11 +700,8 @@ print('Predict [4, 0]: ', m.forward(v).data[0][0])  # put v forward through the 
 # save variables for which rg =True
 print(m.state_dict())
 torch.save(m.state_dict(), 'saved_linear_model')
+
 # load model
 # m = Model()
 # m.load_state_dict(torch.load('savedmodel'))
-
-
-
-
 
