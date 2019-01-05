@@ -244,6 +244,7 @@ print(functionSum(4))
 print(functionSum(10))
 print('')
 
+# sum of N terms with no recursion
 def functionSum2(n):
     sum1 = 0
     var1 = 1
@@ -281,6 +282,7 @@ print(functionSum_rec(4))
 print(functionSum_rec(10))
 print('')
 
+# sum of N terms with recursion
 def functionSum2_rec(n, var1=0, var2=0):
     if n == 1:
         return 1/2
@@ -299,6 +301,8 @@ print(functionSum2_rec(4))
 
 print(functionSum2_rec(10))
 print('')
+
+# use: http://interactivepython.org/runestone/static/pythonds/index.html#
 
 # Find the n-term of the series: a(n) = a(n-1)*2/3 with recursion and with no recursion.
 
@@ -958,4 +962,16 @@ print(gcd(12, 18))
 print(gcd(90, 12))
 
 # https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# recursion programming exercises
+# use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# we use: https://www.geeksforgeeks.org/recursion-practice-problems-solutions/
+
+# http://interactivepython.org/courselib/static/thinkcspy/Recursion/ProgrammingExercises.html
+# use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# recursion coding exercises
+# Python recursion exercises
+# recursion programming exercises
 
