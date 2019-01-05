@@ -2,7 +2,7 @@
 # we use: F. Chollet, Deep learning with Python
 
 # RNN
-# an RNN is a for loop that reuses quantities computed during the previous iteration of the loop
+# an RNN is a for loop that re-uses quantities computed during the previous iteration of the loop
 
 # RNNs, LSTM-RNNs and GRU-RNNs
 # LSTM-RNNs and GRU-RNNs are better than RNNs
@@ -116,7 +116,7 @@ print('Loading data...')
 print(len(input_train), 'train sequences')
 print(len(input_test), 'test sequences')
 
-print('Pad sequences (samples x time)')
+print('We pad sequences (samples x time)')
 
 input_train = sequence.pad_sequences(input_train, maxlen=maxlen)
 input_test = sequence.pad_sequences(input_test, maxlen=maxlen)
@@ -502,7 +502,36 @@ print(functionSum2_rec(4))
 print(functionSum2_rec(10))
 print('')
 
-# use: http://interactivepython.org/runestone/static/pythonds/index.html#
+# Python Online: Interactive Python problems
+# http://interactivepython.org/runestone/static/pythonds/index.html
+
+# Recursion with finite memory and stack. Trees, graphs.
+# use: http://interactivepython.org/runestone/static/pythonds/index.html
+
+# List of interview questions:
+# www.github.com/MaximAbramchuck/awesome-interview-questions
+
+# Website for Python coding questions:
+# https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+# use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+# https://www.springboard.com/blog/data-science-interview-questions
+
+# we use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# we use: http://interactivepython.org/runestone/static/pythonds/BasicDS/toctree.html
+# website: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# we use lambda expressions in Python
+# use: https://docs.python.org/2/reference/expressions.html#lambda
+
+# we use: https://docs.python.org/2/reference/expressions.html
+# website: https://docs.python.org/2/reference/expressions.html#lambda
+
+# recursion, Fibonacci series
+# recursion and memoization to solve stack overflow problems
+
+# we use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
 # Find the n-term of the series: a(n) = a(n-1)*2/3 with recursion and with no recursion.
 
@@ -538,6 +567,7 @@ print(function2(3))
 print(function2(9))
 print('')
 
+# use: http://interactivepython.org/runestone/static/pythonds/index.html
 # use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
 # website: http://interactivepython.org/runestone/static/pythonds/index.html#
