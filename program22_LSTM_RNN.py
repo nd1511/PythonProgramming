@@ -1,7 +1,7 @@
-# we use: F. Chollet's book "Deep learning with Python"
+# we use: F. Chollet's book "Deep learning with Python", Keras
 
 # we use: http://www.deeplearningitalia.com/wp-content/uploads/2017/12/Dropbox_Chollet.pdf
-# we use: F. Chollet's book "Deep learning with Python"
+# use: Keras and F. Chollet's book "Deep learning with Python"
 
 # LSTM = Long Short Term memory, LSTM recurrent neural networks (RNNs)
 # GRU = Gated Recurrent Unit, GRU RNNs
@@ -519,7 +519,6 @@ print(r)
 
 m1, m2, *r = 1, 2, 3, 4, 5, 6, 7
 print(r)
-
 print('')
 
 # use: http://interactivepython.org/runestone/static/pythonds/index.html#
@@ -533,14 +532,11 @@ print('')
 def mkd(a, b):
     if a == b:
         return a
-
     # return mkd(abs(a-b), min(a,b))
     return mkd(a - b, b) if a > b else mkd(a, b - a)  # x if a>b else y
 
 print(mkd(15, 3))
 print(mkd(90, 12))
-
-print('')
 
 # https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
@@ -555,6 +551,8 @@ The maze has 0 and 1 where 0 means empty and 1 means wall.
 
 The input is 0,0 and the output is given.
 For example, the output can be len(.)-1,len(.)-1.
+
+The output is marked with a 3.
 
 If I reach the output, then I have finished.
 If not, then I try 4 different options => recursion.
@@ -572,7 +570,6 @@ array2D = [[0 for i in range(6)] for j in range(6)]
 print(array2D)
 
 print(len(array2D))
-print('')
 
 for i in range(len(array2D)):
     print(array2D[i])
@@ -585,6 +582,7 @@ for i in range(len(array2D)):
     print(array2D[i])
     print
 
+# use numpy
 import numpy as np
 
 print('')
@@ -593,7 +591,8 @@ length1 = 6
 array2D = np.random.randint(2, size=(length1, length1))
 
 array2D[0][0] = 0
-array2D[len(array2D) - 1][len(array2D) - 1] = 0
+# array2D[len(array2D)-1][len(array2D)-1] = 0
+array2D[len(array2D) - 1][len(array2D) - 1] = 3
 
 array2D[1][0] = 0
 array2D[2][0] = 0
@@ -605,7 +604,6 @@ array2D[3][4] = 0
 array2D[4][4] = 0
 array2D[4][5] = 0
 
-# array2D[len(array2D)-1][len(array2D)-1] = 3
 print(array2D)
 print('')
 
@@ -626,12 +624,48 @@ stack2 = []
 # stack1.append(0)
 # stack2.append(0)
 
-# recursion, maz problem
+grid = array2D
+
+maze = grid
+
+# search the maze
+def search(x, y):
+    global grid
+
+    if grid[x][y] == 3:
+        return True
+    elif grid[x][y] == 1:
+        # wall
+        return False
+    elif grid[x][y] == 2:
+        # visited
+        return False
+
+    # mark as visited
+    grid[x][y] = 2
+
+    # explore neighbors clockwise starting by the one on the right
+    if (x < len(grid) - 1 and search(x + 1, y)) \
+            or (y > 0 and search(x, y - 1)) \
+            or (x > 0 and search(x - 1, y)) \
+            or (y < len(grid) - 1 and search(x, y + 1)):
+        return True
+
+    # grid[x][y] = 0
+    return False
+
+# search(0, 0)
+print(search(0, 0))
+print('')
+
+print(grid)
+print('')
+
+# recursion, maze problem
 def maze_rec(array2D, endGiven, currentPosition=0, currentPosition2=0, var1=0, var2=0):
     array2D[currentPosition][currentPosition2] = 2
 
-    # global variables
-    global stack1, stack2
+    # global stack1, stack2
 
     # print(currentPosition)
     # print(currentPosition2)
@@ -698,4 +732,200 @@ print(maze_rec(array2D, (len(array2D) - 1, len(array2D) - 1)))
 
 print('')
 print(array2D)
+
+# use: https://www.laurentluce.com/posts/solving-mazes-using-python-simple-recursivity-and-a-search/
+
+# we use recursion
+# base case and recursive call
+
+def solve(maze, y, x):
+    if maze[y][x] == 3:
+        # base case - endpoint has been found
+        return True
+    else:
+        # search recursively in each direction from here
+        return
+
+def solveMaze_rec(maze, startRow=0, startColumn=0):
+    maze[startRow][startColumn] = 2
+
+    # base case
+
+    #  Check for base cases:
+    #  1. We have run into an obstacle, return false
+    if maze[startRow][startColumn] == 1:
+        return False
+    #  2. We have found a square that has already been explored
+    if maze[startRow][startColumn] == 2:
+        return False
+    # 3. Success, an outside edge not occupied by an obstacle
+    if maze[startRow][startColumn] == 0:
+        return True
+
+    # Otherwise, use logical short circuiting to try each
+    # direction in turn (if needed)
+    found = solveMaze_rec(maze, startRow - 1, startColumn) or \
+            solveMaze_rec(maze, startRow + 1, startColumn) or \
+            solveMaze_rec(maze, startRow, startColumn - 1) or \
+            solveMaze_rec(maze, startRow, startColumn + 1)
+    if not found:
+        maze[startRow][startColumn] = 0
+    return found
+
+print('')
+
+# call the function maze_rec
+# maze_rec(array2D, (len(array2D)-1, len(array2D)-1))
+print(solveMaze_rec(maze))
+
+print('')
+print(maze)
+
+# use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# we use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# website: http://interactivepython.org/runestone/static/pythonds/index.html#
+# we use: http://interactivepython.org/runestone/static/pythonds/BasicDS/toctree.html
+
+# we use lambda expressions in Python
+# use: https://docs.python.org/2/reference/expressions.html#lambda
+
+# we use: https://docs.python.org/2/reference/expressions.html
+# website: https://docs.python.org/2/reference/expressions.html#lambda
+
+
+
+# main website: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# Compute the sum 1/2 + 3/5 + 5/8 + .... for N terms with recursion and with no recursion.
+
+# 1/2 + 3/5 + 5/8 + 7/11 + 9/14 + ....
+# sum of 1/2 + 3/5 + 5/8 + 7/11 + 9/14 + .... for N terms with recursion and with no recursion
+
+# sum of N terms with no recursion
+def functionSum(n):
+    sum1 = 0
+    for i in range(n):
+        #sum1 += (2*n+1) / (2*n+n+2)
+        sum1 += (2*i+1) / (3*i+2)
+
+    return sum1
+
+print('')
+print(functionSum(1))
+print(functionSum(2))
+
+print(functionSum(3))
+print(functionSum(4))
+
+print(functionSum(10))
+print('')
+
+# sum of N terms with no recursion
+def functionSum2(n):
+    sum1 = 0
+    var1 = 1
+    var2 = 2
+    for i in range(n):
+        sum1 += var1 / var2
+        var1 += 2
+        var2 += 3
+
+    return sum1
+
+print(functionSum2(1))
+print(functionSum2(2))
+
+print(functionSum2(3))
+print(functionSum2(4))
+
+print(functionSum2(10))
+print('')
+
+# sum of N terms with recursion
+def functionSum_rec(n):
+    if n == 1:
+        return 1/2
+
+    #return ((2*(n-1)+1) / (2*(n-1)+(n-1)+2)) + functionSum_rec(n-1)
+    return ((2*n - 1) / (3*n - 1)) + functionSum_rec(n - 1)
+
+print(functionSum_rec(1))
+print(functionSum_rec(2))
+
+print(functionSum_rec(3))
+print(functionSum_rec(4))
+
+print(functionSum_rec(10))
+print('')
+
+# sum of N terms with recursion
+def functionSum2_rec(n, var1=0, var2=0):
+    if n == 1:
+        return 1/2
+    if (var1 == 0 and var2 == 0):
+        var1 = (2*n - 1)
+        var2 = (3*n - 1)
+    #else:
+    #    pass
+    return (var1/var2) + functionSum2_rec(n-1, var1-2, var2-3)
+
+print(functionSum2_rec(1))
+print(functionSum2_rec(2))
+
+print(functionSum2_rec(3))
+print(functionSum2_rec(4))
+
+print(functionSum2_rec(10))
+print('')
+
+# use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# Find the n-term of the series: a(n) = a(n-1)*2/3 with recursion and with no recursion.
+
+# recursion for a(n) = a(n-1)*2/3
+def function1(n):
+    if n == 0:
+        return 1
+    return (2/3) * function1(n-1)
+
+print('')
+print(function1(1))
+
+print(function1(2))
+print(function1(3))
+
+print(function1(9))
+print('')
+
+# no recursion for a(n) = a(n-1)*2/3
+def function2(n):
+    k = 1
+    for i in range(1,n+1):
+        k *= 2/3
+
+    return k
+
+print('')
+print(function2(1))
+
+print(function2(2))
+print(function2(3))
+
+print(function2(9))
+print('')
+
+# use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# website: http://interactivepython.org/runestone/static/pythonds/index.html#
+# we use: http://interactivepython.org/runestone/static/pythonds/BasicDS/toctree.html
+
+# we use lambda expressions in Python
+# use: https://docs.python.org/2/reference/expressions.html#lambda
+
+# website: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# we use: https://docs.python.org/2/reference/expressions.html
+# website: https://docs.python.org/2/reference/expressions.html#lambda
 
