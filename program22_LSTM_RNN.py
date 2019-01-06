@@ -19,9 +19,9 @@
 
 
 # we use the kapre library
-# we use: https://github.com/keunwoochoi/kapre
+# use: https://github.com/keunwoochoi/kapre
 
-# kapre and Keras can be used together
+# Kapre and Keras can be used together
 
 # Deep neural networks (DNNs) are used in one of the papers in (https://drive.google.com/drive/folders/1GSMA7KPnJQ0LFBu3F3t7VmybFtAn580U)
 # https://www.commsp.ee.ic.ac.uk/~sap/people-nikolaos-dionelis/
@@ -71,7 +71,7 @@ for i, line in enumerate(lines):
 
 
 
-# use pyplot
+# we use pyplot
 from matplotlib import pyplot as plt
 
 temp = float_data[:, 1]
@@ -107,7 +107,6 @@ def generator(data, lookback, delay, min_index, max_index, shuffle=False, batch_
                 i = min_index + lookback
 
             rows = np.arange(i, min(i + batch_size, max_index))
-
             i += len(rows)
 
         samples = np.zeros((len(rows), lookback // step, data.shape[-1]))
@@ -125,7 +124,7 @@ def generator(data, lookback, delay, min_index, max_index, shuffle=False, batch_
 
 
 # training, validation and testing
-# prepare the data
+# we now prepare the data
 
 lookback = 1440
 step = 6
@@ -145,7 +144,7 @@ test_steps = (len(float_data) - 300001 - lookback)
 
 
 # baseline
-# create a baseline algorithm
+# we create a baseline algorithm
 
 def evaluate_naive_method():
     batch_maes = []
@@ -469,6 +468,8 @@ def sumFib(n):
 
     for i in range(1, n):
         # prev = last
+        #last = prev+last
+
         last, prev = (prev + last), last
 
         sum1 += last
@@ -519,6 +520,7 @@ print(r)
 
 m1, m2, *r = 1, 2, 3, 4, 5, 6, 7
 print(r)
+
 print('')
 
 # use: http://interactivepython.org/runestone/static/pythonds/index.html#
@@ -526,9 +528,10 @@ print('')
 
 
 
+# the greatest common divisor (gcd)
 # https://en.wikipedia.org/wiki/Greatest_common_divisor
 
-# greatest common divisor
+# greatest common divisor (gcd)
 def mkd(a, b):
     if a == b:
         return a
@@ -537,6 +540,8 @@ def mkd(a, b):
 
 print(mkd(15, 3))
 print(mkd(90, 12))
+
+print('')
 
 # https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
@@ -570,6 +575,7 @@ array2D = [[0 for i in range(6)] for j in range(6)]
 print(array2D)
 
 print(len(array2D))
+print('')
 
 for i in range(len(array2D)):
     print(array2D[i])
@@ -625,21 +631,29 @@ stack2 = []
 # stack2.append(0)
 
 grid = array2D
-
 maze = grid
 
 # search the maze
 def search(x, y):
     global grid
 
+    #if grid[x][y] == 3:
+    #    return True
+    #elif grid[x][y] == 1:
+    #    # wall
+    #    return False
+    #elif grid[x][y] == 2:
+    #    # visited
+    #    return False
+
     if grid[x][y] == 3:
         return True
-    elif grid[x][y] == 1:
+    if grid[x][y] == 1 or grid[x][y] == 2:
         # wall
         return False
-    elif grid[x][y] == 2:
-        # visited
-        return False
+    #if grid[x][y] == 2:
+    #    # visited
+    #    return False
 
     # mark as visited
     grid[x][y] = 2
@@ -651,7 +665,7 @@ def search(x, y):
             or (y < len(grid) - 1 and search(x, y + 1)):
         return True
 
-    # grid[x][y] = 0
+    #grid[x][y] = 0
     return False
 
 # search(0, 0)
@@ -661,20 +675,23 @@ print('')
 print(grid)
 print('')
 
+# base case = the end case
+# we start with the base case
+
 # recursion, maze problem
 def maze_rec(array2D, endGiven, currentPosition=0, currentPosition2=0, var1=0, var2=0):
+    if (currentPosition, currentPosition2) == endGiven:
+        return True
+
     array2D[currentPosition][currentPosition2] = 2
 
-    # global stack1, stack2
+    global stack1, stack2
 
     # print(currentPosition)
     # print(currentPosition2)
 
     stack1.append(currentPosition)
     stack2.append(currentPosition2)
-
-    if (currentPosition, currentPosition2) == endGiven:
-        return True
 
     # print(array2D)
 
@@ -726,9 +743,63 @@ def maze_rec(array2D, endGiven, currentPosition=0, currentPosition2=0, var1=0, v
 #    if array2D[currentPosition][currentPosition2-1]==2 and 0<currentPosition2-1<len(array2D)-1:
 #        return maze_rec(array2D, endGiven, currentPosition, currentPosition2-1)
 
+array2D_2 = array2D
+array2D[len(array2D)-1][len(array2D)-1] = 0
+
 # call the function maze_rec
 # maze_rec(array2D, (len(array2D)-1, len(array2D)-1))
 print(maze_rec(array2D, (len(array2D) - 1, len(array2D) - 1)))
+
+print('')
+print(array2D)
+
+# recursion, maze problem
+def maze_rec2(array2D, currentPosition=0, currentPosition2=0, var1=0, var2=0):
+    if array2D[currentPosition][currentPosition2] == 3:
+        return True
+
+    array2D[currentPosition][currentPosition2] = 2
+
+    global stack1, stack2
+
+    # print(currentPosition)
+    # print(currentPosition2)
+
+    stack1.append(currentPosition)
+    stack2.append(currentPosition2)
+
+    # print(array2D)
+
+    if array2D[currentPosition + 1][currentPosition2] == 0 and 0 < currentPosition + 1 < len(array2D) - 1 and (
+    currentPosition + 1, currentPosition2) != (var1, var2):
+        return maze_rec2(array2D, currentPosition + 1, currentPosition2, currentPosition, currentPosition2)
+    if array2D[currentPosition][currentPosition2 + 1] == 0 and 0 < currentPosition2 + 1 < len(array2D) - 1 and (
+    currentPosition, currentPosition2 + 1) != (var1, var2):
+        return maze_rec2(array2D, currentPosition, currentPosition2 + 1, currentPosition, currentPosition2)
+    if array2D[currentPosition - 1][currentPosition2] == 0 and 0 < currentPosition - 1 < len(array2D) - 1 and (
+    currentPosition - 1, currentPosition2) != (var1, var2):
+        return maze_rec2(array2D, currentPosition - 1, currentPosition2, currentPosition, currentPosition2)
+    if array2D[currentPosition][currentPosition2 - 1] == 0 and 0 < currentPosition2 - 1 < len(array2D) - 1 and (
+    currentPosition, currentPosition2 - 1) != (var1, var2):
+        return maze_rec2(array2D, currentPosition, currentPosition2 - 1, currentPosition, currentPosition2)
+
+    print(array2D)
+
+    print(currentPosition)
+    print(currentPosition2)
+
+    #array2D[currentPosition][currentPosition2] = 0
+
+    var1 = stack1.pop()
+    var2 = stack2.pop()
+
+    # return maze_rec(array2D, endGiven, stack1.pop(), stack2.pop(), var1, var2)
+    return maze_rec2(array2D, stack1.pop(), stack2.pop(), var1, var2) if len(stack1) > 0 \
+        else False
+
+# call the function maze_rec
+# maze_rec(array2D, (len(array2D)-1, len(array2D)-1))
+print(maze_rec2(array2D_2))
 
 print('')
 print(array2D)
@@ -890,13 +961,14 @@ def function1(n):
         return 1
     return (2/3) * function1(n-1)
 
-print('')
+#print('')
 print(function1(1))
 
 print(function1(2))
 print(function1(3))
 
 print(function1(9))
+print(function1(10))
 print('')
 
 # no recursion for a(n) = a(n-1)*2/3
@@ -907,19 +979,23 @@ def function2(n):
 
     return k
 
-print('')
+#print('')
 print(function2(1))
 
 print(function2(2))
 print(function2(3))
 
 print(function2(9))
+print(function2(10))
 print('')
 
 # use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
 # website: http://interactivepython.org/runestone/static/pythonds/index.html#
 # we use: http://interactivepython.org/runestone/static/pythonds/BasicDS/toctree.html
+
+# dry run the code
+# run the code like the interpreter
 
 # we use lambda expressions in Python
 # use: https://docs.python.org/2/reference/expressions.html#lambda
