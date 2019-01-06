@@ -16,9 +16,11 @@
 # we use: LSTM RNNs and GRU RNNs
 # LSTM RNNs and GRU RNNs are better than (vanilla) RNNs
 
+# ﻿https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 
-# we use the kapre library
+
+# we use the Kapre library
 # use: https://github.com/keunwoochoi/kapre
 
 # Kapre and Keras can be used together
@@ -26,9 +28,7 @@
 # Deep neural networks (DNNs) are used in one of the papers in (https://drive.google.com/drive/folders/1GSMA7KPnJQ0LFBu3F3t7VmybFtAn580U)
 # https://www.commsp.ee.ic.ac.uk/~sap/people-nikolaos-dionelis/
 
-
-
-# we use the terminal and the command line to download a file
+# we use the terminal and the command line to download files
 
 # we use the terminal
 # cd ~/Downloads
@@ -67,7 +67,7 @@ float_data = np.zeros((len(lines), len(header) - 1))
 
 for i, line in enumerate(lines):
     values = [float(x) for x in line.split(',')[1:]]
-    float_data[i, :] = values
+    float_data[i,:] = values
 
 
 
@@ -320,6 +320,9 @@ model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
 # we now train the RNN model
 history = model.fit(x_train, y_train, epochs=10, batch_size=128, validation_split=0.2)
 
+# Big Data, AI, Machine Learning, Data Science
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
 
 
 # we use a GRU
@@ -328,6 +331,7 @@ history = model.fit(x_train, y_train, epochs=10, batch_size=128, validation_spli
 from keras.models import Sequential
 from keras import layers
 
+# use RMSprop
 from keras.optimizers import RMSprop
 
 model = Sequential()
@@ -341,12 +345,24 @@ model.compile(optimizer=RMSprop(), loss='mae')
 history = model.fit_generator(train_gen, steps_per_epoch=500, epochs=40, \
                               validation_data=val_gen, validation_steps=val_steps)
 
+# we use Keras
+# use: http://crcv.ucf.edu/courses/CAP6412/Spring2018/KerasTutorial.pdf
+
+# http://zhanjunlang.com/resources/tutorial/Deep%20Learning%20with%20Keras.pdf
+
+# website: http://crcv.ucf.edu/courses/CAP6412/Spring2018/KerasTutorial.pdf
+# use: http://zhanjunlang.com/resources/tutorial/Deep%20Learning%20with%20Keras.pdf
+
+# AI: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
 
 
 # use: http://interactivepython.org/runestone/static/pythonds/index.html#
 
 # binary search => requires a sorted list
 # we use: http://interactivepython.org/runestone/static/pythonds/Recursion/toctree.html
+
+# https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
 # binary search
 def binarySearch(list1, item1):
@@ -358,6 +374,7 @@ def binarySearch(list1, item1):
 
     while not found and upper >= lower:
         mid = (upper + lower) // 2
+        # use "// 2" integer division
 
         if list1[mid] == item1:
             found = True
@@ -432,6 +449,9 @@ print(Fib_rec(4))
 
 print(Fib_rec(10))
 print('')
+
+# stack overflow
+# execution stack => recursion
 
 # Fibonacci series with no recursion
 def Fib(n):
