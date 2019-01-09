@@ -1,11 +1,12 @@
 # we use Keras
 from keras import layers
 from keras import models
+# use layers and models
 
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu',
 
-input_shape=(150, 150, 3)))
+input_shape = (150, 150, 3)))
 
 model.add(layers.MaxPooling2D((2, 2)))
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
@@ -314,4 +315,57 @@ print(numbersOccurringOddNumberOfTimes(L))
 
 L = eval(input("L = : "))
 print(numbersOccurringOddNumberOfTimes(L))
+
+
+
+# use: https://www.springboard.com/blog/data-science-interview-questions/
+# https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+# we use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+#### dictionary dict likes
+#### dict has keys and values
+#### keys = names of boys and values are list of names of girls (unique names)
+####
+#### unique names hence set
+#### set(.), list(set(.))
+####
+#### Python function
+####    liked(likes)
+####
+#### Example:
+####  likes = {"Michael": ["Maria", "Helen"],
+####       "John": ["Maria"],
+####       "Manos": ["Helen", "Katerina", "Maria"],
+####       "Costas": ["Joana"],
+####      }
+####
+#### then:
+#### {
+####   "Maria": ["John", "Manos", "Michael"],
+####   "Helen": ["Manos", "Michael"],
+####   "Katerina": ["Manos"],
+####   "Joana": ["Costas"],
+#### }
+####
+
+def liked(likes):
+    likes2 = {}
+
+    for i in likes:
+        for j in likes[i]:
+            if j not in likes2:
+                likes2[j] = [i]
+            else:
+                likes2[j].append(i)
+
+    return likes2
+
+likes = {"Michael": ["Maria", "Helen"], \
+    "John": ["Maria"], \
+    "Manos": ["Helen", "Katerina", "Maria"], \
+    "Costas": ["Joana"]}
+
+print('')
+print(liked(likes))
 
