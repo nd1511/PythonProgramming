@@ -369,3 +369,133 @@ likes = {"Michael": ["Maria", "Helen"], \
 print('')
 print(liked(likes))
 
+# Data Science, Programming
+# use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+# recursion, memoization, maze problems
+# http://interactivepython.org/runestone/static/pythonds/Recursion/ExploringaMaze.html
+
+# we now use: http://interactivepython.org/runestone/static/pythonds/index.html
+# use: http://interactivepython.org/runestone/static/pythonds/Recursion/ExploringaMaze.html
+
+# Data Science (DS), Machine Learning
+# DS: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+#### Exercise
+####
+#### People with names 0, 1, ..., N-1 for 1 day. List of length N.
+#### People in the list: first, second, ..., last. List = who.
+#### who[0] = first, who[1] = last
+####
+#### The list time (of length N) has the time spent for each person/customer.
+#### time[0] = time spent for the first person, time[1] = time spent for the second person
+####
+#### The list start (of length N) find the start time for people[i]
+#### The list over (of length N) find the end time for people[i]
+#### 
+#### *** Example ***
+#### If who = [2, 4, 3, 0, 1] and time = [10, 10, 15.5, 5.3, 8],
+#### then start = [13.3, 38.8, 23.3, 0, 5.3] and over = [23.3, 48.8, 38.8, 5.3, 13.3].
+####
+#### N=5
+#### who = [3, 4, 2, 0, 1]
+#### time = [10, 10, 15.5, 5.3, 8]
+#### print("Η λίστα who: {}".format(who))
+#### print("Η λίστα time: {}".format(time))
+
+import numpy as np
+
+def startAndOver(who, time):
+    start = np.zeros(len(who))
+    over = np.zeros(len(who))
+
+    for i in range(len(who)):
+        if i == 0:
+            start[who.index(0)] = 0
+            over[who.index(0)] = time[who.index(0)]
+        else:
+            start[who.index(i)] = start[who.index(i-1)] + time[who.index(i-1)]
+            over[who.index(i)] = over[who.index(i-1)] + time[who.index(i)]
+
+    return start, over
+
+N = 5
+who = [2, 4, 3, 0, 1]
+time = [10, 10, 15.5, 5.3, 8]
+
+print('')
+print("List who: {}".format(who))
+print("List time: {}".format(time))
+
+print('')
+print(startAndOver(who, time))
+
+who = [2, 4, 5, 6, 3, 0, 1]
+time = [10, 10, 15.5, 14.2, 1.3, 5.3, 8]
+
+print('')
+print(startAndOver(who, time))
+
+
+
+####  Define a function
+####    fof(D, name)
+####
+#### where D is a dictionary whose keys are names (strings). The value of each key k is a
+#### list with the name of all the friends of k. The parameter name is a name (string).
+####
+#### The function returns a list with the people appearing in D and are
+#### the friends of the friends of name but not the friends of name.
+####
+####  * name should not be in the returned list
+####  * All names should be returned one time. => set(.), list(set(.))
+####  * The returned list should be sorted inversely.
+####
+#### Friendship is not symmetrical: A can be within the friends of B but B
+#### not be within the friends of A (like in the example below).
+#### 
+#### *** Example ***
+####  D = {"Mihalis": ["Yannis", "Manolis"],
+####       "Yannis": ["Mihalis", "Kostas", "Manolis"],
+####       "Manolis": ["Kostas", "Dimitris"],
+####       "Kostas": ["Yannis", "Giorgos"]
+####      }
+#### 
+#### and name="Mihalis", then the returned list is ["Kostas", "Dimitris"].
+
+def fof(D, name):
+    list1 = []
+
+    for i in D[name]:
+        for j in D[i]:
+            if j != name and j not in D[name]:
+                list1.append(j)
+
+    list1 = list(set(list1))
+
+    #list1.sort()
+    #list1.reverse()
+    list1 = sorted(list1, reverse=True)
+
+    return list1
+
+D = {"Mihalis": ["Yannis", "Manolis"], \
+    "Yannis": ["Mihalis", "Kostas", "Manolis"], \
+    "Manolis": ["Kostas", "Dimitris"], \
+     "Kostas": ["Yannis", "Giorgos"]}
+
+print('')
+print(fof(D, name="Mihalis"))
+
+print('')
+print("The dict is: {}".format(D))
+
+print('')
+name = input("Please input a name: ")
+print(fof(D, name))
+
+# use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+# https://leonmercanti.com/books/personal-development/Cracking%20the%20Coding%20Interview%20189%20Programming%20Questions%20and%20Solutions.pdf
+
+# we also use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
