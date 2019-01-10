@@ -31,7 +31,7 @@ from keras import optimizers
 
 model.compile(loss='binary_crossentropy', optimizer=optimizers.RMSprop(lr=1e-4), metrics=['acc'])
 
-#model.summary()
+# model.summary()
 print(model.summary())
 
 
@@ -63,7 +63,7 @@ model.add(layers.Dense(1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy', optimizer=optimizers.RMSprop(lr=1e-4), metrics=['acc'])
 
-#model.summary()
+# model.summary()
 print(model.summary())
 
 
@@ -498,4 +498,60 @@ print(fof(D, name))
 # https://leonmercanti.com/books/personal-development/Cracking%20the%20Coding%20Interview%20189%20Programming%20Questions%20and%20Solutions.pdf
 
 # we also use: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+# Python Online course: Interactive Python problems.
+# we use: http://interactivepython.org/runestone/static/pythonds/index.html
+
+# Recursion with finite memory and stack. Memoization. Trees, graphs.
+# List of interview questions: www.github.com/MaximAbramchuck/awesome-interview-questions
+
+# Website for Python coding questions: https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+
+
+#### dict friends with keys and values
+#### where keys are people (strings) and values are his friends (strings)
+####
+#### Given a name, find the list of people in the dict that have name as friend.
+#### sort(.), sorted
+####
+#### If friends is the dict shown below and name = "Manolis",
+#### then result=["Giorgos"], and if name = "Giorgos" then result=[].
+#### If name = "Maria" then result=["Eleni", "Giorgos", "Mihalis"].
+
+# define findFriends
+def findFriends(friends, name):
+    list1 = []
+
+    for i in friends:
+        if name in friends[i]:
+            list1.append(i)
+
+    list1.sort()
+    return list1
+
+# main program
+
+friends = {"Manolis": ["Mihalis", "Yannis"], \
+    "Maria": ["Mihalis", "Eleni"], \
+    "Eleni": ["Mihalis", "Maria"], \
+    "Mihalis": ["Maria"], \
+    "Yannis": [], \
+    "Giorgos": ["Manolis", "Eleni", "Maria"]}
+
+print('')
+print("The dict is: {}".format(friends))
+
+print('')
+print(findFriends(friends, "Manolis"))
+
+print(findFriends(friends, "Giorgos"))
+print(findFriends(friends, "Maria"))
+
+print('')
+name = input("Please input a name: ")
+print(findFriends(friends, name))
+
+# we now use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
