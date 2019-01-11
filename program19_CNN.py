@@ -3,6 +3,9 @@ from keras import layers
 from keras import models
 # use layers and models
 
+# Data Science, Programming
+# use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu',
 
@@ -36,9 +39,9 @@ print(model.summary())
 
 
 
-# we now use dropout
+# we now use dropout to reduce overfitting
 
-# we use dropout
+# dropout, we use dropout
 model = models.Sequential()
 
 model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)))
@@ -551,6 +554,77 @@ print(findFriends(friends, "Maria"))
 print('')
 name = input("Please input a name: ")
 print(findFriends(friends, name))
+
+# we now use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
+
+
+#### Define a function
+####   symdiff(A, B)
+####
+#### where lists A και B.
+#### The function returns a list that contains elements only in one of the lists A and B.
+####
+#### The returned list does not contain double elements.
+#### set(.), list(set(.))
+####
+#### The returned list does not need to be ordered.
+
+def symdiff(A, B):
+    list1 = []
+
+    for i in A:
+        if i not in B:
+            list1.append(i)
+
+    for i in B:
+        if i not in A:
+            list1.append(i)
+
+    list1 = list(set(list1))
+    return list1
+
+def symdiff2(A, B):
+    list1 = []
+
+    for i in A:
+        if i not in B and i not in list1:
+            list1.append(i)
+
+    for i in B:
+        if i not in A and i not in list1:
+            list1.append(i)
+
+    #list1 = list(set(list1))
+    return list1
+
+# main program
+A = [1,2,3,4,5]
+B = [3,4,5,6,7,8,9]
+
+print('')
+print(symdiff(A, B))
+
+A = [1,2,1,2,2]
+B = [2,3,2,3,2,3,3,4]
+
+print('')
+print(symdiff(A, B))
+print(symdiff2(A, B))
+
+print('')
+A = eval(input("Please insert list A: "))
+B = eval(input("Please insert list B: "))
+
+print('')
+print(symdiff(A, B))
+
+# we use: https://www.springboard.com/blog/python-interview-questions/
+
+# What is the difference between a tuple and a list in Python?
+# “Apart from tuples being immutable there is also a semantic distinction that should guide
+# their usage.” => https://www.springboard.com/blog/data-science-interview-questions/#programming
 
 # we now use: https://www.springboard.com/blog/data-science-interview-questions/#programming
 # https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
