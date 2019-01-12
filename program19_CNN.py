@@ -1,12 +1,16 @@
 # we use Keras
 from keras import layers
-# use keras layers
+# we use keras layers
 
 # use keras models
 from keras import models
 
 # Data Science, Programming
 # use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+
+# NLP and sentiment analysis
+# Twitter data => webscraping, examine Twitter data
+# NLP: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu',
