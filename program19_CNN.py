@@ -1,7 +1,9 @@
 # we use Keras
 from keras import layers
+# use keras layers
+
+# use keras models
 from keras import models
-# use layers and models
 
 # Data Science, Programming
 # use: https://www.springboard.com/blog/data-science-interview-questions/#programming
@@ -30,6 +32,7 @@ model.add(layers.Dense(1, activation='sigmoid'))
 #model.summary()
 #print(model.summary())
 
+# use keras optimizers
 from keras import optimizers
 
 model.compile(loss='binary_crossentropy', optimizer=optimizers.RMSprop(lr=1e-4), metrics=['acc'])
@@ -58,6 +61,7 @@ model.add(layers.MaxPooling2D((2, 2)))
 
 model.add(layers.Flatten())
 
+# use dropout
 model.add(layers.Dropout(0.5))
 
 model.add(layers.Dense(512, activation='relu'))
@@ -620,12 +624,144 @@ B = eval(input("Please insert list B: "))
 print('')
 print(symdiff(A, B))
 
+# we now use: https://www.springboard.com/blog/data-science-interview-questions/#programming
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+
 # we use: https://www.springboard.com/blog/python-interview-questions/
 
 # What is the difference between a tuple and a list in Python?
-# “Apart from tuples being immutable there is also a semantic distinction that should guide
-# their usage.” => https://www.springboard.com/blog/data-science-interview-questions/#programming
+# Apart from tuples being immutable there is also a semantic distinction that should guide
+# their usage. => https://www.springboard.com/blog/data-science-interview-questions/#programming
 
-# we now use: https://www.springboard.com/blog/data-science-interview-questions/#programming
-# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+# Algothon 2018, Reuters NLP Challenge: http://algothon.org
+# https://www.kaggle.com/c/algothon-2018
+
+# use: https://www.kaggle.com/c/algothon-2018/data
+# we use: https://www.kaggle.com/c/algothon-2018
+
+# we now use: https://algothon-2018.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover
+# algorithmic trading: machine learning and algorithmic trading, http://algothon.org
+
+# deep learning and machine learning
+# we use: https://www.deeplearningbook.org
+
+# Compute the sum 1/2 + 3/5 + 5/8 + .... for N terms with recursion and with no recursion.
+# Hence: 1/2 + 3/5 + 5/8 + 7/11 + 9/14 + ....
+# sum of 1/2 + 3/5 + 5/8 + 7/11 + 9/14 + .... for N terms with recursion and with no recursion
+
+# sum of N terms with no recursion
+def functionSum(n):
+    sum1 = 0
+    for i in range(n):
+        #sum1 += (2*n+1) / (2*n+n+2)
+        sum1 += (2*i+1) / (3*i+2)
+
+    return sum1
+
+print(functionSum(1))
+print(functionSum(2))
+
+print(functionSum(3))
+print(functionSum(10))
+print('')
+
+# sum of N terms with no recursion
+def functionSum2(n):
+    sum1 = 0
+    var1 = 1
+    var2 = 2
+    for i in range(n):
+        sum1 += var1 / var2
+        var1 += 2
+        var2 += 3
+
+    return sum1
+
+print(functionSum2(1))
+print(functionSum2(2))
+
+print(functionSum2(3))
+print(functionSum2(10))
+print('')
+
+# sum of N terms with recursion
+def functionSum_rec(n):
+    if n == 1:
+        return 1/2
+
+    #return ((2*(n-1)+1) / (2*(n-1)+(n-1)+2)) + functionSum_rec(n-1)
+    return ((2*n - 1) / (3*n - 1)) + functionSum_rec(n - 1)
+
+print(functionSum_rec(1))
+print(functionSum_rec(2))
+
+print(functionSum_rec(3))
+print(functionSum_rec(10))
+print('')
+
+# sum of N terms with recursion
+def functionSum2_rec(n, var1=0, var2=0):
+    if n == 1:
+        return 1/2
+    if (var1 == 0 and var2 == 0):
+        var1 = (2*n - 1)
+        var2 = (3*n - 1)
+    #else:
+    #    pass
+    return (var1/var2) + functionSum2_rec(n-1, var1-2, var2-3)
+
+print(functionSum2_rec(1))
+print(functionSum2_rec(2))
+
+print(functionSum2_rec(3))
+print(functionSum2_rec(10))
+print('')
+
+# use: http://interactivepython.org/runestone/static/pythonds/index.html#
+
+# Find the n-term of the series: a(n) = a(n-1)*2/3 with recursion and with no recursion.
+
+# recursion for a(n) = a(n-1)*2/3
+def function1(n):
+    if n == 0:
+        return 1
+    return (2/3) * function1(n-1)
+
+print('')
+print(function1(1))
+
+print(function1(2))
+print(function1(9))
+print('')
+
+# no recursion for a(n) = a(n-1)*2/3
+def function2(n):
+    k = 1
+    for i in range(1,n+1):
+        k *= 2/3
+
+    return k
+
+print('')
+print(function2(1))
+
+print(function2(2))
+print(function2(9))
+print('')
+
+# Algothon 2018, Reuters NLP Challenge: http://algothon.org
+# https://www.kaggle.com/c/algothon-2018
+
+# use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# website: http://interactivepython.org/runestone/static/pythonds/index.html#
+# we use: http://interactivepython.org/runestone/static/pythonds/BasicDS/toctree.html
+
+# we use one-line lambda expressions in Python
+# use: https://docs.python.org/2/reference/expressions.html#lambda
+
+# website: https://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+# we use: https://docs.python.org/2/reference/expressions.html
+# website: https://docs.python.org/2/reference/expressions.html#lambda
 
