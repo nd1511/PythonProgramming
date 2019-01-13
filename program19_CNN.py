@@ -9,7 +9,7 @@ from keras import models
 # use: https://www.springboard.com/blog/data-science-interview-questions/#programming
 
 # NLP and sentiment analysis
-# Twitter data => webscraping, examine Twitter data
+# Twitter data => webscraping, we examine Twitter data
 # NLP: https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 model = models.Sequential()
@@ -29,8 +29,10 @@ model.add(layers.Conv2D(128, (3, 3), activation='relu'))
 model.add(layers.MaxPooling2D((2, 2)))
 model.add(layers.Flatten())
 
+# we use ReLU for the hidden layers
 model.add(layers.Dense(512, activation='relu'))
 
+# the final output is a value between 0 and 1
 model.add(layers.Dense(1, activation='sigmoid'))
 
 #model.summary()
@@ -38,7 +40,9 @@ model.add(layers.Dense(1, activation='sigmoid'))
 
 # use keras optimizers
 from keras import optimizers
+# Loss functions and optimizers in Keras
 
+# we choose the loss function and the optimizer
 model.compile(loss='binary_crossentropy', optimizer=optimizers.RMSprop(lr=1e-4), metrics=['acc'])
 
 # model.summary()
@@ -645,6 +649,8 @@ print(symdiff(A, B))
 
 # we now use: https://algothon-2018.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover
 # algorithmic trading: machine learning and algorithmic trading, http://algothon.org
+
+
 
 # deep learning and machine learning
 # we use: https://www.deeplearningbook.org
