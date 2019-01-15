@@ -362,7 +362,6 @@ print(numbersOccurringOddNumberOfTimes(L))
 ####   "Katerina": ["Manos"],
 ####   "Joana": ["Costas"],
 #### }
-####
 
 def liked(likes):
     likes2 = {}
@@ -764,14 +763,19 @@ print('')
 
 # use: https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
+# whiteboard interview questions,
+# data science (DS) interview programming questions
+
 # website: http://interactivepython.org/runestone/static/pythonds/index.html#
 # we use: http://interactivepython.org/runestone/static/pythonds/BasicDS/toctree.html
 
 # we use one-line lambda expressions in Python
 # use: https://docs.python.org/2/reference/expressions.html#lambda
 
-# website: https://www.w3resource.com/c-programming-exercises/recursion/index.php
-
 # we use: https://docs.python.org/2/reference/expressions.html
 # website: https://docs.python.org/2/reference/expressions.html#lambda
+
+# website for Python coding questions:
+# https://www.springboard.com/blog/data-science-interview-questions/#programming
+# SOS website: https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
