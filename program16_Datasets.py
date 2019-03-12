@@ -43,7 +43,9 @@ print(x.ndim)
 
 
 
+# the MNIST dataset
 from keras.datasets import mnist
+# handwritten digit recognition, MNIST
 
 # we use tuples, (..., ...)
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
@@ -292,6 +294,9 @@ power_spectrum = speechpy.processing.power_spectrum(frames, fft_points=512)
 
 print('power spectrum shape=', power_spectrum.shape)
 
+# MFCC features
+# extract MFCC features
+
 ############# Extract MFCC features #############
 mfcc = speechpy.feature.mfcc(signal, sampling_frequency=fs, frame_length=0.020, frame_stride=0.01,
              num_filters=40, fft_length=512, low_frequency=0, high_frequency=None)
@@ -419,6 +424,17 @@ train_loader = torch.utils.data.DataLoader(train_data,
                                            shuffle=True,
                                            batch_size=batch_size)
 
+# GANs and LSTM RNNs
+# use LSTM RNNs together with GANs
+
+# combine the power of LSTM RNNs and GANs
+# it is possible to use LSTM RNN together with GANs
+
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+# https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
 # class for D and G
 # we train the discriminator and the generator
 
@@ -479,6 +495,14 @@ class Discriminator(torch.nn.Module):
         x = self.s(x)
 
         return x
+
+# We normalize across a batch.
+# Mean across a batch. We use batches. Normalize across a batch.
+
+# use batch normalisation
+# GANs are very difficult to train and this is why we use batch normalisation.
+
+# use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
 
 # this was for the discriminator
 # we now do the same for the generator
@@ -564,6 +588,17 @@ glr = 0.0003
 #d_optimizer = torch.optim.Adam(d.parameters(), lr=dlr)
 #g_optimizer = torch.
 
+# combine the power of LSTM RNNs and GANs
+# it is possible to use LSTM RNN together with GANs
+
+# GANs and LSTM RNNs
+# use LSTM RNNs together with GANs
+
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+# https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
 # instantiate the model
 d = Discriminator()
 g = Generator()
@@ -638,6 +673,7 @@ def train(epochs):
 
             g_optimizer.zero_grad()
             gcost.backward()
+
             g_optimizer.step()
 
             # batch normalization
