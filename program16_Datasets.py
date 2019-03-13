@@ -103,10 +103,9 @@ print('')
 print(sample_rate)
 print(signal.shape)
 
-
-
 from sklearn import datasets
 
+# use numpy
 import numpy as np
 
 # we use the iris dataset
@@ -142,7 +141,7 @@ print("Labels counts in y_test:", np.bincount(y_test))
 
 # we use: https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/
 
-import numpy
+import numpy as np
 
 import scipy.io.wavfile
 from scipy.fftpack import dct
@@ -333,6 +332,9 @@ print('logenergy features=', logenergy.shape)
 
 # we use "S03_U01.CH1.wav" from the CHiME Challenge
 sample_rate, signal = scipy.io.wavfile.read('/Volumes/Maxtor/CHiME5/audio/train/S03_U01.CH1.wav')
+
+# CHiME Challenge
+# audio data from the CHiME Challenge
 
 print('')
 print(sample_rate)
@@ -574,6 +576,9 @@ class Generator(torch.nn.Module):
 
         return z
 
+# this was for the generator and the discriminator
+# we do the same for the generator and the discriminator
+
 # https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
 # use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
 
@@ -626,7 +631,6 @@ loss_ax.set_ylabel('Cost')
 
 loss_ax.set_ylim(0, 0.2)
 generated_img = fig.add_subplot(122)
-
 plt.show()
 
 # https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
