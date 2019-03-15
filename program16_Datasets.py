@@ -3,6 +3,17 @@
 # https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
 # use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
 
+# GANs and LSTM RNNs
+# use LSTM RNNs together with GANs
+
+# combine the power of LSTM RNNs and GANs
+# it is possible to use LSTM RNN together with GANs
+
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+# https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
 from __future__ import print_function
 
 # we use LIBROSA for speech processing
@@ -129,7 +140,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 print("Labels counts in y:", np.bincount(y))
 
 print("Labels counts in y_train:", np.bincount(y_train))
-
 print("Labels counts in y_test:", np.bincount(y_test))
 
 
@@ -267,6 +277,7 @@ mfcc -= (numpy.mean(mfcc, axis=0) + 1e-8)
 import scipy.io.wavfile as wav
 import numpy as np
 
+# we use speechpy
 import speechpy
 
 import speechpy
@@ -355,6 +366,30 @@ print(signal.shape)
 # We use batch normalisation.
 # GANs are very difficult to train. Super-deep models. This is why we use batch normalisation.
 
+# use PyTorch
+import torch
+
+#import torch
+import torchvision
+
+from torchvision import datasets, transforms
+
+# use matplotlib
+import matplotlib.pyplot as plt
+
+batch_size = 128
+
+# download the training dataset
+train_data = datasets.FashionMNIST(root='fashiondata/',
+                                   transform=transforms.ToTensor(),
+                                   train=True,
+                                   download=True)
+
+# we create the train data loader
+train_loader = torch.utils.data.DataLoader(train_data,
+                                           shuffle=True,
+                                           batch_size=batch_size)
+
 # Anomaly detection (AD)
 # Unsupervised machine learning
 
@@ -371,6 +406,8 @@ print(signal.shape)
 
 # https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
 # https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+
 
 # the BigGAN dataset
 # BigGAN => massive dataset
@@ -436,6 +473,9 @@ train_loader = torch.utils.data.DataLoader(train_data,
 
 # https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
 # https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+# We use batch normalisation.
+# GANs are very difficult to train. Super-deep models. This is why we use batch normalisation.
 
 # class for D and G
 # we train the discriminator and the generator
