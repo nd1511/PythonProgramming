@@ -1,9 +1,10 @@
-
 # PCA, Principal Component Analysis
+# Dimensionality reduction using PCA
 
 # We use matrices and transformations
 # we can use 2 dimensions to visualize our transformation
 
+# PCA and SVD
 # dimensionality reduction
 
 # we want to find the direction in which the variance is the largest
@@ -21,14 +22,12 @@
 # (2) eigenvalues and eigenvectors of the covariance matrix
 # (3) keep the eigenvectors with the largest eigenvalues
 
-
-
 # we now implement PCA
 
-import numpy as np
-
+# use matplotlib
 import matplotlib.pyplot as plt
 
+import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 
 # we use sklearn to load datasets
@@ -112,8 +111,6 @@ eig_vals, eig_vecs, cov = decompose(X_std)
 
 whicheigs(eig_vals)
 
-
-
 def reduce(x, eig_vecs, dims):
     W = eig_vecs[:, :dims]
 
@@ -141,8 +138,6 @@ def plotreduced(x):
     plt.grid()
     plt.show()
 
-
-
 # we now call the functions
 X_std = normalise(X)
 
@@ -157,5 +152,250 @@ plotreduced(X_reduced)
 
 
 
+# Deep Generative Models
+# GANs and VAEs, Generative Models
 
+# random noise
+# from random noise to a tensor
+
+# We use batch normalisation.
+# GANs are very difficult to train. Super-deep models. This is why we use batch normalisation.
+
+# GANs and LSTM RNNs
+# use LSTM RNNs together with GANs
+
+# combine the power of LSTM RNNs and GANs
+# it is possible to use LSTM RNN together with GANs
+
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+# https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+
+
+# Anomaly detection (AD)
+# Unsupervised machine learning
+
+# GANs for super-resolution
+# Generative Adversarial Networks, GANs
+
+# the BigGAN dataset
+# BigGAN => massive dataset
+# latent space, BigGAN, GANs
+
+# down-sampling, sub-sample, pooling
+# throw away samples, pooling, max-pooling
+
+# partial derivatives
+# loss function and partial derivatives
+
+# https://github.com/Students-for-AI/The-Academy-of-AI
+# https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
+
+# Generator G and Discriminator D
+# the loss function of the Generator G
+
+# up-convolution
+# We use a filter we do up-convolution with.
+
+# use batch normalisation
+# GANs are very difficult to train and this is why we use batch normalisation.
+
+# We normalize across a batch.
+# Mean across a batch. We use batches. Normalize across a batch.
+
+# the ReLU activation function
+# ReLU is the most common activation function. We use ReLU.
+
+# use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+
+
+# use PyTorch
+import torch
+
+#import torch
+import torchvision
+
+from torchvision import datasets, transforms
+
+# use matplotlib
+import matplotlib.pyplot as plt
+
+#import torch
+#import torchvision
+
+#from torchvision import transforms, datasets
+
+import torch.nn.functional as F
+
+#import matplotlib.pyplot as plt
+
+#batch_size = 128
+
+# download the training dataset
+#train_data = datasets.FashionMNIST(root='fashiondata/',
+#                                   transform=transforms.ToTensor(),
+#                                   train=True,
+#                                   download=True)
+
+# we create the train data loader
+#train_loader = torch.utils.data.DataLoader(train_data,
+#                                           shuffle=True,
+#                                           batch_size=batch_size)
+
+batch_size = 100
+
+train_data = datasets.FashionMNIST(root='fashiondata/',
+                                 transform=transforms.ToTensor(),
+                                 train=True,
+                                 download=True
+                                 )
+
+train_samples = torch.utils.data.DataLoader(dataset=train_data,
+                                           batch_size=batch_size,
+                                           shuffle=True
+                                           )
+
+# combine the power of LSTM RNNs and GANs
+# it is possible to use LSTM RNN together with GANs
+
+# GANs and LSTM RNNs
+# use LSTM RNNs together with GANs
+
+# class for D and G
+# we train the discriminator and the generator
+
+# we make the discriminator
+class discriminator(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.conv1 = torch.nn.Conv2d(1, 64, kernel_size=4, stride=2, padding=1)  # 1x28x28-> 64x14x14
+        self.conv2 = torch.nn.Conv2d(64, 128, kernel_size=4, stride=2, padding=1)  # 64x14x14-> 128x7x7
+        self.dense1 = torch.nn.Linear(128 * 7 * 7, 1)
+
+        self.bn1 = torch.nn.BatchNorm2d(64)
+        self.bn2 = torch.nn.BatchNorm2d(128)
+
+    def forward(self, x):
+        x = F.relu(self.bn1(self.conv1(x)))
+        x = F.relu(self.bn2(self.conv2(x))).view(-1, 128 * 7 * 7)
+        x = F.sigmoid(self.dense1(x))
+        return x
+
+# this was for the discriminator
+# we now do the same for the generator
+
+# Generator G
+class generator(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.dense1 = torch.nn.Linear(128, 256)
+        self.dense2 = torch.nn.Linear(256, 1024)
+        self.dense3 = torch.nn.Linear(1024, 128 * 7 * 7)
+        self.uconv1 = torch.nn.ConvTranspose2d(128, 64, kernel_size=4, stride=2, padding=1)  # 128x7x7 -> 64x14x14
+        self.uconv2 = torch.nn.ConvTranspose2d(64, 1, kernel_size=4, stride=2, padding=1)  # 64x14x14 -> 1x28x28
+
+        self.bn1 = torch.nn.BatchNorm1d(256)
+        self.bn2 = torch.nn.BatchNorm1d(1024)
+        self.bn3 = torch.nn.BatchNorm1d(128 * 7 * 7)
+        self.bn4 = torch.nn.BatchNorm2d(64)
+
+    def forward(self, x):
+        x = F.relu(self.bn1(self.dense1(x)))
+        x = F.relu(self.bn2(self.dense2(x)))
+        x = F.relu(self.bn3(self.dense3(x))).view(-1, 128, 7, 7)
+        x = F.relu(self.bn4(self.uconv1(x)))
+        x = F.sigmoid(self.uconv2(x))
+        return x
+
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+# use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+#instantiate model
+d = discriminator()
+g = generator()
+
+#training hyperparameters
+epochs = 100
+
+dlr = 0.0003
+glr = 0.0003
+
+d_optimizer = torch.optim.Adam(d.parameters(), lr=dlr)
+g_optimizer = torch.optim.Adam(g.parameters(), lr=glr)
+
+dcosts = []
+gcosts = []
+plt.ion()
+fig = plt.figure()
+loss_ax = fig.add_subplot(121)
+loss_ax.set_xlabel('Batch')
+loss_ax.set_ylabel('Cost')
+loss_ax.set_ylim(0, 0.2)
+generated_img = fig.add_subplot(122)
+plt.show()
+
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+# https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
+# use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
+
+def train(epochs, glr, dlr):
+    g_losses = []
+    d_losses = []
+    for epoch in range(epochs):
+
+        # iteratre over mini-batches
+        for batch_idx, (real_images, _) in enumerate(train_samples):
+
+            z = torch.randn(batch_size, 128)  # generate random latent variable to generate images from
+            generated_images = g.forward(z)  # generate images
+
+            gen_pred = d.forward(generated_images)  # prediction of discriminator on generated batch
+            real_pred = d.forward(real_images)  # prediction of discriminator on real batch
+
+            dcost = -torch.sum(torch.log(real_pred)) - torch.sum(torch.log(1 - gen_pred))  # cost of discriminator
+            gcost = -torch.sum(torch.log(gen_pred)) / batch_size  # cost of generator
+
+            # train discriminator
+            d_optimizer.zero_grad()
+            dcost.backward(retain_graph=True)  # retain the computational graph so we can train generator after
+            d_optimizer.step()
+
+            # train generator
+            g_optimizer.zero_grad()
+            gcost.backward()
+            g_optimizer.step()
+
+            # give us an example of a generated image after every 10000 images produced
+            if batch_idx * batch_size % 1000 == 0:
+                g.eval()  # put in evaluation mode
+                noise_input = torch.randn(1, 128)
+                generated_image = g.forward(noise_input)
+
+                generated_img.imshow(generated_image.detach().squeeze(), cmap='gray_r')
+                g.train()  # put back into training mode
+
+            dcost /= batch_size
+            gcost /= batch_size
+
+            print('Epoch: ', epoch, 'Batch idx:', batch_idx, '\tDisciminator cost: ', dcost.item(),
+                  '\tGenerator cost: ', gcost.item())
+
+            dcosts.append(dcost)
+            gcosts.append(gcost)
+
+            loss_ax.plot(dcosts, 'b')
+            loss_ax.plot(gcosts, 'r')
+
+            fig.canvas.draw()
+
+#print(torch.__version__)
+train(epochs, glr, dlr)
+
+z = torch.randn(batch_size, 128) #generate random latent variable to generate images
+im = g.forward(z) #generate images
+plt.imshow(im)
 
