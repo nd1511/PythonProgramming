@@ -313,13 +313,14 @@ class generator(torch.nn.Module):
 # https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
 # use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
 
-#instantiate model
+# instantiate the model
 d = discriminator()
 g = generator()
 
-#training hyperparameters
+# training hyperparameters
 epochs = 100
 
+# learning rate
 dlr = 0.0003
 glr = 0.0003
 
@@ -345,6 +346,7 @@ plt.show()
 def train(epochs, glr, dlr):
     g_losses = []
     d_losses = []
+
     for epoch in range(epochs):
 
         # iteratre over mini-batches
@@ -366,6 +368,7 @@ def train(epochs, glr, dlr):
 
             # train generator
             g_optimizer.zero_grad()
+
             gcost.backward()
             g_optimizer.step()
 
@@ -395,7 +398,24 @@ def train(epochs, glr, dlr):
 #print(torch.__version__)
 train(epochs, glr, dlr)
 
-z = torch.randn(batch_size, 128) #generate random latent variable to generate images
-im = g.forward(z) #generate images
+# We obtain:
+# Epoch:  0 Batch idx: 0 	Disciminator cost:  1.3832124471664429 	Generator cost:  0.006555716972798109
+# Epoch:  0 Batch idx: 1 	Disciminator cost:  1.0811840295791626 	Generator cost:  0.008780254982411861
+# Epoch:  0 Batch idx: 2 	Disciminator cost:  0.8481155633926392 	Generator cost:  0.011281056329607964
+# Epoch:  0 Batch idx: 3 	Disciminator cost:  0.6556042432785034 	Generator cost:  0.013879001140594482
+# Epoch:  0 Batch idx: 4 	Disciminator cost:  0.5069876909255981 	Generator cost:  0.016225570812821388
+# Epoch:  0 Batch idx: 5 	Disciminator cost:  0.4130948781967163 	Generator cost:  0.018286770209670067
+# Epoch:  0 Batch idx: 6 	Disciminator cost:  0.33445805311203003 	Generator cost:  0.02015063539147377
+# Epoch:  0 Batch idx: 7 	Disciminator cost:  0.279323011636734 	Generator cost:  0.021849267184734344
+# Epoch:  0 Batch idx: 8 	Disciminator cost:  0.2245958000421524 	Generator cost:  0.02352861315011978
+# Epoch:  0 Batch idx: 9 	Disciminator cost:  0.18664218485355377 	Generator cost:  0.025215130299329758
+# Epoch:  0 Batch idx: 10 	Disciminator cost:  0.14700829982757568 	Generator cost:  0.02692217379808426
+
+# generate random latent variable to generate images
+z = torch.randn(batch_size, 128)
+
+# generate images
+im = g.forward(z)
+
 plt.imshow(im)
 
