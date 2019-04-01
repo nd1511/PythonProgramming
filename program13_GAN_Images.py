@@ -5,11 +5,12 @@ import torch
 from torch.autograd import Variable
 
 import numpy as np
-import torchvision
-
 import matplotlib.pyplot as plt
+
+import torchvision
 from torchvision import transforms, datasets
 
+# use nn.functional
 import torch.nn.functional as F
 
 # GAN, Generative Adversarial Network
@@ -22,11 +23,14 @@ import torch.nn.functional as F
 batch_size = 100
 
 # import the datasets
+
+# we now use Fashion-MNIST
 train_data = datasets.FashionMNIST(root='fashiondata/',
                                    transform=transforms.ToTensor(),
                                    train=True,
                                    download=True)
 
+# we use the Fashion-MNIST dataset
 test_data = datasets.FashionMNIST(root='fashiondata/',
                                   transform=transforms.ToTensor(),
                                   train=False,
@@ -100,6 +104,8 @@ g = generator().cuda()
 
 # training hyperparameters
 no_epochs = 100
+
+# learning rate lr
 dlr = 0.0003
 glr = 0.0003
 
@@ -163,6 +169,7 @@ for epoch in range(no_epochs):
 
 
 
+    # plot figure
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.set_xlabel('Epoch')
@@ -229,6 +236,8 @@ for epoch in range(no_epochs):
 
 # use PyTorch
 import torch
+
+# use Variable
 from torch.autograd import Variable
 
 import torchvision
@@ -313,6 +322,7 @@ class generator(torch.nn.Module):
     def forward(self, x):
         x = F.relu(self.bn1(self.dense1(x)))
         x = F.relu(self.bn2(self.dense2(x)))
+
         x = F.relu(self.bn3(self.dense3(x))).view(-1, 128, 7, 7)
 
         x = F.relu(self.bn4(self.uconv1(x)))
@@ -398,8 +408,8 @@ for epoch in range(no_epochs):
 
 
 
-from __future__ import absolute_import
-from __future__ import print_function
+#from __future__ import absolute_import
+#from __future__ import print_function
 
 # numpy
 import numpy
