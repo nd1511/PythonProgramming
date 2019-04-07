@@ -138,7 +138,7 @@ dataset_kddcup99 = sklearn.datasets.kddcup99.fetch_kddcup99()
 # we now use: use: https://searchcode.com/codesearch/view/115660132/
 # we use: http://www.psych.mcgill.ca/labs/mogillab/anaconda2/lib/python2.7/site-packages/sklearn/datasets/kddcup99.py
 
-# dataset_kddcup99
+# we use dataset_kddcup99
 print(dataset_kddcup99)
 
 
@@ -2710,7 +2710,7 @@ def train(epochs, glr, dlr):
 #print(torch.__version__)
 train(epochs, glr, dlr)
 
-# We obtain:
+# We now obtain:
 # Epoch:  0 Batch idx: 0 	Disciminator cost:  1.3832124471664429 	Generator cost:  0.006555716972798109
 # Epoch:  0 Batch idx: 1 	Disciminator cost:  1.0811840295791626 	Generator cost:  0.008780254982411861
 # Epoch:  0 Batch idx: 2 	Disciminator cost:  0.8481155633926392 	Generator cost:  0.011281056329607964
@@ -2745,7 +2745,7 @@ z = torch.randn(batch_size, 128)
 
 # generate images
 im = g.forward(z)
-# use "forward(.)"
+# we use "forward(.)"
 
 plt.imshow(im)
 
