@@ -6,6 +6,21 @@ import numpy as np
 # np.exp(a)/np.sum(np.exp(a))
 # use: np.exp(a)/np.sum(np.exp(a))
 
+# https://github.com/samet-akcay/ganomaly
+# we use: https://github.com/samet-akcay/ganomaly
+
+# Files already downloaded and verified
+# Files already downloaded and verified
+# >> Training model Ganomaly.
+# 100%|██████████| 703/703 [20:16<00:00,  1.73s/it]
+# >> Training model Ganomaly. Epoch 1/15
+#    Avg Run Time (ms/batch): 274.149 AUC: 0.621 max AUC: 0.621
+# >> Training model Ganomaly. Epoch 2/15
+#    Avg Run Time (ms/batch): 284.825 AUC: 0.649 max AUC: 0.649
+#   2%|▏         | 11/703 [00:18<20:00,  1.73s/it]Process Process-34:
+# Process Process-35:
+# Process Process-33:
+
 # CIFAR-10 dataset
 from keras.datasets import cifar10
 
@@ -138,7 +153,7 @@ dataset_kddcup99 = sklearn.datasets.kddcup99.fetch_kddcup99()
 # we now use: use: https://searchcode.com/codesearch/view/115660132/
 # we use: http://www.psych.mcgill.ca/labs/mogillab/anaconda2/lib/python2.7/site-packages/sklearn/datasets/kddcup99.py
 
-# we use dataset_kddcup99
+# dataset_kddcup99
 print(dataset_kddcup99)
 
 
@@ -250,8 +265,6 @@ print("F-measure is: "+ str(2*((precision*recall)/(precision+recall))))
 from math import log
 print("Entropy is: "+ str(-precision*log(precision)))
 
-# 244380/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
-# 244410/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
 # 244450/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
 # 244510/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
 # 244540/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
@@ -2710,7 +2723,7 @@ def train(epochs, glr, dlr):
 #print(torch.__version__)
 train(epochs, glr, dlr)
 
-# We now obtain:
+# We obtain:
 # Epoch:  0 Batch idx: 0 	Disciminator cost:  1.3832124471664429 	Generator cost:  0.006555716972798109
 # Epoch:  0 Batch idx: 1 	Disciminator cost:  1.0811840295791626 	Generator cost:  0.008780254982411861
 # Epoch:  0 Batch idx: 2 	Disciminator cost:  0.8481155633926392 	Generator cost:  0.011281056329607964
@@ -2719,9 +2732,7 @@ train(epochs, glr, dlr)
 # Epoch:  0 Batch idx: 5 	Disciminator cost:  0.4130948781967163 	Generator cost:  0.018286770209670067
 # Epoch:  0 Batch idx: 6 	Disciminator cost:  0.33445805311203003 	Generator cost:  0.02015063539147377
 # Epoch:  0 Batch idx: 7 	Disciminator cost:  0.279323011636734 	Generator cost:  0.021849267184734344
-# Epoch:  0 Batch idx: 8 	Disciminator cost:  0.2245958000421524 	Generator cost:  0.02352861315011978
 
-# Epoch:  0 Batch idx: 37 	Disciminator cost:  0.08900360018014908 	Generator cost:  0.05888563022017479
 # Epoch:  0 Batch idx: 38 	Disciminator cost:  0.0921328067779541 	Generator cost:  0.0593753345310688
 # Epoch:  0 Batch idx: 39 	Disciminator cost:  0.09943853318691254 	Generator cost:  0.05279992148280144
 # Epoch:  0 Batch idx: 40 	Disciminator cost:  0.2455407679080963 	Generator cost:  0.036564696580171585
@@ -2734,7 +2745,6 @@ train(epochs, glr, dlr)
 # Epoch:  0 Batch idx: 118 	Disciminator cost:  0.010556117631494999 	Generator cost:  0.06929603219032288
 # Epoch:  0 Batch idx: 119 	Disciminator cost:  0.017774969339370728 	Generator cost:  0.07270769774913788
 
-# Epoch:  0 Batch idx: 444 	Disciminator cost:  0.06787727028131485 	Generator cost:  0.04046594724059105
 # Epoch:  0 Batch idx: 445 	Disciminator cost:  0.07139576226472855 	Generator cost:  0.03837932273745537
 # Epoch:  0 Batch idx: 446 	Disciminator cost:  0.08202749490737915 	Generator cost:  0.039551254361867905
 # Epoch:  0 Batch idx: 447 	Disciminator cost:  0.12328958511352539 	Generator cost:  0.03817861154675484
@@ -2745,7 +2755,7 @@ z = torch.randn(batch_size, 128)
 
 # generate images
 im = g.forward(z)
-# we use "forward(.)"
+# use "forward(.)"
 
 plt.imshow(im)
 
