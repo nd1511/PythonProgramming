@@ -237,6 +237,8 @@ print('x_train shape:', x_train.shape)
 print('Number of images in x_train', x_train.shape[0])
 print('Number of images in x_test', x_test.shape[0])
 
+
+
 # Importing the required Keras modules containing model and layers
 from keras.models import Sequential
 from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D
@@ -276,6 +278,58 @@ print(pred.argmax())
 # 12832/60000 [=====>........................] - ETA: 1:12 - loss: 0.0376 - acc: 0.9880
 # 12896/60000 [=====>........................] - ETA: 1:12 - loss: 0.0375 - acc: 0.9881
 # 12960/60000 [=====>........................] - ETA: 1:12 - loss: 0.0373 - acc: 0.9881
+
+# >> Training model Ganomaly. Epoch 13/15
+#    Avg Run Time (ms/batch): 4.910 AUC: 0.528 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 14/15
+#    Avg Run Time (ms/batch): 4.875 AUC: 0.533 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 15/15
+#    Avg Run Time (ms/batch): 4.830 AUC: 0.531 max AUC: 0.559
+# >> Training model Ganomaly.[Done]
+
+# Namespace(anomaly_class='bird', batchsize=64, beta1=0.5, dataroot='', dataset='cifar10',
+# device='gpu', display=False, display_id=0, display_port=8097, display_server='http://localhost',
+# droplast=True, extralayers=0, gpu_ids=[0], isTrain=True, isize=32, iter=0, load_weights=False, lr=0.0002,
+# manualseed=-1, metric='roc', model='ganomaly', name='ganomaly/cifar10', nc=3, ndf=64, ngf=64, ngpu=1, niter=15,
+# nz=100, outf='./output', phase='train', print_freq=100, proportion=0.1, resume='', save_image_freq=100,
+# save_test_images=False, w_bce=1, w_enc=1, w_rec=50, workers=8)
+
+# Files already downloaded and verified
+# Files already downloaded and verified
+
+# >> Training model Ganomaly.
+# >> Training model Ganomaly. Epoch 1/15
+#    Avg Run Time (ms/batch): 4.057 AUC: 0.513 max AUC: 0.513
+# >> Training model Ganomaly. Epoch 2/15
+#    Avg Run Time (ms/batch): 4.791 AUC: 0.513 max AUC: 0.513
+# >> Training model Ganomaly. Epoch 3/15
+#    Avg Run Time (ms/batch): 4.897 AUC: 0.519 max AUC: 0.519
+# >> Training model Ganomaly. Epoch 4/15
+#    Avg Run Time (ms/batch): 4.792 AUC: 0.502 max AUC: 0.519
+# >> Training model Ganomaly. Epoch 5/15
+#    Avg Run Time (ms/batch): 4.937 AUC: 0.536 max AUC: 0.536
+# >> Training model Ganomaly. Epoch 6/15
+#    Avg Run Time (ms/batch): 4.883 AUC: 0.498 max AUC: 0.536
+# >> Training model Ganomaly. Epoch 7/15
+#    Avg Run Time (ms/batch): 4.960 AUC: 0.503 max AUC: 0.536
+# >> Training model Ganomaly. Epoch 8/15
+#    Avg Run Time (ms/batch): 4.916 AUC: 0.559 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 9/15
+#    Avg Run Time (ms/batch): 4.870 AUC: 0.522 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 10/15
+#    Avg Run Time (ms/batch): 4.898 AUC: 0.539 max AUC: 0.559
+#  65% 455/703 [00:16<00:08, 28.19it/s]Reloading d net
+# >> Training model Ganomaly. Epoch 11/15
+#    Avg Run Time (ms/batch): 4.900 AUC: 0.529 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 12/15
+#    Avg Run Time (ms/batch): 4.856 AUC: 0.541 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 13/15
+#    Avg Run Time (ms/batch): 4.910 AUC: 0.528 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 14/15
+#    Avg Run Time (ms/batch): 4.875 AUC: 0.533 max AUC: 0.559
+# >> Training model Ganomaly. Epoch 15/15
+#    Avg Run Time (ms/batch): 4.830 AUC: 0.531 max AUC: 0.559
+# >> Training model Ganomaly.[Done]
 
 
 
@@ -374,6 +428,8 @@ sc_x = StandardScaler()
 x_train = sc_x.fit_transform(x_train)
 x_test = sc_x.transform(x_test)
 
+
+
 # use Keras
 import keras
 
@@ -428,7 +484,6 @@ print("F-measure is: "+ str(2*((precision*recall)/(precision+recall))))
 from math import log
 print("Entropy is: "+ str(-precision*log(precision)))
 
-# 244540/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
 # 244670/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
 # 244720/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
 # 244770/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
@@ -659,9 +714,6 @@ def prob21(x):
     #print(np.transpose(x))
 
     #print(phi_i)
-    #print(phi_i)
-
-    #print((np.linalg.inv(sigmaSquared_i)) )
     #print((np.linalg.det(sigmaSquared_i)))
 
     for i in range(7):
@@ -2890,13 +2942,11 @@ train(epochs, glr, dlr)
 # Epoch:  0 Batch idx: 6 	Disciminator cost:  0.33445805311203003 	Generator cost:  0.02015063539147377
 # Epoch:  0 Batch idx: 7 	Disciminator cost:  0.279323011636734 	Generator cost:  0.021849267184734344
 
-# Epoch:  0 Batch idx: 38 	Disciminator cost:  0.0921328067779541 	Generator cost:  0.0593753345310688
 # Epoch:  0 Batch idx: 39 	Disciminator cost:  0.09943853318691254 	Generator cost:  0.05279992148280144
 # Epoch:  0 Batch idx: 40 	Disciminator cost:  0.2455407679080963 	Generator cost:  0.036564696580171585
 # Epoch:  0 Batch idx: 41 	Disciminator cost:  0.10074597597122192 	Generator cost:  0.03721988573670387
 # Epoch:  0 Batch idx: 42 	Disciminator cost:  0.07906078547239304 	Generator cost:  0.04363853484392166
 
-# Epoch:  0 Batch idx: 116 	Disciminator cost:  0.012170110829174519 	Generator cost:  0.06555930525064468
 # Epoch:  0 Batch idx: 117 	Disciminator cost:  0.006641524378210306 	Generator cost:  0.07086272537708282
 # Epoch:  0 Batch idx: 118 	Disciminator cost:  0.010556117631494999 	Generator cost:  0.06929603219032288
 # Epoch:  0 Batch idx: 119 	Disciminator cost:  0.017774969339370728 	Generator cost:  0.07270769774913788
