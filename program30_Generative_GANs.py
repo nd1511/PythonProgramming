@@ -2,10 +2,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import numpy as np
-import tensorflow as tf
-
 from keras.datasets import mnist
 
+import tensorflow as tf
 ds = tf.contrib.distributions
 
 def sample_mog(batch_size, n_mixture=8, std=0.01, radius=1.0):
@@ -46,9 +45,7 @@ plt.show()
 # https://github.com/samet-akcay/ganomaly
 # we use: https://github.com/samet-akcay/ganomaly
 
-"""
-GANs - TRAIN GANOMALY
-"""
+# GANs - TRAIN GANOMALY
 
 # >> Training model Ganomaly. Epoch 14/15
 #    Avg Run Time (ms/batch): 4.875 AUC: 0.533 max AUC: 0.559
@@ -64,7 +61,6 @@ GANs - TRAIN GANOMALY
 # save_test_images=False, w_bce=1, w_enc=1, w_rec=50, workers=8)
 
 # Files already downloaded and verified
-# >> Training model Ganomaly.
 # >> Training model Ganomaly. Epoch 1/15
 #    Avg Run Time (ms/batch): 4.057 AUC: 0.513 max AUC: 0.513
 # >> Training model Ganomaly. Epoch 2/15
@@ -319,9 +315,6 @@ print(pred.argmax())
 # save_test_images=False, w_bce=1, w_enc=1, w_rec=50, workers=8)
 
 # Files already downloaded and verified
-# Files already downloaded and verified
-
-# >> Training model Ganomaly.
 # >> Training model Ganomaly. Epoch 1/15
 #    Avg Run Time (ms/batch): 4.057 AUC: 0.513 max AUC: 0.513
 # >> Training model Ganomaly. Epoch 2/15
@@ -408,7 +401,10 @@ dataset = pd.read_csv('/Users/dionelisnikolaos/Downloads/kddcup.data_10_percent'
 # we use: https://github.com/chadlimedamine/kdd-cup-99-Analysis-machine-learning-python/blob/master/kdd_binary_classification_ANN.py
 
 #change Multi-class to binary-class
-dataset['normal.'] = dataset['normal.'].replace(['back.', 'buffer_overflow.', 'ftp_write.', 'guess_passwd.', 'imap.', 'ipsweep.', 'land.', 'loadmodule.', 'multihop.', 'neptune.', 'nmap.', 'perl.', 'phf.', 'pod.', 'portsweep.', 'rootkit.', 'satan.', 'smurf.', 'spy.', 'teardrop.', 'warezclient.', 'warezmaster.'], 'attack')
+dataset['normal.'] = dataset['normal.'].replace(['back.', 'buffer_overflow.', 'ftp_write.', 'guess_passwd.',
+                                                 'imap.', 'ipsweep.', 'land.', 'loadmodule.', 'multihop.', 'neptune.',
+                                                 'nmap.', 'perl.', 'phf.', 'pod.', 'portsweep.', 'rootkit.', 'satan.',
+                                                 'smurf.', 'spy.', 'teardrop.', 'warezclient.', 'warezmaster.'], 'attack')
 
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 41].values
@@ -1001,7 +997,6 @@ plt.axis('equal')
 plt.show()
 
 n = 10000
-
 numpy.random.seed(0x5eed)
 
 # Parameters of the mixture components
@@ -2439,7 +2434,6 @@ from keras.datasets import fashion_mnist
 
 # set the matplotlib backend so figures can be saved in the background
 import matplotlib
-
 #matplotlib.use("Agg")
 
 # import the necessary packages
