@@ -10,6 +10,7 @@ import tensorflow as tf
 
 from keras.datasets import mnist
 from tensorflow.examples.tutorials.mnist import input_data
+
 # https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/
 
 # https://towardsdatascience.com/introduction-to-multilayer-neural-networks-with-tensorflows-keras-api-abf4f813959
@@ -202,10 +203,7 @@ plt.show()
 # https://github.com/samet-akcay/ganomaly
 # we use: https://github.com/samet-akcay/ganomaly
 
-"""
-GANs - TRAIN GANOMALY
-"""
-
+# GANs - TRAIN GANOMALY
 # >> Training model Ganomaly. Epoch 14/15
 #    Avg Run Time (ms/batch): 4.875 AUC: 0.533 max AUC: 0.559
 # >> Training model Ganomaly. Epoch 15/15
@@ -402,9 +400,10 @@ print(x_train.shape)
 x_train = x_train.reshape(x_train.shape[0], 28, 28, 1)
 x_test = x_test.reshape(x_test.shape[0], 28, 28, 1)
 
+#input_shape = (64, 64, 1)
 input_shape = (28, 28, 1)
 
-# Making sure that the values are float so that we can get decimal points after division
+# Ensure that the values are float so that we can get decimal points after division
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
 
@@ -2392,9 +2391,7 @@ print(test_x.shape)
 # https://gogul09.github.io/software/neural-nets-logistic-regression
 # use: https://gogul09.github.io/software/neural-nets-logistic-regression
 
-#-----------------
 # save using h5py
-#-----------------
 h5_train = h5py.File("train_x.h5", 'w')
 h5_train.create_dataset("data_train", data=np.array(train_x))
 
@@ -2513,7 +2510,6 @@ def model(X_train, Y_train, X_test, Y_test, epochs, lr):
 
 # we use: https://gogul09.github.io/software/neural-nets-logistic-regression
 
-#epochs = 100
 epochs = 10
 
 # lr, learning rate, step size
