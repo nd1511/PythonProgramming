@@ -1002,8 +1002,6 @@ imgplot2 = plt.imshow(img2)
 # >> Training model Ganomaly. Epoch 2/15
 #    Avg Run Time (ms/batch): 284.825 AUC: 0.649 max AUC: 0.649
 
-
-
 # https://github.com/samet-akcay/ganomaly
 # we use: https://github.com/samet-akcay/ganomaly
 
@@ -1032,7 +1030,6 @@ X_test = X_test / 255.0
 # use: https://medium.com/tebs-lab/how-to-classify-mnist-digits-with-different-neural-network-architectures-39c75a0f03e3
 
 # Files already downloaded and verified
-# >> Training model Ganomaly.
 # >> Training model Ganomaly. Epoch 1/15
 #   0% 1/703 [00:01<19:09,  1.64s/it]   Avg Run Time (ms/batch): 238.385 AUC: 0.587 max AUC: 0.587
 # >> Training model Ganomaly. Epoch 2/15
@@ -1123,7 +1120,6 @@ plt.pause(2)
 pred = model.predict(x_test[image_index].reshape(1, 28, 28, 1))
 print(pred.argmax())
 
-# 12704/60000 [=====>........................] - ETA: 1:13 - loss: 0.0377 - acc: 0.9880
 # 12768/60000 [=====>........................] - ETA: 1:13 - loss: 0.0376 - acc: 0.9880
 # 12832/60000 [=====>........................] - ETA: 1:12 - loss: 0.0376 - acc: 0.9880
 # 12896/60000 [=====>........................] - ETA: 1:12 - loss: 0.0375 - acc: 0.9881
@@ -1983,9 +1979,7 @@ def plot_sphere(w=0, c=[0,0,0], r=[1, 1, 1], subdev=10, ax=None, sigma_multiplie
     cmap.set_cmap('jet')
 
     c = cmap.to_rgba(w)
-
     ax.plot_surface(x, y, z, color=c, alpha=0.2, linewidth=1)
-
     return ax
 
 def visualize_2D_gmm(points, w, mu, stdev, export=True):
@@ -2539,24 +2533,20 @@ plt.plot(hist.history['loss'])
 plt.plot(hist.history['val_loss'])
 
 plt.legend(['train', 'test'])
-
 plt.title('loss')
 
 plt.savefig("loss7.png", dpi=300, format="png")
 
 plt.figure()
-
 plt.plot(hist.history['acc'])
 plt.plot(hist.history['val_acc'])
 
 plt.legend(['train', 'test'])
-
 plt.title('accuracy')
 
 plt.savefig("accuracy7.png", dpi=300, format="png")
 
 model_json = model.to_json()
-
 with open("model7.json", "w") as json_file:
 	json_file.write(model_json)
 
