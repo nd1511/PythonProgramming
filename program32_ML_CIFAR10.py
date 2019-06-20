@@ -2576,7 +2576,6 @@ from keras.datasets import fashion_mnist
 
 print(trainX2.shape)
 print(testX2.shape)
-
 print('')
 
 from keras.datasets import imdb
@@ -2584,7 +2583,6 @@ from keras.datasets import imdb
 
 print(trainX3.shape)
 print(testX3.shape)
-
 print('')
 
 from keras.datasets import cifar10
@@ -2598,7 +2596,6 @@ from keras.datasets import cifar100
 
 print(trainX5.shape)
 print(testX5.shape)
-
 print('')
 
 # use: https://medium.com/@erikhallstrm/work-remotely-with-pycharm-tensorflow-and-ssh-c60564be862d
@@ -2615,7 +2612,6 @@ from keras.datasets import boston_housing
 
 print(trainX7.shape)
 print(testX7.shape)
-
 print('')
 
 # use: https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
@@ -2770,7 +2766,6 @@ lines = text_file.read().split(' ')
 #print(lines)
 
 list_of_lists = []
-
 with open(filename) as f:
     for line in f:
         inner_list = [elt.strip() for elt in line.split(' ')]
@@ -2840,17 +2835,14 @@ df= pd.DataFrame(features)
 X_train, X_test, y_train, y_test = train_test_split(df, labels, train_size=0.8, test_size=0.2)
 
 print('')
-
 print ("X_train, y_train:", X_train.shape, y_train.shape)
 print ("X_test, y_test:", X_test.shape, y_test.shape)
 
 print('')
-
 print(X_train.shape)
 print(y_train.shape)
 
 print('')
-
 print(X_train.shape)
 print(X_test.shape)
 
@@ -2868,11 +2860,9 @@ print ("Score: ", trained_model.score(X_train, y_train))
 
 # Predicting
 print ("Predicting")
-
 y_pred = clf.predict(X_test)
 
 print ("Computing performance metrics")
-
 results = confusion_matrix(y_test, y_pred)
 error = zero_one_loss(y_test, y_pred)
 
