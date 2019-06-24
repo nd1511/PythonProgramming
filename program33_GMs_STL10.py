@@ -982,12 +982,11 @@ from tensorflow.examples.tutorials.mnist import input_data
 # t10k-images-idx3-ubyte.gz:   test set images (1648877 bytes)
 # t10k-labels-idx1-ubyte.gz:   test set labels (4542 bytes)
 
-# From Terminal:
-# cd mnist/
-# gzip train-images-idx3-ubyte.gz -d
-# gzip train-labels-idx1-ubyte.gz -d
-# gzip t10k-images-idx3-ubyte.gz -d
-# gzip t10k-labels-idx1-ubyte.gz -d
+# From Terminal: (1) cd mnist/
+# (2) gzip train-images-idx3-ubyte.gz -d
+# (3) gzip train-labels-idx1-ubyte.gz -d
+# (4) gzip t10k-images-idx3-ubyte.gz -d
+# (5) gzip t10k-labels-idx1-ubyte.gz -d
 
 import os
 import struct
@@ -2622,7 +2621,6 @@ ncategories = len(categories)
 
 imgs = []
 labels = []
-
 print('')
 
 #print(categories)
@@ -2787,7 +2785,6 @@ model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accurac
 # model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 print(model.summary())
-
 np.random.seed(seed)
 
 hist = model.fit(X_train, y_train, validation_data=(X_test, y_test),
@@ -3189,16 +3186,11 @@ from sklearn.metrics import classification_report
 num_train_images =  1500
 num_test_images = 100
 
-#-------------------
-# organize imports
-#-------------------
-import numpy as np
-
 import os
 import h5py
 
 import glob
-import cv2
+import numpy as np
 
 # we use opencv-python
 import cv2
@@ -3206,9 +3198,7 @@ import cv2
 # we use keras
 from keras.preprocessing import image
 
-#------------------------
 # dataset pre-processing
-#------------------------
 #train_path   = "G:\\workspace\\machine-intelligence\\deep-learning\\logistic-regression\\dataset\\train"
 #test_path    = "G:\\workspace\\machine-intelligence\\deep-learning\\logistic-regression\\dataset\\test"
 
