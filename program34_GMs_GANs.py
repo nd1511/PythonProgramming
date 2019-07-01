@@ -8,9 +8,8 @@ print(tf.__version__)
 # use: https://www.analyticsinsight.net/best-computer-vision-courses-to-master-in-2019/
 
 import sys
-import os, tarfile, errno
-
 import numpy as np
+import os, tarfile, errno
 import matplotlib.pyplot as plt
 
 if sys.version_info >= (3, 0, 0):
@@ -2035,10 +2034,9 @@ import sys
 import errno
 from gzip import GzipFile
 
+import os
 import logging
 from io import BytesIO
-
-import os
 from os.path import exists, join
 
 try:
@@ -2050,10 +2048,9 @@ except ImportError:
 # https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/datasets/kddcup99.py
 dataset_kddcup99 = sklearn.datasets.kddcup99.fetch_kddcup99()
 
+# we now use: use: https://searchcode.com/codesearch/view/115660132/
 # https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/datasets/kddcup99.py
 # use: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/datasets/kddcup99.py
-
-# we now use: use: https://searchcode.com/codesearch/view/115660132/
 # we use: http://www.psych.mcgill.ca/labs/mogillab/anaconda2/lib/python2.7/site-packages/sklearn/datasets/kddcup99.py
 
 # dataset_kddcup99
@@ -2570,9 +2567,8 @@ def LSTM_RNN(_X, _weights, _biases):
     # Function returns a tensorflow LSTM (RNN) artificial neural network from given parameters.
     # Moreover, two LSTM cells are stacked which adds deepness to the neural network.
 
-    # Note, some code of this notebook is inspired from an slightly different
-    # RNN architecture used on another dataset, some of the credits goes to
-    # "aymericdamien" under the MIT license.
+    # Note, some code of this notebook is inspired from an slightly different RNN architecture used on
+    # another dataset, some of the credits goes to "aymericdamien" under the MIT license.
 
     # (NOTE: This step could be greatly optimised by shaping the dataset once
     # input shape: (batch_size, n_steps, n_input)
@@ -3034,10 +3030,9 @@ from keras.layers.convolutional import MaxPooling2D
 from keras import backend as K
 from keras.utils import np_utils
 
-K.set_image_dim_ordering('th')
-
 seed = 7
 numpy.random.seed(seed)
+K.set_image_dim_ordering('th')
 
 # load data
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
@@ -3211,10 +3206,7 @@ print(ncategories)
 seed = 7
 np.random.seed(seed)
 
-# use pandas
-import pandas as pd
-
-# use sklearn
+import pandas as pd # use pandas
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(imgs, labels, test_size=0.1)
@@ -4357,9 +4349,7 @@ import torch.nn.functional as F
 #                                           shuffle=True,
 #                                           batch_size=batch_size)
 
-# define the batch size
-batch_size = 100
-
+batch_size = 100 # define the batch size
 train_data = datasets.FashionMNIST(root='fashiondata/',
                                  transform=transforms.ToTensor(),
                                  train=True, download=True)
