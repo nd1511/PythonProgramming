@@ -821,7 +821,6 @@ plt.figure(1)
 #plt.xticks(range(len(arrayLoop)), arrayLoop)
 
 #print(res21_total)
-
 #res21_total = list(res21_total)
 #best_auc21_total = list(best_auc21_total)
 #res22_total = list(res22_total)
@@ -852,7 +851,6 @@ plt.legend(['F1 Score', 'Best F1 Score'])
 
 #plt.legend(['F1 Score', 'Best F1 Score'])
 #plt.legend(['AUPRC', 'Best AUPRC'])
-
 plt.show()
 
 plt.figure(2)
@@ -980,8 +978,7 @@ class Encoder(snt.AbstractModule):
             stride=(1, 1),
             name="enc_3")(h)
 
-        h = residual_stack(
-            h,
+        h = residual_stack(h,
             self._num_hiddens,
             self._num_residual_layers,
             self._num_residual_hiddens)
@@ -1003,8 +1000,7 @@ class Decoder(snt.AbstractModule):
             stride=(1, 1),
             name="dec_1")(x)
 
-        h = residual_stack(
-            h,
+        h = residual_stack(h,
             self._num_hiddens,
             self._num_residual_layers,
             self._num_residual_hiddens)
@@ -1042,8 +1038,8 @@ image_size = 32
 num_training_updates = 100
 
 num_hiddens = 128
-num_residual_hiddens = 32
 num_residual_layers = 2
+num_residual_hiddens = 32
 
 # These hyper-parameters define the size of the model (number of parameters and layers).
 # The hyper-parameters in the paper were (For ImageNet):
@@ -1104,8 +1100,7 @@ decoder = Decoder(num_hiddens, num_residual_layers, num_residual_hiddens)
 
 pre_vq_conv1 = snt.Conv2D(output_channels=embedding_dim,
                           kernel_shape=(1, 1),
-                          stride=(1, 1),
-                          name="to_vq")
+                          stride=(1, 1), name="to_vq")
 
 if vq_use_ema:
     vq_vae = snt.nets.VectorQuantizerEMA(
@@ -3019,10 +3014,8 @@ sio.savemat('caltech_del.mat', data)
 # CIFAR-10 Dataset
 # CNN model for CIFAR-10
 
-# numpy
-import numpy
-
 # CIFAR-10 dataset
+import numpy # numpy
 from keras.datasets import cifar10
 
 # Sequential
@@ -4286,9 +4279,8 @@ print(pred.argmax())
 # GANs and VAEs, Generative Models
 
 # random noise
-# from random noise to a tensor
-
 # We use batch normalisation.
+# from random noise to a tensor
 # GANs are very difficult to train. Super-deep models. This is why we use batch normalisation.
 
 # GANs and LSTM RNNs
@@ -4305,9 +4297,8 @@ print(pred.argmax())
 
 
 # Anomaly detection (AD)
-# Unsupervised machine learning
-
 # GANs for super-resolution
+# Unsupervised machine learning
 # Generative Adversarial Networks, GANs
 
 # the BigGAN dataset
@@ -4359,8 +4350,7 @@ import torch.nn.functional as F
 # download the training dataset
 #train_data = datasets.FashionMNIST(root='fashiondata/',
 #                                   transform=transforms.ToTensor(),
-#                                   train=True,
-#                                   download=True)
+#                                   train=True, download=True)
 
 # we create the train data loader
 #train_loader = torch.utils.data.DataLoader(train_data,
