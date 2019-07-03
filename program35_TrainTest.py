@@ -26,10 +26,8 @@ try:
 except:
     from scipy.misc import imsave
 
-# sys.version_info
-print(sys.version_info)
-# Import IsolationForest module
-from sklearn.ensemble import IsolationForest
+print(sys.version_info) # we use: sys.version_info
+from sklearn.ensemble import IsolationForest # Import IsolationForest module
 
 # Import Line2D for marking legend in graph
 from matplotlib.lines import Line2D
@@ -951,18 +949,18 @@ plt.show()
 
 
 
+import tarfile
 import numpy as np
 import sonnet as snt
-
-import tarfile
 import tensorflow as tf
 
-from six.moves import cPickle
-from six.moves import urllib
 from six.moves import xrange
+from six.moves import urllib
+from six.moves import cPickle
 
-# CIFAR-10 Dataset
-data_path = "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
+# https://github.com/deepmind/sonnet/blob/master/sonnet/examples/vqvae_example.ipynb
+data_path = "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz" # CIFAR-10 Dataset
+# we use: https://github.com/deepmind/sonnet/blob/master/sonnet/examples/vqvae_example.ipynb
 
 local_data_dir = tempfile.mkdtemp()
 tf.gfile.MakeDirs(local_data_dir)
@@ -975,9 +973,6 @@ url.close()
 
 archive.close()
 print('extracted data files to %s' % local_data_dir)
-
-# https://github.com/deepmind/sonnet/blob/master/sonnet/examples/vqvae_example.ipynb
-# we use: https://github.com/deepmind/sonnet/blob/master/sonnet/examples/vqvae_example.ipynb
 
 def unpickle(filename):
     with open(filename, 'rb') as fo:
@@ -2142,10 +2137,9 @@ dataset = pd.read_csv('/Users/dionelisnikolaos/Downloads/kddcup.data_10_percent'
 #change Multi-class to binary-class
 dataset['normal.'] = dataset['normal.'].replace(['back.', 'buffer_overflow.', 'ftp_write.', 'guess_passwd.', 'imap.', 'ipsweep.', 'land.', 'loadmodule.', 'multihop.', 'neptune.', 'nmap.', 'perl.', 'phf.', 'pod.', 'portsweep.', 'rootkit.', 'satan.', 'smurf.', 'spy.', 'teardrop.', 'warezclient.', 'warezmaster.'], 'attack')
 
-x = dataset.iloc[:, :-1].values
-y = dataset.iloc[:, 41].values
-
 #encoding categorical data
+y = dataset.iloc[:, 41].values
+x = dataset.iloc[:, :-1].values
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 labelencoder_x_1 = LabelEncoder()
@@ -3103,14 +3097,11 @@ X_test = X_test / 255.0
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 
-num_classes = y_test.shape[1]
-
 # we now create the model
+num_classes = y_test.shape[1]
 # we use: https://github.com/acht7111020/CNN_object_classification
 
-# use Sequential
-model = Sequential()
-
+model = Sequential() # we now use Sequential
 model.add(Conv2D(32, (3, 3), input_shape=(3, 32, 32), activation='relu', padding='same'))
 
 model.add(Dropout(0.2))
@@ -4408,11 +4399,10 @@ train_data = datasets.FashionMNIST(root='fashiondata/',
 train_samples = torch.utils.data.DataLoader(dataset=train_data,
                                            batch_size=batch_size, shuffle=True)
 
-# combine the power of LSTM RNNs and GANs
-# it is possible to use LSTM RNN together with GANs
-
 # GANs and LSTM RNNs
 # use LSTM RNNs together with GANs
+# combine the power of LSTM RNNs and GANs
+# it is possible to use LSTM RNN together with GANs
 
 # class for D and G
 # we train the discriminator and the generator
