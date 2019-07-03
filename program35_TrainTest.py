@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 if sys.version_info >= (3, 0, 0):
@@ -28,6 +29,7 @@ except:
 
 print(sys.version_info) # we use: sys.version_info
 from sklearn.ensemble import IsolationForest # Import IsolationForest module
+# use: https://towardsdatascience.com/anomaly-detection-for-dummies-15f148e559c1
 
 # Import Line2D for marking legend in graph
 from matplotlib.lines import Line2D
@@ -105,10 +107,10 @@ plt.show()
 
 
 
-# example of loading the cifar10 dataset
+# example of loading the CIFAR-10 dataset
 from keras.datasets.cifar10 import load_data
 
-# load the images into memory
+# we load the images into the memory
 (trainX, trainy), (testX, testy) = load_data()
 
 # summarize the shape of the dataset
@@ -134,11 +136,8 @@ for i in range(49):
     # define subplot
 	pyplot.subplot(7, 7, 1 + i)
 
-    # turn off axis
-	pyplot.axis('off')
-
-	# plot raw pixel data
-	pyplot.imshow(trainX[i])
+	pyplot.axis('off') # turn off axis
+    pyplot.imshow(trainX[i]) # plot raw pixel data
 
 pyplot.show()
 
@@ -358,7 +357,8 @@ model.summary()
 # plot the model
 plot_model(model, to_file='generator_plot.png', show_shapes=True, show_layer_names=True)
 
-from numpy.random import randn
+from numpy.random import randn # we use randn
+# https://towardsdatascience.com/anomaly-detection-for-dummies-15f148e559c1
 
 # generate points in latent space as input for the generator
 def generate_latent_points(latent_dim, n_samples):
@@ -639,20 +639,16 @@ latent_points = generate_latent_points(100, 100)
 # generate images
 X = model.predict(latent_points)
 
-# scale from [-1,1] to [0,1]
-X = (X + 1) / 2.0
+X = (X + 1) / 2.0 # scale from [-1,1] to [0,1]
+save_plot(X, 10) # plot the result
 
-# plot the result
-save_plot(X, 10)
-
+# an example of generating an image for a specific point in the latent space
 # https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/
 # use: https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/
 
-# example of generating an image for a specific point in the latent space
-from keras.models import load_model
-
 from numpy import asarray
 from matplotlib import pyplot
+from keras.models import load_model
 
 # load model
 model = load_model('generator_model_200.h5')
@@ -984,6 +980,7 @@ def reshape_flattened_image_batch(flat_image_batch):
 def combine_batches(batch_list):
     images = np.vstack([reshape_flattened_image_batch(batch['data'])
                         for batch in batch_list])
+
     labels = np.vstack([np.array(batch['labels']) for batch in batch_list]).reshape(-1, 1)
     return {'images': images, 'labels': labels}
 
@@ -1061,6 +1058,7 @@ class Encoder(snt.AbstractModule):
             self._num_hiddens,
             self._num_residual_layers,
             self._num_residual_hiddens)
+
         return h
 
 class Decoder(snt.AbstractModule):
@@ -1616,12 +1614,10 @@ print("Test accuracy: {:.3f}%".format(test_acc*100))
 
 
 
-import tensorflow
-import matplotlib.pyplot as plt
-
 import time
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 from keras.datasets import mnist
 from tensorflow.examples.tutorials.mnist import input_data
@@ -2285,9 +2281,7 @@ from matplotlib import pyplot as plt
 import scipy.io as sio
 import matplotlib.pyplot as plt
 
-# index
-image_ind = 10
-
+image_ind = 10 # define the index
 #train_data = sio.loadmat('train_32x32.mat')
 train_data = sio.loadmat('/Users/dionelisnikolaos/Downloads/train_32x32.mat')
 
@@ -3187,12 +3181,11 @@ def imread(path):
 	return img
 
 #cwd = os.getcwd()
-#path = cwd + "/101_ObjectCategories"
-
 #path = "/101_ObjectCategories"
+#path = cwd + "/101_ObjectCategories"
 path = "/Users/dionelisnikolaos/Downloads/101_ObjectCategories"
 
-#CIFAR-10 Dataset
+# CIFAR-10 Dataset
 # The Caltech-101 Dataset
 # CIFAR-10 Dataset, and CIFAR-100 Dataset
 
@@ -3351,7 +3344,7 @@ model.add(Dense(4096, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 
-# Compile mode
+# Compile the model
 epochs = 300
 lrate = 0.0001
 
@@ -3361,6 +3354,7 @@ decay = lrate / epochs
 adam = SGD(lr=0.0001)
 
 model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
+
 # model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 # model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
@@ -3370,9 +3364,8 @@ np.random.seed(seed)
 hist = model.fit(X_train, y_train, validation_data=(X_test, y_test),
 				 epochs=epochs, batch_size=56, shuffle=True, callbacks=[earlyStopping])
 
-# hist = model.load_weights('./64.15/model.h5');
-
 # Final evaluation of the model
+# hist = model.load_weights('./64.15/model.h5')
 scores = model.evaluate(X_test, y_test, verbose=0)
 
 print("Accuracy: %.2f%%" % (scores[1] * 100))
@@ -4538,11 +4531,8 @@ def train(epochs, glr, dlr):
                 generated_image = g.forward(noise_input)
                 generated_img.imshow(generated_image.detach().squeeze(), cmap='gray_r')
 
-                # pause for some seconds
-                plt.pause(5)
-
-                # put back into training mode
-                g.train()
+                plt.pause(5) # pause for some seconds
+                g.train() # now, go back to the training mode
 
             dcost /= batch_size
             gcost /= batch_size
