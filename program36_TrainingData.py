@@ -1289,7 +1289,6 @@ class Decoder(snt.AbstractModule):
         return x_recon
 
 tf.reset_default_graph()
-
 # VQ-VAE, DeepMind, Google AI
 # https://github.com/deepmind/sonnet/blob/master/sonnet/examples/vqvae_example.ipynb
 
@@ -1322,15 +1321,13 @@ embedding_dim = 64
 # The higher this value, the higher the capacity in the information bottleneck.
 num_embeddings = 512
 
-# commitment_cost should be set appropriately. It's often useful to try a couple
-# of values. It mostly depends on the scale of the reconstruction cost
-# (log p(x|z)). So if the reconstruction cost is 100x higher, the
+# commitment_cost should be set appropriately. It's often useful to try a couple of values. It mostly depends on
+# the scale of the reconstruction cost (log p(x|z)). So if the reconstruction cost is 100x higher, the
 # commitment_cost should also be multiplied with the same amount.
 commitment_cost = 0.25
 
-# Use EMA updates for the codebook (instead of the Adam optimizer).
-# This typically converges faster, and makes the model less dependent on choice
-# of the optimizer. In the VQ-VAE paper EMA updates were not used (but was
+# Use EMA updates for the codebook (instead of the Adam optimizer). This typically converges faster, and makes
+# the model less dependent on choice of the optimizer. In the VQ-VAE paper EMA updates were not used (but was
 # developed afterwards). See Appendix of the paper for more details.
 vq_use_ema = False
 
@@ -1360,13 +1357,12 @@ def get_images(sess, subset='train'):
     elif subset == 'valid':
         return sess.run(valid_dataset_batch)['images']
 
-# Build the modules
+# we build the modules
 encoder = Encoder(num_hiddens, num_residual_layers, num_residual_hiddens)
 decoder = Decoder(num_hiddens, num_residual_layers, num_residual_hiddens)
 
 pre_vq_conv1 = snt.Conv2D(output_channels=embedding_dim,
-                          kernel_shape=(1, 1),
-                          stride=(1, 1), name="to_vq")
+                          kernel_shape=(1, 1), stride=(1, 1), name="to_vq")
 
 if vq_use_ema:
     vq_vae = snt.nets.VectorQuantizerEMA(
@@ -1718,10 +1714,10 @@ lr=0.005
 criterion = nn.BCELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
+clip = 5
 epochs = 2
 counter = 0
 print_every = 1000
-clip = 5
 valid_loss_min = np.Inf
 
 model.train()
@@ -1832,8 +1828,7 @@ def load_mnist(path2, kind='train'):
     labels_path = os.path.join(path2)
     images_path = os.path.join(path2)
 
-# loading the data
-from mlxtend.data import loadlocal_mnist
+from mlxtend.data import loadlocal_mnist # we load the data
 #X_train, y_train = load_mnist('/Users/dionelisnikolaos/Downloads/mnist/', kind='train')
 
 #y_train = load_mnist('/Users/dionelisnikolaos/Downloads/mnist/train-labels-idx1-ubyte')
@@ -1842,7 +1837,6 @@ from mlxtend.data import loadlocal_mnist
 
 X_train, y_train = loadlocal_mnist(images_path='/Users/dionelisnikolaos/Downloads/mnist/train-images-idx3-ubyte',
         labels_path='/Users/dionelisnikolaos/Downloads/mnist/train-labels-idx1-ubyte')
-
 
 #X_test, y_test = load_mnist('./mnist/', kind='t10k') # loading the data
 #y_test = load_mnist('/Users/dionelisnikolaos/Downloads/mnist/t10k-labels-idx1-ubyte')
