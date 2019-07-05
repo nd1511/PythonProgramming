@@ -1312,8 +1312,7 @@ num_residual_hiddens = 32
 # num_residual_hiddens = 32
 # num_residual_layers = 2
 
-# This value is not that important, usually 64 works.
-# This will not change the capacity in the information-bottleneck.
+# This value is usually 64. This value will not change the capacity in the information-bottleneck.
 embedding_dim = 64
 
 # The higher this value, the higher the capacity in the information bottleneck.
@@ -1591,7 +1590,7 @@ for i, sentence in enumerate(train_sentences):
 
 print("OK. Done.")
 
-# Removing the words that only appear once
+# Remove the words that only appear once
 words = {k:v for k,v in words.items() if v>1}
 
 # Sorting the words according to the number of appearances, with the most common word being first
@@ -1644,6 +1643,7 @@ train_data = TensorDataset(torch.from_numpy(train_sentences), torch.from_numpy(t
 val_data = TensorDataset(torch.from_numpy(val_sentences), torch.from_numpy(val_labels))
 test_data = TensorDataset(torch.from_numpy(test_sentences), torch.from_numpy(test_labels))
 
+# define the batch size
 batch_size = 400
 
 train_loader = DataLoader(train_data, shuffle=True, batch_size=batch_size)
@@ -1889,24 +1889,19 @@ y_train_onehot = keras.utils.to_categorical(y_train)
 print('First 3 labels: ', y_train[:3])
 print('\nFirst 3 labels (one-hot):\n', y_train_onehot[:3])
 
-# initialize model
+# initialize the model
 model = keras.models.Sequential()
 
-# add input layer
-model.add(keras.layers.Dense(units=50,
-    input_dim=X_train_centered.shape[1],
-    kernel_initializer='glorot_uniform',
-    bias_initializer='zeros', activation='tanh'))
+# add the input layer
+model.add(keras.layers.Dense(units=50, input_dim=X_train_centered.shape[1],
+    kernel_initializer='glorot_uniform', bias_initializer='zeros', activation='tanh'))
 
 model.add(keras.layers.Dense(10, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
 # https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/
 
-# train model
-history = model.fit(X_train_centered, y_train_onehot,
-    batch_size=64, epochs=50, verbose=1, validation_split=0.1)
-
-y_train_pred = model.predict_classes(X_train_centered, verbose=0)
+history = model.fit(X_train_centered, y_train_onehot, batch_size=64, epochs=50, verbose=1, validation_split=0.1)
+y_train_pred = model.predict_classes(X_train_centered, verbose=0) # we train the model
 print('First 3 predictions: ', y_train_pred[:3])
 
 # calculate training accuracy
@@ -2403,7 +2398,7 @@ precision = cm[1,1]/(cm[1,0]+cm[1,1])
 print("Precision is: "+ str(precision))
 print("F-measure is: "+ str(2*((precision*recall)/(precision+recall))))
 
-from math import log
+from math import log # we use log(.)
 print("Entropy is: "+ str(-precision*log(precision)))
 
 # 244720/345814 [====================>.........] - ETA: 55s - loss: 0.0038 - acc: 0.9992
@@ -2625,12 +2620,11 @@ def prob21(x):
         #prob = prob + (phi_i * ((1 / np.sqrt(((2*np.pi)**7)*(np.linalg.det(sigmaSquared_i)))) * np.exp(-0.5*(np.transpose(x-np.transpose(mu_total[i])))*(np.linalg.inv(sigmaSquared_i))*((x-np.transpose(mu_total[i]))))))
 
         #prob = prob + (phi_i * ((1 / np.sqrt(((2 * np.pi) ** 7) * (np.linalg.det(sigmaSquared_i)))) * np.exp(-0.5 * ((x - (mu_total[i]))) * (np.linalg.inv(sigmaSquared_i)) * (np.transpose(x - (mu_total[i]))))))
+        #print((1 / np.sqrt(((2 * np.pi) ** 7) * (np.linalg.det(sigmaSquared_i)))))
+        #print(mu_total[i])
 
         var1 = ((x - (mu_total[i])))
         var1 = np.array(var1)
-
-        #print(mu_total[i])
-        #print((1 / np.sqrt(((2 * np.pi) ** 7) * (np.linalg.det(sigmaSquared_i)))))
 
         #prob = prob + (phi_i * ((1 / np.sqrt(((2 * np.pi) ** 7) * (np.linalg.det(sigmaSquared_i)))) * np.exp(
         #    -0.5 * (((var1)) * (np.linalg.inv(sigmaSquared_i)) * ((var1.T))))))
@@ -2648,7 +2642,6 @@ print(prob21([1.0, 0.0]))
 
 # http://www.ee.imperial.ac.uk/hp/staff/dmb/voicebox/mdoc/v_mfiles/v_gaussmixp.html
 # we use: http://www.ee.imperial.ac.uk/hp/staff/dmb/voicebox/mdoc/v_mfiles/v_gaussmixp.html
-
 # v_gaussmixp([], [[0, 1]; [0.75, 0.70]; [1, 0]; [0.48, -0.8]; [-0.48, -0.8]; [-1, -0.24]; [-0.8, 0.6]], [[0.05, 0.05]; [0.05, 0.05]; [0.05, 0.05]; [0.05, 0.05]; [0.05, 0.05]; [0.05, 0.05]; [0.05, 0.05]], [1, 1, 1, 1, 1, 1, 1]')
 # v_gaussmixp([], [[0, 1]; [0.75, 0.70]; [1, 0]; [0.48, -0.8]; [-0.48, -0.8]; [-1, -0.24]; [-0.8, 0.6]], [[0.01, 0.01]; [0.01, 0.01]; [0.01, 0.01]; [0.01, 0.01]; [0.01, 0.01]; [0.01, 0.01]; [0.01, 0.01]], [1, 1, 1, 1, 1, 1, 1]')
 
@@ -2674,13 +2667,12 @@ import os
 import tensorflow as tf
 from sklearn import metrics
 
-# UCI HAR Dataset
+# UCI HAR Dataset, and https://www.tensorflow.org/datasets
 DATASET_PATH = "/Users/dionelisnikolaos/Downloads/UCI HAR Dataset/"
 # we use: https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
 
 TRAIN = "train/"
 TEST = "test/"
-# use: https://www.tensorflow.org/datasets
 
 # Load "X" (the neural network's training and testing inputs)
 def load_X(X_signals_paths):
@@ -2770,9 +2762,9 @@ n_classes = 6 # Total classes (should go up, or should go down)
 
 # Training
 learning_rate = 0.0025
-
-batch_size = 1500
 lambda_loss_amount = 0.0015
+
+batch_size = 1500 # we define the batch size
 display_iter = 30000  # To show test set accuracy during training
 training_iters = training_data_count * 300  # Loop 300 times on the dataset
 
@@ -4483,9 +4475,7 @@ print(pred.argmax())
 
 # down-sampling, sub-sample, pooling
 # throw away samples, pooling, max-pooling
-
-# partial derivatives
-# loss function and partial derivatives
+# partial derivatives, loss function and partial derivatives
 
 # https://github.com/Students-for-AI/The-Academy-of-AI
 # https://github.com/life-efficient/Academy-of-AI/tree/master/Lecture%2013%20-%20Generative%20Models
