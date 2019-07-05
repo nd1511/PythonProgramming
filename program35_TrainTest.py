@@ -107,6 +107,16 @@ plt.show()
 
 
 
+# example of loading the fashion_mnist dataset
+from keras.datasets.fashion_mnist import load_data
+
+# load the images into memory
+(trainX, trainy), (testX, testy) = load_data()
+
+# summarize the shape of the dataset
+print('Train', trainX.shape, trainy.shape)
+print('Test', testX.shape, testy.shape)
+
 # example of loading the CIFAR-10 dataset
 from keras.datasets.cifar10 import load_data
 
@@ -134,9 +144,9 @@ from matplotlib import pyplot
 # plot images from the training dataset
 for i in range(49):
     # define subplot
-	pyplot.subplot(7, 7, 1 + i)
+    pyplot.subplot(7, 7, 1 + i)
 
-	pyplot.axis('off') # turn off axis
+    pyplot.axis('off') # turn off axis
     pyplot.imshow(trainX[i]) # plot raw pixel data
 
 pyplot.show()
@@ -433,14 +443,9 @@ def define_gan(g_model, d_model):
 # size of the latent space
 latent_dim = 100
 
-# create the discriminator
-d_model = define_discriminator()
-
-# create the generator
-g_model = define_generator(latent_dim)
-
-# create the gan
-gan_model = define_gan(g_model, d_model)
+d_model = define_discriminator() # create the discriminator
+g_model = define_generator(latent_dim) # create the generator
+gan_model = define_gan(g_model, d_model) # create the GAN model
 
 # summarize gan model
 gan_model.summary()
@@ -585,14 +590,9 @@ def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=8, n_batch=
 # size of the latent space
 latent_dim = 100
 
-# create the discriminator
-d_model = define_discriminator()
-
-# create the generator
-g_model = define_generator(latent_dim)
-
-# create the gan
-gan_model = define_gan(g_model, d_model)
+d_model = define_discriminator() # create the discriminator
+g_model = define_generator(latent_dim) # create the generator
+gan_model = define_gan(g_model, d_model) # create the GAN model
 
 # load image data
 dataset = load_real_samples()
