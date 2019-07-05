@@ -12,9 +12,6 @@ import matplotlib.pyplot as plt
 import numpy.random
 import scipy.stats as ss
 
-# https://www.analyticsinsight.net/best-computer-vision-courses-to-master-in-2019/
-# we use: https://www.analyticsinsight.net/best-computer-vision-courses-to-master-in-2019/
-
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -45,8 +42,8 @@ import os
 import tensorflow as tf
 from sklearn import metrics
 
-# https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
 # use: https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
+# https://www.analyticsinsight.net/best-computer-vision-courses-to-master-in-2019/
 
 from gluoncv import data, utils
 from gluoncv.data import ImageNet
@@ -57,9 +54,8 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 
-# MNIST: Keras or scikit-learn embedded datasets
-# For example, Keras: from keras.datasets import mnist
-
+# https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
+# https://www.analyticsinsight.net/best-computer-vision-courses-to-master-in-2019/
 # UCI data: https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 # Human Activity Recognition Using Smartphones Data Set, archive.ics.uci.edu, Human Activity Recognition
 
@@ -68,6 +64,8 @@ import tensorflow as tf
 
 ds = tf.contrib.distributions
 
+# MNIST: Keras or scikit-learn embedded datasets
+# For example, Keras: from keras.datasets import mnist
 #def sample_mog(batch_size, n_mixture=8, std=0.01, radius=1.0):
 
 #def sample_mog(batch_size, n_mixture=8, std=0.01, radius=1.0):
@@ -1923,12 +1921,11 @@ print(train_acc)
 # https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/
 # use: https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/
 
-# calculate testing accuracy
 y_test_pred = model.predict_classes(X_test_centered, verbose=0)
-
 correct_preds = np.sum(y_test == y_test_pred, axis=0)
 test_acc = correct_preds / y_test.shape[0]
 
+# we calculate the testing accuracy
 # First 3 predictions: [5 0 4], 0.9799666666666667, 0.9621
 print(test_acc) # First 3 predictions: [5 0 4], 0.9799666666666667, 0.9621
 
@@ -2929,6 +2926,7 @@ elif D == 3:
                      np.diag([0.08, 0.01, 0.01]),
                      np.diag([0.01, 0.05, 0.01]),
                      np.diag([0.03, 0.07, 0.01])])
+
 n_gaussians = means.shape[0]
 
 points = []
@@ -2938,9 +2936,8 @@ for i in range(len(means)):
 
 points = np.concatenate(points)
 
-#fit the gaussian model
 gmm = GaussianMixture(n_components=n_gaussians, covariance_type='diag')
-gmm.fit(points)
+gmm.fit(points) # we fit the Gaussian model
 
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -3264,8 +3261,7 @@ X_test = X_test / 255.0
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 
-# we now create the model
-num_classes = y_test.shape[1]
+num_classes = y_test.shape[1] # we now create the model
 # we use: https://github.com/acht7111020/CNN_object_classification
 
 model = Sequential() # we now use Sequential
