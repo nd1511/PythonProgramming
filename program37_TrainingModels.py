@@ -467,7 +467,7 @@ def generate_real_samples(dataset, n_samples):
     # we choose random instances
 
 	# choose random instances
-	ix = randint(0, dataset.shape[0], n_samples)
+    ix = randint(0, dataset.shape[0], n_samples)
 
     X = dataset[ix] # retrieve selected images
     y = ones((n_samples, 1)) # generate 'real' class labels (1)
@@ -479,13 +479,13 @@ def generate_fake_samples(n_samples):
     # generate uniform random numbers in [0,1]
     X = rand(32 * 32 * 3 * n_samples)
 
-	X = -1 + X * 2 # update to have the range [-1, 1]
-	X = X.reshape((n_samples, 32, 32, 3)) # reshape into a batch of color images
+    X = -1 + X * 2 # update to have the range [-1, 1]
+    X = X.reshape((n_samples, 32, 32, 3)) # reshape into a batch of color images
 
 	# generate 'fake' class labels (0)
-	y = zeros((n_samples, 1))
+    y = zeros((n_samples, 1))
 
-	return X, y
+    return X, y
 
 # example of training the discriminator model on real and random cifar10 images
 from numpy import expand_dims
