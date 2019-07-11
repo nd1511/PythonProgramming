@@ -202,6 +202,7 @@ plt.hist(y, normed=True, bins="fd")
 
 plt.xlabel("x")
 plt.ylabel("f(x)")
+
 plt.show()
 
 
@@ -468,21 +469,18 @@ def generate_real_samples(dataset, n_samples):
 	# choose random instances
 	ix = randint(0, dataset.shape[0], n_samples)
 
-	X = dataset[ix] # retrieve selected images
+    X = dataset[ix] # retrieve selected images
     y = ones((n_samples, 1)) # generate 'real' class labels (1)
 
-	return X, y
+    return X, y
 
 # generate n fake samples with class labels
 def generate_fake_samples(n_samples):
-	# generate uniform random numbers in [0,1]
-	X = rand(32 * 32 * 3 * n_samples)
+    # generate uniform random numbers in [0,1]
+    X = rand(32 * 32 * 3 * n_samples)
 
-	# update to have the range [-1, 1]
-	X = -1 + X * 2
-
-	# reshape into a batch of color images
-	X = X.reshape((n_samples, 32, 32, 3))
+	X = -1 + X * 2 # update to have the range [-1, 1]
+	X = X.reshape((n_samples, 32, 32, 3)) # reshape into a batch of color images
 
 	# generate 'fake' class labels (0)
 	y = zeros((n_samples, 1))
@@ -4477,8 +4475,6 @@ plt.pause(2)
 pred = model.predict(x_test[image_index].reshape(1, 28, 28, 1))
 
 print(pred.argmax())
-
-
 
 # Deep Generative Models
 # GANs and VAEs, Generative Models
