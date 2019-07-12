@@ -2,7 +2,7 @@ from __future__ import print_function
 from __future__ import absolute_import
 
 import tensorflow as tf
-print(tf.__version__)
+print(tf.__version__) # 1.14.0
 
 import sys
 import numpy
@@ -127,9 +127,8 @@ train_data = sio.loadmat('/Users/dionelisnikolaos/Downloads/train_32x32.mat')
 x_train = train_data['X']
 y_train = train_data['y']
 
-# show sample
 plt.imshow(x_train[:,:,:,image_ind])
-plt.show()
+plt.show() # show the sample
 
 print(y_train[image_ind])
 
@@ -285,14 +284,12 @@ plt.scatter(X_train_outliers[:,0],X_train_outliers[:,1],label='X_train_outliers'
 plt.scatter(X_test_normal[:,0],X_test_normal[:,1],label='X_test_normal')
 plt.scatter(X_test_outliers[:,0],X_test_outliers[:,1],label='X_test_outliers')
 
-#plt.xlabel('Feature 1')
-#plt.ylabel('Feature 2')
+plt.xlabel('x') #plt.xlabel('Feature 1')
+plt.ylabel('y') #plt.ylabel('Feature 2')
 
-plt.xlabel('x')
-plt.ylabel('y')
 plt.legend()
-
 plt.savefig('./NormalAbnormal.png')
+
 plt.show()
 
 #Now we will append the normal points and outliers- train and test separately
@@ -312,11 +309,8 @@ y_test=clf.predict(X_test)
 plt.figure(figsize=(10, 7.5))
 plt.scatter(X_train[:, 0], X_train[:, 1], c=y_train)
 
-#plt.xlabel('Feature 1')
-#plt.ylabel('Feature 2')
-
-plt.xlabel('x')
-plt.ylabel('y')
+plt.xlabel('x') #plt.xlabel('Feature 1')
+plt.ylabel('y') #plt.ylabel('Feature 2')
 
 # This is to set the legend appropriately
 legend_elements = [Line2D([], [], marker='o', color='yellow', label='Marked as normal', linestyle='None'),
@@ -1683,10 +1677,9 @@ train_data = TensorDataset(torch.from_numpy(train_sentences), torch.from_numpy(t
 val_data = TensorDataset(torch.from_numpy(val_sentences), torch.from_numpy(val_labels))
 test_data = TensorDataset(torch.from_numpy(test_sentences), torch.from_numpy(test_labels))
 
-# define the batch size
-batch_size = 400
-
+batch_size = 400 # we now define the batch size
 train_loader = DataLoader(train_data, shuffle=True, batch_size=batch_size)
+
 val_loader = DataLoader(val_data, shuffle=True, batch_size=batch_size)
 test_loader = DataLoader(test_data, shuffle=True, batch_size=batch_size)
 
@@ -1792,10 +1785,8 @@ for i in range(epochs):
                 val_losses.append(val_loss.item())
 
             model.train()
-            print("Epoch: {}/{}...".format(i + 1, epochs),
-                  "Step: {}...".format(counter),
-                  "Loss: {:.6f}...".format(loss.item()),
-                  "Val Loss: {:.6f}".format(np.mean(val_losses)))
+            print("Epoch: {}/{}...".format(i + 1, epochs), "Step: {}...".format(counter),
+                  "Loss: {:.6f}...".format(loss.item()), "Val Loss: {:.6f}".format(np.mean(val_losses)))
 
             if np.mean(val_losses) <= valid_loss_min:
                 torch.save(model.state_dict(), './state_dict.pt')
@@ -3541,9 +3532,8 @@ model.add(Dense(4096, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 
-# Compile the model
-epochs = 300
-lrate = 0.0001
+epochs = 300 # compile the model
+lrate = 0.0001 # we compile the model
 
 decay = lrate / epochs
 
