@@ -9,6 +9,7 @@ import numpy
 import os, tarfile, errno
 import matplotlib.pyplot as plt
 
+import sklearn
 import numpy.random
 import scipy.stats as ss
 
@@ -2111,7 +2112,6 @@ img2 = mpimg.imread('/Users/dionelisnikolaos/Downloads/GANomaly_image2.png')
 imgplot2 = plt.imshow(img2)
 #plt.pause(2)
 
-# Files already downloaded and verified
 # >> Training model Ganomaly. Epoch 1/15
 #    Avg Run Time (ms/batch): 274.149 AUC: 0.621 max AUC: 0.621
 # >> Training model Ganomaly. Epoch 2/15
