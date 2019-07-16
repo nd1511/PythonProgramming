@@ -1262,7 +1262,7 @@ def read_all_images(path_to_data):
 
 def read_single_image(image_file):
     """
-    CAREFUL! - this method uses a file as input instead of the path - so the
+    This method uses a file as input instead of the path - so the
     position of the reader will be remembered outside of context of this method.
     :param image_file: the open file containing the images
     :return: a single image
@@ -1712,9 +1712,8 @@ z = pre_vq_conv1(encoder(x))
 # These encodings will not pass gradients into to encoder,
 # but can be used to train a PixelCNN on top afterwards.
 
-# For training
-vq_output_train = vq_vae(z, is_training=True)
-x_recon = decoder(vq_output_train["quantize"])
+vq_output_train = vq_vae(z, is_training=True) # For training
+x_recon = decoder(vq_output_train["quantize"]) # Training
 
 recon_error = tf.reduce_mean((x_recon - x) ** 2) / data_variance  # Normalized MSE
 loss = recon_error + vq_output_train["loss"]
@@ -2291,9 +2290,8 @@ plt.show()
 # use: np.exp(a)/np.sum(np.exp(a))
 
 # https://github.com/samet-akcay/ganomaly
-# we use: https://github.com/samet-akcay/ganomaly
+# GANomaly: https://github.com/samet-akcay/ganomaly
 
-# GANs - TRAIN GANOMALY
 # >> Training model Ganomaly. Epoch 14/15
 #    Avg Run Time (ms/batch): 4.875 AUC: 0.533 max AUC: 0.559
 # >> Training model Ganomaly. Epoch 15/15
@@ -2307,7 +2305,6 @@ plt.show()
 # nz=100, outf='./output', phase='train', print_freq=100, proportion=0.1, resume='', save_image_freq=100,
 # save_test_images=False, w_bce=1, w_enc=1, w_rec=50, workers=8)
 
-# Files already downloaded and verified
 # >> Training model Ganomaly. Epoch 1/15
 #    Avg Run Time (ms/batch): 4.057 AUC: 0.513 max AUC: 0.513
 # >> Training model Ganomaly. Epoch 2/15
@@ -3943,9 +3940,7 @@ import scipy.io # we use .io
 #mat2 = scipy.io.loadmat('NATOPS6.mat')
 mat2 = scipy.io.loadmat('/Users/dionelisnikolaos/Downloads/NATOPS6.mat')
 
-# NATOPS6.mat
-print(mat2)
-
+print(mat2) # use NATOPS6.mat
 #mat = scipy.io.loadmat('thyroid.mat')
 mat = scipy.io.loadmat('/Users/dionelisnikolaos/Downloads/thyroid.mat')
 
@@ -4062,7 +4057,7 @@ with open(filename) as f:
     for line in f:
         inner_list = [elt.strip() for elt in line.split(' ')]
 
-        # in alternative, if you need to use the file content as numbers
+        # If you need to use the file content as numbers:
         # inner_list = [int(elt.strip()) for elt in line.split(',')]
         list_of_lists.append(inner_list)
 
@@ -4083,8 +4078,7 @@ from sklearn.metrics import confusion_matrix, zero_one_loss
 
 from sklearn.model_selection import train_test_split
 
-#data_dir="./datasets/KDD-CUP-99/"
-#data_dir="./"
+#data_dir="./datasets/KDD-CUP-99/" # or: data_dir="./"
 
 data_dir = "/Users/dionelisnikolaos/Downloads/"
 raw_data_filename = data_dir + "kddcup.data"
@@ -4244,9 +4238,7 @@ train_y = np.zeros((1, num_train_images))
 test_x  = np.zeros(((image_size[0]*image_size[1]*num_channels), num_test_images))
 test_y  = np.zeros((1, num_test_images))
 
-#----------------
-# TRAIN dataset
-#----------------
+# The TRAIN dataset
 count = 0
 num_label = 0
 
@@ -4266,7 +4258,7 @@ for i, label in enumerate(train_labels):
 		count += 1
 	num_label += 1
 
-# TEST dataset
+# The TEST dataset
 count = 0
 num_label = 0
 
@@ -4421,11 +4413,9 @@ def model(X_train, Y_train, X_test, Y_test, epochs, lr):
 
 	return log_reg_model
 
-# use: https://gogul09.github.io/software/neural-nets-logistic-regression
-epochs = 10
-
-# lr, learning rate, step size
-lr = 0.0003
+# here, we now use: https://gogul09.github.io/software/neural-nets-logistic-regression
+epochs = 10 # https://gogul09.github.io/software/neural-nets-logistic-regression
+lr = 0.0003 # define the learning rate, lr, step size
 
 # activate the logistic regression model
 myModel = model(train_x, train_y, test_x, test_y, epochs, lr)
