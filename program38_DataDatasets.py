@@ -253,12 +253,11 @@ plt.show() # we show the sample
 
 print(y_train[image_ind])
 
-image_ind = 10 # index, image index
+image_ind = 10 # index, define the image index
 test_data = sio.loadmat('/Users/dionelisnikolaos/Downloads/test_32x32.mat')
 
-# access to the dict
-x_test = test_data['X']
-y_test = test_data['y']
+x_test = test_data['X'] # access the dict
+y_test = test_data['y'] # access to the dict
 
 plt.imshow(x_test[:,:,:,image_ind])
 plt.show() # show the sample
@@ -301,17 +300,14 @@ numpy.random.seed(0x5eed)
 # Parameters of the mixture components
 norm_params = np.array([[5, 1], [1, 1.3], [9, 1.3]])
 
-n_components = norm_params.shape[0]
-
-# Weight of each component, in this case all of them are 1/3
-weights = np.ones(n_components, dtype=np.float64) / float(n_components)
+n_components = norm_params.shape[0] # Components and weights of each component
+weights = np.ones(n_components, dtype=np.float64) / float(n_components) # Weight of each component
 
 mixture_idx = numpy.random.choice(n_components, size=n, replace=True, p=weights) # Indices to choose the component
 y = numpy.fromiter((ss.norm.rvs(*(norm_params[i])) for i in mixture_idx), dtype=np.float64) # y is the mixture sample
 
-# Theoretical PDF plotting -- generate the x and y plotting positions
-xs = np.linspace(y.min(), y.max(), 200)
-ys = np.zeros_like(xs)
+xs = np.linspace(y.min(), y.max(), 200) # Theoretical PDF plotting
+ys = np.zeros_like(xs) # Generate the x and y plotting positions
 
 for (l, s), w in zip(norm_params, weights):
     ys += ss.norm.pdf(xs, loc=l, scale=s) * w
@@ -907,13 +903,10 @@ def generate_fake_samples(g_model, latent_dim, n_samples):
 
 	return X, y
 
-# size of the latent space
-latent_dim = 100
+latent_dim = 100 # we define the size of the latent space
+model = define_generator(latent_dim) # define the generator model
 
-# define the discriminator model
-model = define_generator(latent_dim)
-
-n_samples = 49 # we generate samples
+n_samples = 49 # we now generate samples
 X, _ = generate_fake_samples(model, latent_dim, n_samples)
 
 # scale pixel values from [-1,1] to [0,1]
@@ -3063,9 +3056,8 @@ print(y_test.shape)
 n_hidden = 32 # Hidden layer num of features
 n_classes = 6 # Total classes (should go up, or should go down)
 
-# Training
-learning_rate = 0.0025
-lambda_loss_amount = 0.0015
+learning_rate = 0.0025 # For training
+lambda_loss_amount = 0.0015 # Training
 
 batch_size = 1500 # we define the batch size
 display_iter = 30000  # To show test set accuracy during training
@@ -3081,9 +3073,7 @@ print("(X shape, y shape, every X's mean, every X's standard deviation)")
 print(X_test.shape, y_test.shape, np.mean(X_test), np.std(X_test))
 print('')
 
-
-
-# use LSTM
+# we now use the LSTM RNN model
 def LSTM_RNN(_X, _weights, _biases):
     # Function returns a tensorflow LSTM (RNN) artificial neural network from given parameters.
     # Moreover, two LSTM cells are stacked which adds deepness to the neural network.
