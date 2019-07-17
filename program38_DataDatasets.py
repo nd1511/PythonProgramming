@@ -2335,12 +2335,8 @@ plt.show()
 
 # https://github.com/samet-akcay/ganomaly
 # we use: https://github.com/samet-akcay/ganomaly
-
-# Files already downloaded and verified
-# >> Training model Ganomaly.
 #    Avg Run Time (ms/batch): 274.149 AUC: 0.621 max AUC: 0.621
-# >> Training model Ganomaly. Epoch 2/15
-#    Avg Run Time (ms/batch): 284.825 AUC: 0.649 max AUC: 0.649
+#    >> Avg Run Time (ms/batch): 284.825 AUC: 0.649 max AUC: 0.649
 
 # Namespace(anomaly_class='bird', batchsize=64, beta1=0.5, dataroot='', dataset='cifar10', device='gpu', display=False,
 # display_id=0, display_port=8097, display_server='http://localhost', droplast=True, extralayers=0, gpu_ids=[0],
@@ -2348,7 +2344,6 @@ plt.show()
 # name='ganomaly/cifar10', nc=3, ndf=64, ngf=64, ngpu=1, niter=15, nz=100, outf='./output', phase='train', print_freq=100,
 # proportion=0.1, resume='', save_image_freq=100, save_test_images=False, w_bce=1, w_enc=1, w_rec=50, workers=8)
 
-# Files already downloaded and verified
 # >> Training model Ganomaly. Epoch 1/15
 #    Avg Run Time (ms/batch): 4.100 AUC: 0.504 max AUC: 0.504
 # >> Training model Ganomaly. Epoch 2/15
@@ -3085,16 +3080,14 @@ def LSTM_RNN(_X, _weights, _biases):
     # input shape: (batch_size, n_steps, n_input)
     _X = tf.transpose(_X, [1, 0, 2])  # permute n_steps and batch_size
 
-    # Reshape to prepare input to hidden activation
-    _X = tf.reshape(_X, [-1, n_input])
-    # new shape: (n_steps*batch_size, n_input)
+    # Reshape to prepare the input to the hidden activation
+    _X = tf.reshape(_X, [-1, n_input]) # Shape: (n_steps*batch_size, n_input)
 
     # ReLU activation, thanks to Yu Zhao for adding this improvement here:
     _X = tf.nn.relu(tf.matmul(_X, _weights['hidden']) + _biases['hidden'])
 
     # Split data because rnn cell needs a list of inputs for the RNN inner loop
-    _X = tf.split(_X, n_steps, 0)
-    # new shape: n_steps * (batch_size, n_hidden)
+    _X = tf.split(_X, n_steps, 0) # For the new shape: n_steps * (batch_size, n_hidden)
 
     # Define two stacked LSTM cells (two recurrent layers deep) with tensorflow
     lstm_cell_1 = tf.contrib.rnn.BasicLSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -3360,9 +3353,8 @@ elif D == 3:
 #Caltech-101 Dataset
 #CIFAR-10 Dataset, CIFAR-100 Dataset
 
-# we use Sequential
-from keras.models import Sequential
-from keras.layers import Dense
+from keras.models import Sequential # use Sequential
+from keras.layers import Dense # use FC fully connected
 
 # use dropout
 from keras.layers import Dropout
@@ -3592,10 +3584,10 @@ print('')
 
 
 
-#Caltech-101 Dataset
-#CIFAR-10 and CIFAR-100 Datasets
+# Caltech-101 Dataset
+# CIFAR-10 and CIFAR-100 Datasets
 
-# we use Sequential
+# we use now Sequential
 from keras.models import Sequential
 from keras.layers import Dense
 
@@ -3916,9 +3908,8 @@ from sklearn.metrics import accuracy_score
 import sklearn
 #from sklearn.datasets2 import kddcup99
 
-#import sklearn.datasets2
 #import sklearn.datasets
-
+#import sklearn.datasets2
 #dataset_boston = datasets.load_boston()
 #dataset_boston = datasets2.load_boston()
 
@@ -4228,12 +4219,11 @@ train_y = np.zeros((1, num_train_images))
 test_x  = np.zeros(((image_size[0]*image_size[1]*num_channels), num_test_images))
 test_y  = np.zeros((1, num_test_images))
 
-# The TRAIN dataset
-count = 0
-num_label = 0
+count = 0 # The TRAIN dataset
+num_label = 0 # For the TRAIN dataset
 
 for i, label in enumerate(train_labels):
-	cur_path = train_path + "\\" + label
+    cur_path = train_path + "\\" + label
 	for image_path in glob.glob(cur_path + "/*.jpg"):
 		img = image.load_img(image_path, target_size=image_size)
 
