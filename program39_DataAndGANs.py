@@ -447,7 +447,7 @@ plt.show()
 
 
 
-# Generate synthetic data
+# we generate synthetic data
 N,D = 1000, 2 # number of points and dimensionality
 
 if D == 2:
@@ -481,25 +481,23 @@ points = np.concatenate(points)
 
 
 
-# Create a normally distributed data set for training
+# Create a normally distributed dataset for training
 
-# Generate a normally distributed data set for training
+# Generate a normally distributed dataset for training
 X = 0.3 * np.random.randn(100, 2)
 X_train_normal = np.r_[X + 2, X - 2]
 
-# Generating outliers for training
+# Generate anomalies and outliers for training
 X_train_outliers = np.random.uniform(low=-4, high=4, size=(20, 2))
 
-# Generating a normally distributed dataset for testing
+# Generate a normally distributed dataset for testing
 X = 0.3 * np.random.randn(20, 2)
 X_test_normal = np.r_[X + 2, X - 2]
 
 # Generate anomalies and outliers for testing
 X_test_outliers = np.random.uniform(low=-4, high=4, size=(20, 2))
 
-#Plotting and visualising the data points
-plt.figure(figsize=(10,7.5))
-
+plt.figure(figsize=(10,7.5)) # we plot and visualise the data points
 plt.scatter(X_train_normal[:,0],X_train_normal[:,1],label='X_train_normal')
 #plt.scatter(X_train_outliers[:,0],X_train_outliers[:,1],label='X_train_outliers')
 
@@ -839,7 +837,7 @@ def define_discriminator(in_shape=(32, 32, 3)):
 
     model.add(Dense(1, activation='sigmoid'))
 
-    # compile model
+    # compile the model
     opt = Adam(lr=0.0002, beta_1=0.5)
     model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
 
@@ -848,7 +846,7 @@ def define_discriminator(in_shape=(32, 32, 3)):
 model = define_discriminator() # define the model
 model.summary() # we now summarize the model
 
-# plot the model
+# we plot the model
 plot_model(model, to_file='discriminator_plot.png', show_shapes=True, show_layer_names=True)
 
 # https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/
@@ -944,11 +942,8 @@ def train_discriminator(model, dataset, n_iter=8, n_batch=128):
 # define the discriminator model
 model = define_discriminator()
 
-# load image data
-dataset = load_real_samples()
-
-# fit the model
-train_discriminator(model, dataset)
+dataset = load_real_samples() # load the image data
+train_discriminator(model, dataset) # we fit the model
 
 # example of defining the generator model
 from keras.models import Sequential
@@ -1314,11 +1309,8 @@ HEIGHT = 96
 WIDTH = 96
 DEPTH = 3
 
-# size of a single image in bytes
-SIZE = HEIGHT * WIDTH * DEPTH
-
-# path to the directory with the data
-DATA_DIR = './data'
+SIZE = HEIGHT * WIDTH * DEPTH # size of a single image in bytes
+DATA_DIR = './data' # set the path to the directory with the data
 
 # url of the binary data
 DATA_URL = 'http://ai.stanford.edu/~acoates/stl10/stl10_binary.tar.gz'
@@ -3851,9 +3843,7 @@ from keras.regularizers import l1, l2
 from keras.callbacks import EarlyStopping
 
 earlyStopping = EarlyStopping(monitor='val_loss', patience=10, verbose=1, mode='auto')
-
-# Create the model
-model = Sequential()
+model = Sequential() # we now create the model
 
 # model.add(Conv2D(32, (3, 3), padding='same', activation='relu', kernel_constraint=maxnorm(3)))
 # model.add(Conv2D(32, (3, 3), activation='relu', padding='same', kernel_constraint=maxnorm(3)))
