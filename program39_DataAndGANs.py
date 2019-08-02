@@ -168,7 +168,7 @@ G = Generator(z_size, g_hidden_size, g_output_size)
 print(D)
 print(G)
 
-# Calculate losses
+# we calculate the losses
 def real_loss(D_out, smooth=False):
     batch_size = D_out.size(0)
 
@@ -249,7 +249,7 @@ anomaly_algorithms = [("Robust covariance", EllipticEnvelope(contamination=outli
     ("Isolation Forest", IsolationForest(contamination=outliers_fraction, random_state=42)),
     ("Local Outlier Factor", LocalOutlierFactor(n_neighbors=35, contamination=outliers_fraction))]
 
-# we define the datasets
+# we now define the datasets
 blobs_params = dict(random_state=0, n_samples=n_inliers, n_features=2)
 
 datasets = [make_blobs(centers=[[0, 0], [0, 0]], cluster_std=0.5, **blobs_params)[0],
@@ -512,9 +512,7 @@ plt.legend()
 plt.savefig('./DataNormalAbnormal.png')
 plt.show()
 
-#Plotting and visualising the data points
-plt.figure(figsize=(10,7.5))
-
+plt.figure(figsize=(10,7.5)) # Plot and visualise the data points
 plt.scatter(X_train_normal[:,0],X_train_normal[:,1],label='X_train_normal')
 plt.scatter(X_train_outliers[:,0],X_train_outliers[:,1],label='X_train_outliers')
 
@@ -529,15 +527,15 @@ plt.savefig('./NormalAbnormal.png')
 
 plt.show()
 
-#Now we will append the normal points and outliers- train and test separately
+# we append the normal points and outliers- train and test separately
 X_train=np.append(X_train_normal,X_train_outliers,axis=0)
 X_test=np.append(X_test_normal,X_test_outliers,axis=0)
 
-#Training with isolation forest algorithm
+# train with the isolation forest algorithm
 clf = IsolationForest(random_state=0, contamination=0.1)
 clf.fit(X_train)
 
-#Now we predict the anomaly state for data
+# we predict the anomaly state for data
 y_train=clf.predict(X_train)
 y_test=clf.predict(X_test)
 
@@ -678,8 +676,7 @@ EPOCHS = 8
 #num_examples_to_generate = 16
 num_examples_to_generate = 4
 
-# We will reuse this seed overtime (so it's easier)
-# to visualize progress in the animated GIF)
+# We will reuse this seed overtime to visualize progress in the animated GIF
 seed = tf.random.normal([num_examples_to_generate, noise_dim])
 
 # Notice the use of `tf.function`
@@ -4766,8 +4763,7 @@ print('Number of images in x_test', x_test.shape[0])
 
 
 
-# Importing the required Keras modules containing model and layers
-from keras.models import Sequential
+from keras.models import Sequential # Import the Keras modules containing model and layers
 from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D
 
 # Creating a Sequential Model and adding the layers
@@ -4776,9 +4772,7 @@ model = Sequential()
 model.add(Conv2D(28, kernel_size=(3,3), input_shape=input_shape))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
-# Flatten the 2D arrays for fully connected layers
-model.add(Flatten())
-
+model.add(Flatten()) # Flatten the 2D arrays for fully connected layers
 model.add(Dense(128, activation=tf.nn.relu))
 
 model.add(Dropout(0.2))
@@ -4878,8 +4872,7 @@ import torch.nn.functional as F
 #batch_size = 128
 
 # download the training dataset
-#train_data = datasets.FashionMNIST(root='fashiondata/',
-#                                   transform=transforms.ToTensor(), train=True, download=True)
+#train_data = datasets.FashionMNIST(root='fashiondata/', transform=transforms.ToTensor(), train=True, download=True)
 
 # we create the train data loader
 #train_loader = torch.utils.data.DataLoader(train_data, shuffle=True, batch_size=batch_size)
@@ -4887,11 +4880,8 @@ import torch.nn.functional as F
 # we now define the batch size
 batch_size = 100 # define the batch size
 
-train_data = datasets.FashionMNIST(root='fashiondata/',
-                                 transform=transforms.ToTensor(), train=True, download=True)
-
-train_samples = torch.utils.data.DataLoader(dataset=train_data,
-                                           batch_size=batch_size, shuffle=True)
+train_data = datasets.FashionMNIST(root='fashiondata/', transform=transforms.ToTensor(), train=True, download=True)
+train_samples = torch.utils.data.DataLoader(dataset=train_data, batch_size=batch_size, shuffle=True)
 
 # combine the power of LSTM RNNs and GANs
 # it is possible to use LSTM RNN together with GANs
