@@ -157,7 +157,7 @@ input_size = 784
 d_output_size = 1
 d_hidden_size = 32
 
-z_size = 100 # Generator
+z_size = 100 # For generator
 g_output_size = 784
 g_hidden_size = 32
 
@@ -191,9 +191,8 @@ def fake_loss(D_out):
 
     return loss
 
-import torch.optim as optim
 lr = 0.002
-
+import torch.optim as optim
 d_optimizer = optim.Adam(D.parameters(), lr)
 g_optimizer = optim.Adam(G.parameters(), lr)
 
@@ -250,7 +249,7 @@ anomaly_algorithms = [("Robust covariance", EllipticEnvelope(contamination=outli
     ("Isolation Forest", IsolationForest(contamination=outliers_fraction, random_state=42)),
     ("Local Outlier Factor", LocalOutlierFactor(n_neighbors=35, contamination=outliers_fraction))]
 
-# define the datasets
+# we define the datasets
 blobs_params = dict(random_state=0, n_samples=n_inliers, n_features=2)
 
 datasets = [make_blobs(centers=[[0, 0], [0, 0]], cluster_std=0.5, **blobs_params)[0],
@@ -378,10 +377,9 @@ y_train = train_data['y']
 
 plt.imshow(x_train[:,:,:,image_ind])
 plt.show() # we show the sample
-
 print(y_train[image_ind])
 
-image_ind = 10 # index, define the image index
+image_ind = 10 # index, we now define the image index
 test_data = sio.loadmat('/Users/dionelisnikolaos/Downloads/test_32x32.mat')
 
 x_test = test_data['X'] # access the dict
@@ -389,7 +387,6 @@ y_test = test_data['y'] # access to the dict
 
 plt.imshow(x_test[:,:,:,image_ind])
 plt.show() # show the sample
-
 print(y_test[image_ind])
 
 # Import Line2D for marking legend in graph
@@ -425,7 +422,7 @@ plt.show()
 n = 10000
 numpy.random.seed(0x5eed)
 
-# Parameters of the mixture components
+# the parameters of the mixture components
 norm_params = np.array([[5, 1], [1, 1.3], [9, 1.3]])
 
 n_components = norm_params.shape[0] # Components and weights of each component
@@ -477,6 +474,7 @@ n_gaussians = means.shape[0]
 points = []
 for i in range(len(means)):
     x = np.random.multivariate_normal(means[i], covs[i], N )
+
     points.append(x)
 
 points = np.concatenate(points)
@@ -993,16 +991,10 @@ def define_generator(latent_dim):
 
     return model
 
-# define the size of the latent space
-latent_dim = 100
+latent_dim = 100 # define the size of the latent space
+model = define_generator(latent_dim) # define the generator model
 
-# define the generator model
-model = define_generator(latent_dim)
-
-# summarize the model
-model.summary()
-
-# plot the model
+model.summary() # we summarize the model and, then, we plot the model
 plot_model(model, to_file='generator_plot.png', show_shapes=True, show_layer_names=True)
 
 from numpy.random import randn # we use randn
@@ -4887,9 +4879,7 @@ import torchvision
 
 from torchvision import datasets, transforms
 #from torchvision import transforms, datasets
-
-# use matplotlib
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # use matplotlib
 
 # use nn.functional
 import torch.nn.functional as F
@@ -4945,7 +4935,7 @@ class discriminator(torch.nn.Module):
 # this was for the discriminator
 # we now do the same for the generator
 
-# Generator G
+# define the generator G
 class generator(torch.nn.Module):
     def __init__(self):
         super().__init__()
