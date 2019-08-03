@@ -224,6 +224,12 @@ plt.ylabel('y')
 plt.savefig('./HalfMoon_dataset.png')
 plt.show()
 
+# sklearn.datasets.make_swiss_roll(n_samples=100, noise=0.0, random_state=None)
+X_swiss_roll, y_swiss_roll = dsets.make_swiss_roll(n_samples=200, noise=0.09)
+
+print(X_swiss_roll.shape)
+print(y_swiss_roll.shape)
+
 import time
 import matplotlib
 import matplotlib.pyplot as plt
@@ -243,7 +249,7 @@ n_inliers = n_samples - n_outliers
 
 # define the anomaly detection methods to be compared
 
-# define the anomaly detection methods to be compared
+# we define the anomaly detection methods to be compared
 anomaly_algorithms = [("Robust covariance", EllipticEnvelope(contamination=outliers_fraction)),
     ("One-Class SVM", svm.OneClassSVM(nu=outliers_fraction, kernel="rbf", gamma=0.1)),
     ("Isolation Forest", IsolationForest(contamination=outliers_fraction, random_state=42)),
@@ -666,8 +672,7 @@ checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
 checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
  discriminator_optimizer=discriminator_optimizer, generator=generator, discriminator=discriminator)
 
-#EPOCHS = 50
-noise_dim = 100
+noise_dim = 100 # Also: EPOCHS = 50
 #num_examples_to_generate = 16
 
 #EPOCHS = 50
@@ -834,7 +839,7 @@ def define_discriminator(in_shape=(32, 32, 3)):
 
     model.add(Dense(1, activation='sigmoid'))
 
-    # compile the model
+    # we compile the model
     opt = Adam(lr=0.0002, beta_1=0.5)
     model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
 
@@ -849,16 +854,13 @@ plot_model(model, to_file='discriminator_plot.png', show_shapes=True, show_layer
 # https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/
 # we use: https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/
 
-# load cifar10 dataset
-(trainX, _), (_, _) = load_data()
-
-# convert from unsigned ints to floats
-X = trainX.astype('float32')
+(trainX, _), (_, _) = load_data() # load the CIFAR-10 dataset
+X = trainX.astype('float32') # convert from unsigned ints to floats
 
 # scale from [0,255] to [-1,1]
 X = (X - 127.5) / 127.5
 
-# load and prepare cifar10 training images
+# load and prepare CIFAR-10 training images
 def load_real_samples():
     (trainX, _), (_, _) = load_data()
 
@@ -867,7 +869,7 @@ def load_real_samples():
 
     return X
 
-# select real samples
+# we select real samples
 def generate_real_samples(dataset, n_samples):
     # we choose random instances
 
@@ -4864,9 +4866,7 @@ import torchvision
 from torchvision import datasets, transforms
 #from torchvision import transforms, datasets
 import matplotlib.pyplot as plt # use matplotlib
-
-# use nn.functional
-import torch.nn.functional as F
+import torch.nn.functional as F # use nn.functional
 
 #import matplotlib.pyplot as plt
 #batch_size = 128
