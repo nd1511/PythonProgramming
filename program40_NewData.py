@@ -79,10 +79,9 @@ import torchvision.transforms as transforms
 # use: https://www.renom.jp/notebooks/tutorial/generative-model/anoGAN/notebook.html
 
 import numpy as np
-import matplotlib.pyplot as plt
-
 #import renom as rm
 from copy import deepcopy
+import matplotlib.pyplot as plt
 
 import external.renom as rm
 #from renom.optimizer import Adam
@@ -105,7 +104,6 @@ from keras.datasets.fashion_mnist import load_data
 print('Fashion-MNIST Test', x_fashion.shape, y_fashion.shape)
 
 print('')
-
 num_workers = 0
 batch_size = 128
 
@@ -5071,12 +5069,8 @@ def train(epochs, glr, dlr):
 #print(torch.__version__)
 train(epochs, glr, dlr)
 
-# Epoch:  0 Batch idx: 0 	Disciminator cost:  1.3832124471664429 	Generator cost:  0.006555716972798109
-# Epoch:  0 Batch idx: 1 	Disciminator cost:  1.0811840295791626 	Generator cost:  0.008780254982411861
-# Epoch:  0 Batch idx: 2 	Disciminator cost:  0.8481155633926392 	Generator cost:  0.011281056329607964
 # Epoch:  0 Batch idx: 3 	Disciminator cost:  0.6556042432785034 	Generator cost:  0.013879001140594482
 # Epoch:  0 Batch idx: 4 	Disciminator cost:  0.5069876909255981 	Generator cost:  0.016225570812821388
-# Epoch:  0 Batch idx: 5 	Disciminator cost:  0.4130948781967163 	Generator cost:  0.018286770209670067
 
 # Epoch:  0 Batch idx: 41 	Disciminator cost:  0.10074597597122192 	Generator cost:  0.03721988573670387
 # Epoch:  0 Batch idx: 42 	Disciminator cost:  0.07906078547239304 	Generator cost:  0.04363853484392166
