@@ -1,0 +1,4 @@
+sphinx==1.7.6
+sphinx-intl==0.9.9
+sphinxcontrib-versioning==2.2.1
+nbsphinx==0.4.1

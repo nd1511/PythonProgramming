@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-13 13:29+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/api/renom.layers.activation.rst:2
+msgid "renom.layers.activation"
+msgstr ""
+
+#: of renom.layers.activation.elu.Elu:1
+msgid ""
+"The Exponential Linear Units [elu]_ activation function is described by "
+"the following formula:"
+msgstr "以下の式で表されるExponential Linear Units活性化関数 [elu]_ を定義したクラス."
+
+#: of renom.layers.activation.elu.Elu:4
+msgid ":math:`f(x)=max(x, 0) + alpha*min(exp(x)-1, 0)`"
+msgstr ""
+
+#: of renom.layers.activation.elu.Elu
+#: renom.layers.activation.leaky_relu.LeakyRelu
+#: renom.layers.activation.relu.Relu renom.layers.activation.selu.Selu
+#: renom.layers.activation.sigmoid.Sigmoid
+#: renom.layers.activation.softmax.Softmax renom.layers.activation.tanh.Tanh
+msgid "Parameters"
+msgstr ""
+
+#: of renom.layers.activation.elu.Elu:6
+#: renom.layers.activation.leaky_relu.LeakyRelu:5
+#: renom.layers.activation.softmax.Softmax:6
+msgid "Input numpy array or instance of Variable."
+msgstr "入力データ"
+
+#: of renom.layers.activation.elu.Elu:8
+msgid "Coefficient multiplied by exponentiated values."
+msgstr "係数"
+
+#: of renom.layers.activation.elu.Elu:12
+#: renom.layers.activation.leaky_relu.LeakyRelu:11
+#: renom.layers.activation.relu.Relu:9 renom.layers.activation.selu.Selu:12
+#: renom.layers.activation.sigmoid.Sigmoid:9
+#: renom.layers.activation.softmax.Softmax:10
+#: renom.layers.activation.tanh.Tanh:9
+msgid "Example"
+msgstr ""
+
+#: of renom.layers.activation.elu.Elu:25
+msgid ""
+"Djork-Arné Clevert, Thomas Unterthiner, Sepp Hochreiter (2015). Fast and "
+"Accurate Deep Network Learning by Exponential Linear Units (ELUs). "
+"Published as a conference paper at ICLR 2016"
+msgstr ""
+
+#: of renom.layers.activation.leaky_relu.LeakyRelu:1
+msgid ""
+"The Leaky relu [leaky_relu]_ activation function is described by the "
+"following formula:"
+msgstr "以下の式で表される leaky relu [leaky_relu]_ 活性化関数を定義したクラス."
+
+#: of renom.layers.activation.leaky_relu.LeakyRelu:3
+msgid ":math:`f(x)=max(x, 0)+min(slope*x, 0)`"
+msgstr ""
+
+#: of renom.layers.activation.leaky_relu.LeakyRelu:7
+msgid "Coefficient multiplied by negative values."
+msgstr "係数"
+
+#: of renom.layers.activation.leaky_relu.LeakyRelu:24
+msgid ""
+"Andrew L. Maas, Awni Y. Hannun, Andrew Y. Ng (2014). Rectifier "
+"Nonlinearities Improve Neural Network Acoustic Models"
+msgstr ""
+
+#: of renom.layers.activation.relu.Relu:1
+msgid ""
+"Rectified Linear Unit activation function as described by the following "
+"formula."
+msgstr "以下の式で表されるrelu活性化関数を定義したクラス."
+
+#: of renom.layers.activation.relu.Relu:3
+msgid ":math:`f(x)=max(x, 0)`"
+msgstr ""
+
+#: of renom.layers.activation.relu.Relu:5 renom.layers.activation.selu.Selu:8
+#: renom.layers.activation.sigmoid.Sigmoid:5
+#: renom.layers.activation.tanh.Tanh:5
+msgid "Input numpy array or Node instance."
+msgstr "入力データ"
+
+#: of renom.layers.activation.selu.Selu:1
+msgid ""
+"The scaled exponential linear unit [selu]_ activation function is "
+"described by the following formula:"
+msgstr "以下の式で表される scaled exponential linear unit [selu]_ 活性化関数を定義したクラス."
+
+#: of renom.layers.activation.selu.Selu:4
+msgid ""
+":math:`a = 1.6732632423543772848170429916717` :math:`b = "
+"1.0507009873554804934193349852946` :math:`f(x) = b*max(x, 0)+min(0, "
+"exp(x) - a)`"
+msgstr ""
+
+#: of renom.layers.activation.selu.Selu:25
+msgid ""
+"Günter Klambauer, Thomas Unterthiner, Andreas Mayr, Sepp Hochreiter. "
+"Self-Normalizing Neural Networks. Learning (cs.LG); Machine Learning"
+msgstr ""
+
+#: of renom.layers.activation.sigmoid.Sigmoid:1
+msgid "Sigmoid activation function as described by the following formula."
+msgstr "sigmoid [2]_ 活性化関数を定義したクラス."
+
+#: of renom.layers.activation.sigmoid.Sigmoid:3
+msgid ":math:`f(x) = 1/(1 + \\exp(-x))`"
+msgstr ""
+
+#: of renom.layers.activation.softmax.Softmax:1
+msgid "Soft max activation function is described by the following formula:"
+msgstr "sigmoid [2]_ 活性化関数を定義したクラス."
+
+#: of renom.layers.activation.softmax.Softmax:4
+msgid ":math:`f(x_j)=\\frac{exp(x_j)}{\\sum_{i}exp(x_i)}`"
+msgstr ""
+
+#: of renom.layers.activation.tanh.Tanh:1
+msgid ""
+"Hyperbolic tangent activation function as described by the following "
+"formula."
+msgstr "tanh 活性化関数を定義したクラス."
+
+#: of renom.layers.activation.tanh.Tanh:3
+msgid ":math:`f(x) = tanh(x)`"
+msgstr ""
+

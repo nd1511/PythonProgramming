@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-20 15:40+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/change_history/main.rst:2
+msgid "Changes 2.6 => 2.7"
+msgstr ""
+
+#: ../../rsts/change_history/main.rst:4
+msgid "Support ONNX(https://onnx.ai/)."
+msgstr "ONNX形式のモデル出力をサポート(https://onnx.ai/)"
+
+#: ../../rsts/change_history/main.rst:8
+msgid "Add ``GroupConvolution``"
+msgstr "``GroupConvolution``を追加"
+
+#: ../../rsts/change_history/main.rst:8
+msgid ":py:meth:`renom.layers.function.group_conv2d.GroupConv2d`."
+msgstr ""
+
+#: ../../rsts/change_history/main.rst:11
+msgid "Add ``DeconvNd``"
+msgstr "``DeconvNd``を追加"
+
+#: ../../rsts/change_history/main.rst:11
+msgid ":py:meth:`renom.layers.function.deconvnd.DeconvNd`."
+msgstr ""
+
+#: ../../rsts/change_history/main.rst:14
+msgid "Add Nesterov's Accelerated Gradient Method to SGD."
+msgstr "Nesterovの加速勾配降下法をSgdに追加."
+
+#: ../../rsts/change_history/main.rst:14
+msgid ":py:meth:`renom.optimizer.Sgd`."
+msgstr ""
+
+#: ../../rsts/change_history/main.rst:17
+msgid "Add ``He Normal`` weight initializer."
+msgstr "重みの初期化方法``He Normal``を追加."
+
+#: ../../rsts/change_history/main.rst:17
+msgid ":py:meth:`renom.utility.initializer.HeNormal`."
+msgstr ""
+
+#: ../../rsts/change_history/main.rst:20
+msgid "Add ``He Uniform`` weight initializer."
+msgstr "重みの初期化方法``He Uniform``を追加."
+
+#: ../../rsts/change_history/main.rst:20
+msgid ":py:meth:`renom.utility.initializer.HeUniform`."
+msgstr ""
+

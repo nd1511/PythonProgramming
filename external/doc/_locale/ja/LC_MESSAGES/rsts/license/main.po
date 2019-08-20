@@ -1,0 +1,831 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-18 18:43+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../rsts/license.rst:2
+msgid "License"
+msgstr ""
+
+#: ../../rsts/license.rst:5
+msgid "ReNom Subscription Agreement Ver. 1.0"
+msgstr "ReNom サブスクリプション契約 Ver.1.1"
+
+#: ../../rsts/license.rst:7
+msgid ""
+"This Agreement is made and entered into by and between you, a user "
+"(irrespective of whether you are an individual or corporation, or any "
+"other organization; hereinafter referred to as the “User”), and GRID inc "
+"(hereinafter, “GRID”). This Agreement consists of arrangements with "
+"regard to the use of the following services, the usage fees for such "
+"services, etc., and other provisions including those stipulating the term"
+" of agreement, cancellation, warranty, liability limitation, and audits."
+msgstr ""
+"本契約は、お客様（個人、法人その他の団体いずれであるかを問いません。以下「お客様」といいます。）と、株式会社グリッド（以下「当社」といいます。）との間で締結されるものです。本契約は、下記のサービスの使用、サービスの使用料等に関する取り決め、および、契約期間、解除、保証、責任制限、監査、その他で構成されます。"
+" "
+
+#: ../../rsts/license.rst:9
+msgid ""
+"This Agreement shall come into force on the day on which the User starts "
+"using his/her subscription, or on which his/her subscription is renewed, "
+"and the User will be deemed to agree to the details and conditions of the"
+" subscription. The software included in the subscription is hereinafter "
+"referred to as the “Software,” and a license to use the Software and the "
+"services that GRID provides to the User in connection with such license "
+"are collectively referred to as the “Services.”"
+msgstr ""
+"本契約は、お客様がサブスクリプションをご利用された日、またはお客様のサブスクリプションが更新された日をもって発効され、お客様はサブスクリプションの内容・条件に同意したものとみなされます。なお、サブスクリプションに含まれるソフトウェアを以下「本ソフトウェア」といい、本ソフトウェアの使用許諾及びこれに関連してお客様に提供する当社のサービスを「本サービス」といいます。"
+" "
+
+#: ../../rsts/license.rst:11
+msgid ""
+"The details of this Agreement may be changed without any prior notice to "
+"the User. For the up-to-date details of this Agreement, the User is "
+"advised to check the latest terms at www.renom.jp upon his/her own "
+"responsibility and at his/her own expense."
+msgstr ""
+"なお、本契約の内容は、お客様への事前の予告なく変更される場合があります。最新の本契約の内容については、お客様自身の責任と負担において最新規約（www.renom.jp）よりご確認ください。"
+" "
+
+#: ../../rsts/license.rst:14
+msgid "1. Use of Services"
+msgstr "\\1. サービスの使用"
+
+#: ../../rsts/license.rst:17
+msgid "1.1 Right to Use"
+msgstr "1.1 使用の権利"
+
+#: ../../rsts/license.rst:17
+msgid ""
+"As provided for herein, GRID grants the User a license to install the "
+"Software and use it in a non-exclusive manner. GRID does not sell the "
+"actual Software to the User, and reserves all intellectual property "
+"rights and other rights."
+msgstr ""
+"本契約に規定するとおり、当社はお客様に対し、本ソフトウェアをインストールして非独占的に使用する権利を付与します。 "
+"なお、当社は、お客様に対し、本ソフトウェア自体を販売するものではなく、知的財産権その他の権利はすべて当社が留保します。"
+
+#: ../../rsts/license.rst:20
+msgid "1.2 Permitted Use"
+msgstr "1.2 許可される使用"
+
+#: ../../rsts/license.rst:20
+msgid ""
+"The User is permitted to use the Services only in line with this "
+"Agreement."
+msgstr "お客様は、本契約に従ってのみ本サービスを使用することができます。"
+
+#: ../../rsts/license.rst:27
+msgid "1.3 Responsibility for the User’s Account"
+msgstr "1.3 お客様アカウントに関する責任"
+
+#: ../../rsts/license.rst:23
+msgid ""
+"The User shall assume responsibility for keeping information concerning "
+"his/her account confidential."
+msgstr ""
+"お客様は、本サービスのサポート提供のために、当社または当社が指定する販売会社より発行されるお客様のアカウント情報を秘密に保つ責任を負うものとします。"
+" "
+
+#: ../../rsts/license.rst:25
+msgid ""
+"Only where the User obtains the prior consent of GRID, he/she may, on "
+"his/her own responsibility, allow a third party to use the Services in "
+"accordance with the conditions of this Agreement; provided, however, that"
+" even in this case, the User shall assume the responsibilities prescribed"
+" herein and cause such third party to comply with the conditions of this "
+"Agreement."
+msgstr ""
+"お客様は、当社の事前の承諾を得た場合に限り、本契約の条件に従って、自らの責任で第三者に本サービスを使用させることができますが、この場合も、本契約で定める同様の責任を負うものとし、第三者に本契約の条件を遵守させるものとします。"
+" "
+
+#: ../../rsts/license.rst:27
+msgid ""
+"If the User considers that information concerning his/her account has "
+"potentially been misused, he/she shall immediately notify GRID to that "
+"effect."
+msgstr "お客様のアカウント情報が悪用された可能性がある場合、お客様は直ちにその旨を通知しなければなりません。"
+
+#: ../../rsts/license.rst:30
+msgid "1.4 Consent to Data Use"
+msgstr "1.4 データ使用に関する承諾"
+
+#: ../../rsts/license.rst:30
+msgid ""
+"The User agrees that GRID and distributors designated thereby shall "
+"collect, maintain, and use information concerning, for example, the "
+"status of the User’s usage of the Software and the Software version, for "
+"the purpose of appropriately managing the User’s use of the Services. "
+"GRID and distributors designated thereby may use such information only "
+"for the management, improvement, and updating of the Services, and for "
+"the provision of assistance to the User in connection with the Services."
+msgstr "お客様は、当社及び当社が指定する販売会社が、本サービスに関してお客様のご利用状況を適切に管理するために、お客様の本ソフトウェアの利用状況に関する情報、バージョンに関する情報等を収集、保持、使用する場合があることに同意します。当該情報は、当社及び当社が指定する販売会社が、本サービスの管理、サービスの向上、アップデート、及びお客様への本サービスのサポート提供のためにのみ使用できるものとします。"
+
+#: ../../rsts/license.rst:34
+msgid "1.5 Customer Data"
+msgstr "1.5 顧客データ"
+
+#: ../../rsts/license.rst:33
+msgid ""
+"The User shall solely assume all responsibility for managing, and for the"
+" contents of, all the data, information, etc. that the User possesses and"
+" uses on the Services (hereinafter, “Customer Data”). The User shall "
+"secure and maintain all rights relating to his/her Customer Data."
+msgstr ""
+"お客様が保有し、本サービスで使用するすべてのデータ・情報等（以下「顧客データ」といいます。）の管理及び内容に関する責任は、すべてお客様自身が単独で負うものとします。"
+" お客様は、顧客データに関するすべての権利を確保し、維持するものとします。"
+
+#: ../../rsts/license.rst:37
+msgid "1.6 Additional Software Used"
+msgstr "1.6 使用する追加ソフトウェア"
+
+#: ../../rsts/license.rst:37
+msgid ""
+"There are cases where it is necessary to install certain external "
+"software in using the Services, or where the User elects to additionally "
+"install software necessary for the User’s use. Such types of software are"
+" licensed to the User, and thus are not to be sold to the User, nor is "
+"any right thereto to be transferred to the User. The User is required to "
+"confirm the details of the license for these types of software, and "
+"complete all necessary procedures on his/her own responsibility and at "
+"his/her expense, when using such software."
+msgstr "本サービスを使用するために、一定の外部ソフトウェアをインストールしなければならない場合、または、お客様が、必要なソフトウェアを追加でインストールする場合があります。これらのソフトウェアはお客様にライセンスされるものであり、販売されるものではなく、権利がお客様に譲渡されるものではありません。これらのソフトウェアに関するライセンス内容は、お客様自身で内容を確認し、必要な手続きを経てお客様が自らの責任と負担においてご利用ください。"
+
+#: ../../rsts/license.rst:40
+msgid "1.7 Pre-release: Provision of Beta Versions"
+msgstr "1.7 プレリリース　β版の提供"
+
+#: ../../rsts/license.rst:40
+msgid ""
+"GRID may provide a beta version of the Software. Such beta version is "
+"provided on the condition that “its users are not to hold GRID liable for"
+" any defect,” and is not covered by any limited warranty prescribed "
+"herein. No support based on the Services is available for any beta "
+"version, and GRID may change or discontinue any content or preview of "
+"beta versions without prior notice, as required."
+msgstr "当社は本ソフトウェアのβ版を提供することがあります。β版は、「当社に対し瑕疵を問わない条件」で提供されるものとし、本契約に規定するいかなる限定的保証の対象にもなりません。なお、β版は本サービスに基づくサポートの対象とならならず、当社は、予告なくβ版の内容およびプレビューを随時変更または中止することがあります。"
+
+#: ../../rsts/license.rst:43
+msgid "1.8 Provision for Non-commercial Purposes"
+msgstr "1.8 商用目的でない場合の提供"
+
+#: ../../rsts/license.rst:43
+msgid ""
+"GRID provides the Software to the User without any charge in the case "
+"where the User uses it for personal purposes, academic purposes, or for "
+"the purpose of product evaluation (hereinafter, “Non-commercial Use”). "
+"For Non-commercial Use, the Software is provided under the condition that"
+" “its users are not to hold GRID liable in any manner including for any "
+"defect,” and is not covered by any limited warranty prescribed herein. "
+"Furthermore, no support based on the Services is available for Non-"
+"commercial Use, and GRID may change or discontinue any of the details of "
+"Non-commercial Use without prior notice, as required."
+msgstr "当社は、本ソフトウェアを、お客様が個人目的で利用、学術目的で利用、または製品評価を目的として利用（以下、「商用目的でない利用」）する場合について、お客様に無償で提供しています。商用目的でない利用は、「当社に対し一切の責任及び瑕疵を問わない条件」で提供されるものとし、本契約に規定するいかなる限定的保証の対象にもなりません。なお、商用目的でない利用は本サービスに基づくサポートの対象とならず、当社は、予告なく商用目的でない利用の内容を随時変更または中止することがあります。"
+
+#: ../../rsts/license.rst:50
+msgid "1.9 Prohibitions"
+msgstr "1.9 禁止事項"
+
+#: ../../rsts/license.rst:46
+msgid ""
+"The User shall not reproduce (except where the User installs the Software"
+" at the start of his/her use of the Services), adapt, or transmit "
+"(including public transmission and enabling transmission) the Services in"
+" part or whole, or sub-license, rent, lease, lend, resell, redistribute, "
+"or transfer the Services in part or whole to any third party, or host the"
+" Services in part or whole."
+msgstr "お客様は、本サービスまたはその一部を複製（本サービス開始時にお客様が本ソフトウェアをインストールする場合を除く）、翻案、送信（公衆送信および送信可能化を含む。）し、または第三者に対して再利用許諾、レンタル、リース、貸与、再販売、再頒布、移転、もしくはホスティングを行うことはできません。"
+
+#: ../../rsts/license.rst:48
+msgid ""
+"The User shall not reverse-engineer, decompile, or disassemble the "
+"Software, or circumvent its technical restrictions."
+msgstr "お客様は、本ソフトウェアのリバースエンジニアリング、逆コンパイル、逆アセンブル、または技術的な制限の回避を行ってはなりません。"
+
+#: ../../rsts/license.rst:50
+msgid ""
+"In the case where the User uses the Software for Non-commercial Use, any "
+"diversion of the Software to commercial use without GRID’s prior consent "
+"is prohibited."
+msgstr "本ソフトウェアについて商用目的でない利用をするお客様は、当社の事前の同意を得ずに、本ソフトウェアを商用目的に転用することを禁じます。"
+
+#: ../../rsts/license.rst:53
+msgid "2. Arrangements Concerning Service Fees, Etc."
+msgstr "\\2. サービスの使用料等に関する取り決め"
+
+#: ../../rsts/license.rst:58
+msgid "2.1 Available Subscription Plan"
+msgstr "2.1 利用可能なサブスクリプションプラン"
+
+#: ../../rsts/license.rst:56
+msgid ""
+"With regard to the Services, the details of the available subscription "
+"(the price, use location, time frame, and other relevant conditions; "
+"hereinafter, the “Subscription Plan”) are provided to the User in "
+"advance, and the User is able to use the Services by ordering the "
+"Subscription Plan from GRID or a distributor designated thereby. The use "
+"of the Services shall be limited to the period of use set at the time of "
+"ordering (hereinafter, the “Subscription Period”), and the usage fee for "
+"the Services will not be charged for any period outside the Subscription "
+"Period. Furthermore, no usage fee paid by the User will be refunded even "
+"where the User did not use the Services during the Subscription Period. "
+"The User’s license to use the Services expires when his/her Subscription "
+"Period ends."
+msgstr "本サービスでは、利用可能なサブスクリプションの詳細（価格および使用場所、期限、その他関連する条件。以下「サブスクリプションプラン」といいます）を事前にお客様に提供し、当社または当社が指定する販売会社に発注することで利用することができます。なお、本サービスの利用は、発注時に契約で定めた利用期間（以下「サブスクリプション期間」といいます。）に限定され、その使用料は当該期間以外には発生せず、サブスクリプション期間中に本サービスを使用しなかった場合でも、当社がお客様から受領した使用料金は返金せず、お客様の本サービスの使用権限はサブスクリプション期間の満了により失効します。"
+
+#: ../../rsts/license.rst:58
+msgid ""
+"The expiration of the Services will result in disabling the use of "
+"deliverables, outcomes, etc. that the User has developed and created by "
+"using the Services. The User is advised to, on his/her own responsibility"
+" and at his/her expense, implement procedures necessary for maintaining "
+"such deliverables, outcomes, etc. prior to the expiration of the "
+"Services, such as storing or transferring them, or using other services."
+msgstr "なお、本サービスの失効により、お客様が本サービスを利用して開発・作成した成果物・結果等が利用できなくなることがありますが、お客様が自らの責任と負担において、本サービスの失効前に、当該成果物・結果等を維持するために必要な保存、移管、他のサービスの利用等の処理を行うものとします。"
+
+#: ../../rsts/license.rst:61
+msgid "2.2 Billing Plan"
+msgstr "2.2 課金プラン"
+
+#: ../../rsts/license.rst:61
+msgid ""
+"With regard to the use of the Services during the Subscription Period "
+"arranged in advance, the User is entitled to receive and use the provided"
+" Services at a fixed rate. The payment of the usage fee shall be made by "
+"the method determined at the time of execution of this Agreement."
+msgstr "お客様は、事前に約定したサブスクリプション期間中の使用に関し、定額で本サービスの提供を受け、本サービスを使用することができます。なお、使用料の支払方法は契約時に取り決めた方法で行います。"
+
+#: ../../rsts/license.rst:64
+msgid "2.3 Ordering"
+msgstr "2.3 発注"
+
+#: ../../rsts/license.rst:64
+msgid ""
+"The User shall be deemed to agree to the details and conditions of "
+"his/her subscription by using or renewing it. Unless otherwise stipulated"
+" in the Subscription Plan separately, the Services shall be provided to "
+"the User by the method prescribed in this Agreement when the User places "
+"an order with GRID or a distributor designated thereby."
+msgstr "サブスクリプションの利用、または更新を行うことにより、お客様はサブスクリプションの内容・条件に同意したものとみなされます。これらのサブスクリプションプランに別途規定されている場合を除き、本サービスは、当社及び当社が指定する販売会社に発注を行うことで、本契約に定める方法で、お客様に提供されるものとします。"
+
+#: ../../rsts/license.rst:67
+msgid "2.4 Price and Payment"
+msgstr "2.4 価格および支払"
+
+#: ../../rsts/license.rst:67
+msgid ""
+"In accordance with the User’s Subscription Plan, the payment of the usage"
+" fee for the Services shall be based on the contents of services ordered "
+"by the User from GRID or a distributor designated thereby. The price of "
+"the Services may be changed as required without prior notice, and such "
+"change will be applied from the following renewal of the User’s "
+"subscription. In this case, please note that any change in the price will"
+" not be applied to the User’s billing details retrospectively back to the"
+" time of such change, and thus such change for the retrospective period "
+"will not be subject to settlement."
+msgstr "本サービスの使用料の支払は、お客様のサブスクリプションプランに従い、お客様が当社または当社が指定する販売会社に発注したサービスの内容に基づきます。本サービスの価格は、随時予告なく変更されることがあり、その変更はお客様の次回のサブスクリプションの更新時より適用されます。この場合、価格の変更がお客様の課金内容に変更時から遡って適用されることはなく、精算の対象とはなりませんのでご注意ください。"
+
+#: ../../rsts/license.rst:85
+msgid "2.5 Renewal"
+msgstr "2.5 更新"
+
+#: ../../rsts/license.rst:70
+msgid ""
+"At the expiration of the Subscription Period set between the User and "
+"GRID or the relevant distributor designated thereby at the time of "
+"execution hereof, this Agreement will be automatically renewed with the "
+"same details as those applicable at the time of such renewal, unless "
+"particularly indicated otherwise by the User."
+msgstr "本契約は、お客様から格別の意思表示がない限り、契約時に当社または当社が指定する販売会社との間で定めたサブスクリプション期間の満了時をもって、その時点における本契約と同一の内容で自動的に更新されます。"
+
+#: ../../rsts/license.rst:72
+msgid ""
+"The details of this Agreement may be changed without any prior notice to "
+"the User. For the up-to-date details of this Agreement, the User is "
+"advised to check the latest terms at www.renom.jp prior to renewing this "
+"Agreement on his/her own responsibility and at his/her own expense."
+msgstr "本契約の内容は、お客様への事前の予告なく変更される場合がありますので、契約の更新前に、最新の本契約の内容については、お客様自身の責任と負担において最新規約（www.renom.jp）よりご確認ください。"
+
+#: ../../rsts/license.rst:74
+msgid ""
+"In the case where the User does not agree to renewal conditions, he/she "
+"may refuse to renew his/her subscription and terminate it at the "
+"expiration of the Subscription Period. If the User wishes to change the "
+"form, period, quantity, or other contractual details of his/her "
+"subscription, a new Subscription Plan shall be set at the time of "
+"renewal."
+msgstr "お客様は、更新条件に同意しない場合、サブスクリプションの更新を拒否することができ、お客様は、サブスクリプション期間の終了時に解約することができます。お客様がサブスクリプションの形態、期間、数量その他契約内容の変更を希望する場合は、更新時に新たにサブスクリプションプランを定めるものとします。"
+
+#: ../../rsts/license.rst:76
+msgid ""
+"If the User does not agree to the renewal of his/her subscription or "
+"renewal conditions, please notify GRID or the relevant distributor "
+"designated thereby to that effect at least one (1) month prior to the "
+"expiration of the Subscription Period."
+msgstr "サブスクリプションの更新又は更新条件に同意しない場合には、期間満了の１ヶ月前までに、当社または当社が指定する販売会社までご連絡ください。"
+
+#: ../../rsts/license.rst:78
+msgid ""
+"Furthermore, GRID may refuse the User’s renewal of his/her subscription "
+"in any of the following cases:"
+msgstr "また、当社は、以下の場合には、お客様からのサブスクリプションの更新を拒絶することができます。"
+
+#: ../../rsts/license.rst
+msgid ""
+"(1) The User is found to be in violation of GRID or a third party’s right"
+" in using the Services;"
+msgstr "\\(1) お客様が、本サービスを利用して、当社または第三者の権利を侵害していることが判明した場合"
+
+#: ../../rsts/license.rst
+msgid ""
+"(2) The User fails to pay any fee or other costs that he/she is supposed "
+"to pay to GRID in accordance with this Agreement;"
+msgstr "\\(2) お客様が本契約に基づいて当社に支払うべき料金その他の費用を支払わない場合"
+
+#: ../../rsts/license.rst
+msgid "(3) The User is found to use the Services for an improper purpose;"
+msgstr "\\(3) お客様が、本サービスを不正の目的で利用していることが判明した場合"
+
+#: ../../rsts/license.rst
+msgid ""
+"(4) The User is categorized as a member of an organized crime group or as"
+" any other antisocial force (hereinafter collectively, an “Antisocial "
+"Force”), or is found to use the Services for the purpose of facilitating "
+"any Antisocial Force’s activities or providing favors to any Antisocial "
+"Force;"
+msgstr ""
+"\\(4) "
+"お客様が、暴力団員その他の反社会的勢力（以下「反社会的勢力」といいます。）に該当する場合、または本サービスを反社会的勢力の活動を助長し、もしくは反社会的勢力に対し利益を供与する目的で利用していることが判明した場合"
+
+#: ../../rsts/license.rst
+msgid "(5) The User is in violation of any other provisions of this Agreement; or"
+msgstr "\\(5) お客様が本契約の他の条項に違反している場合"
+
+#: ../../rsts/license.rst
+msgid ""
+"(6) In connection with the Services, the User makes an unreasonable "
+"demand of GRID or any third party, or commits any other act that destroys"
+" the trust-based relationship between the User and GRID."
+msgstr "\\(6) お客様が、本サービスに関連して、当社または第三者に対し、不当な要求を行った場合その他当社との信頼関係を破壊するような行為があった場合"
+
+#: ../../rsts/license.rst:88
+msgid "2.6 Proof"
+msgstr "2.6 証明"
+
+#: ../../rsts/license.rst:88
+msgid ""
+"\\1) This Agreement, 2) electromagnetic records, data, etc. concerning "
+"orders placed by the User with GRID or the relevant distributor "
+"designated thereby (in the case where orders are placed through an agent,"
+" these shall include electromagnetic records and data concerning order "
+"forms prepared by such agent and actual orders), and 3) the proofs of "
+"payments shall be treated as proof of the User’s use of the Services."
+msgstr "\\１）本契約、２）お客様から当社又は当社が指定する販売会社への発注依頼にかかる電磁的記録・データ等（代理店を経由する場合、代理店で作成した発注書、発注にかかる電磁的記録・データを含みます。）、３）支払の証明、をもって、お客様の本サービスの利用の証明とします。"
+
+#: ../../rsts/license.rst:91
+msgid "2.7 Taxation"
+msgstr "2.7 租税"
+
+#: ../../rsts/license.rst:91
+msgid ""
+"No consumption tax is included in the shown price. The User shall bear "
+"taxes which are imposed on the basis of this Agreement and also which "
+"GRID is permitted to collect from the User pursuant to applicable laws "
+"and regulations."
+msgstr "表示価格には消費税は含まれていません。本契約に基づいて課されるもので、適用される法令により当社がお客様から徴収することが認められている税金については、お客様にご負担頂きます。"
+
+#: ../../rsts/license.rst:94
+msgid "3. Term of Agreement and Cancellation"
+msgstr "\\3. 契約期間、解除"
+
+#: ../../rsts/license.rst:97
+msgid "3.1 Term of Agreement"
+msgstr "3.1 契約期間"
+
+#: ../../rsts/license.rst:97
+msgid ""
+"The term of this Agreement shall be the Subscription Period set between "
+"the User and GRID or the relevant distributor designated thereby at the "
+"time of execution of this Agreement. However, the term of the Agreement "
+"shall be extended to the point in time newly set when this Agreement is "
+"renewed in accordance with Article 2.5 “Renewal.” Furthermore, if the "
+"renewal of this Agreement is refused in accordance with the same "
+"provision, if the User terminates this Agreement in accordance with "
+"Article 3.2 “Termination of Subscription,” or if GRID cancels the User’s "
+"account in accordance with Article 3.3 “Cancellation of Subscription,” "
+"this Agreement shall come to an end when the existing Subscription Period"
+" expires in the case of such refusal, or at the time of such termination "
+"or cancellation."
+msgstr "本契約の有効期間は、お客様と当社または当社が指定する販売会社との間で契約時に定めたサブスクリプション期間とします。但し、2.5「更新」により本契約が更新された場合には、更新により新たに定められた期間まで延長され、同条項により本契約の更新が拒絶された場合、3.2「サブスクリプションの解約」によりお客様が本契約を解約した場合、または3.3「サブスクリプションの解除」により当社がお客様のアカウントを解除した場合には、更新拒絶、解約または解除時に本契約は終了するものとします。"
+
+#: ../../rsts/license.rst:100
+msgid "3.2 Termination of Subscription"
+msgstr "3.2 サブスクリプションの解約"
+
+#: ../../rsts/license.rst:100
+msgid ""
+"The User may terminate his/her subscription; provided, however, that the "
+"User shall, at the time of termination, pay any usage fee that he/she is "
+"obliged to pay and any other monetary obligations. Furthermore, even "
+"where the User terminates his/her subscription in the middle of the "
+"Subscription Period, the amount corresponding to the usage fee up to the "
+"expiration date set at the time of execution of this Agreement will not "
+"be refunded."
+msgstr "お客様は、サブスクリプションを解約することができます。ただし、解約時にお客様が支払義務を負う使用料、その他の金員は支払わなければならず、お客様がサブスクリプション期間の途中で解約した場合でも、契約時に定めた期間満了日までの使用料相当額は返金しません。"
+
+#: ../../rsts/license.rst:118
+msgid "3.3 Cancellation of Subscription"
+msgstr "3.3 サブスクリプションの解除"
+
+#: ../../rsts/license.rst:103
+msgid "GRID may cancel the User’s account in any of the following cases:"
+msgstr "以下の場合には、当社は、お客様アカウントを解除することができます。"
+
+#: ../../rsts/license.rst
+msgid ""
+"(1) It is reasonably necessary to cancel it in order to prevent any "
+"unauthorized access to Customer Data;"
+msgstr "\\(1) 顧客データへの不正アクセスを防止するために合理的に必要とされる場合"
+
+#: ../../rsts/license.rst
+msgid "(2) The User is found to be in violation of GRID or a third party’s right;"
+msgstr "\\(2) お客様が、当社または第三者の権利を侵害していることが判明した場合"
+
+#: ../../rsts/license.rst
+msgid ""
+"(3) The User fails to pay any fee or other costs that he/she is supposed "
+"to pay to GRID in accordance with this Agreement;"
+msgstr "\\(3) お客様が本契約に基づいて当社に支払うべき料金その他の費用を支払わない場合"
+
+#: ../../rsts/license.rst
+msgid "(4) The User is found to use the Services for an improper purpose;"
+msgstr "\\(4) お客様が、本サービスを不正な目的で利用していることが判明した場合"
+
+#: ../../rsts/license.rst
+msgid ""
+"(5) The User is categorized as a member of an organized crime group or as"
+" any other Antisocial Force, or is found to use the Services for the "
+"purpose of facilitating any Antisocial Force’s activities or providing "
+"favors to any Antisocial Force;"
+msgstr ""
+"\\(5) "
+"お客様が、暴力団員その他の反社会的勢力（以下「反社会的勢力」といいます。）に該当する場合、または本サービスを反社会的勢力の活動を助長し、もしくは反社会的勢力に対し利益を供与する目的で利用していることが判明した場合"
+
+#: ../../rsts/license.rst
+msgid ""
+"(6) The User is in violation of the details of his/her Subscription Plan "
+"or any other provisions of this Agreement; or"
+msgstr "\\(6) お客様がサブスクリプションプランの内容、本契約の他の条項に違反している場合"
+
+#: ../../rsts/license.rst
+msgid ""
+"(7) In connection with the Services, the User makes an unreasonable "
+"demand of GRID or any third party, or commits any other act that destroys"
+" the trust-based relationship between the User and GRID."
+msgstr "\\(7) お客様が、本サービスに関連して、当社または第三者に対し、不当な要求を行った場合"
+
+#: ../../rsts/license.rst:114
+msgid ""
+"In the event where GRID is to cancel the User’s account, GRID shall "
+"notify the User to that effect at least thirty (30) days in advance, "
+"unless in the case of item (5) above or where GRID reasonably considers "
+"it necessary to cancel it immediately without prior notice. If the User "
+"fails to rectify the reason for such cancellation, GRID may cancel "
+"his/her subscription and terminate its provision of the Services to the "
+"User without setting any period of retention."
+msgstr ""
+"その他当社との信頼関係を破壊するような行為があった場合 当社が、お客様アカウントを解除する場合、上記 (5) "
+"の場合及び解除を予告なく直ちに実施する必要があると当社が合理的に考える場合を除き、当社は30日前までにお客様に通知し、お客様が解除の理由に対処しない場合、当社はお客様のサブスクリプションを解除し、保持期間を設けずにお客様に提供する本サービスを停止することができます。"
+
+#: ../../rsts/license.rst:116
+msgid ""
+"GRID will not accept liability for any damage caused to the User by the "
+"cancellation of his/her subscription."
+msgstr "サブスクリプションの解除を実施したことによって、お客様に損害が生じたとしても、当社は一切責任を負いません。 "
+
+#: ../../rsts/license.rst:118
+msgid ""
+"The User shall, at the time of termination of his/her subscription, pay "
+"any usage fee that he/she is obliged to pay and any other monetary "
+"obligations. Furthermore, even where GRID cancels the subscription in the"
+" middle of the Subscription Period, the amount corresponding to the usage"
+" fee up to the expiration date set at the time of execution of this "
+"Agreement will not be refunded."
+msgstr "サブスクリプションの解約時にお客様が支払義務を負う使用料、その他の金員は支払わなければならず、当社がサブスクリプション期間の途中で解除した場合でも、契約時に定めた期間満了日までの使用料相当額は返金しません。"
+
+#: ../../rsts/license.rst:121
+msgid "4. Warranty"
+msgstr "\\4. 保証"
+
+#: ../../rsts/license.rst:126
+msgid "4.1 Software"
+msgstr "4.1 ソフトウェア"
+
+#: ../../rsts/license.rst:124
+msgid ""
+"GRID provides a warranty that the Software practically operates in line "
+"with the description of the reference (www.renom.jp)."
+msgstr "当社は、本ソフトウェアがリファレンス（www.renom.jp）の記載に実質的に従って動作することを保証します。"
+
+#: ../../rsts/license.rst:126
+msgid ""
+"In the event where the Software is not able to meet this warranty, GRID "
+"shall choose either (1) to refund the amount paid for the Software, or "
+"(2) to correct or replace the Software. Aside from these choices, the "
+"User may not make any other demand of GRID. The period of warranty "
+"against defects and any other liability concerning the product shall be "
+"the period of one (1) year (hereinafter the limited warranty prescribed "
+"in this paragraph is referred to as the “Warranty”). Furthermore, the "
+"Warranty will not cover any trouble caused by grounds over which GRID has"
+" no reasonable control. In addition, the Warranty will not apply to any "
+"beta or preview version or the provision of the Software for Non-"
+"commercial Use."
+msgstr ""
+"本ソフトウェアがこの保証を満たすことができない場合、当社は自らの選択により、(1) 本ソフトウェアについて支払われた代金を返金するか、(2) "
+"本ソフトウェアを修正または交換します。お客様は、当社に対し、これ以外の請求を行うことはできません。瑕疵担保、またはその他の製品に対する責任の期間は1年間とします。（本項に規定した限定的保証を以下「本保証」といいます。）"
+" "
+"その他当社が合理的に支配できない事由から生じた問題には適用されません。また、本保証はβ版及びプレビュー版、商用利用目的でない提供には適用されません。"
+
+#: ../../rsts/license.rst:131
+msgid "4.2 Exemption from Liability"
+msgstr "4.2 免責"
+
+#: ../../rsts/license.rst:129
+msgid ""
+"GRID will not accept liability for any problem caused due to results "
+"generated by systems developed by the User’s use of the Services, "
+"including analysis results, prediction results, control results, and "
+"identification errors. Aside from the Warranty, GRID will not provide any"
+" other warranty covering problems, defects, faults, or malfunctions with "
+"regard to deliverables, results, etc. that are generated by the User’s "
+"use of the Services, any force majeure events (including, but not limited"
+" to, those enumerated in Article 7.6 “Force Majeure”), lost earnings, the"
+" non-fulfillment of expectations concerning cost reduction, any damage to"
+" the User’s data, programs, or other intangible property, or any damage "
+"to tangible property such as facilities or equipment. Furthermore, GRID "
+"will not accept any responsibility beyond what is stipulated in this "
+"article in relation to problems such as defects in the quality of, or the"
+" title to, the Services."
+msgstr "当社は、本サービスを使用し、お客様自身が開発したシステムが行う、解析結果、予測結果、制御結果、識別エラー等、システムが出力した結果が原因で生じた問題に対しては一切の責任を負いません。お客様が本サービスを利用して生じた成果物、結果等の不良、瑕疵、欠陥もしくは誤作動または不可抗力（7.6「不可抗力」に例示したものを含みますが、この限りではありません。）、逸失損益及び、費用節減の期待の不達成、お客様のデータ、プログラムその他無体財産に対する損害、設備機器などの有形財産に対する損害など、当社は、本保証以外には一切の保証を行わず、その他本サービスの品質または権利の瑕疵等の問題について、本条に定める以上の責任を負いません。"
+
+#: ../../rsts/license.rst:131
+msgid ""
+"GRID guarantees that the Services are not in violation of any third "
+"party’s rights as far as GRID is aware at the time of execution of this "
+"Agreement; provided, however, that this does not guarantee that any "
+"notice of right infringement, etc. will not be issued by a third party "
+"after the execution of this Agreement. In the event where it is necessary"
+" to suspend any function of the Services for reasons relating to such "
+"notice of infringement, GRID shall promptly inform the User to that "
+"effect by publishing the information on its website (www.renom.jp), and "
+"change or suspend the function concerned or take other actions in order "
+"to avoid the infringement concerned."
+msgstr "当社は、本契約の締結時に当社の知る限り、本サービスが第三者の権利を侵害していないことを保証します。但し、本契約締結以降に、第三者から権利侵害の通知等を受けないことまで保証するものではありません。なお、このために本サービスの一部機能の停止が必要になった場合には、当社は、お客様に対し、速やかにHP（www.renom.jp）で告知するとともに、侵害を回避するために本サービスの機能を変更するか、停止するなど対処するものとします。"
+
+#: ../../rsts/license.rst:134
+msgid "5. Limitation of Liability"
+msgstr "\\5. 責任制限"
+
+#: ../../rsts/license.rst:137
+msgid "5.1 Limitations"
+msgstr "5.1 制限"
+
+#: ../../rsts/license.rst:137
+msgid ""
+"The scope of GRID’s liability for any claim made by the User on the basis"
+" of his/her use of the Services or inability to use the Services shall be"
+" limited to direct losses up to the amount the User has paid to GRID in "
+"accordance with this Agreement within one (1) year up to the day on which"
+" the event resulting in the claim concerned occurred; provided, however, "
+"that in any case the total amount of liability of each party hereto in "
+"relation to the Services shall not exceed the amount that the User has "
+"paid to GRID for the Services during the Subscription Period."
+msgstr "お客様の当社に対する本サービスの使用または使用不能に基づくあらゆる請求についての当社の責任範囲は、当該請求の原因となった事象が発生した日から遡って１年間に本契約に基づきお客様が当社に支払った額を上限とする直接損害に限定されます。ただし、いかなる場合であっても、本サービスに関する当事者の責任総額は、サブスクリプション期間中に本サービスについてお客様が当社に支払った金額を超えないものとします。"
+
+#: ../../rsts/license.rst:140
+msgid "5.2 Exceptions"
+msgstr "5.2 除外"
+
+#: ../../rsts/license.rst:140
+msgid ""
+"GRID will not accept any liability for the User’s use of the Services, or"
+" any of lost earnings, indirect damage, special damage, incidental "
+"damage, consequential damage, punitive damage, or damage due to lost "
+"profits, business interruption, or the loss of business information, "
+"caused to the User in connection with the use of the Services, "
+"irrespective of the foreseeability of such lost earnings or types of "
+"damage."
+msgstr "当社は、本サービスの利用またはこれに関連してお客様に生じた逸失収益または間接損害、特別損害、付随的損害、派生的損害、懲罰的損害、逸失利益による損害、事業の中断による損害、もしくは事業情報の喪失による損害について、予見可能性の有無にかかわらず一切責任を負いません。"
+
+#: ../../rsts/license.rst:143
+msgid "5.3 Export control restrictions"
+msgstr "5.3 輸出管理制限"
+
+#: ../../rsts/license.rst:143
+msgid ""
+"GRID shall assume no responsibility for the User’s failure to obtain "
+"required licenses/approvals or the User’s act of providing the Software "
+"to a Trading Partner Subject to Embargo on Export and/or of using the "
+"Software for any purpose that may ultimately lead to a Banned Purpose."
+msgstr "当社は、お客様が本ソフトウェアをお客様が居住する以外の国、又は地域に居住する第三者に送信その他提供等する場合において、7.5（輸出管理規定等の遵守）の承諾および当該条項に規定する必要な許認可・承認を取得しなかったこと、輸出禁止先に対し本ソフトウェアを提供したこと及び禁止目的を最終目的として使用することに対し、如何なる責任も負わないものとします。"
+
+#: ../../rsts/license.rst:146
+msgid "6. Audit"
+msgstr "\\6. 監査"
+
+#: ../../rsts/license.rst:149
+msgid "6.1 Implementation"
+msgstr "6.1 実施"
+
+#: ../../rsts/license.rst:149
+msgid ""
+"GRID or distributors designated thereby may audit the status of the "
+"User’s use of the Software, provided that written notice is provided to "
+"the User at least thirty (30) days in advance. The User agrees to "
+"cooperate with audits and provide assistance and information to a "
+"reasonable extent. Such audits shall not unfairly obstruct the User’s "
+"ordinary business activities."
+msgstr "当社及び当社が指定する販売会社は、30日前までにお客様に書面で通知することにより、お客様による本ソフトウェアの使用状況について、監査を行うことができます。お客様は監査に協力し、合理的な範囲内で助力及び情報を提供することに同意します。当該監査は、お客様の通常の事業活動を不当に妨げないものとします。"
+
+#: ../../rsts/license.rst:152
+msgid "6.2 Payment"
+msgstr "6.2 支払い"
+
+#: ../../rsts/license.rst:152
+msgid ""
+"With regard to consideration to be paid for the use of the Software "
+"beyond the scope licensed to the User, the User agrees to pay the amount "
+"of such consideration within thirty (30) days of written notice from GRID"
+" or the relevant distributor designated thereby. In the event where the "
+"User fails to pay accordingly, GRID or the relevant distributor "
+"designated thereby may cancel the User’s subscription in accordance with "
+"Article 3.3(6), and terminate the Services (including the Warranty and "
+"any support) and this Agreement. GRID or distributors designated thereby "
+"will not accept any liability for damage caused to the User by the "
+"cancellation of his/her subscription as a result of an audit."
+msgstr "お客様に許諾された使用権の範囲を超える本ソフトウェアの使用に対して適用される対価について、お客様は当社または当社が指定する販売会社の書面による通知から30日以内に支払うことに同意します。お客様がこれを支払わない場合、当社及び当社が指定する販売会社は3.3.(6)によりお客様のサブスクリプションを解約及び本サービス(本保証、サポートを含みます)を終了し、本契約を終了することができるものとします。当該監査に基づきサブスクリプションの解約を実施したことによってお客様に損害が生じたとしても、当社及び当社が指定する販売会社は一切責任を負いません。"
+
+#: ../../rsts/license.rst:155
+msgid "6.3 Costs for Audits"
+msgstr "6.3 監査に関する費用"
+
+#: ../../rsts/license.rst:155
+msgid ""
+"All costs that the User incurs in cooperating with audits shall be wholly"
+" borne by the User, and the User agrees that neither GRID nor "
+"distributors designated thereby will accept any responsibility for such "
+"costs."
+msgstr "監査に協力することによってお客様に生じたあらゆる費用については全額お客様の負担とし、当社及び当社が指定する販売会社は一切責任を負わないことに同意します。"
+
+#: ../../rsts/license.rst:158
+msgid "7. Miscellaneous Provisions"
+msgstr "\\7. その他"
+
+#: ../../rsts/license.rst:163
+msgid "7.1 Notification"
+msgstr "7.1 通知"
+
+#: ../../rsts/license.rst:161
+msgid ""
+"When sending notice to GRID in accordance with or in connection with this"
+" Agreement, the User is required to send such notice to the contact point"
+" specified on the website of GRID. GRID may change such contact point for"
+" notice without prior notice to the User."
+msgstr "お客様は、本契約に基づいてまたは関連して、当社に対し通知を行う場合には、当社のホームページで指定する先に通知を行う必要があります。なお、当社は、お客様への事前の予告なく通知先を変更することがあります。"
+
+#: ../../rsts/license.rst:163
+msgid ""
+"Furthermore, the User shall correctly inform GRID of the User’s contact "
+"point to receive notice forwarded to the User by GRID in accordance with "
+"or in connection with this Agreement; the same shall apply when such "
+"contact point for notice is changed. If the User fails to inform GRID of "
+"the User’s contact point for notice either correctly or after it has been"
+" changed, and consequently GRID’s notice fails to reach the User, such "
+"notice shall be deemed to have reached the User at the time it would have"
+" originally been received."
+msgstr "また、当社が、本契約に基づいてまたは関連してお客様に対して通知を行う場合の通知先を、お客様は当社に対し正確に連絡しなければなりません。通知先が変更した場合にも同様とします。なお、お客様が、その通知先を正確に連絡しなかったため、または変更したにもかかわらず連絡しなかったために、当社からの通知がお客様に届かなかった場合には、本来到達するべき時期に当該通知が到達したものとみなします。"
+
+#: ../../rsts/license.rst:166
+msgid "7.2 Transfer of Status"
+msgstr "7.2 地位譲渡"
+
+#: ../../rsts/license.rst:166
+msgid ""
+"The User is not permitted to transfer to any third party all or part of "
+"his/her license, or other rights, obligations, or statuses arising on the"
+" basis of this Agreement without obtaining the prior consent of GRID."
+msgstr "お客様は、第三者に対し、当社の事前の同意を得ずに、ライセンスの全部または一部その他本契約に基づき生じる権利、義務及び地位を譲渡することはできません。"
+
+#: ../../rsts/license.rst:169
+msgid "7.3 Entire Agreement"
+msgstr "7.3 完全合意"
+
+#: ../../rsts/license.rst:169
+msgid ""
+"This Agreement constitutes the entire agreement pertaining to the matters"
+" set forth therein, and supersedes any and all prior and contemporaneous "
+"indications of intent."
+msgstr "本契約は、本契約に定める事項に関する完全合意であり、従前のまたは同時に行われたあらゆる意思表示に優先します。"
+
+#: ../../rsts/license.rst:172
+msgid "7.4 Survival of Provisions"
+msgstr "7.4 規定の存続"
+
+#: ../../rsts/license.rst:172
+msgid ""
+"The provisions of Articles 1.4 (Consent to Data Use), 1.9 (Prohibitions),"
+" 4.2 (Exemption from Liability), 5.1 (Limitations), 5.2 (Exceptions), 7.2"
+" (Transfer of Status), and 7.8 (Agreed Jurisdiction) shall remain "
+"effective even after this Agreement has come to an end (irrespective of "
+"the reason for such end)."
+msgstr "1.4（データ使用に関する承諾）、1.9（禁止事項）、4.2（免責）、5.1（制限）、5.2（除外）、5.3（輸出管理制限）及び7.2（地位譲渡）、7.5（輸出管理規定等の遵守）、7.8（合意管轄）の規定は、本契約の終了後（終了の原因を問わない。）も有効に存続します。"
+
+#: ../../rsts/license.rst:175
+msgid "7.5 Observance of Export Control Regulations, etc."
+msgstr "7.5 輸出管理規定等の遵守　"
+
+#: ../../rsts/license.rst:175
+msgid ""
+"Where the User sends or otherwise provides the Software to a third party "
+"who has their residence in a country/region other than that where the "
+"User has its residence with the prior consent of GRID in accordance with "
+"the conditions of this Agreement, the User shall observe the Foreign "
+"Exchange and Foreign Trade Act of Japan, the Export Control Regulations "
+"of the U.S. and the applicable trade-related regulations of any other "
+"country and shall follow the required licensing/approval procedures under"
+" the relevant regulations. The User shall not export, re-export or "
+"otherwise provide the Software to any trading partner appearing on the "
+"current list of enterprises subject to exclusion from export that is in "
+"place in Japan, the U.S. or any other relevant country (hereinafter "
+"“Japan, etc.”), any country subject to embargo on export or designated as"
+" a terrorist state under the export control regulations of Japan, etc. or"
+" any enterprise or individual that is subject to embargo on export under "
+"the export control regulations of Japan, etc. (hereinafter “Trading "
+"Partner Subject to Embargo on Export”). The User shall not use the "
+"Software for any purpose which may ultimately lead to the development, "
+"manufacturing or utilization of banned weapons of mass destruction (WMD):"
+" nuclear weapons, missiles or biochemical weapons (hereinafter “Banned "
+"Purpose”). GRID shall assume no responsibility for the User’s failure to "
+"obtain required licenses/approvals or the User’s act of providing the "
+"Software to a Trading Partner Subject to Embargo on Export and/or of "
+"using the Software for any purpose that may ultimately lead to a Banned "
+"Purpose."
+msgstr "お客様は、本契約に基づいて当社が承認し、本ソフトウェアをお客様が居住する以外の国又は地域に居住する第三者に送信その他提供等する場合には、日本国の「外国為替及び外国貿易法」、米国輸出管理規定およびその他の国の貿易関連法規を遵守するとともに、当該法規に基づいて必要な許認可・承認にかかる手続を履行するものとします。お客様は、現在の日本国、米国その他の国（以下「日本国等」といいます。）の輸出除外リストに掲載されている企業、および日本国等の輸出管理規定で指定された輸出禁止国及びテロリスト国、並びに輸出禁止の対象となっている企業及び個人（以下「輸出禁止先」といいます）に対し、本製品を輸出、再輸出その他の提供行為をしないものとします。お客様は、本ソフトウェアを、禁止されている核兵器、ミサイル、または生物化学兵器その他の武器の開発、製造、利用（以下「禁止目的」といいます）を最終目的として使用しないものとします。"
+
+#: ../../rsts/license.rst:178
+msgid "7.6 Force Majeure"
+msgstr "7.6 不可抗力"
+
+#: ../../rsts/license.rst:178
+msgid ""
+"Neither of the parties hereto shall assume any liability for non-"
+"performance of obligations if such non-performance is attributable to a "
+"cause beyond the reasonable control of the parties. In this case, force "
+"majeure events shall include, without limitation, fires, explosions, "
+"power blackouts, earthquakes, floods, eruptions, lightning strikes, "
+"rainstorms, natural disasters, civil commotions, wars, riots, coups, "
+"terrorist acts (including cyber-terrorism), industrial actions, lockouts,"
+" communication failures, any malfunctions or stoppages of servers or "
+"computers due to unknown causes, embargoes, amendments to laws, "
+"regulations, etc., and control, etc. exercised by government agencies."
+msgstr ""
+"いずれの当事者も、各当事者の合理的支配を越えた原因による債務の不履行については、一切責任を負わないものとします。この場合、不可抗力とは、火災、爆発、停電、地震、洪水、噴火、落雷、暴風雨、天災地変、内乱、戦争、暴動、クーデター、テロリズム（サイバー"
+" "
+"テロリズムを含みます。）、ストライキ、ロックアウト、通信障害、原因不明のサーバー・コンピュータの誤作動・停止、禁輸措置、法令等の改正、政府機関による規制等を意味しますが、この限りではありません。"
+
+#: ../../rsts/license.rst:181
+msgid "7.7 Authority to Execute Agreement"
+msgstr "7.7 契約締結の権限"
+
+#: ../../rsts/license.rst:181
+msgid ""
+"In the case where the User is an individual who is to agree to the "
+"conditions of this Agreement on behalf of a corporation, the User shall "
+"declare that he/she holds legal authority to execute this Agreement on "
+"behalf of such corporation."
+msgstr "お客様が法人に代わって本契約の条件に同意する個人である場合、お客様は、当該法人に代わって本契約を締結する法的権限を有していることを表明するものとします。"
+
+#: ../../rsts/license.rst:184
+msgid "7.8 Agreed Jurisdiction"
+msgstr "7.8 合意管轄"
+
+#: ../../rsts/license.rst:184
+msgid ""
+"This Agreement shall be governed by the laws of Japan, and the Tokyo "
+"District Court shall be the court of jurisdiction."
+msgstr "本契約の準拠法は日本の法律を準拠法とし、管轄裁判所を東京地方裁判所とします。"
+

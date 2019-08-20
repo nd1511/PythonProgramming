@@ -1,0 +1,145 @@
+#tutorial_lists_wrapper li {
+  list-style: none;
+  margin-left: 0;
+}
+#tutorial_lists_wrapper .category_name {
+  font-size: 24px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+#tutorial_lists_wrapper ul.tutorial_lists {
+  overflow: hidden;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  border-top: 1px solid #cfcfcf;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item {
+  flex-direction: row;
+  width: 33%;
+  padding: 1.5%;
+  border-right: 1px solid #cfcfcf;
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(3n) {
+  border-right: none;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(3n+1) {
+  position: relative;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(3n+1):after {
+  content: "";
+  display: block;
+  background: #cfcfcf;
+  height: 1px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 300%;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item .tutorial_title {
+  font-weight: bold;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item .summary {
+  font-weight: normal;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item .summary:last-child {
+  padding-bottom: 0;
+}
+#tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item > ul {
+  display: none;
+}
+
+.single-document h2 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.single-document .single-company-logo {
+  padding: 10px 0 10px 20px;
+}
+.single-document .single-company-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.single-document.ja-document .en-img {
+  display: none;
+}
+
+.single-document.en-document .ja-img {
+  display: none;
+}
+
+.catalog-company-logo {
+  padding: 10px 0 10px 20px;
+}
+.catalog-company-logo img {
+  max-width: 70px;
+  height: auto;
+}
+
+@media only screen and (max-width: 960px) {
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item {
+    width: 50%;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(3n) {
+    border-right: 1px solid #cfcfcf;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(2n) {
+    border-right: none;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(3n+1) {
+    position: static;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(3n+1):after {
+    display: none;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(2n+1) {
+    position: relative;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(2n+1):after {
+    content: "";
+    display: block;
+    background: #cfcfcf;
+    height: 1px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 200%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cfcfcf;
+    margin-bottom: 0;
+    padding: 15px 0;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(3n) {
+    border-right: none;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(2n) {
+    border-right: none;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(2n+1) {
+    position: static;
+  }
+  #tutorial_lists_wrapper ul.tutorial_lists .tutorial_list_item:nth-child(2n+1):after {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=custom.css.map */

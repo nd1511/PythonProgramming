@@ -1,0 +1,619 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-20 16:11+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/api/renom.utility.rst:2
+msgid "renom.utility"
+msgstr ""
+
+#: ../../rsts/api/renom.utility.rst:5
+msgid "renom.utility.initializer"
+msgstr ""
+
+#: of renom.utility.initializer.Initializer:1
+msgid "Base class of initializer."
+msgstr "Initializerクラスの基底となるクラス."
+
+#: of renom.utility.initializer.Initializer:3
+msgid ""
+"When the initialization of parameterized layer class, dense, conv2d, lstm"
+" ... , you can select the initialization method changing the initializer "
+"class as following example."
+msgstr "Dense, Conv2dオブジェクトの重みパラメータを初期化する方法を提供する."
+
+#: of renom.utility.distributor.imageloader.ImageLoader:11
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:18
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create:16
+#: renom.utility.initializer.Initializer:8 renom.utility.searcher.Searcher:11
+#: renom.utility.trainer.Trainer:23
+msgid "Example"
+msgstr ""
+
+#: of renom.utility.initializer.GlorotUniform:1
+msgid ""
+"Glorot uniform initializer [1]_ initializes parameters sampled by "
+"following uniform distribution \"U(max, min)\"."
+msgstr "Glorotの一様分布 \"U(max, min)\" に従って重みを初期化する."
+
+#: of renom.utility.initializer.GlorotNormal:1
+msgid ""
+"Glorot normal initializer [1]_ initializes parameters sampled by "
+"following normal distribution \"N(0, std)\"."
+msgstr "Glorotの正規分布 \"N(0, std)\" に従って重みを初期化する."
+
+#: of renom.utility.initializer.GlorotNormal:9
+msgid ""
+"Xavier Glorot, Yoshua Bengio. Understanding the difficulty of training "
+"deep feedforward neural networks."
+msgstr ""
+
+#: of renom.utility.initializer.HeNormal:1
+msgid "He normal initializer. Initializes parameters according to [1]"
+msgstr "Heの正規分布によって重みパラメータを初期化する."
+
+#: of renom.utility.initializer.HeNormal:9
+#: renom.utility.initializer.HeUniform:11
+msgid ""
+"https://arxiv.org/abs/1502.01852 Delving Deep into Rectifiers: Surpassing"
+" Human-Level Performance on ImageNet Classification"
+msgstr ""
+
+#: of renom.utility.initializer.HeUniform:1
+msgid "He uniform initializer. Initializes parameters according to [1]"
+msgstr "Heの一様分布によって重みパラメータを初期化する."
+
+#: of renom.utility.initializer.Gaussian:1
+msgid ""
+"Gaussian initializer. Initialize parameters using samples drawn from "
+":math:`N(mean, std)`"
+msgstr "ガウス分布 :math:`N(mean, std)` に従って重みを初期化する."
+
+#: of renom.utility.distributor.distributor.Distributor
+#: renom.utility.distributor.distributor.Distributor.batch
+#: renom.utility.distributor.distributor.Distributor.split
+#: renom.utility.distributor.distributor.GPUDistributor
+#: renom.utility.distributor.distributor.GPUDistributor.batch
+#: renom.utility.distributor.distributor.NdarrayDistributor
+#: renom.utility.distributor.imageloader.ImageLoader
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor.batch
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch
+#: renom.utility.distributor.threadingdistributor.ImageDistributor
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create
+#: renom.utility.initializer.Gaussian renom.utility.initializer.Uniform
+#: renom.utility.searcher.BayesSearcher
+#: renom.utility.searcher.BayesSearcher.suggest
+#: renom.utility.searcher.GridSearcher
+#: renom.utility.searcher.GridSearcher.suggest
+#: renom.utility.searcher.RandomSearcher
+#: renom.utility.searcher.RandomSearcher.suggest
+#: renom.utility.searcher.Searcher renom.utility.searcher.Searcher.best
+#: renom.utility.searcher.Searcher.set_result
+#: renom.utility.searcher.Searcher.suggest renom.utility.trainer.Trainer
+#: renom.utility.trainer.Trainer.test renom.utility.trainer.Trainer.train
+msgid "Parameters"
+msgstr ""
+
+#: of renom.utility.initializer.Gaussian:4
+msgid "Mean value of normal distribution."
+msgstr "ガウス分布の平均値"
+
+#: of renom.utility.initializer.Gaussian:6
+msgid "Standard deviation value of normal distribution."
+msgstr "ガウス分布の標準偏差"
+
+#: of renom.utility.initializer.Uniform:1
+msgid ""
+"Uniform initializer. Initialize parameters using samples drawn from "
+":math:`U(min, max)`"
+msgstr "ガウス分布 :math:`U(min, max)` に従って重みを初期化する."
+
+#: of renom.utility.initializer.Uniform:4
+msgid "Minimum limit of uniform distribution."
+msgstr "一様分布の下限値"
+
+#: of renom.utility.initializer.Uniform:6
+msgid "Maximum limit of uniform distribution."
+msgstr "一様分布の上限値"
+
+#: ../../rsts/api/renom.utility.rst:11
+msgid "renom.utility.searcher"
+msgstr ""
+
+#: of renom.utility.searcher.Searcher:1
+msgid "Base class of searcher."
+msgstr "Searcherクラスの基底となるクラス"
+
+#: of renom.utility.searcher.Searcher:3
+msgid ""
+"Searcher classes searches the hyper parameter that yields the lowest "
+"value."
+msgstr "Searcherクラスは誤差が低くなるようなモデルのハイパーパラメータを探索する機能を提供するクラス."
+
+#: of renom.utility.searcher.BayesSearcher:6
+#: renom.utility.searcher.RandomSearcher:6 renom.utility.searcher.Searcher:6
+msgid ""
+"Dictionary which contains the parameter name as a key and each parameter "
+"space as a value."
+msgstr "パラメータ名をキーとし, パラメータ空間を値として持つ辞書"
+
+#: of renom.utility.searcher.Searcher.set_result:1
+msgid "Set the result of yielded hyper parameter to searcher object."
+msgstr "ハイパーパラメータ 'params' によって得られたモデルの評価値をSearcherオブジェクトにセットする."
+
+#: of renom.utility.searcher.Searcher.set_result:3
+msgid "The result of yielded hyper parameter."
+msgstr "ハイパーパラメータによって得られた結果"
+
+#: of renom.utility.searcher.Searcher.set_result:5
+msgid ""
+"The hyper parameter which used in model. If None has given, the result is"
+" considered as it caused by last yielded hyper parameter."
+msgstr ""
+"学習に使用したハイパーパラメータ. Noneが与えられた場合, 'result'を, "
+"searcherが最後に出力したハイパーパラメータに対する評価値として扱う."
+
+#: of renom.utility.searcher.GridSearcher.suggest:1
+#: renom.utility.searcher.RandomSearcher.suggest:1
+#: renom.utility.searcher.Searcher.suggest:1
+msgid "This method yields next hyper parameter."
+msgstr "次に調べるべきハイパーパラメータを返す."
+
+#: of renom.utility.searcher.BayesSearcher.suggest:1
+#: renom.utility.searcher.GridSearcher.suggest:3
+#: renom.utility.searcher.RandomSearcher.suggest:3
+#: renom.utility.searcher.Searcher.suggest:3
+msgid "Maximum iteration number of parameter search."
+msgstr "最大探索回数"
+
+#: of renom.utility.searcher.GridSearcher.suggest
+#: renom.utility.searcher.RandomSearcher.suggest
+#: renom.utility.searcher.Searcher.suggest
+msgid "Yields"
+msgstr ""
+
+#: of renom.utility.searcher.GridSearcher.suggest:6
+#: renom.utility.searcher.RandomSearcher.suggest:6
+#: renom.utility.searcher.Searcher.suggest:6
+msgid "*dict* -- Dictionary of hyper parameter."
+msgstr "ハイパーパラメータを含む辞書"
+
+#: of renom.utility.searcher.Searcher.best:1
+msgid ""
+"Returns the best hyper parameters. By default, this method returns the "
+"top 3 hyper parameter as a result of searching."
+msgstr "最も低い評価値を得られたハイパーパラメータを返す.デフォルトでは低い順に三つのハイパーパラメータを返す."
+
+#: of renom.utility.searcher.Searcher.best:5
+msgid "The number of hyper parameters."
+msgstr "返すハイパーパラメータセットの数"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor.batch
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create
+#: renom.utility.searcher.Searcher.best renom.utility.trainer.Trainer.test
+msgid "Returns"
+msgstr ""
+
+#: of renom.utility.searcher.Searcher.best:8
+msgid "A list of dictionary of hyper parameters."
+msgstr "ハイパーパラメータを含む辞書のリスト"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor.batch
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create
+#: renom.utility.searcher.Searcher.best
+msgid "Return type"
+msgstr ""
+
+#: of renom.utility.searcher.GridSearcher:1
+msgid "Grid searcher class."
+msgstr ""
+
+#: of renom.utility.searcher.GridSearcher:3
+msgid ""
+"This class searches better hyper parameter in the parameter space with "
+"grid search."
+msgstr "グリッドサーチに基づいて, 誤差が低くなるようなハイパーパラメータを探索する."
+
+#: of renom.utility.searcher.GridSearcher:5
+msgid ""
+"Dictionary witch contains the parameter name as a key and each parameter "
+"space as a value."
+msgstr "パラメータ名をキーとし, パラメータ空間を値として持つ辞書"
+
+#: of renom.utility.searcher.RandomSearcher:1
+msgid "Random searcher class."
+msgstr ""
+
+#: of renom.utility.searcher.RandomSearcher:3
+msgid ""
+"This class randomly searches a parameter of the model which yields the "
+"lowest loss."
+msgstr "パラメータ空間をランダムに探索し, 誤差が低くなるようなハイパーパラメータを探索する."
+
+#: of renom.utility.searcher.BayesSearcher:1
+msgid "Bayes searcher class."
+msgstr ""
+
+#: of renom.utility.searcher.BayesSearcher:3
+msgid "This class performs hyper parameter search based on bayesian optimization."
+msgstr "ベイズ最適化に基づいて誤差が低くなるようなハイパーパラメータを探索する."
+
+#: of renom.utility.searcher.BayesSearcher:12
+msgid ""
+"This class requires the module GPy [1]_. You can install it using pip. "
+"``pip install gpy``"
+msgstr "このクラスはGPy [1]_ ライブラリを必要とします. GPyは ``pip install gpy`` で インストールが可能です."
+
+#: of renom.utility.searcher.BayesSearcher:15
+msgid "GPy - Gaussian Process framework http://sheffieldml.github.io/GPy/"
+msgstr ""
+
+#: of renom.utility.searcher.BayesSearcher.suggest:3
+msgid "Number of random search."
+msgstr "ランダム探索の回数."
+
+#: ../../rsts/api/renom.utility.rst:17
+msgid "renom.utility.trainer"
+msgstr ""
+
+#: of renom.utility.trainer.Trainer:1
+msgid "Trainer class."
+msgstr "Trainerクラス"
+
+#: of renom.utility.trainer.Trainer:3
+msgid ""
+"This class owns train loop. It executes forward propagation, back "
+"propagation and updating of weight parameters for the specified number of"
+" times."
+msgstr "このクラスは学習ループを提供します. 順伝播, 逆伝播, 重みパラメータの更新を指定されたepoch数分実行します."
+
+#: of renom.utility.trainer.Trainer:7
+msgid "Model to be trained."
+msgstr "学習対象のモデル"
+
+#: of renom.utility.trainer.Trainer:9
+msgid "Numer of iteration."
+msgstr "epoch数"
+
+#: of renom.utility.trainer.Trainer:11
+msgid "Loss function."
+msgstr "誤差関数"
+
+#: of renom.utility.trainer.Trainer:13
+msgid "Batch size."
+msgstr "バッチサイズ"
+
+#: of renom.utility.trainer.Trainer:15
+msgid "Gradient descent algorithm."
+msgstr "勾配降下アルゴリズム"
+
+#: of renom.utility.trainer.Trainer:17
+msgid "If it's true, mini batch is created randomly."
+msgstr "真の場合, ミニバッチを重複を許さずランダムに作成する"
+
+#: of renom.utility.trainer.Trainer:19
+msgid "Dictionary of function."
+msgstr "関数を要素に持つ辞書"
+
+#: of renom.utility.trainer.Trainer.train:1
+msgid ""
+"Train method. This method executes train loop. If test_distributor is "
+"given, validation loss will be calculated."
+msgstr "学習を実行するメソッド. test_distributorが与えられた場合、validationエラーを計算します."
+
+#: of renom.utility.trainer.Trainer.train:5
+msgid "Distributor for yielding train data."
+msgstr "学習データを与えるためのDistributorオブジェクト"
+
+#: of renom.utility.trainer.Trainer.train:7
+msgid "Distributor for yielding test data."
+msgstr "テストデータを与えるためのDistributorオブジェクト"
+
+#: of renom.utility.trainer.Trainer.test:1
+msgid "Test method. This method executes forward propagation for given data."
+msgstr "順伝播のみを実行するメソッド."
+
+#: of renom.utility.distributor.distributor.Distributor:4
+#: renom.utility.distributor.distributor.GPUDistributor:3
+#: renom.utility.distributor.distributor.NdarrayDistributor:3
+#: renom.utility.trainer.Trainer.test:4
+msgid "Input data."
+msgstr "入力データ"
+
+#: of renom.utility.trainer.Trainer.test:7
+msgid "ndarray"
+msgstr ""
+
+#: ../../rsts/api/renom.utility.rst:23
+msgid "renom.utility.distributor.distributor"
+msgstr ""
+
+#: of renom.utility.distributor.distributor.Distributor:1
+msgid "Distributor class This is the base class of a data distributor."
+msgstr "Distributorベースクラス. "
+
+#: of renom.utility.distributor.distributor.Distributor:6
+#: renom.utility.distributor.distributor.GPUDistributor:5
+#: renom.utility.distributor.distributor.NdarrayDistributor:5
+msgid "Target data."
+msgstr "教師データ"
+
+#: of renom.utility.distributor.distributor.Distributor:8
+msgid "Path to data."
+msgstr "入力データへのパス"
+
+#: of renom.utility.distributor.distributor.Distributor.batch:1
+#: renom.utility.distributor.distributor.GPUDistributor.batch:1
+msgid "This function returns `minibatch`."
+msgstr "与えられたサイズのミニバッチを返す."
+
+#: of renom.utility.distributor.distributor.Distributor.batch:3
+#: renom.utility.distributor.distributor.GPUDistributor.batch:3
+msgid "Size of batch."
+msgstr "バッチサイズ"
+
+#: of renom.utility.distributor.distributor.Distributor.batch:5
+#: renom.utility.distributor.distributor.GPUDistributor.batch:5
+msgid "If True is passed, data will be selected randomly."
+msgstr "Trueが与えられた場合, バッチは重複を許さずランダムに選択されたデータから作られる."
+
+#: of renom.utility.distributor.distributor.Distributor.split:1
+msgid ""
+"This method splits its own data and generates 2 distributors using the "
+"split data."
+msgstr "このメソッドはDistributor自身が持つデータを2分割し, それらを元に新たなDistributorを二つ作成する."
+
+#: of renom.utility.distributor.distributor.Distributor.split:3
+msgid "Ratio for dividing data."
+msgstr "データを分割する比率"
+
+#: of renom.utility.distributor.distributor.Distributor.split:5
+msgid "If True, the data is shuffled before dividing."
+msgstr "Trueが与えられた場合, データは分割する前にシャッフルされる."
+
+#: of renom.utility.distributor.distributor.NdarrayDistributor:1
+msgid "Derived class of Distributor which manages ndarray data."
+msgstr "ndarray形式のデータを扱うためのDistributorの派生クラス."
+
+#: of renom.utility.distributor.distributor.GPUDistributor:1
+msgid "Derived class of Distributor which manages GPUValue data."
+msgstr "ndarray形式のデータを扱うためのDistributorの派生クラス."
+
+#: ../../rsts/api/renom.utility.rst:29
+msgid "renom.utility.distributor.imageloader"
+msgstr ""
+
+#: of renom.utility.distributor.imageloader.ImageLoader:1
+msgid ""
+"ImageLoader is a generator that yields images in batches. By inputting "
+"list of image path, ImageLoader load images and yields according to "
+"number of batch size."
+msgstr ""
+"ImageLoaderは画像データをバッチで扱うためのジェネレータを提供する.ImageLoaderに対し, 画像へのパスをリストで与えることで,"
+" 指定されたバッチサイズ分のデータを生成する."
+
+#: of renom.utility.distributor.imageloader.ImageLoader:5
+#: renom.utility.distributor.threadingdistributor.ImageDistributor:6
+msgid "List of image path."
+msgstr "画像へのパスのリスト"
+
+#: of renom.utility.distributor.imageloader.ImageLoader:7
+msgid "Color Space of Input Image."
+msgstr "画像のカラーフォーマット"
+
+#: ../../rsts/api/renom.utility.rst:35
+msgid "renom.utility.distributor.threadingdistributor"
+msgstr ""
+
+#: of renom.utility.distributor.threadingdistributor.ImageDistributor:1
+msgid ""
+"Base class for image distribution. Use subclasses "
+"ImageClassificationDistributor, ImageDetectionDistributor, "
+"ImageSegmentationDistributor depending on the image task. Or sublass it "
+"for original image tasks."
+msgstr ""
+"画像ファイルを扱うDistributorクラスの基底クラス.学習の目的ごとに, "
+"派生クラスであるImageDetectionDistributor, ImageClassificationDistributorを使用する."
+
+#: of renom.utility.distributor.threadingdistributor.ImageDistributor:8
+msgid "List of labels (bbox and class) for every image (2 dimensional array)."
+msgstr "画像それぞれに対する教師データのリスト."
+
+#: of renom.utility.distributor.threadingdistributor.ImageDistributor:10
+msgid "List of classes name for this dataset."
+msgstr "データセットに含まれるクラス名のリスト."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:9
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:11
+#: renom.utility.distributor.threadingdistributor.ImageDistributor:12
+msgid "If True, apply datasets shuffle per epoch"
+msgstr "真の場合, epochごとにデータはシャッフルされる."
+
+#: of renom.utility.distributor.threadingdistributor.ImageDistributor:14
+msgid "Resize input image for converting batch ndarray."
+msgstr "画像を指定されたサイズにリサイズする."
+
+#: of renom.utility.distributor.threadingdistributor.ImageDistributor:16
+msgid "Color of Input Image. [\"RGB\", \"GRAY\"]"
+msgstr "入力画像のカラーフォーマト."
+
+#: of renom.utility.distributor.threadingdistributor.ImageDistributor:18
+msgid "Augmentater for input Image."
+msgstr "データオーギュメンテーション設定."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:1
+msgid ""
+"Distributor class for tasks of image detection. Labels are expected to be"
+" Bounding boxes and Classes. ex:) np.array([[center x, center y, "
+"x_top_left, height, 0, 0, 0, 1, 0]])"
+msgstr ""
+"オブジェクト検出モデルを作成するためのDistributorを提供するクラス.教師データは "
+"バウンディングボックスとクラスラベルからなる.np.array([[center x, center y, x_top_left, height,"
+" 0, 0, 0, 1, 0]])"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:3
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:5
+msgid "list of image path"
+msgstr "画像ファイルへのパスリスト"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:5
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:7
+msgid "list of labels (bbox and class) for every image"
+msgstr "それぞれの画像に対する教師データのリスト."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:7
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:9
+msgid "list of classes name for this dataset"
+msgstr "データセットに含まれるクラス名のリスト."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:11
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:13
+msgid "resize input image for converting batch ndarray"
+msgstr "引数に指定されたサイズに画像がリサイズされる."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:13
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:15
+msgid "color of Input Image. [\"RGB\", \"GRAY\"]"
+msgstr "入力画像のカラーフォーマット."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor:17
+msgid "augmentater for Input Image"
+msgstr "オーギュメンテーションの設定"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch:1
+msgid "Returns generator of batch images."
+msgstr "バッチを返すgeneratorオブジェクト"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor.batch:1
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch:3
+msgid "size of a batch."
+msgstr "バッチサイズ"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch:6
+msgid ""
+"Images(4 dimension) of input data for Network.   If including labels, "
+"return with transformed labels"
+msgstr "4次元テンソルで表された入力画像データ. 同時に教師ラベルが与えられた場合,オーギュメンテーションに対応して教師データは変形される."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch:8
+msgid "Images(4 dimension) of input data for Network."
+msgstr "4次元テンソルで表された入力画像データ."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageDetectionDistributor.batch:9
+msgid "If including labels, return with transformed labels"
+msgstr "4次元テンソルで表された入力画像データ. 同時に教師ラベルが与えられた場合,オーギュメンテーションに対応して教師データは変形される."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:1
+msgid "Distributor class for tasks of image classification."
+msgstr "クラスタリングのためのDistributorクラス."
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor:15
+msgid "(function) augmentater for Input Image"
+msgstr "オーギュメンテーションの設定"
+
+#: of
+#: renom.utility.distributor.threadingdistributor.ImageClassificationDistributor.batch:4
+msgid ""
+"Images(4 dimension) of input data for Network. If including labels, "
+"return with original labels"
+msgstr "4次元テンソルで表された入力画像データ."
+
+#: ../../rsts/api/renom.utility.rst:42
+msgid "renom.utility.image.data_augmentation.augmentation"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.augmentation.DataAugmentation:1
+msgid ""
+"Apply transformation to the input x and labels. You could choose "
+"transform function from below. [\"Flip\", \"Resize\", \"Crop\", "
+"\"Color_jitter\", \"Rescale\", \"Rotate\", \"Shift\"]."
+msgstr ""
+"画像データx, 教師データyともに, オーギュメンテーションを行う. 以下のオーギュメンテーションオプションを指定できる.[\"Flip\", "
+"\"Resize\", \"Crop\", \"Color_jitter\", \"Rescale\", \"Rotate\", "
+"\"Shift\"]. \"Rotate\" transform can't apply label transformation. So "
+"when you want to use \"Rotate\", Please use only image transformation."
+
+#: of renom.utility.image.data_augmentation.augmentation.DataAugmentation:5
+msgid "list of instance for converter."
+msgstr "Resize, Flipなどのコンバーターインスタンスのリスト."
+
+#: of renom.utility.image.data_augmentation.augmentation.DataAugmentation:7
+msgid "apply random transformation or not"
+msgstr "Trueが与えられた場合ランダムに画像変形を適用する."
+
+#: of
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create:1
+msgid ""
+"Performs a DataAugmentation of a Numpy images. if x is a Batch, apply "
+"DataAugmentation to Batch. if arguments include labels, apply label "
+"transformation."
+msgstr ""
+"画像に対しオーギュメンテーションを適用する.入力xが4次元テンソルである場合, "
+"第一軸はバッチ数として認識され,バッチ内の各画像に対しオーギュメンテーションが適用される.教師データが同時に与えられていた場合, "
+"教師データに対しても変形が行われる."
+
+#: of
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create:5
+msgid "3 or 4(batch) dimensional images. dtype is float32. value=[0.0, 255.0]."
+msgstr "3, 4(第一軸はバッチ数)次元テンソルデータ. "
+
+#: of
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create:7
+msgid "labels for classification, detection and segmentation. 2-dimensional array"
+msgstr "教師データ."
+
+#: of
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create:9
+msgid "number of class of datasets"
+msgstr "データセットに含まれるクラス数."
+
+#: of
+#: renom.utility.image.data_augmentation.augmentation.DataAugmentation.create:12
+msgid ""
+"Images(4 dimension) of augment transformed. If including labels, return "
+"with transformed labels"
+msgstr "4次元テンソルで表された入力画像データ. 同時に教師ラベルが与えられた場合,オーギュメンテーションに対応して教師データは変形される."
+
+#~ msgid "He normal initializer."
+#~ msgstr "Initializerクラスの基底となるクラス."
+
+#~ msgid "He uniform initializer."
+#~ msgstr "Heの一様乱数に基づいて重みの初期化を行う."
+

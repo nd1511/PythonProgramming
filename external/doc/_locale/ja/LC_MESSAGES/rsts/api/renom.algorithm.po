@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-13 13:29+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/api/renom.algorithm.rst:2
+msgid "renom.algorithm"
+msgstr ""
+
+#: ../../rsts/api/renom.algorithm.rst:5
+msgid "renom.algorithm.image"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:1
+msgid ""
+"Use to transform a list of objects per image into a "
+"image*cells*cells*(5+classes) matrix. Each cell in image can only be "
+"labeled for 1 object."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:4
+msgid "\"5\" represents: objectness (0 or 1) and X Y W H"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:6
+msgid "ex: Input: 2 objects in first image, 5 classes"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:10
+msgid "y[0] = X Y W H 0 1 0 0 0 X Y W H 0 0 0 1 0"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:10
+msgid "|---1st object----||---2nd object---|"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:12
+msgid "Output: 7 * 7 cells * 10 per image"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:14
+msgid "truth[0,0,0] = 1 X Y W H 0 1 0 0"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:15
+msgid "(cell 0,0 has first object)"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:17
+msgid "truth[0,0,1] = 0 0 0 0 0 0 0 0 0"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.build_truth:18
+msgid "(cell 0,1 has no object)"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:1
+msgid ""
+"Apply to X predicted out of yolo_detector layer to get list of detected "
+"objects. Default threshold for detection is prob < 0.2. Default threshold"
+" for suppression is IOU > 0.4"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.Yolo
+#: renom.algorithm.image.detection.yolo.apply_nms
+#: renom.algorithm.reinforcement.dqn.DQN
+#: renom.algorithm.reinforcement.dqn.DQN.train
+msgid "Parameters"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:5
+msgid "Cell size."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.Yolo:13
+#: renom.algorithm.image.detection.yolo.apply_nms:7
+msgid "Number of bbox."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.Yolo:15
+#: renom.algorithm.image.detection.yolo.apply_nms:9
+msgid "Number of class."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:11
+msgid "Image size."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:13
+msgid "A threshold for effective bounding box."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:15
+msgid "A threshold for bounding box suppression."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms
+#: renom.algorithm.reinforcement.dqn.DQN.action
+#: renom.algorithm.reinforcement.dqn.DQN.train
+msgid "Returns"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:18
+msgid ""
+"List of dict object is returned. The dict includes keys ``class``,     "
+"``box``, ``score``."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:20
+msgid "List of dict object is returned. The dict includes keys ``class``,"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.apply_nms:21
+msgid "``box``, ``score``."
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.Yolo:1
+msgid ""
+"Loss function for Yolo detection. Last layer of the network needs to be "
+"following size: cells*cells*(bbox*5+classes) 5 is because every bounding "
+"box gets 1 score and 4 locations (x, y, w, h)"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.Yolo:6
+msgid ""
+"Ex: Prediction: 2 bbox per cell, 7*7 cells per image, 5 classes X[0,0,0] "
+"= S  X  Y  W  H  S  X  Y  W  H  0 0 0 1 0"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.Yolo:9
+msgid "|---1st bbox--||---2nd bbox--||-classes-|"
+msgstr ""
+
+#: of renom.algorithm.image.detection.yolo.Yolo:11
+msgid "Number of grid cells."
+msgstr ""
+
+#: ../../rsts/api/renom.algorithm.rst:16
+msgid "renom.algorithm.reinforcement"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN:1
+msgid ""
+"DQN class This class provides a reinforcement learning agent including "
+"training method."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN:4
+msgid "Q-Network."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN:6
+msgid "The size of state."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN:8
+msgid "The number of action pattern."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN:10
+msgid "Discount rate."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN:12
+msgid "The size of replay buffer."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.action:1
+msgid ""
+"This method returns an action according to the given state. :param state:"
+" A state of an environment. :type state: ndarray"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.action:5
+msgid "Action."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.action
+#: renom.algorithm.reinforcement.dqn.DQN.train
+msgid "Return type"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.update:1
+msgid "This function updates target network."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:1
+msgid ""
+"This method executes training of a q-network. Training will be done with "
+"epsilon-greedy method."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:4
+msgid ""
+"A function which accepts action as an argument and returns prestate, "
+"state,  reward and terminal."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:7
+msgid "Loss function for training q-network."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:9
+msgid "Optimizer object for training q-network."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:11
+msgid "Number of epoch for training."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:13
+msgid "Batch size."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:15
+msgid "Number of random step which will be executed before training."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:17
+msgid "Number of step of one epoch."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:19
+msgid "Number of test step."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:21
+msgid "A environment function for test."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:23
+msgid "Period of updating target network."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:25
+msgid "Number of step"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:27
+msgid "Minimum greedy value"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:29
+msgid "Maximum greedy value"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:31
+msgid "Greedy threshold"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:33
+msgid "For the learning step, training is done at this cycle"
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:36
+msgid "A dictionary which includes reward list of training and loss list."
+msgstr ""
+
+#: of renom.algorithm.reinforcement.dqn.DQN.train:40
+msgid "Example"
+msgstr ""
+

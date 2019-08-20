@@ -1,0 +1,1 @@
+recursive-include renom *.cu *.py *.c* *.h *.inl *.pxd *.pxi *.pyx

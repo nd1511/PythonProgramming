@@ -1,0 +1,628 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-19 01:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.3\n"
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:2
+msgid "renom.utility.image.data_augmentation.color_jitter"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.color_jitter.color_jitter:1
+msgid ""
+"Performs a HSV color jitter of a RGB images. if x is a Batch, apply "
+"jitter transform to Batch. if arguments include labels, apply label "
+"transformation."
+msgstr ""
+"入力されたRGB画像に対し, HSV空間におけるjitter処理を適用する.入力xが4次元テンソルで与えられた場合, "
+"第一軸をバッチサイズとしバッチ内のすべての画像に対しjitter処理を適用する."
+
+#: of renom.utility.image.data_augmentation.color_jitter.ColorJitter
+#: renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter
+#: renom.utility.image.data_augmentation.crop.Crop
+#: renom.utility.image.data_augmentation.crop.Crop.transform
+#: renom.utility.image.data_augmentation.crop.crop
+#: renom.utility.image.data_augmentation.flip.Flip
+#: renom.utility.image.data_augmentation.flip.Flip.transform
+#: renom.utility.image.data_augmentation.flip.flip
+#: renom.utility.image.data_augmentation.rescale.Rescale
+#: renom.utility.image.data_augmentation.rescale.Rescale.transform
+#: renom.utility.image.data_augmentation.rescale.rescale
+#: renom.utility.image.data_augmentation.resize.Resize
+#: renom.utility.image.data_augmentation.resize.Resize.transform
+#: renom.utility.image.data_augmentation.resize.resize
+#: renom.utility.image.data_augmentation.rotate.Rotate
+#: renom.utility.image.data_augmentation.rotate.Rotate.transform
+#: renom.utility.image.data_augmentation.rotate.rotate
+#: renom.utility.image.data_augmentation.shift.Shift
+#: renom.utility.image.data_augmentation.shift.Shift.transform
+#: renom.utility.image.data_augmentation.shift.shift
+#: renom.utility.image.data_augmentation.zoom.Zoom
+#: renom.utility.image.data_augmentation.zoom.Zoom.transform
+#: renom.utility.image.data_augmentation.zoom.zoom
+msgid "Parameters"
+msgstr ""
+
+#: of
+#: renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform:5
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter:5
+msgid "3 or 4(batch) dimensional RGB images"
+msgstr "3, 4(第一軸はバッチ数)次元RGB画像."
+
+#: of renom.utility.image.data_augmentation.color_jitter.ColorJitter:3
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter:7
+msgid ""
+"multiple value to h channel of HSV color space. when you apply random "
+"transformation, please use tuple (min h, max h)"
+msgstr "HSV色空間におけるH値を変化させる幅を指定するタプル.(min h, max h)の形式を受け取る."
+
+#: of renom.utility.image.data_augmentation.color_jitter.ColorJitter:6
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter:10
+msgid ""
+"multiple value to s channel of HSV color space. when you apply random "
+"transformation, please use tuple (min s, max s)"
+msgstr "HSV色空間におけるS値を変化させる幅を指定するタプル.(min s, max s)の形式を受け取る."
+
+#: of renom.utility.image.data_augmentation.color_jitter.ColorJitter:9
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter:13
+msgid ""
+"multiple value to v channel of HSV color space. when you apply random "
+"transformation, please use tuple (min v, max v)"
+msgstr "HSV色空間におけるV値を変化させる幅を指定するタプル.(min v, max v)の形式を受け取る."
+
+#: of renom.utility.image.data_augmentation.color_jitter.color_jitter:16
+msgid "If True, apply random jitter transform"
+msgstr "Trueが与えられた場合, Jitter処理を指定された値の範囲でランダムに適用する."
+
+#: of
+#: renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform:9
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter:18
+#: renom.utility.image.data_augmentation.crop.Crop.transform:9
+#: renom.utility.image.data_augmentation.crop.crop:11
+#: renom.utility.image.data_augmentation.flip.Flip.transform:9
+#: renom.utility.image.data_augmentation.flip.flip:14
+#: renom.utility.image.data_augmentation.rescale.Rescale.transform:6
+#: renom.utility.image.data_augmentation.resize.Resize.transform:6
+#: renom.utility.image.data_augmentation.resize.resize:6
+#: renom.utility.image.data_augmentation.shift.Shift.transform:9
+#: renom.utility.image.data_augmentation.shift.shift:15
+msgid ""
+"rectangle labels(2-dimensional array) ex:) np.array([[center x, center y,"
+" x_top_left, height, 0, 0, 0, 1, 0]])"
+msgstr ""
+"教師データ(2次元行列) ex:) np.array([[center x, center y, x_top_left, height, 0, "
+"0, 0, 1, 0]])"
+
+#: of renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter
+#: renom.utility.image.data_augmentation.crop.Crop.transform
+#: renom.utility.image.data_augmentation.crop.crop
+#: renom.utility.image.data_augmentation.flip.Flip.transform
+#: renom.utility.image.data_augmentation.flip.flip
+#: renom.utility.image.data_augmentation.rescale.Rescale.transform
+#: renom.utility.image.data_augmentation.rescale.rescale
+#: renom.utility.image.data_augmentation.resize.Resize.transform
+#: renom.utility.image.data_augmentation.resize.resize
+#: renom.utility.image.data_augmentation.rotate.rotate
+#: renom.utility.image.data_augmentation.shift.Shift.transform
+#: renom.utility.image.data_augmentation.shift.shift
+#: renom.utility.image.data_augmentation.zoom.Zoom.transform
+#: renom.utility.image.data_augmentation.zoom.zoom
+msgid "Returns"
+msgstr ""
+
+#: of
+#: renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform:13
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter:22
+msgid ""
+"Images(4 dimension) of jitter transformed. If including labels, return "
+"with transformed labels"
+msgstr "Jitter処理が施された画像(４次元テンソル). インスタンス化時に教師データが与えられていた場合変形が教師データ施された教師データも返される."
+
+#: of renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter
+#: renom.utility.image.data_augmentation.crop.Crop.transform
+#: renom.utility.image.data_augmentation.crop.crop
+#: renom.utility.image.data_augmentation.flip.Flip.transform
+#: renom.utility.image.data_augmentation.flip.flip
+#: renom.utility.image.data_augmentation.rescale.Rescale.transform
+#: renom.utility.image.data_augmentation.rescale.rescale
+#: renom.utility.image.data_augmentation.resize.Resize.transform
+#: renom.utility.image.data_augmentation.resize.resize
+#: renom.utility.image.data_augmentation.rotate.rotate
+#: renom.utility.image.data_augmentation.shift.Shift.transform
+#: renom.utility.image.data_augmentation.shift.shift
+#: renom.utility.image.data_augmentation.zoom.Zoom.transform
+#: renom.utility.image.data_augmentation.zoom.zoom
+msgid "Return type"
+msgstr ""
+
+#: of
+#: renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform:17
+#: renom.utility.image.data_augmentation.color_jitter.color_jitter:26
+#: renom.utility.image.data_augmentation.crop.Crop.transform:19
+#: renom.utility.image.data_augmentation.crop.crop:23
+#: renom.utility.image.data_augmentation.flip.Flip.transform
+#: renom.utility.image.data_augmentation.flip.flip:24
+#: renom.utility.image.data_augmentation.rescale.rescale
+#: renom.utility.image.data_augmentation.resize.Resize.transform
+#: renom.utility.image.data_augmentation.resize.resize
+#: renom.utility.image.data_augmentation.rotate.Rotate:14
+#: renom.utility.image.data_augmentation.rotate.rotate:25
+#: renom.utility.image.data_augmentation.shift.Shift.transform:19
+#: renom.utility.image.data_augmentation.shift.shift:25
+#: renom.utility.image.data_augmentation.zoom.Zoom.transform:20
+#: renom.utility.image.data_augmentation.zoom.zoom:24
+msgid "Example"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.color_jitter.ColorJitter:1
+msgid "Apply color jitter transformation to the input x and labels."
+msgstr "入力xと教師データに対し, Jitter処理を適用する."
+
+#: of
+#: renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform:1
+msgid ""
+"Performs a HSV color jitter of a RGB images. if x is a Batch, apply "
+"jitter transform to Batch if arguments include labels, apply label "
+"transformation"
+msgstr ""
+"入力されたRGB画像に対し, HSV空間におけるjitter処理を適用する.入力xが4次元テンソルで与えられた場合, "
+"第一軸をバッチサイズとしバッチ内のすべての画像に対しjitter処理を適用する."
+
+#: of
+#: renom.utility.image.data_augmentation.color_jitter.ColorJitter.transform:7
+msgid "apply random jitter or not"
+msgstr "Trueが与えられた場合, Jitter処理を指定された値の範囲でランダムに適用する."
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:9
+msgid "renom.utility.image.data_augmentation.crop"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.crop.crop:1
+msgid ""
+"Performs a Crop of a Numpy images. if x is a Batch, apply Crop transform "
+"to Batch. if arguments include labels, apply label transformation."
+msgstr ""
+"画像に対し一部分を切り抜き処理を適用する.xが四次元テンソルである場合,第一軸はバッチ数として処理される.教師データが同時に与えられた場合, "
+"教師データに対しても変形が行われる."
+
+#: of renom.utility.image.data_augmentation.crop.Crop.transform:5
+#: renom.utility.image.data_augmentation.crop.crop:5
+#: renom.utility.image.data_augmentation.flip.Flip.transform:5
+#: renom.utility.image.data_augmentation.flip.flip:5
+#: renom.utility.image.data_augmentation.rescale.Rescale.transform:4
+#: renom.utility.image.data_augmentation.rotate.Rotate:3
+#: renom.utility.image.data_augmentation.rotate.Rotate.transform:4
+#: renom.utility.image.data_augmentation.rotate.rotate:4
+#: renom.utility.image.data_augmentation.shift.Shift.transform:5
+#: renom.utility.image.data_augmentation.shift.shift:5
+msgid "3 or 4(batch) dimensional images"
+msgstr "3, 4(第一軸はバッチ数)次元画像データ"
+
+#: of renom.utility.image.data_augmentation.crop.Crop:3
+#: renom.utility.image.data_augmentation.crop.crop:7
+msgid "x and y of top left (y, x)"
+msgstr "座標(y, x)"
+
+#: of renom.utility.image.data_augmentation.crop.Crop:5
+#: renom.utility.image.data_augmentation.crop.crop:9
+msgid "width and height of crop image (Height, Width)"
+msgstr "縦横幅(height, width)"
+
+#: of renom.utility.image.data_augmentation.crop.Crop.transform:12
+#: renom.utility.image.data_augmentation.crop.crop:14
+#: renom.utility.image.data_augmentation.flip.Flip.transform:12
+#: renom.utility.image.data_augmentation.flip.flip:17
+#: renom.utility.image.data_augmentation.zoom.Zoom.transform:13
+#: renom.utility.image.data_augmentation.zoom.zoom:17
+msgid "number of class of datasets (for rectangle transformation)"
+msgstr "データセット内に含まれるクラス数"
+
+#: of renom.utility.image.data_augmentation.crop.crop:16
+msgid "If True, apply random cropping. left_top is randomly decided."
+msgstr "Trueが与えられていた場合, ランダムに切り抜きが行われる."
+
+#: of renom.utility.image.data_augmentation.crop.Crop.transform:15
+#: renom.utility.image.data_augmentation.crop.crop:19
+msgid ""
+"Images(4 dimension) of crop transformed. If including labels, return with"
+" transformed labels"
+msgstr "切り抜き処理が適用された4次元画像データ. 教師ラベルが同時に与えられていた場合変形された教師ラベルも同時に返される."
+
+#: of renom.utility.image.data_augmentation.crop.Crop:1
+msgid "Apply crop transformation to the input x and labels."
+msgstr "切り抜き処理を入力xと教師データに対して適用する."
+
+#: of renom.utility.image.data_augmentation.crop.Crop.transform:1
+msgid ""
+"Performs a Crop of a Numpy images. if x is a Batch, apply Crop transform "
+"to Batch if arguments include labels, apply label transformation"
+msgstr ""
+"画像に対し切り抜き処理を適用する.xが４次元テンソルで与えられた場合, 第一軸はバッチ数として処理される.教師データが同時に与えられた場合, "
+"教師データに対しても変形が施される."
+
+#: of renom.utility.image.data_augmentation.crop.Crop.transform:7
+msgid "If True, apply random cropping. left_top is randomly desided."
+msgstr "Trueが与えられた場合, 切り出しが行われる座標はランダムに決められる."
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:16
+msgid "renom.utility.image.data_augmentation.flip"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.flip.flip:1
+msgid ""
+"Performs a flip of a Numpy images. if x is a Batch, apply flip transform "
+"to Batch. if arguments include labels, apply label transformation."
+msgstr "画像に対し, フリッピング処理(左右上下反転)を適用する.教師データが同時に与えられた場合, 教師データに対しても変形が適用される."
+
+#: of renom.utility.image.data_augmentation.flip.Flip:3
+#: renom.utility.image.data_augmentation.flip.flip:7
+msgid ""
+"1 means Horizontal Flip. 2 means Vertical Flip. 3 means both. else no "
+"flip conversion."
+msgstr "1が与えられた場合, 左右反転が適用される.2が与えられた場合, 上下反転が適用される.3が与えられた場合, 両方が適用される."
+
+#: of renom.utility.image.data_augmentation.flip.Flip.transform:7
+#: renom.utility.image.data_augmentation.flip.flip:12
+msgid "apply random flip or not"
+msgstr "Trueが与えられた場合, フリッピングがランダムに適用される."
+
+#: of renom.utility.image.data_augmentation.flip.Flip.transform:15
+#: renom.utility.image.data_augmentation.flip.flip:20
+msgid ""
+"Images(4 dimension) of flip transformed. If including labels, return with"
+" transformed labels"
+msgstr "フリッピングが施された4次元テンソル画像. インスタンス化時に教師データが与えられていた場合変形が施された教師データも返す."
+
+#: of renom.utility.image.data_augmentation.flip.Flip:1
+msgid "Apply flip transformation to the input x and labels."
+msgstr "入力xと教師データに対しフリッピング処理を行う."
+
+#: of renom.utility.image.data_augmentation.flip.Flip.transform:1
+msgid ""
+"Performs a flip of a Numpy images. if x is a Batch, apply flip transform "
+"to Batch if arguments include labels, apply label transformation"
+msgstr ""
+"画像データに対しフリッピング処理を適用する.xが四次元テンソルで与えられた場合, "
+"第一軸はバッチサイズとして処理される.同時に教師データが与えられた場合, 教師データに対しても変形処理が施される."
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:23
+msgid "renom.utility.image.data_augmentation.rescale"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.rescale.rescale:1
+msgid ""
+"Performs a rescale transform of a Numpy images. if x is a Batch, apply "
+"rescale transform to Batch."
+msgstr ""
+"画像に対しリスケーリングを適用する.入力xが四次元テンソルで与えられた場合, "
+"第一軸はバッチサイズとして処理され,バッチ内の各画像に対し処理が適用される."
+
+#: of renom.utility.image.data_augmentation.rescale.rescale:4
+msgid "4(batch) dimensional images"
+msgstr "4(第一軸はバッチ数)次元テンソルデータ"
+
+#: of renom.utility.image.data_augmentation.rescale.Rescale:3
+#: renom.utility.image.data_augmentation.rescale.rescale:6
+msgid ""
+"option of rescale. \"zero\": rescale images to [-0.5, 0.5]. \"vgg\" : "
+"substract averate values of vgg datasets. other : rescale [0.0, 1.0]."
+msgstr ""
+"リスケールオプション. \"zero\": 画素値が[-0.5, 0.5]の範囲に収まるようスケーリング. \"vgg\" : "
+"画素値からvggデータセットの平均値を引く. other : 画素値が[0.0, 1.0]の範囲に収まるようリスケール."
+
+#: of renom.utility.image.data_augmentation.rescale.rescale:11
+#: renom.utility.image.data_augmentation.zoom.Zoom.transform:10
+#: renom.utility.image.data_augmentation.zoom.zoom:14
+msgid ""
+"rectangle labels(2-dimensional array). ex:) np.array([[center x, center "
+"y, x_top_left, height, 0, 0, 0, 1, 0]])"
+msgstr ""
+"二次元行列の教師データ array). ex:) np.array([[center x, center y, x_top_left, "
+"height, 0, 0, 0, 1, 0]])"
+
+#: of renom.utility.image.data_augmentation.rescale.Rescale.transform:10
+#: renom.utility.image.data_augmentation.rescale.rescale:15
+msgid ""
+"Images(4 dimension) of rescale transformed. If including labels, return "
+"with transformed labels"
+msgstr "リスケール処理が適用された画像. 教師データが与えられていた場合,変換された教師データも同時に返される."
+
+#: of renom.utility.image.data_augmentation.rescale.Rescale:1
+msgid "Apply rescale transformation to the input x"
+msgstr "入力xに対してリスケール処理を適用する."
+
+#: of renom.utility.image.data_augmentation.rescale.Rescale.transform:1
+msgid ""
+"Performs a rescale transform of a Numpy images. if x is a Batch, apply "
+"rescale transform to Batch"
+msgstr ""
+"入力画像に対しリスケール処理を適用する.入力xが四次元テンソルデータであった場合, "
+"その第一軸はバッチ数として解釈され、バッチ内の各画像に対し処理が適用される."
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:30
+msgid "renom.utility.image.data_augmentation.resize"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.resize.resize:1
+msgid ""
+"Performs a resize transformation of a Numpy Image 'x'. if x is a Batch, "
+"apply Resize transform to Batch. if arguments include labels, apply label"
+" transformation."
+msgstr ""
+"画像に対しリスケーリングを適用する.入力xが四次元テンソルで与えられた場合, "
+"第一軸はバッチサイズとして処理され,バッチ内の各画像に対し処理が適用される.教師データが同時に与えられていた場合, 教師データも同時に返される."
+
+#: of renom.utility.image.data_augmentation.resize.resize:5
+msgid "3 or 4(batch) dimensional x(images)"
+msgstr "3, 4(第一軸はバッチ数)次元画像データ"
+
+#: of renom.utility.image.data_augmentation.resize.Resize.transform:8
+#: renom.utility.image.data_augmentation.resize.resize:8
+#: renom.utility.image.data_augmentation.shift.Shift.transform:12
+#: renom.utility.image.data_augmentation.shift.shift:18
+msgid "number of class of datasets"
+msgstr "データセット内に含まれるクラス数"
+
+#: of renom.utility.image.data_augmentation.resize.Resize.transform:9
+#: renom.utility.image.data_augmentation.resize.resize:9
+msgid ""
+"Images(4 dimension) of resize transformed. If including labels, return "
+"with transformed labels"
+msgstr "リスケール処理が適用された画像. 教師データが与えられていた場合,変換された教師データも同時に返される."
+
+#: of renom.utility.image.data_augmentation.resize.Resize:1
+msgid "Apply resize transformation to the input x and labels."
+msgstr "入力xに対してリスケール処理を適用する."
+
+#: of renom.utility.image.data_augmentation.resize.Resize:3
+msgid "size of ('Height', \"Width\")"
+msgstr "画像サイズ(Height, Width)"
+
+#: of renom.utility.image.data_augmentation.resize.Resize.transform:1
+msgid ""
+"Performs a resize transformation of a Numpy Image x. if x is a Batch, "
+"apply Resize transform to Batch. if arguments include labels, apply label"
+" transformation."
+msgstr ""
+"画像に対しリスケーリングを適用する.入力xが四次元テンソルで与えられた場合, "
+"第一軸はバッチサイズとして処理され,バッチ内の各画像に対し処理が適用される.教師データが同時に与えられていた場合, 教師データも同時に返される."
+
+#: of renom.utility.image.data_augmentation.resize.Resize.transform:5
+msgid "3 or 4(batch) dimensional x"
+msgstr "3, 4(第一軸はバッチ数)次元画像データ"
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:38
+msgid "renom.utility.image.data_augmentation.rotate"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.rotate.rotate:1
+msgid ""
+"Performs a rotation of a Numpy images. if x is a Batch, apply rotation "
+"transform to Batch."
+msgstr "画像に対し回転処理を適用する.入力xが四次元テンソルで与えられた場合, 第一軸はバッチサイズとして処理され,バッチ内の各画像に対し処理が適用される."
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate:5
+#: renom.utility.image.data_augmentation.rotate.rotate:6
+msgid "rotation degree [-180 : 180]"
+msgstr "回転角度"
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate:7
+#: renom.utility.image.data_augmentation.rotate.rotate:8
+msgid ""
+"method of interpolation after rotate transform you can use ['constant', "
+"'nearest']"
+msgstr "回転処理後の画素を保管する方法を指定する. ['constant', 'nearest']のどちらかを指定可能."
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate:10
+#: renom.utility.image.data_augmentation.rotate.rotate:11
+#: renom.utility.image.data_augmentation.shift.Shift:7
+#: renom.utility.image.data_augmentation.shift.shift:11
+msgid "the interpolation value if fill_mode is 'constant'"
+msgstr "fill_modeにconstantが与えられた際に使用される定数."
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate.transform:6
+#: renom.utility.image.data_augmentation.rotate.rotate:13
+msgid "random rotation. degree is [-degree, +degree]"
+msgstr "Trueが与えられた場合, 指定された範囲内のランダムな回転角度による変換処理が適用される."
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate.transform:8
+#: renom.utility.image.data_augmentation.rotate.rotate:15
+msgid "you can use only when degree=90"
+msgstr "教師データ. 教師データを与える場合は, degree=90とする必要がある."
+
+#: of renom.utility.image.data_augmentation.rotate.rotate:18
+msgid ""
+"Images(4 dimension) of rotate transformed.     If including labels, "
+"return with transformed labels"
+msgstr "Jitter処理が施された画像(４次元テンソル). インスタンス化時に教師データが与えられていた場合変形が教師データ施された教師データも返される."
+
+#: of renom.utility.image.data_augmentation.rotate.rotate:20
+msgid "Images(4 dimension) of rotate transformed."
+msgstr "3, 4(第一軸はバッチ数)次元画像データ"
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate.transform:13
+#: renom.utility.image.data_augmentation.rotate.rotate:21
+msgid "If including labels, return with transformed labels"
+msgstr "教師データが与えられていた場合,変換された教師データも同時に返される."
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate:1
+msgid "Apply rotate transformation to the input x"
+msgstr "入力xに対して回転処理を適用する."
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate.transform:1
+msgid ""
+"Performs a rotation of a Numpy images. if x is a Batch, apply rotation "
+"transform to Batch"
+msgstr "画像に対し回転処理を適用する.入力xが四次元テンソルで与えられた場合, 第一軸はバッチサイズとして処理され,バッチ内の各画像に対し処理が適用される."
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate.transform:12
+msgid "Retuens:"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.rotate.Rotate.transform:12
+msgid "(ndarray): Images(4 dimension) of rotate transformed."
+msgstr "3, 4(第一軸はバッチ数)次元画像データ"
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:46
+msgid "renom.utility.image.data_augmentation.shift"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.shift.Shift.transform:1
+#: renom.utility.image.data_augmentation.shift.shift:1
+msgid ""
+"Performs shift transformation to Numpy images. if x is a Batch, apply "
+"shifts transform to Batch. if arguments include labels, apply label "
+"transformation."
+msgstr "画像に対してシフト処理を行う. 入力xが４次元テンソルで与えられた場合,第一軸はバッチ数として処理され, バッチ内の各画像に対して処理が適用される."
+
+#: of renom.utility.image.data_augmentation.shift.Shift:3
+#: renom.utility.image.data_augmentation.shift.shift:7
+msgid "values of x and y shifts (y, x)"
+msgstr "座標(y, x)"
+
+#: of renom.utility.image.data_augmentation.shift.Shift:5
+#: renom.utility.image.data_augmentation.shift.shift:9
+msgid "method of interpolation after rotate transform"
+msgstr "回転処理が施された後の画素補正方法"
+
+#: of renom.utility.image.data_augmentation.shift.Shift.transform:7
+#: renom.utility.image.data_augmentation.shift.shift:13
+msgid "random shift or not"
+msgstr "Trueが与えられた場合, シフトはランダムに行われる."
+
+#: of renom.utility.image.data_augmentation.shift.Shift.transform:15
+#: renom.utility.image.data_augmentation.shift.shift:21
+msgid ""
+"Images(4 dimension) of shift transformed. If including labels, return "
+"with transformed labels"
+msgstr "リスケール処理が適用された画像. 教師データが与えられていた場合,変換された教師データも同時に返される."
+
+#: of renom.utility.image.data_augmentation.shift.Shift:1
+msgid "Apply shift transformation to the input x and labels"
+msgstr "入力xに対してシフト処理を適用する."
+
+#: ../../rsts/renom.utility.image.data_augmentation.rst:54
+msgid "renom.utility.image.data_augmentation.zoom"
+msgstr ""
+
+#: of renom.utility.image.data_augmentation.zoom.zoom:1
+msgid ""
+"Apply zoom in transformation to the input x. if x is a Batch, apply Zoom "
+"transform to Batch. needs zoom_rate (has to be > 1.0). If you use Random "
+"transformation, Zoom will be done randomly for values between the two "
+"limits given by the tuple or from 1 to zoom_rate."
+msgstr ""
+"画像に対して拡大処理を行う. 入力xが４次元テンソルで与えられた場合,第一軸はバッチ数として処理され, "
+"バッチ内の各画像に対して処理が適用される.ズーム比は1以上であることが必要."
+
+#: of renom.utility.image.data_augmentation.zoom.Zoom:3
+#: renom.utility.image.data_augmentation.zoom.zoom:6
+msgid "3 or 4(batch) dimensional Images"
+msgstr "3, 4(第一軸はバッチ)次元画像"
+
+#: of renom.utility.image.data_augmentation.zoom.Zoom:5
+#: renom.utility.image.data_augmentation.zoom.zoom:8
+msgid ""
+"zoom ratio. If use random transformation, zoom_rate can be an interval "
+"(lower bound > 1.0). If you want to specify the range, you could use "
+"tuple (min, max)"
+msgstr "拡大比. zoom_ratio=(min, max)のように下限と上限を指定できる."
+
+#: of renom.utility.image.data_augmentation.zoom.Zoom.transform:8
+#: renom.utility.image.data_augmentation.zoom.zoom:12
+msgid "If True, apply random transformation."
+msgstr "Trueが与えられた場合, 指定されたパラメータの範囲内で,ランダムに変形が行われる."
+
+#: of renom.utility.image.data_augmentation.zoom.Zoom.transform:16
+#: renom.utility.image.data_augmentation.zoom.zoom:20
+msgid ""
+"Images(4 dimension) of zoom transformed. If including labels, return with"
+" transformed labels"
+msgstr "拡大処理が適用された画像. 教師データが与えられていた場合,変換された教師データも同時に返される."
+
+#: of renom.utility.image.data_augmentation.zoom.Zoom:1
+msgid "Apply zoom in transformation to the input x."
+msgstr "入力xに対して拡大処理を適用する."
+
+#: of renom.utility.image.data_augmentation.zoom.Zoom.transform:1
+msgid ""
+"Performs a Zoom transformation of a Numpy Images. if x is a Batch, apply "
+"Zoom transform to Batch. needs zoom_rate (has to be > 1.0). If you use "
+"Random transformation, Zoom will be done randomly for values between the "
+"two limits given by the tuple or from 1 to zoom_rate."
+msgstr ""
+"画像に対して拡大処理を行う. 入力xが４次元テンソルで与えられた場合,第一軸はバッチ数として処理され, "
+"バッチ内の各画像に対して処理が適用される.ズーム比は1以上であることが必要."
+
+#: of renom.utility.image.data_augmentation.zoom.Zoom.transform:6
+msgid "3 or 4(batch) dimensional Image"
+msgstr "3, 4(第一軸はバッチ)次元画像"
+
+#~ msgid ""
+#~ "x (ndarray): 3 or 4(batch) dimensional"
+#~ " images degree (int): rotation degree "
+#~ "[-180 : 180] fill_mode (str): method "
+#~ "of interpolation after rotate transform"
+#~ msgstr "3, 4(第一軸はバッチ数)次元画像データ"
+
+#~ msgid "you can use ['constant', 'nearest']"
+#~ msgstr ""
+
+#~ msgid "fill_val (float): the interpolation value if fill_mode is 'constant'"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(ndarray): Images(4 dimension) of shift "
+#~ "transformed. If including labels, return "
+#~ "with transformed labels"
+#~ msgstr "シフト処理が適用された画像. 教師データが与えられていた場合,変換された教師データも同時に返される."
+
+#~ msgid "Args;"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ndarray x (ndarray): 3 or 4(batch) "
+#~ "dimensional Images zoom_rate (tuple): zoom "
+#~ "ratio. If use random transformation,"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "zoom_rate can be an interval (lower "
+#~ "bound > 1.0). If you want to "
+#~ "specify the range, you could use "
+#~ "tuple (min, max)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "random (bool): If True, apply random "
+#~ "transformation. labels (ndarray): rectangle "
+#~ "labels(2-dimensional array)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ex:) np.array([[center x, center y, "
+#~ "x_top_left, height, 0, 0, 0, 1, "
+#~ "0]])"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "num_class (int): number of class of "
+#~ "datasets (for rectangle transformation)"
+#~ msgstr "データセットに含まれるクラス数"
+

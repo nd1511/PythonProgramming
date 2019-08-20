@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-13 13:29+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/api/renom.cuda.rst:2
+msgid "renom.cuda"
+msgstr ""
+
+#: of renom.cuda.set_cuda_active:1
+msgid "If True is given, cuda will be activated."
+msgstr "引数にTrueが与えられた場合、cudaを有効化する."
+
+#: of renom.cuda.curand_set_seed renom.cuda.set_cuda_active
+msgid "Parameters"
+msgstr ""
+
+#: of renom.cuda.set_cuda_active:3
+msgid "Activation flag."
+msgstr "有効化フラグ"
+
+#: of renom.cuda.is_cuda_active:1
+msgid "Checks whether CUDA is activated."
+msgstr "cudaが有効化されているかを返す関数."
+
+#: of renom.cuda.has_cuda renom.cuda.is_cuda_active
+msgid "Returns"
+msgstr ""
+
+#: of renom.cuda.is_cuda_active:3
+msgid "True if cuda is active."
+msgstr "cudaが有効であればTrueを返す."
+
+#: of renom.cuda.has_cuda renom.cuda.is_cuda_active
+msgid "Return type"
+msgstr ""
+
+#: of renom.cuda.has_cuda:1
+msgid "This method checks cuda libraries are available."
+msgstr "cudaライブラリを使用可能か確認するための関数"
+
+#: of renom.cuda.has_cuda:3
+msgid "True if cuda is correctly set."
+msgstr "cudaライブラリが使用可能となっていればTrueを返す"
+
+#: of renom.cuda.curand_set_seed:1
+msgid ""
+"Set a seed to curand random number generator. The curand generator is "
+"used when cuda is activated."
+msgstr "cuRand乱数生成器に乱数シードを設定する. "
+"cudaが有効化されている状況では, cuRand乱数生成器が使用される."
+
+#: of renom.cuda.curand_set_seed:4
+msgid "Seed."
+msgstr "乱数のシード"
+
+#: of renom.cuda.curand_set_seed:8 renom.cuda.release_mem_pool:4
+msgid "Example"
+msgstr ""
+
+#: of renom.cuda.release_mem_pool:1
+msgid "This function releases GPU memory pool."
+msgstr "確保したGPUメモリプールを開放する."
+

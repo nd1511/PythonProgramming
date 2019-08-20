@@ -1,0 +1,723 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-20 15:40+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/api/renom.layers.function.rst:2
+msgid "renom.layers.function"
+msgstr ""
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:1
+msgid ""
+"Batch normalization function [bn]_. This layer accelerates learning speed"
+" with reducing internal covariate shift and allow us to set high learning"
+" rate."
+msgstr "Batch normalization関数. [bn]_"
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:5
+msgid ""
+"When the forward propagation, if the argument ``inference`` is set to "
+"False this layer calculates moving average of mean and variance. Other "
+"wise the ``inference`` is set to True, this layer uses the moving average"
+" which calculated in the above mode."
+msgstr ""
+"順伝播時に引数 ``inference`` にFalseがセットされていた場合,バッチごとの平均, 分散を用いてバッチ正規化を行う. "
+"さらにそれら平均と分散それぞれの学習時における移動平均が計算される. Trueがセットされていた場合, "
+"学習時に取られた統計量の移動平均を用いてバッチ正規化を行う."
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:10
+msgid ""
+"If the argument mode is set to 'activation', this layer normalizes prior-"
+"layer features per unit. Otherwise the argument mode is set to 'feature',"
+" this layer normalizes prior-layer features per channel."
+msgstr ""
+"引数modeに ``activation`` が与えらた場合, バッチ正規化は各ユニットの出力に対して適用される. modeに "
+"``feature`` が与えられた場合, バッチ正規化は各チャンネルに対して行われる."
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:13
+msgid "The 'feature' mode is only effective for 4D tensor input."
+msgstr "上記の理由から'feature'モードは4次元テンソルが入力された場合のみ有効となる."
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:15
+#: renom.layers.function.conv2d.Conv2d:9 renom.layers.function.convnd.ConvNd:10
+#: renom.layers.function.deconv2d.Deconv2d:9
+#: renom.layers.function.deconvnd.DeconvNd:10
+#: renom.layers.function.dense.Dense:6
+#: renom.layers.function.group_conv2d.GroupConv2d:9
+msgid ""
+"If the argument `input_size` is passed, this layers' weight is "
+"initialized in the __init__ function. Otherwise, the weight is "
+"initialized in its first forward calculation."
+msgstr ""
+"'input_size'が与えられた場合, このレイヤが持つ重みパラメータはレイヤのインスタン化時に初期化される.そうでない場合, "
+"重みパラメータは順伝播計算が初めて実行された際にインスタンス化される."
+
+#: of renom.layers.function.batch_normalize.BatchNormalize
+#: renom.layers.function.conv2d.Conv2d renom.layers.function.convnd.ConvNd
+#: renom.layers.function.deconv2d.Deconv2d
+#: renom.layers.function.deconvnd.DeconvNd renom.layers.function.dense.Dense
+#: renom.layers.function.dropout.Dropout
+#: renom.layers.function.dropout.SpatialDropout
+#: renom.layers.function.embedding.Embedding
+#: renom.layers.function.group_conv2d.GroupConv2d renom.layers.function.gru.Gru
+#: renom.layers.function.layer_normalize.LayerNormalize
+#: renom.layers.function.lrn.Lrn renom.layers.function.lstm.Lstm
+#: renom.layers.function.parameterized.Model.load
+#: renom.layers.function.parameterized.Model.save
+#: renom.layers.function.parameterized.Sequential
+#: renom.layers.function.peephole_lstm.PeepholeLstm
+#: renom.layers.function.pool2d.AveragePool2d
+#: renom.layers.function.pool2d.MaxPool2d
+#: renom.layers.function.unpool2d.AverageUnPool2d
+#: renom.layers.function.unpool2d.MaxUnPool2d
+msgid "Parameters"
+msgstr ""
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:19
+#: renom.layers.function.dense.Dense:12 renom.layers.function.gru.Gru:9
+#: renom.layers.function.lstm.Lstm:28
+#: renom.layers.function.peephole_lstm.PeepholeLstm:31
+msgid "Input unit size."
+msgstr "入力ユニットサイズ"
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:21
+msgid "Momentum coefficient for the moving average."
+msgstr "移動平均計算時に使用するモメンタム係数"
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:23
+msgid "'activation'  or 'feature'."
+msgstr "'activation' もしくは 'feature'をセット可能"
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:25
+msgid "Small number added to avoid division by zero."
+msgstr "Zero division エラーを避けるために用いる微小な定数"
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:27
+#: renom.layers.function.conv2d.Conv2d:25
+#: renom.layers.function.convnd.ConvNd:24
+#: renom.layers.function.deconvnd.DeconvNd:24
+#: renom.layers.function.group_conv2d.GroupConv2d:25
+msgid "If `True` is given, bias will not be added."
+msgstr "True が与えられた場合, biasパラメータは使用されない."
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:29
+#: renom.layers.function.conv2d.Conv2d:27
+#: renom.layers.function.convnd.ConvNd:26
+#: renom.layers.function.deconv2d.Deconv2d:27
+#: renom.layers.function.deconvnd.DeconvNd:26
+#: renom.layers.function.dense.Dense:16
+#: renom.layers.function.embedding.Embedding:17
+#: renom.layers.function.group_conv2d.GroupConv2d:27
+#: renom.layers.function.gru.Gru:13 renom.layers.function.lstm.Lstm:32
+msgid "Initializer object for weight initialization."
+msgstr "重みパラメータの初期値を与えるInitializerオブジェクト."
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:33
+#: renom.layers.function.conv2d.Conv2d:31
+#: renom.layers.function.convnd.ConvNd:30
+#: renom.layers.function.deconv2d.Deconv2d:31
+#: renom.layers.function.deconvnd.DeconvNd:30
+#: renom.layers.function.dense.Dense:20
+#: renom.layers.function.dropout.Dropout:11
+#: renom.layers.function.dropout.SpatialDropout:10
+#: renom.layers.function.embedding.Embedding:21
+#: renom.layers.function.flatten.Flatten:5
+#: renom.layers.function.group_conv2d.GroupConv2d:33
+#: renom.layers.function.gru.Gru:17
+#: renom.layers.function.layer_normalize.LayerNormalize:12
+#: renom.layers.function.lrn.Lrn:22 renom.layers.function.lstm.Lstm:36
+#: renom.layers.function.parameterized.Model.load:7
+#: renom.layers.function.parameterized.Model.prevent_update:4
+#: renom.layers.function.parameterized.Model.save:8
+#: renom.layers.function.parameterized.Model.train:5
+#: renom.layers.function.parameterized.Model.values:8
+#: renom.layers.function.parameterized.Sequential:7
+#: renom.layers.function.peephole_lstm.PeepholeLstm:35
+#: renom.layers.function.pool2d.AveragePool2d:12
+#: renom.layers.function.pool2d.MaxPool2d:12
+#: renom.layers.function.weight_normalize.WeightNormalize:17
+msgid "Example"
+msgstr ""
+
+#: of renom.layers.function.batch_normalize.BatchNormalize:45
+msgid ""
+"Sergey Ioffe, Christian Szegedy. Batch Normalization: Accelerating Deep "
+"Network Training by Reducing Internal Covariate Shift(2015)"
+msgstr ""
+
+#: of renom.layers.function.conv2d.Conv2d:1
+#: renom.layers.function.deconv2d.Deconv2d:1
+msgid "2d convolution layer."
+msgstr "2D畳み込み関数."
+
+#: of renom.layers.function.conv2d.Conv2d:3
+#: renom.layers.function.deconv2d.Deconv2d:3
+#: renom.layers.function.group_conv2d.GroupConv2d:3
+msgid ""
+"This class creates a convolution filter to be convolved with the input "
+"tensor. The instance of this class only accepts and outputs 4d tensors."
+msgstr "このクラスは畳込フィルタを持ち, 入力に対してフィルタとの畳込み演算を実行する.4次元テンソルデータのみを入力として受け付ける."
+
+#: of renom.layers.function.conv2d.Conv2d:7
+#: renom.layers.function.convnd.ConvNd:8
+#: renom.layers.function.deconv2d.Deconv2d:7
+#: renom.layers.function.deconvnd.DeconvNd:8
+#: renom.layers.function.group_conv2d.GroupConv2d:7
+msgid ""
+"At instantiation, in the case of int input, filter, padding, and stride, "
+"the shape will be symmetric."
+msgstr "インスタンス化時に,フィルタサイズ, パディング, ストッライドなどのパラメータをintもしくはtupleで与えることができる."
+
+#: of renom.layers.function.conv2d.Conv2d:13
+#: renom.layers.function.convnd.ConvNd:14
+#: renom.layers.function.deconv2d.Deconv2d:13
+#: renom.layers.function.deconvnd.DeconvNd:14
+#: renom.layers.function.group_conv2d.GroupConv2d:13
+msgid "The dimensionality of the output."
+msgstr "出力チャンネル数"
+
+#: of renom.layers.function.conv2d.Conv2d:15
+#: renom.layers.function.convnd.ConvNd:16
+#: renom.layers.function.deconvnd.DeconvNd:16
+#: renom.layers.function.group_conv2d.GroupConv2d:15
+#: renom.layers.function.pool2d.AveragePool2d:4
+#: renom.layers.function.pool2d.MaxPool2d:4
+msgid "Filter size of the convolution kernel."
+msgstr "フィルタサイズ"
+
+#: of renom.layers.function.conv2d.Conv2d:17
+#: renom.layers.function.group_conv2d.GroupConv2d:17
+#: renom.layers.function.pool2d.AveragePool2d:6
+#: renom.layers.function.pool2d.MaxPool2d:6
+msgid "Size of the zero-padding around the image."
+msgstr "ゼロパディングサイズ"
+
+#: of renom.layers.function.conv2d.Conv2d:19
+#: renom.layers.function.group_conv2d.GroupConv2d:19
+#: renom.layers.function.pool2d.AveragePool2d:8
+#: renom.layers.function.pool2d.MaxPool2d:8
+msgid "Stride-size of the convolution."
+msgstr "ストライドサイズ"
+
+#: of renom.layers.function.conv2d.Conv2d:21
+#: renom.layers.function.deconv2d.Deconv2d:21
+#: renom.layers.function.group_conv2d.GroupConv2d:21
+msgid "Dilation of the convolution."
+msgstr "膨張サイズ"
+
+#: of renom.layers.function.conv2d.Conv2d:23
+#: renom.layers.function.convnd.ConvNd:22
+#: renom.layers.function.deconv2d.Deconv2d:23
+#: renom.layers.function.deconvnd.DeconvNd:22
+#: renom.layers.function.group_conv2d.GroupConv2d:23
+msgid "Input unit size. This must be a tuple like (Channel, Height, Width)."
+msgstr "入力データサイズ. (channel, height, width)形式のtupleに対応."
+
+#: of renom.layers.function.conv2d.Conv2d:43
+#: renom.layers.function.group_conv2d.GroupConv2d:45
+msgid "Tensor data format is **NCHW**."
+msgstr "テンソルデータのフォーマットは **NCHW** の並び順となっている."
+
+#: of renom.layers.function.convnd.ConvNd:1
+#: renom.layers.function.deconvnd.DeconvNd:1
+msgid "Nd convolution layer."
+msgstr "N次元畳み込み関数."
+
+#: of renom.layers.function.convnd.ConvNd:3
+#: renom.layers.function.deconvnd.DeconvNd:3
+msgid ""
+"This class creates a convolution filter to be convolved with the input "
+"tensor. The instance of this class accepts tensors of any dimensionality "
+"and produces an output of equal dimensionality as the input"
+msgstr ""
+"このクラスは畳込フィルタを持ち, 入力に対してフィルタとの畳込み演算を実行する.CPUモードでは, 任意次元のテンソルデータを, "
+"GPUモードでは2~3次元テンソルデータを入力として受け付ける."
+
+#: of renom.layers.function.convnd.ConvNd:18
+#: renom.layers.function.deconvnd.DeconvNd:18
+msgid "Size of the zero - padding around the image."
+msgstr "ゼロパディングサイズ"
+
+#: of renom.layers.function.convnd.ConvNd:20
+#: renom.layers.function.deconvnd.DeconvNd:20
+msgid "Stride - size of the convolution."
+msgstr "ストライドサイズ"
+
+#: of renom.layers.function.convnd.ConvNd:42
+#: renom.layers.function.deconvnd.DeconvNd:42
+msgid "Tensor data format is **NC(D*)**."
+msgstr "テンソルデータのフォーマットは **NC(D*)**　の並び順となっている."
+
+#: of renom.layers.function.convnd.Conv3d:1
+msgid "Provides an interface for the ConvNd with a more familiar name"
+msgstr "3次元畳み込み関数. ConvNd関数においてN=3とした畳込みと等しい."
+
+#: of renom.layers.function.convnd.Conv3d:3
+msgid "Tensor data format is **NCHWD**."
+msgstr "テンソルデータのフォーマットは **NCHWD** の並び順となっている."
+
+#: of renom.layers.function.group_conv2d.GroupConv2d:1
+msgid "2d grouped convolution layer."
+msgstr "2Dグループ畳み込み関数."
+
+#: of renom.layers.function.group_conv2d.GroupConv2d:29
+msgid ""
+"Number of groups to split convolution into. Must be divisor of input and "
+"output channels."
+msgstr "畳み込み演算を実行するグループの数. 出力チャネル数と入力チャネル数の約数でなければならない."
+
+#: of renom.layers.function.deconv2d.Deconv2d:15
+msgid "Filter size to witch used as convolution kernel."
+msgstr "フィルタサイズ"
+
+#: of renom.layers.function.deconv2d.Deconv2d:17
+msgid "Pad around image by 0 according to this size."
+msgstr "ゼロパディングサイズ"
+
+#: of renom.layers.function.deconv2d.Deconv2d:19
+msgid "Specifying the strides of the convolution."
+msgstr "ストライドサイズ"
+
+#: of renom.layers.function.deconv2d.Deconv2d:25
+#: renom.layers.function.dense.Dense:14 renom.layers.function.gru.Gru:11
+#: renom.layers.function.lstm.Lstm:30
+msgid "If True is given, bias will not be added."
+msgstr "True が与えられた場合, biasパラメータは使用されない."
+
+#: of renom.layers.function.dense.Dense:1
+msgid "Fully connected layer as described bellow."
+msgstr "以下の式で表される全結合レイヤ"
+
+#: of renom.layers.function.dense.Dense:3
+msgid ":math:`f(x)= w \\cdot x + b`"
+msgstr ""
+
+#: of renom.layers.function.dense.Dense:10
+#: renom.layers.function.embedding.Embedding:13 renom.layers.function.gru.Gru:7
+#: renom.layers.function.lstm.Lstm:26
+#: renom.layers.function.peephole_lstm.PeepholeLstm:29
+msgid "Output unit size."
+msgstr "出力ユニットサイズ"
+
+#: of renom.layers.function.dropout.Dropout:1
+msgid "Applies Dropout [dropout]_ to the input."
+msgstr "入力に対してドロップアウト [dropout]_ を適用する."
+
+#: of renom.layers.function.dropout.Dropout:3
+msgid ""
+"Dropout function randomly selects a fraction (specified by dropout_ratio)"
+" of the data sets them to zero. Remaining data will be rescaled by ``1/(1"
+" - dropout_ratio)``."
+msgstr ""
+"``dropout_ratio`` に与えられた割合で入力をランダムに0とする.0とならなかった値に対しては ``1/(1 - "
+"dropout_ratio)`` をかけている."
+
+#: of renom.layers.function.dropout.Dropout:7
+#: renom.layers.function.dropout.SpatialDropout:4
+msgid "Dropout ratio."
+msgstr "ドロップアウト率"
+
+#: of renom.layers.function.dropout.Dropout:33
+msgid "Hinton, Geoffrey E.; Srivastava, Nitish; Krizhevsky, Alex; Sutskever,"
+msgstr ""
+
+#: of renom.layers.function.dropout.Dropout:34
+msgid "Ilya; Salakhutdinov, Ruslan R. (2012)."
+msgstr ""
+
+#: of renom.layers.function.dropout.Dropout:35
+msgid "Improving neural networks by preventing co-adaptation of feature detectors"
+msgstr ""
+
+#: of renom.layers.function.dropout.SpatialDropout:1
+msgid ""
+"Applies spatial dropout to the input. This function drops feature maps "
+"randomly."
+msgstr "チャンネルごとにドロップアウトを適用する."
+
+#: of renom.layers.function.dropout.SpatialDropout
+msgid "raises"
+msgstr ""
+
+#: of renom.layers.function.dropout.SpatialDropout:7
+msgid ""
+":exc:`AssertionError` -- An assertion error will be raised if the input "
+"tensor dimension is not 4."
+msgstr "入力テンソルが4次元でない場合, Assertion エラーを発生させる."
+
+#: of renom.layers.function.dropout.SpatialDropout:35
+msgid "SpatialDropout only accepts 4d tensor data."
+msgstr "SpatialDropoutは４次元テンソルのみを入力とする."
+
+#: of renom.layers.function.embedding.Embedding:1
+msgid ""
+"Embedding layer. This layer is the special case of dense layer. The case "
+"is that the input value is onehot encoded. Since the onehot encoded input"
+" is very sparse, the matrix product performed in the dense layer is "
+"redundant."
+msgstr ""
+"Embedding層. この層は全結合層の特別なケースを表す.Embedding層は入力データがone-"
+"hotエンコーディングされた行列である場合に使用できる.One hotエンコーディングされた行列データはスパースであるため, "
+"全結合層(Dense)による演算は冗長となる. Embedding層ではone-hotエンコーディングされた入力データを省メモリで扱える."
+
+#: of renom.layers.function.embedding.Embedding:5
+msgid "The difference between dense layer and embedding layer is bellow."
+msgstr "全結合層とEmbedding層の違いは以下のとおりである."
+
+#: of renom.layers.function.embedding.Embedding:7
+msgid "**[Dense layer]**"
+msgstr ""
+
+#: of renom.layers.function.embedding.Embedding:8
+msgid "data -> onehot encoding -> onehot data -> dense layer -> embedded data"
+msgstr ""
+
+#: of renom.layers.function.embedding.Embedding:10
+msgid "**[Embedding layer]**"
+msgstr ""
+
+#: of renom.layers.function.embedding.Embedding:11
+msgid "data -> embedding layer -> embedded data"
+msgstr ""
+
+#: of renom.layers.function.embedding.Embedding:15
+msgid "Input unit size. This is same as number of embedding characters."
+msgstr "入力ユニットサイズ. ここで与えられる数はEmbeddingを行う説明変数の数と等しい必要がある."
+
+#: of renom.layers.function.embedding.Embedding:31
+msgid ""
+"This layer only accepts matrix which shape is (N, 1) and has integer "
+"value. *N is batch size."
+msgstr "この層はサイズ(N, 1)の行列のみを入力として受け取る. *Nはバッチサイズ."
+
+#: of renom.layers.function.embedding.Embedding:32
+msgid "Both ``output_size`` and ``input_size`` must be specified."
+msgstr "``output_size``と``input_size``の両方が指定されている必要がある."
+
+#: of renom.layers.function.flatten.Flatten:1
+msgid "This function flattens an input tensor. It does not affect the batch size."
+msgstr "入力テンソルを二次元テンソルに変形する.第一軸はバッチサイズ, 第二軸はデータ次元数となる."
+
+#: of renom.layers.function.gru.Gru:1
+msgid "Gated Recurrent Unit"
+msgstr ""
+
+#: of renom.layers.function.gru.Gru:3
+msgid ""
+"An LSTM-like RNN unit, which simplifies the LSTM unit by not including a "
+"memory core. This simplifies learning of the unit and reduces "
+"computational complexity, as the GRU only performs requires 3 input "
+"gates, compared to the 4 required by the LSTM."
+msgstr "LSTMと同様に, 再帰的な構造を持つユニット. "
+
+#: of renom.layers.function.gru.Gru:33
+msgid "https://arxiv.org/pdf/1409.1259.pdf"
+msgstr ""
+
+#: of renom.layers.function.gru.Gru.truncate:1
+#: renom.layers.function.lstm.Lstm.truncate:1
+#: renom.layers.function.peephole_lstm.PeepholeLstm.truncate:1
+msgid "Truncates temporal connection."
+msgstr "時系列方向の計算グラフのつながりを切る."
+
+#: of renom.layers.function.lrn.Lrn:1
+msgid "Local response normalization function [lrn]_ ."
+msgstr "局所正規化レイヤ [lrn]_ ."
+
+#: of renom.layers.function.lrn.Lrn:6
+msgid ""
+":math:`x_{c,i,j}` represents the c th conv filter’s output at the "
+"position of (i, j) in the feature map. :math:`y_{c_{out},j,i}` represents"
+" the output of local response normalization. :math:`N` is the number of "
+"the feature maps. :math:`n` is the adjacent feature map number. The "
+"default argument values are recommended."
+msgstr ""
+":math:`x_{c,i,j}` は第cチャンネルの(i, j)ピクセル値を表す.:math:`y_{c_{out},j,i}` "
+"は局所正規化レイヤの出力を表す.:math:`N` は特徴マップ数. :math:`n` "
+"正規化に使用される隣接する特徴マップ数.ハイパーパラメータにはデフォルト値を推奨している."
+
+#: of renom.layers.function.lrn.Lrn:12
+msgid "Number of images used to be normalized."
+msgstr "正規化を行う際に使用される画像数"
+
+#: of renom.layers.function.lrn.Lrn:14
+msgid "Constant."
+msgstr "定数"
+
+#: of renom.layers.function.lrn.Lrn:16
+msgid "Scale factor."
+msgstr "係数"
+
+#: of renom.layers.function.lrn.Lrn:18
+msgid "Exponential factor."
+msgstr "係数"
+
+#: of renom.layers.function.lrn.Lrn:31
+msgid ""
+"Alex Krizhevsky Krizhevsky, , Ilya IlyaSutskever Sutskever, Geoff. "
+"ImageNet Classification with Deep Convolutional Neural Networks"
+msgstr ""
+
+#: of renom.layers.function.layer_normalize.LayerNormalize:1
+msgid ""
+"Layer Normalization Model [1] Applies a shift to a standard bell curve "
+"formation for each input unit. The resultant bell curve can be "
+"transformed with the gain/bias parameters, displacing the mean with the "
+"bias or the variance with gain."
+msgstr "レイヤ正規化関数. "
+
+#: of renom.layers.function.layer_normalize.LayerNormalize:6
+msgid "Initial value of gain."
+msgstr ""
+
+#: of renom.layers.function.layer_normalize.LayerNormalize:8
+msgid "Initial value of bias."
+msgstr ""
+
+#: of renom.layers.function.layer_normalize.LayerNormalize:24
+msgid "https://arxiv.org/pdf/1607.06450.pdf"
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:1
+msgid ""
+"Weight Normalization Model [weight_norm]_ A modification to the normal "
+"dense layer model, where the weight is normalized and multiplied by a "
+"trainable gain factor."
+msgstr "ウェイト正規化関数. "
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:6
+msgid "The weight in this form is parameterized by the form:"
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:6
+msgid "w = v / ||v|| * gain"
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:8
+msgid "Note that in this version, gain is taken linear on the input s giving:"
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:9
+msgid "gain = s."
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:10
+msgid ""
+"The original paper suggests a potential gain parameterization by taking "
+"the exponential value of s instead:"
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:12
+msgid "gain = exp(s)"
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:14
+msgid "There might be support for this later."
+msgstr ""
+
+#: of renom.layers.function.weight_normalize.WeightNormalize:27
+msgid "https://arxiv.org/abs/1602.07868"
+msgstr ""
+
+#: of renom.layers.function.lstm.Lstm:1
+msgid ""
+"Long short time memory [lstm]_ . Lstm object has 8 weights and 4 biases "
+"parameters to learn."
+msgstr "Lstmレイヤ [lstm]_ . このレイヤは8個の重みと4つのバイアスを学習パラメータとして持つ."
+
+#: of renom.layers.function.lstm.Lstm:4
+#: renom.layers.function.peephole_lstm.PeepholeLstm:4
+msgid ""
+"Weights applied to the input of the input gate, forget gate and output "
+"gate. :math:`W_{ij}, Wgi_{ij}, Wgf_{ij}, Wgo_{ij}`"
+msgstr "前の層から入力されるデータに対してかけられる重み. :math:`W_{ij}, Wgi_{ij}, Wgf_{ij}, Wgo_{ij}`"
+
+#: of renom.layers.function.lstm.Lstm:7
+#: renom.layers.function.peephole_lstm.PeepholeLstm:7
+msgid ""
+"Weights applied to the recuurent input of the input gate, forget gate and"
+" output gate. :math:`R_{ij}, Rgi_{ij}, Rgf_{ij}, Rgo_{ij}`"
+msgstr "一時刻前から入力されるデータに対してかけられる重み. :math:`R_{ij}, Rgi_{ij}, Rgf_{ij}, Rgo_{ij}`"
+
+#: of renom.layers.function.lstm.Lstm:22
+msgid ""
+"If the argument ``input_size`` is passed, this layers' weight is "
+"initialized in the __init__ function. Otherwise, the weight is "
+"initialized in its first forward calculation."
+msgstr ""
+"'input_size'が与えられた場合, このレイヤが持つ重みパラメータはレイヤのインスタン化時に初期化される.そうでない場合, "
+"重みパラメータは順伝播計算が初めて実行された際にインスタンス化される."
+
+#: of renom.layers.function.lstm.Lstm:53
+msgid "Learning Precise Timing with LSTM Recurrent Networks"
+msgstr ""
+
+#: of renom.layers.function.peephole_lstm.PeepholeLstm:1
+msgid ""
+"Long short time memory with peephole [plstm]_ . Lstm object has 11 "
+"weights and 4 biases parameters to learn."
+msgstr "Peephole付きLstmレイヤ.このレイヤは8個の重みと4つのバイアスを学習パラメータとして持つ."
+
+#: of renom.layers.function.peephole_lstm.PeepholeLstm:10
+msgid ""
+"Weights applied to the state input of the input gate, forget gate and "
+"output gate. :math:`P_{ij}, Pgi_{ij}, Pgf_{ij}, Pgo_{ij}`"
+msgstr "前の層から入力されるデータに対してかけられる重み. :math:`W_{ij}, Wgi_{ij}, Wgf_{ij}, Wgo_{ij}`"
+
+#: of renom.layers.function.peephole_lstm.PeepholeLstm:52
+msgid ""
+"Felix A. Gers, Nicol N. Schraudolph, J ̈urgen Schmidhuber. Learning "
+"Precise Timing with LSTM Recurrent Networks"
+msgstr ""
+
+#: of renom.layers.function.parameterized.Model:1
+msgid "Abstract class of neural network model."
+msgstr "ニューラルネットワークモデルに関する抽象クラス."
+
+#: of renom.layers.function.parameterized.Model.train:1
+msgid ""
+"Context manager to control whether a computational graph will be created "
+"or not."
+msgstr "計算グラフを作成するためのコンテキストを管理するコンテキストマネジャー."
+
+#: of renom.layers.function.parameterized.Model.prevent_update:1
+msgid ""
+"This context manager can controls that whether model's weight parameter "
+"be updated."
+msgstr ""
+"コンテキストマネージャ内においてGradsクラスのupdate()関数による重みパラメータのパラメータを実行した場合, "
+"そのコンテキストを持つModelの属性として定義された重みパラメータは更新されない."
+
+#: of renom.layers.function.parameterized.Model.values:1
+msgid "Generates nested tuple of underlying models and params of models."
+msgstr "Modelオブジェクトが持つ重みパラメータをネストされたタプルとして返す."
+
+#: of renom.layers.function.parameterized.Model.values:3
+msgid ""
+"Each model generates tuple of two dictionary. The first dictionary "
+"contains child models, keyed by attribute name. The second dictionary "
+"contains parameters of the model, keyed by attribute name."
+msgstr ""
+"Modelオブジェクトは属性としてModelオブジェクトを持つことがある.valuesメソッドを実行すると, "
+"それぞれのModelオブジェクトは二つの辞書からなるタプルを返す. ひとつ目の辞書は子要素が持つ重みパラメータを持つ. "
+"ふたつ目の辞書にはModel自身(self)が持つ重みパラメータが含まれる."
+
+#: of renom.layers.function.parameterized.Model.join_grads:1
+msgid ""
+"Merge gradients of other models. Others is a list of tuple of (model, "
+"grads) to be merged. Models listed in the others should have same "
+"structure with self."
+msgstr ""
+"引数gradに与えられたGradsオブジェクトが持つ勾配データに対し,引数others(Model, "
+"Gradsオブジェクトのタプル)が持つ勾配データを足し合わせる.引数に与えられるすべてのModelオブジェクトは等しい構造を持つ必要がある."
+
+#: of renom.layers.function.parameterized.Model.save:1
+msgid ""
+"Save model attributes. For save attributes, please register attributes to"
+" the dictionary which is named as 'SERIALIZED'."
+msgstr ""
+"Modelオブジェクトが持つ属性を保存する. 保存したい属性名を'SERIALIZED'という名前のタプルに登録することで, "
+"saveメソッドによる保存対象に含むことができる.Modelオブジェクトが持つ重みパラメータはSERIALIZEDに登録せずとも保存される."
+
+#: of renom.layers.function.parameterized.Model.save:5
+msgid "Following example shows how to do it."
+msgstr "以下にその例を示す."
+
+#: of renom.layers.function.parameterized.Model.save:36
+msgid "File name to save model."
+msgstr "モデルを保存する際のパス."
+
+#: of renom.layers.function.parameterized.Model.load:1
+msgid "Load saved weights to model."
+msgstr "保存した属性値をモデルにロードする."
+
+#: of renom.layers.function.parameterized.Model.load:3
+msgid "File name of saved model."
+msgstr "ロードするモデルのパス"
+
+#: of renom.layers.function.parameterized.Sequential:1
+msgid "Sequential model."
+msgstr ""
+
+#: of renom.layers.function.parameterized.Sequential:3
+msgid "A list of layer objects."
+msgstr "レイヤオブジェクトのリスト"
+
+#: of renom.layers.function.pool2d.MaxPool2d:1
+msgid ""
+"Max pooling function. In the case of int input, filter, padding, and "
+"stride, the shape will be symmetric."
+msgstr "Max poolingクラス."
+
+#: of renom.layers.function.pool2d.AveragePool2d:1
+msgid ""
+"Average pooling function. In the case of int input, filter, padding, and "
+"stride, the shape will be symmetric."
+msgstr "Average poolingクラス."
+
+#: of renom.layers.function.unpool2d.MaxUnPool2d:1
+msgid ""
+"Max unpooling function. Unpools an input in a network where a previous "
+"pooling has occured."
+msgstr ""
+"Max unpooling関数. この関数より先にMax poolingが実行されている必要がある.Max unpooling関数は, Max "
+"Pooling時に選択されたインデックスを元にUnpoolingを行う."
+
+#: of renom.layers.function.unpool2d.AverageUnPool2d:4
+#: renom.layers.function.unpool2d.MaxUnPool2d:4
+msgid "The input to the unpooling method"
+msgstr "入力データ"
+
+#: of renom.layers.function.unpool2d.AverageUnPool2d:6
+#: renom.layers.function.unpool2d.MaxUnPool2d:6
+msgid ""
+"The previous pool to be unpooled. In the case of none, the model searches"
+" through the history for the previous layer."
+msgstr ""
+"MaxPool2d関数の出力, もしくはNoneを引数にとる. Noneの場合, "
+"計算グラフ上から対応するMaxpooling関数の出力を探索する. "
+
+#: of renom.layers.function.unpool2d.AverageUnPool2d:12
+#: renom.layers.function.unpool2d.MaxUnPool2d:12
+msgid "The input shape requirement: ``x.shape == previous_pool.shape``"
+msgstr ""
+"UnPooling関数に入力されるデータ ``x`` は 対応するPooling関数の出力 ``previous_pool`` "
+"が持つshapeと等しい必要がある. ``x.shape == previous_pool.shape`` "
+
+#: of renom.layers.function.unpool2d.AverageUnPool2d:15
+#: renom.layers.function.unpool2d.MaxUnPool2d:15
+msgid "The output shape will be: ``ret.shape == previous_pool.input.shape``"
+msgstr ""
+"同様に, UnPooling関数の出力はpooling関数への入力と等しいshapeを持つ. ``ret.shape == "
+"previous_pool.input.shape`` "
+
+#: of renom.layers.function.unpool2d.AverageUnPool2d:1
+msgid ""
+"Average unpooling function. Unpools an input in a network where a "
+"previous pooling has occured."
+msgstr ""
+"Average unpooling関数. この関数より先にAverage poolingが実行されている必要がある.Average "
+"unpooling関数は, Average pooling時に選択されたインデックスを元にUnpoolingを行う."
+
+#~ msgid ""
+#~ "Hinton, Geoffrey E.; Srivastava, Nitish; "
+#~ "Krizhevsky, Alex; Sutskever, Ilya; "
+#~ "Salakhutdinov, Ruslan R. (2012). Improving "
+#~ "neural networks by preventing co-"
+#~ "adaptation of feature detectors"
+#~ msgstr ""
+

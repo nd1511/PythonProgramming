@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-20 15:40+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/api/renom.optimizer.rst:2
+msgid "renom.optimizer"
+msgstr ""
+
+#: of renom.optimizer.Adadelta:1 renom.optimizer.Adagrad:1
+#: renom.optimizer.Adam:1 renom.optimizer.Rmsprop:1 renom.optimizer.Sgd:1
+msgid "Bases: :class:`renom.optimizer.Optimizer`"
+msgstr ""
+
+#: of renom.optimizer.Sgd:1
+msgid "Stochastic Gradient Descent."
+msgstr "確率的勾配降下法による最適化を行うクラス."
+
+#: of renom.optimizer.Adadelta renom.optimizer.Adagrad renom.optimizer.Adam
+#: renom.optimizer.Rmsprop renom.optimizer.Sgd
+msgid "Parameters"
+msgstr ""
+
+#: of renom.optimizer.Adagrad:3 renom.optimizer.Adam:11
+#: renom.optimizer.Rmsprop:9 renom.optimizer.Sgd:3
+msgid "Learning rate."
+msgstr "学習率"
+
+#: of renom.optimizer.Sgd:5
+msgid "Momentum coefficient of optimization."
+msgstr "慣性項の強さを決める係数."
+
+#: of renom.optimizer.Sgd:7
+msgid "If true, applies nesterov's accelerated gradient."
+msgstr "Trueが与えられた場合, nesterovの加速勾配法を使用する."
+
+#: of renom.optimizer.Sgd:11
+msgid "Example"
+msgstr ""
+
+#: of renom.optimizer.ClampedSgd:1
+msgid "Bases: :class:`renom.optimizer.Sgd`"
+msgstr ""
+
+#: of renom.optimizer.Adadelta:1 renom.optimizer.Adagrad:1
+msgid "Adaptive gradient algorithm. [Adagrad]_"
+msgstr "AdaGradによる最適化を行うクラス."
+
+#: of renom.optimizer.Adadelta:5 renom.optimizer.Adagrad:5
+#: renom.optimizer.Adam:17 renom.optimizer.Rmsprop:13
+msgid "Small number in the equation for avoiding zero division."
+msgstr "0による除算を防ぐための微小な数."
+
+#: of renom.optimizer.Adadelta:8 renom.optimizer.Adagrad:8
+msgid ""
+"Duchi, J., Hazan, E., & Singer, Y. Adaptive Subgradient Methods for "
+"Online Learning and Stochastic Optimization. Journal of Machine Learning "
+"Research, 12, 2121–2159."
+msgstr ""
+
+#: of renom.optimizer.Adadelta:3
+msgid "Decay rate."
+msgstr "減衰率"
+
+#: of renom.optimizer.Rmsprop:1
+msgid "Rmsprop described by following formula. [Rmsprop]_"
+msgstr "Rmspropによる最適化を行うクラス."
+
+#: of renom.optimizer.Rmsprop:16
+msgid ""
+"Nitish Srivastava, Kevin Swersky, Geoffrey Hinton. Neural Networks for "
+"Machine Learning."
+msgstr ""
+
+#: of renom.optimizer.Adam:1
+msgid "Adaptive moment estimation described by following formula. [Adam]_"
+msgstr "Adamによる最適化を行うクラス."
+
+#: of renom.optimizer.Adam:13 renom.optimizer.Adam:15
+msgid "Coefficient"
+msgstr "係数"
+
+#: of renom.optimizer.Adam:20
+msgid ""
+"Diederik P. Kingma, Jimmy Ba. ADAM: A METHOD FOR STOCHASTIC "
+"OPTIMIZATION(2014) https://arxiv.org/pdf/1412.6980.pdf"
+msgstr ""
+

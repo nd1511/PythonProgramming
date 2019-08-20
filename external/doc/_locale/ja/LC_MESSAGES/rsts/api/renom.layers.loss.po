@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, grid
+# This file is distributed under the same license as the ReNom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ReNom 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-13 13:29+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../rsts/api/renom.layers.loss.rst:2
+msgid "renom.layers.loss"
+msgstr ""
+
+#: of renom.layers.loss.mean_squared_error.MeanSquaredError:1
+msgid ""
+"This function evaluates the loss between the target ``y`` and the input "
+"``x`` using mean squared error."
+msgstr "教師データ ``ｙ`` と入力データ ``x`` 間の誤差を平均二乗誤差で評価し、その結果を返す。"
+
+#: of renom.layers.loss.mean_squared_error.MeanSquaredError:8
+msgid ""
+"In the case of the argument `reduce_sum` is False, this class will not "
+"perform summation."
+msgstr "``reduce_sum`` がFalseの場合行列の要素を足しあわれず, 戻り値は行列となる."
+"その結果, 以下の式に基づいて戻り値が計算される."
+"Trueの場合, 戻り値はスカラ値となる."
+
+#: of renom.layers.loss.mean_squared_error.MeanSquaredError:13
+msgid ":math:`N` is batch size."
+msgstr ":math:`N` : バッチサイズ"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError
+#: renom.layers.loss.cross_entropy.CrossEntropy
+#: renom.layers.loss.mean_squared_error.MeanSquaredError
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy
+#: renom.layers.loss.softmax_cross_entropy.SoftmaxCrossEntropy
+msgid "Parameters"
+msgstr ""
+
+#: of renom.layers.loss.cross_entropy.CrossEntropy:10
+#: renom.layers.loss.mean_squared_error.MeanSquaredError:15
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy:8
+#: renom.layers.loss.softmax_cross_entropy.SoftmaxCrossEntropy:8
+msgid "Input array."
+msgstr "入力データ"
+
+#: of renom.layers.loss.cross_entropy.CrossEntropy:12
+#: renom.layers.loss.mean_squared_error.MeanSquaredError:17
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy:10
+#: renom.layers.loss.softmax_cross_entropy.SoftmaxCrossEntropy:10
+msgid "Target array."
+msgstr "教師データ"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:17
+#: renom.layers.loss.cross_entropy.CrossEntropy:14
+#: renom.layers.loss.mean_squared_error.MeanSquaredError:19
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy:12
+#: renom.layers.loss.softmax_cross_entropy.SoftmaxCrossEntropy:12
+msgid ""
+"If True is given, the result array will be summed up and returns scalar "
+"value."
+msgstr "Trueが与えられた場合, 行列の要素は足し合わされ, 戻り値はスカラ値となる."
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError
+#: renom.layers.loss.cross_entropy.CrossEntropy
+#: renom.layers.loss.mean_squared_error.MeanSquaredError
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy
+msgid "Returns"
+msgstr ""
+
+#: of renom.layers.loss.mean_squared_error.MeanSquaredError:22
+msgid "Mean squared error."
+msgstr "平均二乗誤差関数"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError
+#: renom.layers.loss.cross_entropy.CrossEntropy
+#: renom.layers.loss.mean_squared_error.MeanSquaredError
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy
+msgid "Return type"
+msgstr ""
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError
+#: renom.layers.loss.cross_entropy.CrossEntropy
+#: renom.layers.loss.mean_squared_error.MeanSquaredError
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy
+#: renom.layers.loss.softmax_cross_entropy.SoftmaxCrossEntropy
+msgid "raises"
+msgstr ""
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:23
+#: renom.layers.loss.cross_entropy.CrossEntropy:20
+#: renom.layers.loss.mean_squared_error.MeanSquaredError:25
+#: renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy:18
+#: renom.layers.loss.softmax_cross_entropy.SoftmaxCrossEntropy:15
+msgid ""
+":exc:`AssertionError` -- An assertion error will be raised if the given "
+"tensor dimension is less than 2."
+msgstr ":exc:`AssertionError` -- 引数に与えられたテンソルの次元が2未満の時、Assertion エラーを出力する。"
+
+#: of renom.layers.loss.cross_entropy.CrossEntropy:23
+#: renom.layers.loss.mean_squared_error.MeanSquaredError:28
+msgid "Example"
+msgstr ""
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:1
+msgid ""
+"Cliped mean squared error function. In the forward propagation, this "
+"function yields same calculation as mean squared error."
+msgstr "順伝播ではデータ ``x`` と ``y`` 間の平均二乗誤差を返すが、逆伝播時はclipに指定された値で勾配をクリッピングする。"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:5
+msgid "In the backward propagation, this function calculates following formula."
+msgstr "逆伝播時は以下の式に基づいて勾配が計算される。"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:11
+msgid "Input data."
+msgstr "入力データ"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:13
+msgid "Target data."
+msgstr "教師データ"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:15
+msgid "Clipping threshold."
+msgstr "クリッピングに用いる閾値"
+
+#: of renom.layers.loss.clipped_mean_squared_error.ClippedMeanSquaredError:20
+msgid "Clipping mean squared error."
+msgstr ""
+
+#: of renom.layers.loss.cross_entropy.CrossEntropy:1
+msgid ""
+"This function evaluates the cross entropy loss between the target ``y`` "
+"and the input ``x``."
+msgstr "教師データ ``ｙ`` と入力データ ``x`` 間の誤差を平均二乗誤差で評価し、その結果を返す。"
+
+#: of renom.layers.loss.cross_entropy.CrossEntropy:7
+msgid ""
+":math:`N` is batch size. :math:`\\epsilon` is small number for avoiding "
+"division by zero."
+msgstr "":math:`N` はバッチサイズ. :math:`\\epsilon` はゼロ除算を防ぐための小数."
+
+#: of renom.layers.loss.cross_entropy.CrossEntropy:17
+msgid "Cross entropy error."
+msgstr "交差エントロピー誤差"
+
+#: of renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy:1
+msgid ""
+"This function evaluates the loss between target ``y`` and output of "
+"sigmoid activation ``z`` using cross entropy."
+msgstr "教師データ ``ｙ`` と、入力データをシグモイド活性化関数にかけた ``z`` をクロスエントロピーでより評価し、その結果を返す。"
+
+#: of renom.layers.loss.sigmoid_cross_entropy.SigmoidCrossEntropy:15
+msgid "Cross entropy error between sigmoid(x) and target y."
+msgstr "sigmoid(x)と教師データy間の交差エントロピー誤差."
+
+#: of renom.layers.loss.softmax_cross_entropy.SoftmaxCrossEntropy:1
+msgid ""
+"This function evaluates the loss between target ``y`` and output of "
+"softmax activation ``z`` using cross entropy."
+msgstr "教師データ ``ｙ`` と、入力データをソフトマックス活性化関数にかけた ``z`` をクロスエントロピーでより評価し、その結果を返す。"
+
