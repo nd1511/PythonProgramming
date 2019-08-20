@@ -104,6 +104,7 @@ from keras.datasets.fashion_mnist import load_data
 print('Fashion-MNIST Test', x_fashion.shape, y_fashion.shape)
 
 print('')
+
 num_workers = 0
 batch_size = 128
 
@@ -1076,11 +1077,8 @@ def define_gan(g_model, d_model):
 	# connect them
 	model = Sequential()
 
-	# add generator
-	model.add(g_model)
-
-	# add the discriminator
-	model.add(d_model)
+	model.add(g_model) # add generator
+	model.add(d_model) # add the discriminator
 
 	# compile model
 	opt = Adam(lr=0.0002, beta_1=0.5)
@@ -4976,13 +4974,11 @@ class generator(torch.nn.Module):
 d = discriminator()
 g = generator()
 
-# training hyperparameters
-#epochs = 100
-epochs = 10
+#epochs = 100 # hyper-parameters
+epochs = 10 # training hyperparameters
 
-# learning rate
-#dlr = 0.0003
-#glr = 0.0003
+#dlr = 0.0003 # learning rate
+#glr = 0.0003 # lr learning rate
 
 dlr = 0.003
 glr = 0.003
