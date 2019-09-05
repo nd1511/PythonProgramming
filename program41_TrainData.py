@@ -80,12 +80,12 @@ import numpy as np
 from copy import deepcopy
 import matplotlib.pyplot as plt
 
-import externals.renom as rm
+import external.renom as rm
 #from renom.optimizer import Adam
 #from renom.cuda import set_cuda_active
 
-from externals.renom.optimizer import Adam
-from externals.renom.cuda import set_cuda_active
+from external.renom.optimizer import Adam
+from external.renom.cuda import set_cuda_active
 
 import numpy as np
 import tensorflow as tf
