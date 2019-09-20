@@ -53,7 +53,6 @@ from sklearn.mixture import GaussianMixture
 
 import scipy
 import matplotlib
-import numpy as np
 from scipy.misc import imshow
 from scipy import ndimage, misc
 import matplotlib.pyplot as plt
@@ -247,6 +246,7 @@ class GAN():
         #fig.savefig("gan/images/mnist_%d.png" % epoch)
         fig.savefig("/Users/dionelisnikolaos/Downloads/mnist_%d.png" % epoch)
 
+        #plt.pause(1)
         plt.close()
 
 if __name__ == '__main__':
