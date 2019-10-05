@@ -81,11 +81,11 @@ from keras.models import Sequential
 # https://www.renom.jp/notebooks/tutorial/generative-model/anoGAN/notebook.html
 # use: https://www.renom.jp/notebooks/tutorial/generative-model/anoGAN/notebook.html
 
-import externals.renom as rm
+import external.renom as rm
 #from renom.optimizer import Adam
 #from renom.cuda import set_cuda_active
-from externals.renom.optimizer import Adam
-from externals.renom.cuda import set_cuda_active
+from external.renom.optimizer import Adam
+from external.renom.cuda import set_cuda_active
 
 # MNIST: Keras or scikit-learn embedded datasets
 # Keras: from keras.datasets import mnist
