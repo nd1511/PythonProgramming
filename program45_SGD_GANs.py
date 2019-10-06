@@ -1,29 +1,34 @@
 from __future__ import print_function
 from __future__ import absolute_import
 
-# use: https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/audio_recognition.md
-# https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/audio_recognition.md
-# we now use: https://www.youtube.com/watch?v=9dXiAecyJrY&feature=youtu.be&t=13874
+# https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
+# https://www.analyticsinsight.net/best-computer-vision-courses-to-master-in-2019/
+# UCI data: https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+# Human Activity Recognition Using Smartphones Data Set, archive.ics.uci.edu, Human Activity Recognition
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 import numpy as np
-import pandas as pd
-import sys, sklearn
-
 import numpy.random
+import pandas as pd
+
+import sys, sklearn
 import scipy.stats as ss
 import os, tarfile, errno
 import matplotlib.pyplot as plt
+
+# https://www.cmegroup.com/education/files/jpm-momentum-strategies-2015-04-15-1681565.pdf
+# https://faculty.sites.uci.edu/pjorion/files/2018/05/JPM-2017-MachineLearningInvestments.pdf
+# we use: https://www.cmegroup.com/education/files/jpm-momentum-strategies-2015-04-15-1681565.pdf
+# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
 
 import tensorflow as tf
 print(tf.__version__) # 1.14.0
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
 
-# https://medium.com/startup-grind/fueling-the-ai-gold-rush-7ae438505bc2
-# https://www.analyticsinsight.net/best-computer-vision-courses-to-master-in-2019/
-# UCI data: https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-# Human Activity Recognition Using Smartphones Data Set, archive.ics.uci.edu, Human Activity Recognition
-# https://www.cfasociety.org/cleveland/Lists/Events%20Calendar/Attachments/1045/BIG-Data_AI-JPMmay2017.pdf
+# use: https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/audio_recognition.md
+# https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/audio_recognition.md
+# we now use: https://www.youtube.com/watch?v=9dXiAecyJrY&feature=youtu.be&t=13874
 
 if sys.version_info >= (3, 0, 0):
     import urllib.request as urllib
@@ -68,24 +73,23 @@ from torchvision import datasets
 from matplotlib import pyplot as plt
 import torchvision.transforms as transforms
 
-#import renom as rm
-from copy import deepcopy
-import matplotlib.pyplot as plt
-
 import numpy as np
+#import renom as rm
 import tensorflow as tf
+from copy import deepcopy
 from keras.layers import Dense
+import matplotlib.pyplot as plt
 from keras.datasets import mnist
 from keras.models import Sequential
 
 # https://www.renom.jp/notebooks/tutorial/generative-model/anoGAN/notebook.html
 # use: https://www.renom.jp/notebooks/tutorial/generative-model/anoGAN/notebook.html
 
-import external.renom as rm
+import externals.renom as rm
 #from renom.optimizer import Adam
 #from renom.cuda import set_cuda_active
-from external.renom.optimizer import Adam
-from external.renom.cuda import set_cuda_active
+from externals.renom.optimizer import Adam
+from externals.renom.cuda import set_cuda_active
 
 # MNIST: Keras or scikit-learn embedded datasets
 # Keras: from keras.datasets import mnist
@@ -274,7 +278,7 @@ class FNN(nn.Module):
         return y4
 
     # Backward propagation
-    def backward(self, X, l, y4):
+    def backward(self, X, l, y4): # Back, Backward
         # Derivative of binary cross entropy cost w.r.t. final output y4
         self.dC_dy4 = y4 - l
 
@@ -435,9 +439,8 @@ class GAN():
             idx = np.random.randint(0, X_train.shape[0], half_batch)
             imgs = X_train[idx]
 
+            # Generator => Generate a half batch of new images
             noise = np.random.normal(0, 1, (half_batch, 100))
-
-            # Generate a half batch of new images
             gen_imgs = self.generator.predict(noise)
 
             # Train the Discriminator
@@ -1586,10 +1589,8 @@ plot_model(model, to_file='discriminator_plot.png', show_shapes=True, show_layer
 # we use: https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/
 
 (trainX, _), (_, _) = load_data() # load the CIFAR-10 dataset
-X = trainX.astype('float32') # convert from unsigned ints to floats
-
-# scale from [0,255] to [-1,1]
-X = (X - 127.5) / 127.5
+X = trainX.astype('float32') # convert from ints to floats
+X = (X - 127.5) / 127.5 # scale from [0,255] to [-1,1]
 
 # load and prepare CIFAR-10 training images
 def load_real_samples():
@@ -5575,9 +5576,8 @@ print(pred.argmax()) # we print the result
 # ReLU is the most common activation function. We use ReLU.
 # Mean across a batch. We use batches. Normalize across a batch.
 
+# https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
 # use: https://github.com/life-efficient/Academy-of-AI/blob/master/Lecture%2013%20-%20Generative%20Models/GANs%20tutorial.ipynb
-
-
 
 import torch
 import torchvision
